@@ -1,0 +1,6 @@
+framework module Pods_AugustFriday {
+  umbrella header "Pods-AugustFriday-umbrella.h"
+
+  export *
+  module * { export * }
+}
