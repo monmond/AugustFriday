@@ -35,31 +35,6 @@ public extension AGNavigationBarProtocol {
     return 56.0
   }
   
-  //  public var height_navigationView: CGFloat {
-  //    var result: CGFloat = 0
-  //    switch agNavigationBarAnchor {
-  //    case .safeArea:
-  //      result = statusBar + navigationBar
-  //
-  //    case .statueBar:
-  //      result = statusBar
-  //
-  //    case .none:
-  //      break
-  //
-  //    }
-  //    if isAGSearchController {
-  //      result += searchBar
-  //    }
-  //    return result
-  //
-  //  }
-  //
-  //  public var inset_safeAreaTop: CGFloat {
-  //    return (isAGNavigationBarHidden ? -(height_navigationView * 2) : -height_navigationView)
-  //  }
-  
-  
 }
 
 
