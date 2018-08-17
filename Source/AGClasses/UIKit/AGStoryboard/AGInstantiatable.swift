@@ -57,13 +57,13 @@ public extension AGInstantiatable where Self: UIViewController {
     return vc as! Self
   }
   
-  public static func vc(setup: Setup?) -> Self {
+  public static func vc(setup: Setup? = nil) -> Self {
     let vc = create()
     setup?(vc)
     return vc
   }
   
-  public static func nvc(setup: Setup?) -> UINavigationController {
+  public static func nvc(setup: Setup? = nil) -> UINavigationController {
     let vc = create()
     setup?(vc)
     let nvc = UINavigationController(rootViewController: vc)
