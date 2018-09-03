@@ -22,7 +22,7 @@ end
 def networking_pods
   
   # Networking
-  # pod 'Alamofire', '~> 4.5'
+   pod 'Alamofire', '~> 4.5'
   # Json reader
   # pod 'SwiftyJSON', '~> 4.1.0'
   # Image downloader and cacheing
