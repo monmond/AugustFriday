@@ -73,7 +73,8 @@ public extension AGTableViewHeaderFooterView {
   
   public func setupClear() {
     //    backgroundColor = BaseColor.clear.color
-    contentView.backgroundColor = BaseColor.clear.color
+    
+    backgroundView.backgroundColor = BaseColor.clear.color
   }
   
 }

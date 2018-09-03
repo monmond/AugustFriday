@@ -16,7 +16,7 @@ import UIKit
 public extension CGFloat {
   
   public static var zero: CGFloat {
-    return 0.0
+    return .leastNormalMagnitude
   }
   
 }
