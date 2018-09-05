@@ -107,8 +107,8 @@ s.subspec 'Core' do |c|
 	}
 	c.requires_arc = true
 	c.dependency 'NVActivityIndicatorView', '~> 4.0.0'
-
-
+	c.dependency 'Firebase/Core'
+	c.dependency 'Firebase/Messaging'
 
 	# AGClasses
 	c.subspec 'AGClasses' do |agc|
