@@ -6,8 +6,13 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
+
+
 import UIKit
 
+
+
+//MARK: - Top view
 public extension UIViewController {
   
   public static var top: UIViewController? {
@@ -37,19 +42,11 @@ public extension UIViewController {
 }
 
 
+
+//MARK: - Flow control
 public extension UIViewController {
   
-  public func popViewController(_ count: Int, onComplete: CallbackVoid?) {
-    guard let viewControllers = navigationController?.viewControllers else {
-      return
-    }
-    var index = 0
-    if count < viewControllers.count - 1 {
-      index = count
-    }
-    navigationController?.popToViewController(viewControllers[index], onComplete: onComplete)
-  }
-  
+  //MARK: - Unused
   public func pushTransition() -> CATransition {
     let transition = CATransition()
     transition.duration = 0.3
@@ -57,6 +54,25 @@ public extension UIViewController {
     transition.type = kCATransitionPush
     transition.subtype = kCATransitionFade
     return transition
+  }
+  
+}
+
+
+
+//MARK: - Update layout
+public extension UIViewController {
+
+  public func updateFrame() {
+    view.setNeedsLayout()
+    view.layoutIfNeeded()
+    
+  }
+  
+  public func animateChange(with duration: TimeInterval = 0.3) {
+    UIView.animate(withDuration: duration, animations: {
+      self.view.layoutIfNeeded()
+    })
   }
   
 }

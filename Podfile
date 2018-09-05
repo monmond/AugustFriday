@@ -21,8 +21,12 @@ end
 
 def networking_pods
   
+  # Firebase Core 5.0.4
+  pod 'Firebase/Core'
+  # Firebase Messaging 3.0.2
+  pod 'Firebase/Messaging'
   # Networking
-   pod 'Alamofire', '~> 4.5'
+  pod 'Alamofire', '~> 4.5'
   # Json reader
   # pod 'SwiftyJSON', '~> 4.1.0'
   # Image downloader and cacheing

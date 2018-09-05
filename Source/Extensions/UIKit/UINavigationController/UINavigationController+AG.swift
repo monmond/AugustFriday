@@ -6,7 +6,11 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
+
+
 import UIKit
+
+
 
 public extension UINavigationController {
   
@@ -17,17 +21,29 @@ public extension UINavigationController {
     CATransaction.commit()
   }
   
-  public func popToViewController(_ vc: UIViewController, onComplete: CallbackVoid?) {
+  public func popToViewController(to vc: UIViewController, onComplete: CallbackVoid?) {
     CATransaction.begin()
     CATransaction.setCompletionBlock(onComplete)
     self.popToViewController(vc, animated: true)
     CATransaction.commit()
   }
-  public func pushViewController(vc: UIViewController, onComplete: CallbackVoid?) {
+  
+  public func pushViewController(to vc: UIViewController, onComplete: CallbackVoid?) {
     CATransaction.begin()
     CATransaction.setCompletionBlock(onComplete)
     self.pushViewController(vc, animated: true)
     CATransaction.commit()
+  }
+  
+  public func popViewController(count: Int, onComplete: CallbackVoid?) {
+    guard let viewControllers = navigationController?.viewControllers else {
+      return
+    }
+    var index = 0
+    if count < viewControllers.count - 1 {
+      index = count
+    }
+    navigationController?.popToViewController(to: viewControllers[index], onComplete: onComplete)
   }
   
 }

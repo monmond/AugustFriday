@@ -12,6 +12,7 @@ import Foundation
 
 
 
+//MARK: - AGConfiguration
 public enum AGConfiguration {
   
   public enum App {
