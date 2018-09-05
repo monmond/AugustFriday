@@ -107,8 +107,6 @@ s.subspec 'Core' do |c|
 	}
 	c.requires_arc = true
 	c.dependency 'NVActivityIndicatorView', '~> 4.0.0'
-	c.dependency 'Firebase/Core'
-	c.dependency 'Firebase/Messaging'
 
 	# AGClasses
 	c.subspec 'AGClasses' do |agc|
@@ -117,6 +115,8 @@ s.subspec 'Core' do |c|
 		# Main
 		agc.subspec 'Main' do |m|
 			m.source_files = PodUtility.mapSwiftFiles(str_agc_main, 2)
+			m.dependency 'Firebase/Core'
+			m.dependency 'Firebase/Messaging'
 
 		end
 
