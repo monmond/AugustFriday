@@ -8,23 +8,54 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
 
-public class AGKeyboardManager: NSObject {
-  
+//MARK: - AGKeyboardHelper
+public class AGKeyboardHelper: NSObject {
+  //MARK: - UI
   fileprivate var vc: UIViewController!
-  public var txt_active: UITextField?
-  fileprivate var tap_dismissKeyboard: UITapGestureRecognizer?
-  public var scrollToBottomWhenKeyboardShows: Bool = false
+  fileprivate var txt_active: UITextField?
+  fileprivate lazy var tap_dismissKeyboard: UITapGestureRecognizer = {
+    let tap = UITapGestureRecognizer(target: self,
+                                     action: #selector(dismissKeyboardGestureTapped))
+    tap.cancelsTouchesInView = false
+    tap.delegate = self
+    return tap
+  }()
   
+  
+  //MARK: - NSLayout
+  
+  
+  
+  //MARK: - Constraint
+  
+  
+  
+  //MARK: - Instance
+  
+  
+  
+  //MARK: - Flag
+  public var flag_scrollToBottom: Bool = false
+  
+  
+  //MARK: - Storage
+  
+  
+  
+  //MARK: - Initial
   public init(vc: UIViewController) {
+    super.init()
     self.vc = vc
+    onInit()
   }
   
   deinit {
-    deposeView()
+    onDeinit()
     
   }
 }
@@ -32,8 +63,21 @@ public class AGKeyboardManager: NSObject {
 
 
 //MARK: - Life Cycle
-extension AGKeyboardManager {
+extension AGKeyboardHelper {
   
+  func onInit() {
+    setupGestures()
+    setupKeyboardObserverListeners()
+    
+  }
+  
+  func onDeinit() {
+    vc = nil
+    txt_active = nil
+    vc.view.removeGestureRecognizer(tap_dismissKeyboard)
+    removeKeyboardObserverListeners()
+    
+  }
   
   
 }
@@ -41,26 +85,24 @@ extension AGKeyboardManager {
 
 
 //MARK: - Setup
-extension AGKeyboardManager {
+extension AGKeyboardHelper {
   
-  fileprivate func addKeyboardObservers() {
-    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+  fileprivate func setupKeyboardObserverListeners() {
+    let nc = NotificationCenter.default
+    nc.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+    nc.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
     
   }
   
-  fileprivate func removeKeyboardObservers() {
-    NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-    NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+  fileprivate func removeKeyboardObserverListeners() {
+    let nc = NotificationCenter.default
+    nc.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+    nc.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    
   }
   
-  fileprivate func setupGesture() {
-    tap_dismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-    if let gesture = tap_dismissKeyboard {
-      gesture.cancelsTouchesInView = false
-      gesture.delegate = self
-      vc.view.addGestureRecognizer(gesture)
-    }
+  fileprivate func setupGestures() {
+    vc.view.addGestureRecognizer(tap_dismissKeyboard)
     
   }
   
@@ -87,11 +129,12 @@ extension AGKeyboardManager {
           sv.scrollRectToVisible(txt_active.frame, animated: true)
         }
       }
-      if scrollToBottomWhenKeyboardShows {
+      if flag_scrollToBottom {
         sv.scrollRectToVisible(CGRect(x: 0, y: sv.contentSize.height, width: 1, height: 1), animated: true)
       }
       continue
     }
+    
   }
   
   @objc
@@ -104,64 +147,55 @@ extension AGKeyboardManager {
         continue
       }
     }
+    
   }
   
   @objc
-  fileprivate func dismissKeyboard() {
+  fileprivate func dismissKeyboardGestureTapped() {
     txt_active?.resignFirstResponder()
+    
   }
   
 }
 
 
 
-//MARK: - Depose UI
-extension AGKeyboardManager {
+//MARK: - Public
+public extension AGKeyboardHelper {
   
-  fileprivate func deposeView() {
-    removeKeyboardObservers()
-    vc = nil
+  public func setActiveTextField(_ textField: UITextField) {
+    txt_active = textField
+  }
+  
+  public func removeActiveTextField() {
     txt_active = nil
-    tap_dismissKeyboard = nil
-    
   }
   
 }
 
 
 
-//MARK: - Common Function
-extension AGKeyboardManager {
+//MARK: - Private
+extension AGKeyboardHelper {
   
-  public func create() {
-    setupGesture()
-    addKeyboardObservers()
-    
-  }
+  
   
 }
 
 
 
 //MARK: - UIGestureRecognizerDelegate
-extension AGKeyboardManager: UIGestureRecognizerDelegate {
+extension AGKeyboardHelper: UIGestureRecognizerDelegate {
   
   public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-    guard let tap = tap_dismissKeyboard, tap == gestureRecognizer else {
+    guard tap_dismissKeyboard == gestureRecognizer else {
       return true
     }
     guard let v = touch.view, !v.isKind(of: UIControl.self) else {
       return false
     }
     return true
+    
   }
   
 }
-
-
-
-
-
-
-
-

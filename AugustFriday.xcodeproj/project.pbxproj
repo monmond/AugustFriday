@@ -51,7 +51,7 @@
 		A434A19D21101EA9004898DE /* CGRect+AGSpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16421101EA9004898DE /* CGRect+AGSpinerLayer.swift */; };
 		A434A19E21101EA9004898DE /* AGSpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16521101EA9004898DE /* AGSpinerLayer.swift */; };
 		A434A19F21101EA9004898DE /* AGNavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */; };
-		A434A1A021101EA9004898DE /* AGKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16921101EA9004898DE /* AGKeyboardManager.swift */; };
+		A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16921101EA9004898DE /* AGKeyboardHelper.swift */; };
 		A434A1A121101EA9004898DE /* AGStateViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16A21101EA9004898DE /* AGStateViewManager.swift */; };
 		A434A1A221101EA9004898DE /* AGLoadingViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */; };
 		A434A1A321101EA9004898DE /* AGNavigationViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */; };
@@ -104,6 +104,7 @@
 		A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */; };
 		A4C0C258213E7E6E00288AFB /* AGApplicationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */; };
 		A4C0C25A213E830800288AFB /* AGApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */; };
+		A4EB82012141317500BBAC2D /* AGInteractivePopHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB82002141317500BBAC2D /* AGInteractivePopHelper.swift */; };
 		C15DE745382C471E3C1F5210 /* Pods_AugustFriday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7752691B00FF4C7AFA2771 /* Pods_AugustFriday.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,7 +155,7 @@
 		A434A16421101EA9004898DE /* CGRect+AGSpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AGSpinerLayer.swift"; sourceTree = "<group>"; };
 		A434A16521101EA9004898DE /* AGSpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGSpinerLayer.swift; sourceTree = "<group>"; };
 		A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationBarProtocol.swift; sourceTree = "<group>"; };
-		A434A16921101EA9004898DE /* AGKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGKeyboardManager.swift; sourceTree = "<group>"; };
+		A434A16921101EA9004898DE /* AGKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGKeyboardHelper.swift; sourceTree = "<group>"; };
 		A434A16A21101EA9004898DE /* AGStateViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStateViewManager.swift; sourceTree = "<group>"; };
 		A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLoadingViewManager.swift; sourceTree = "<group>"; };
 		A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationViewManager.swift; sourceTree = "<group>"; };
@@ -208,6 +209,7 @@
 		A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebase.swift; sourceTree = "<group>"; };
 		A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationSetup.swift; sourceTree = "<group>"; };
 		A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebaseMessaging.swift; sourceTree = "<group>"; };
+		A4EB82002141317500BBAC2D /* AGInteractivePopHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGInteractivePopHelper.swift; sourceTree = "<group>"; };
 		A5A4B23F8CF11F08AA61D4A3 /* Pods-AugustFriday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugustFriday.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugustFriday/Pods-AugustFriday.release.xcconfig"; sourceTree = "<group>"; };
 		E8793D4AC79E433907C0127E /* Pods-AugustFriday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugustFriday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugustFriday/Pods-AugustFriday.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -705,6 +707,7 @@
 		A434A16621101EA9004898DE /* AGViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A4EB81FE2141286100BBAC2D /* Helper */,
 				A44DBECD211AA7070002D75B /* Protocol */,
 				A434A16721101EA9004898DE /* Managers */,
 				A434A16D21101EA9004898DE /* Components */,
@@ -715,7 +718,6 @@
 		A434A16721101EA9004898DE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A434A16921101EA9004898DE /* AGKeyboardManager.swift */,
 				A434A16A21101EA9004898DE /* AGStateViewManager.swift */,
 				A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */,
 				A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */,
@@ -1029,6 +1031,15 @@
 			path = AGView;
 			sourceTree = "<group>";
 		};
+		A4EB81FE2141286100BBAC2D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A434A16921101EA9004898DE /* AGKeyboardHelper.swift */,
+				A4EB82002141317500BBAC2D /* AGInteractivePopHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1183,7 +1194,7 @@
 				A44DBECC211AA6DC0002D75B /* AGStateViewProtocol.swift in Sources */,
 				A418518721241E1D00765969 /* URL+AG.swift in Sources */,
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
-				A434A1A021101EA9004898DE /* AGKeyboardManager.swift in Sources */,
+				A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */,
 				A42D8998213DAA08002A7E01 /* Storyboard.swift in Sources */,
 				A434A15921101B8F004898DE /* AGEnum.swift in Sources */,
 				A434A11A21101855004898DE /* UICollectionReusableView+AG.swift in Sources */,
@@ -1192,6 +1203,7 @@
 				A434A13E21101A32004898DE /* UIView+AG.swift in Sources */,
 				A434A1B021101EA9004898DE /* AGViewAnimation.swift in Sources */,
 				A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */,
+				A4EB82012141317500BBAC2D /* AGInteractivePopHelper.swift in Sources */,
 				A4C0C258213E7E6E00288AFB /* AGApplicationSetup.swift in Sources */,
 				A4B61D6321183979003F98FF /* AGNavigationView.swift in Sources */,
 				A434A12B21101959004898DE /* Bundle+AG.swift in Sources */,

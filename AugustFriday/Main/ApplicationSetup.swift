@@ -8,13 +8,19 @@
 
 
 
+//MARK: - Imports
 import UIKit
+import AugustFriday
 
 
 
 //MARK: - ApplicationSetup
 public protocol ApplicationSetup: AGApplicationSetup {
-
+  
+  func setupOnInit()
+  func setupOnApplicationDidFinishLaunching()
+  func setupOnDeinit()
+  
 }
 
 
@@ -28,6 +34,7 @@ public extension ApplicationSetup {
   
   public func setupOnApplicationDidFinishLaunching() {
     setupNavigationBar()
+    setupLogLevel()
     
   }
   
@@ -46,7 +53,7 @@ public extension ApplicationSetup {
 
 
 
-//MARK: - Setups
+//MARK: - Core Setups
 public extension ApplicationSetup {
   
   private func setupNavigationBar() {
@@ -59,6 +66,19 @@ public extension ApplicationSetup {
     
   }
   
+}
+
+
+//MARK: - Core Setups
+public extension ApplicationSetup {
+  
+  private func setupLogLevel() {
+    AGLogManager.shared.logLevel = .debug
+    
+  }
   
 }
+
+
+
 

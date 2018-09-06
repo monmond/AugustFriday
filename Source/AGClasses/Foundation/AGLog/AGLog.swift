@@ -8,10 +8,23 @@
 
 
 
+//MARK: - Imports
 import Foundation
 
 
 
+//MARK: - AGLogManager
+public class AGLogManager {
+  
+  public static let shared = AGLogManager()
+  
+  public var logLevel: AGLogLevel = .debug
+  
+}
+
+
+
+//MARK: - AGLogLevel
 public enum AGLogLevel: Int {
   
   case off = 0, error, warning, info, debug
@@ -36,17 +49,11 @@ public enum AGLogLevel: Int {
 
 
 
+//MARK: - AGLog
 open class AGLog: NSObject {
   
-  fileprivate static var logLevel = AGLogLevel.info
-  
-  open class func setLevel(_ level: AGLogLevel) {
-    logLevel = level
-    
-  }
-  
   fileprivate class func log(_ level: AGLogLevel, message: String) {
-    if level.rawValue <= logLevel.rawValue {
+    if level.rawValue <= AGLogManager.shared.logLevel.rawValue {
       print("\(level.description()) \(message)")
     }
     

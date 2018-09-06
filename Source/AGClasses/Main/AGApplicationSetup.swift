@@ -46,6 +46,13 @@ public extension AGApplicationSetup {
 //MARK: - Common functions
 public extension AGApplicationSetup {
 
+}
+
+
+
+//MARK: - Core Setups
+public extension AGApplicationSetup {
+  
   private func setupNavigationBar() {
     let nb = UINavigationBar.appearance()
     nb.barStyle = .default
@@ -56,5 +63,5 @@ public extension AGApplicationSetup {
     
   }
   
-
 }
+

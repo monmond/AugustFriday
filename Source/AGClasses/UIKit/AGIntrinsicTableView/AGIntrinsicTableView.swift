@@ -6,11 +6,15 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
+
+
 import UIKit
+
+
 
 open class IntrinsicTableView: UITableView {
   
-  open override var contentSize:CGSize {
+  open override var contentSize: CGSize {
     didSet {
       self.invalidateIntrinsicContentSize()
     }
