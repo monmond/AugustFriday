@@ -17,7 +17,7 @@ enum Storyboard {
   class Main {
     
     static func mainVC() {
-      Logger.logInfo(#function, scope: self)
+      AGLog.info(#function, scope: self)
       
     }
     
@@ -26,7 +26,7 @@ enum Storyboard {
   struct Login {
     
     static func loginVC() {
-      Logger.logInfo(#function, scope: self)
+      AGLog.info(#function, scope: self)
       
     }
     

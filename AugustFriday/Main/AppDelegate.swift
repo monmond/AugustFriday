@@ -146,12 +146,12 @@ extension AppDelegate {
   func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
     // TODO: If necessary send token to application server.
     // Note: This callback is fired at each app startup and whenever a new token is generated.
-    Logger.logInfo("\(#function) - \(fcmToken)", scope: type(of: self))
+    AGLog.info("\(#function) - \(fcmToken)", scope: type(of: self))
     
   }
   
   func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-    Logger.logInfo("\(#function) - \(remoteMessage)", scope: type(of: self))
+    AGLog.info("\(#function) - \(remoteMessage)", scope: type(of: self))
     
   }
   

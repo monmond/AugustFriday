@@ -54,20 +54,20 @@ public extension AGApplicationBlurable {
   }
   
   private func applicationWillEnterForeground(_ notification: Notification) {
-    Logger.logDebug(#function, scope: AGApplicationBlurable.self)
+    AGLog.debug(#function, scope: AGApplicationBlurable.self)
     unBlur()
     
   }
   
   
   private func applicationWillResignActive(_ notification: Notification) {
-    Logger.logDebug(#function, scope: AGApplicationBlurable.self)
+    AGLog.debug(#function, scope: AGApplicationBlurable.self)
     blur()
     
   }
   
   private func applicationDidBecomeActive(_ notification: Notification) {
-    Logger.logDebug(#function, scope: AGApplicationBlurable.self)
+    AGLog.debug(#function, scope: AGApplicationBlurable.self)
     unBlur()
     
   }

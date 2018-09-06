@@ -15,7 +15,7 @@
 		A42D898D213D9AC1002A7E01 /* ApplicationRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D898C213D9AC1002A7E01 /* ApplicationRoutable.swift */; };
 		A42D898F213D9BDF002A7E01 /* ApplicationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D898E213D9BDF002A7E01 /* ApplicationSetup.swift */; };
 		A42D8991213DA0DB002A7E01 /* ApplicationFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8990213DA0DB002A7E01 /* ApplicationFirebase.swift */; };
-		A42D8996213DA480002A7E01 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8995213DA480002A7E01 /* Logger.swift */; };
+		A42D8996213DA480002A7E01 /* AGLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8995213DA480002A7E01 /* AGLog.swift */; };
 		A42D8998213DAA08002A7E01 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8997213DAA08002A7E01 /* Storyboard.swift */; };
 		A42D899A213DAA89002A7E01 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8999213DAA89002A7E01 /* MainVC.swift */; };
 		A434A1072110141A004898DE /* UIAlertController+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A1062110141A004898DE /* UIAlertController+AG.swift */; };
@@ -118,7 +118,7 @@
 		A42D898E213D9BDF002A7E01 /* ApplicationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSetup.swift; sourceTree = "<group>"; };
 		A42D8990213DA0DB002A7E01 /* ApplicationFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFirebase.swift; sourceTree = "<group>"; };
 		A42D8992213DA390002A7E01 /* ApplicationFirebaseMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFirebaseMessaging.swift; sourceTree = "<group>"; };
-		A42D8995213DA480002A7E01 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A42D8995213DA480002A7E01 /* AGLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLog.swift; sourceTree = "<group>"; };
 		A42D8997213DAA08002A7E01 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		A42D8999213DAA89002A7E01 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		A434A1062110141A004898DE /* UIAlertController+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+AG.swift"; sourceTree = "<group>"; };
@@ -376,7 +376,6 @@
 		A42D897F213D7853002A7E01 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				A42D8995213DA480002A7E01 /* Logger.swift */,
 				A42D8997213DAA08002A7E01 /* Storyboard.swift */,
 			);
 			path = Utilities;
@@ -610,6 +609,7 @@
 		A434A14B21101B8F004898DE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				A46D63452140DECE00E7D26E /* AGLog */,
 				A434A14C21101B8F004898DE /* AGDate */,
 				A434A14E21101B8F004898DE /* AGEnum */,
 				A434A15021101B8F004898DE /* AGTypealias */,
@@ -941,6 +941,14 @@
 			path = Messagging;
 			sourceTree = "<group>";
 		};
+		A46D63452140DECE00E7D26E /* AGLog */ = {
+			isa = PBXGroup;
+			children = (
+				A42D8995213DA480002A7E01 /* AGLog.swift */,
+			);
+			path = AGLog;
+			sourceTree = "<group>";
+		};
 		A477729621172F7000D82F7D /* AGSafeArea */ = {
 			isa = PBXGroup;
 			children = (
@@ -1211,7 +1219,7 @@
 				A479EB4F213E38A900A4F143 /* AGVC.swift in Sources */,
 				A434A12F21101959004898DE /* String+AG.swift in Sources */,
 				A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */,
-				A42D8996213DA480002A7E01 /* Logger.swift in Sources */,
+				A42D8996213DA480002A7E01 /* AGLog.swift in Sources */,
 				A434A1B121101EA9004898DE /* UIFont+AGAsset.swift in Sources */,
 				A434A13621101997004898DE /* UIButton+AG.swift in Sources */,
 				A4B61D6A21185EA8003F98FF /* AGView.swift in Sources */,

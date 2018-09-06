@@ -1,5 +1,5 @@
 //
-//  Logger.swift
+//  AGLog.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 4/9/18.
@@ -12,7 +12,7 @@ import Foundation
 
 
 
-public enum LogLevel: Int {
+public enum AGLogLevel: Int {
   
   case off = 0, error, warning, info, debug
   
@@ -36,23 +36,23 @@ public enum LogLevel: Int {
 
 
 
-open class Logger: NSObject {
+open class AGLog: NSObject {
   
-  fileprivate static var logLevel = LogLevel.info
+  fileprivate static var logLevel = AGLogLevel.info
   
-  open class func setLevel(_ level: LogLevel) {
+  open class func setLevel(_ level: AGLogLevel) {
     logLevel = level
     
   }
   
-  fileprivate class func log(_ level: LogLevel, message: String) {
+  fileprivate class func log(_ level: AGLogLevel, message: String) {
     if level.rawValue <= logLevel.rawValue {
       print("\(level.description()) \(message)")
     }
     
   }
   
-  fileprivate class func log<T>(_ level: LogLevel, scope: T.Type?, message: String) {
+  fileprivate class func log<T>(_ level: AGLogLevel, scope: T.Type?, message: String) {
     if let scope = scope {
       let reflecting: String = String(reflecting: scope).lazy.split(separator: ".").dropFirst().joined(separator: ".")
       log(level, message: "[\(reflecting)] \(message)")
@@ -61,22 +61,22 @@ open class Logger: NSObject {
     }
   }
   
-  open class func logError<T>(_ message: String, scope: T.Type? = nil) {
+  open class func error<T>(_ message: String, scope: T.Type? = nil) {
     log(.error, scope: scope, message: message)
     
   }
   
-  open class func logWarn<T>(_ message: String, scope: T.Type? = nil) {
+  open class func warn<T>(_ message: String, scope: T.Type? = nil) {
     log(.warning, scope: scope, message: message)
     
   }
   
-  open class func logInfo<T>(_ message: String, scope: T.Type? = nil) {
+  open class func info<T>(_ message: String, scope: T.Type? = nil) {
     log(.info, scope: scope, message: message)
     
   }
   
-  open class func logDebug<T>(_ message: String, scope: T.Type? = nil) {
+  open class func debug<T>(_ message: String, scope: T.Type? = nil) {
     log(.debug, scope: scope, message: message)
     
   }
