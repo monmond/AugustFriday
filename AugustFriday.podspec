@@ -110,7 +110,7 @@ s.subspec 'Alamofire' do |c|
 	c.source_files = PodUtility.mapSwiftFiles(str_aga, 1)
 	c.dependency 'AugustFriday/Core'
 	c.dependency 'Alamofire', '~> 4.7'
-	c.dependency 'Alamofire', '~> 4.1'
+	c.dependency 'SwiftyJSON', '~> 4.1'
 
 end	
 
