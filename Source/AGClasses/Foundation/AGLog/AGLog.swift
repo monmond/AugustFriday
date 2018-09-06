@@ -59,6 +59,7 @@ open class AGLog: NSObject {
     } else {
       log(level, message: message)
     }
+    
   }
   
   open class func error<T>(_ message: String, scope: T.Type? = nil) {

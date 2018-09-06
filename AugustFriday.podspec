@@ -103,7 +103,7 @@ str_ext_foundation = "#{str_ext}/Foundation"
 
 # Firebase
 s.subspec 'Firebase' do |c|
-	c.frameworks = 'UIKit'
+	c.frameworks = 'UIKit', 'Firebase'
 	c.source_files = PodUtility.mapSwiftFiles(str_agf_core, 2)
 	c.dependency 'AugustFriday/Core'
 	c.dependency 'Firebase/Core'
@@ -112,7 +112,7 @@ end
 
 # Messaging
 s.subspec 'Messaging' do |c|
-	c.frameworks = 'UIKit'
+	c.frameworks = 'UIKit', 'Firebase'
 	c.source_files = PodUtility.mapSwiftFiles(str_agf_messagging, 2)
 	c.dependency 'AugustFriday/Core'
 	c.dependency 'AugustFriday/Firebase'
