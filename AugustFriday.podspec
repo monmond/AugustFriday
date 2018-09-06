@@ -85,8 +85,8 @@ str_source = 'Source'
 
 # AGFirebase
 str_agf = "#{str_source}/AGFirebase"
-str_agf_core = "#{str_agc}/Core"
-str_agf_messagging = "#{str_agc}/Messagging"
+str_agf_core = "#{str_agf}/Core"
+str_agf_messagging = "#{str_agf}/Messagging"
 
 # AGClasses
 str_agc = "#{str_source}/AGClasses"
