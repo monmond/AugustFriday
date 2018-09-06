@@ -21,29 +21,29 @@ public protocol AGStateViewDelegate: class {
 
 public class AGStateViewManager {
   
-  //MARK: UI
+  //MARK: - UI
   public var vc: (UIViewController & AGNavigationBarProtocol & AGStateViewProtocol)!
   public var v_state: AGStateView!
   
   
-  //MARK: Constraint
+  //MARK: - Constraint
   
   
   
-  //MARK: Instance
+  //MARK: - Instance
   public weak var delegate_agStateView: AGStateViewDelegate?
   
   
-  //MARK: Storage
+  //MARK: - Storage
   fileprivate var state: AGStateViewModel.State = .normal
   fileprivate var viewModel: AGStateViewModel.ViewModel = AGStateViewModel.ViewModel()
   
   
-  //MARK: Event
+  //MARK: - Event
   
   
   
-  //MARK: Initial
+  //MARK: - Initial
   
   public init(vc: (UIViewController & AGNavigationBarProtocol & AGStateViewProtocol),
               viewModel: AGStateViewModel.ViewModel) {

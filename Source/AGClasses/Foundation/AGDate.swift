@@ -8,26 +8,12 @@
 
 
 
+//MARK: - Imports
 import Foundation
 
 
 
-public enum AGDateStyle: String, AGEnum {
-  
-  case iso = "yyyy-MM-dd'T'HH:mm:ssZ"
-  case iso2 = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-  case display = "dd MMMM yyyy"
-  case orderRef = "yyyyMMddHHmmssSSS"
-  case JTAppleCalendar = "yyyy MM dd"
-  case lastUpdate = "h:mm:ss a"
-  case month = "MM"
-  case year = "yyyy"
-  case time = "HH:mm"
-  
-}
-
-
-
+//MARK: - AGDate
 public class AGDate {
   
   private init() { }
@@ -87,7 +73,7 @@ public class AGDate {
   }
   
   public class var format_all: [String] {
-    return format_default + format_style
+    return AGDateConfiguration.shared.format_using
   }
   
   public class var calander: Calendar {
@@ -110,7 +96,7 @@ public class AGDate {
 
 
 //MARK: - CORE FUNCTION
-extension AGDate {
+public extension AGDate {
   
   public class func stringToDate(date: String) -> Date? {
     let formatter = self.formatter
@@ -123,23 +109,23 @@ extension AGDate {
     return nil
   }
   
-  public class func dateToString(date: Date, style: AGDateStyle) -> String {
+  public class func dateToString(date: Date, style: String) -> String {
     let formatter = self.formatter
-    formatter.dateFormat = style.rawValue
+    formatter.dateFormat = style
     let timeStamp = formatter.string(from: date)
     return timeStamp
+  }
+  
+  public class func convertDateFormat(date: String, style: String) -> String? {
+    if let stringToDate = stringToDate(date: date) {
+      return dateToString(date: stringToDate, style: style)
+    }
+    return nil
   }
   
   public class func dateToString(date: Date, dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
     let timeStamp = DateFormatter.localizedString(from: date, dateStyle: dateStyle, timeStyle: timeStyle)
     return timeStamp
-  }
-  
-  public class func convertDateFormat(date: String, style: AGDateStyle) -> String? {
-    if let stringToDate = stringToDate(date: date) {
-      return dateToString(date: stringToDate, style: style)
-    }
-    return nil
   }
   
   public class func convertDateFormatCustom(date: String, style: String) -> String? {
@@ -190,7 +176,7 @@ public extension AGDate {
     guard let date = dateByComponent(date: date, component: dateComponents) else {
       return nil
     }
-    return dateToString(date: date, style: .iso2)
+    return dateToString(date: date, style: AGDateStyle.iso2.rawValue)
   }
   
   public class func endOfDay(date: Date) -> String? {
@@ -198,7 +184,7 @@ public extension AGDate {
     guard let date = dateByComponent(date: date, component: dateComponents) else {
       return nil
     }
-    return dateToString(date: date, style: .iso2)
+    return dateToString(date: date, style: AGDateStyle.iso2.rawValue)
   }
   
 }

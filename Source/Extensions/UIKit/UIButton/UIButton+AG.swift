@@ -95,7 +95,7 @@ public extension UIBarButtonItem {
 
 
 
-//MARK: Animation
+//MARK: - Animation
 extension UIButton {
   
   func pulsate() {

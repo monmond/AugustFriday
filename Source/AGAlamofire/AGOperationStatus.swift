@@ -16,22 +16,23 @@ import SwiftyJSON
 
 
 //MARK: - Main
-class AGOperationStatus: AGModelHelper {
+public class AGOperationStatus: AGModelHelper {
   
-  var _status: Bool?
-  var _code: Int?
-  var _description: String?
-  var _error: String?
-  var _http_code: Int?
+  public var _status: Bool?
+  public var _code: Int?
+  public var _description: String?
+  public var _error: String?
+  public var _http_code: Int?
   
-  init() {
+  public init() {
+    
   }
   
-  init(status: Bool,
-       code: Int,
-       description: String,
-       error: String,
-       http_code: Int) {
+  public init(status: Bool,
+              code: Int,
+              description: String,
+              error: String,
+              http_code: Int) {
     self._status = status
     self._code = code
     self._description = description
@@ -39,7 +40,7 @@ class AGOperationStatus: AGModelHelper {
     self._http_code = http_code
   }
   
-  init?(json: JSON?) {
+  public init?(json: JSON?) {
     guard let json = json else { return }
     self._status = json[Key.status].bool
     self._code = json[Key.code].int
@@ -53,9 +54,9 @@ class AGOperationStatus: AGModelHelper {
 
 
 //MARK: - Key
-extension AGOperationStatus {
+public extension AGOperationStatus {
   
-  enum Key {
+  public enum Key {
     static var status = "status"
     static var code = "code"
     static var description = "description"
@@ -68,24 +69,24 @@ extension AGOperationStatus {
 
 
 //MARK: - Getter
-extension AGOperationStatus {
+public extension AGOperationStatus {
   
-  var status: Bool {
+  public var status: Bool {
     return _status ?? false
   }
-  var code: Int {
+  public var code: Int {
     return _code ?? 0
   }
-  var description: String {
+  public var description: String {
     return _description ?? ""
   }
-  var error: String {
+  public var error: String {
     return _error ?? ""
   }
-  var http_code: Int {
+  public var http_code: Int {
     return _http_code ?? 0
   }
-  var getJson: JSON {
+  public var getJson: JSON {
     let json: JSON = [
       Key.status : status,
       Key.code : code,
@@ -101,7 +102,7 @@ extension AGOperationStatus {
 
 
 //MARK: - Utils
-extension AGOperationStatus {
-
+public extension AGOperationStatus {
+  
 }
 

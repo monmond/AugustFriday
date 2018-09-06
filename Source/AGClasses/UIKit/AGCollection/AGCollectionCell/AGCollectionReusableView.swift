@@ -14,7 +14,7 @@ import UIKit
 
 open class AGCollectionReusableView: UICollectionReusableView, AGReusable {
 
-  //MARK: Sizing
+  //MARK: - Sizing
 //  open class func inset() -> UIEdgeInsets {
 //    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 //  }
@@ -37,27 +37,27 @@ open class AGCollectionReusableView: UICollectionReusableView, AGReusable {
 
 
   
-  //MARK: UI
+  //MARK: - UI
   
   
   
-  //MARK: Constraint
+  //MARK: - Constraint
   
   
   
-  //MARK: Instance
+  //MARK: - Instance
   
   
   
-  //MARK: Storage
+  //MARK: - Storage
   
   
   
-  //MARK: Event
+  //MARK: - Event
   
   
   
-  //MARK: Initial
+  //MARK: - Initial
   
   
   

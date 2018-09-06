@@ -13,7 +13,7 @@ import NVActivityIndicatorView
 
 
 
-//MARK: Extensions
+//MARK: - Extensions
 extension AGVC: UIBarPositioningDelegate { }
 extension AGVC: AGVCEventable { }
 //extension AGVC: NVActivityIndicatorViewable { }
@@ -344,7 +344,7 @@ extension AGVC {
 
 
 
-//MARK: Core - UIBarPositioningDelegate
+//MARK: - Core - UIBarPositioningDelegate
 extension AGVC {
   
   public func position(for bar: UIBarPositioning) -> UIBarPosition {

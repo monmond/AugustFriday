@@ -9,7 +9,6 @@
 
 
 //MARK: - Imports
-import AugustFriday
 import Alamofire
 import SystemConfiguration
 

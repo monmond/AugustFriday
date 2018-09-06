@@ -8,28 +8,13 @@
 
 
 
-//MARK: Imports
+//MARK: - Imports
 import Alamofire
 import SwiftyJSON
 
 
 
-//MARK: RetryHandler
-public class RetryHandler: RequestRetrier {
-  
-  public func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-    if let _ = request.task?.response as? HTTPURLResponse, request.retryCount <= 5 {
-      completion(true, 1)
-    } else {
-      completion(false, 0.0)
-    }
-  }
-  
-}
-
-
-
-//MARK: AFWrapper
+//MARK: - AFWrapper
 public class AGAlamofireHelper: NSObject {
   
   public static let shared = AGAlamofireHelper()
@@ -37,14 +22,13 @@ public class AGAlamofireHelper: NSObject {
     let configuration = URLSessionConfiguration.default
     configuration.timeoutIntervalForRequest = 30
     let sessionManager = SessionManager(configuration: configuration)
-    sessionManager.retrier = RetryHandler()
+    sessionManager.retrier = AGRetryHandler()
     return sessionManager
   }()
   //  private var request: [AGDataRequest] = []
   
   private override init() { }
   
-  //MARK: - OMU
   public func request(_ endpoint: (URLRequestConvertible & AGRouter),
                       taskIdentifier: LambdaInt? = nil,
                       onComplete: @escaping CallbackAGResponseJSON) {
@@ -126,22 +110,22 @@ public class AGAlamofireHelper: NSObject {
 extension AGAlamofireHelper {
   
   func printSuccess() {
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>> SUCCESS RESPONSE >>>>>>>>>>>>>>>>>>>>>>>>")
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    AGLog.debug(">>>>>>>>> SUCCESS RESPONSE >>>>>>>>>")
+    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   }
   
   func printFailure() {
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>> FAILED RESPONSE >>>>>>>>>>>>>>>>>>>>>>>>>")
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    AGLog.debug(">>>>>>>>> FAILED RESPONSE >>>>>>>>>>")
+    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   }
   
   func printRequest(request: URLRequest?) {
     guard let req = request else {
       return
     }
-    AGLog.debug("===================      REQUEST      ===================")
+    AGLog.debug("============= REQUEST =============")
     AGLog.debug(req)
   }
   
@@ -150,7 +134,7 @@ extension AGAlamofireHelper {
       return
     }
     let parameter = JSON(req)
-    AGLog.debug("===================      REQUEST HEADER      ===================")
+    AGLog.debug("========== REQUEST HEADER =========")
     AGLog.debug(parameter)
   }
   
@@ -159,7 +143,7 @@ extension AGAlamofireHelper {
       return
     }
     let parameters = JSON(httpBody)
-    AGLog.debug("=================== REQUEST PARAMETERS ===================")
+    AGLog.debug("======== REQUEST PARAMETERS =======")
     AGLog.debug(parameters)
   }
   
@@ -167,7 +151,7 @@ extension AGAlamofireHelper {
     guard let tmp = data else {
       return
     }
-    AGLog.debug("===================    RESPONSE STATUS CODE   ===================")
+    AGLog.debug("======= RESPONSE STATUS CODE ======")
     AGLog.debug(tmp.statusCode)
   }
   
@@ -175,12 +159,12 @@ extension AGAlamofireHelper {
     guard let tmp = data else {
       return
     }
-    AGLog.debug("===================    RESPONSE DATA   ===================")
+    AGLog.debug("=========== RESPONSE DATA ==========")
     AGLog.debug(tmp)
   }
   
   func printHTTPmapper(status: AGOperationStatus) {
-    AGLog.debug("=================== HTTP MAPPER ===================")
+    AGLog.debug("============ HTTP MAPPER ===========")
     AGLog.debug(status.code)
     AGLog.debug(status.description)
   }
@@ -189,7 +173,7 @@ extension AGAlamofireHelper {
     guard let err = error else {
       return
     }
-    AGLog.debug("===================  ERROR ====================")
+    AGLog.debug("=============== ERROR ===============")
     AGLog.debug(err)
   }
   

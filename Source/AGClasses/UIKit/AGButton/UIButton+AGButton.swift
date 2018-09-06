@@ -8,7 +8,7 @@
 
 import UIKit
 
-//MARK: HILIGHT BACKGROUND
+//MARK: - HILIGHT BACKGROUND
 public extension UIButton {
   
   public func setBackgroundColor(_ color: UIColor, for state: UIControlState) {

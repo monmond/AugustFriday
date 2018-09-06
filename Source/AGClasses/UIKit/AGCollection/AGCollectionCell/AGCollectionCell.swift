@@ -14,7 +14,7 @@ import UIKit
 
 open class AGCollectionCell: UICollectionViewCell, AGReusable, AGShadowable, AGRadiusable, AGBouncingView {
   
-  //MARK: Sizing
+  //MARK: - Sizing
 //  open class func inset() -> UIEdgeInsets {
 //    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 //  }
@@ -37,29 +37,29 @@ open class AGCollectionCell: UICollectionViewCell, AGReusable, AGShadowable, AGR
 
   
   
-  //MARK: UI
+  //MARK: - UI
   
   
   
-  //MARK: Constraint
+  //MARK: - Constraint
   
   
   
-  //MARK: Instance
+  //MARK: - Instance
   
   
   
-  //MARK: Storage
+  //MARK: - Storage
   open var setting_shadow = AGShadowSetting()
   open var setting_radius = AGRadiusSetting()
   
   
   
-  //MARK: Event
+  //MARK: - Event
   
   
   
-  //MARK: Initial
+  //MARK: - Initial
 
   
   

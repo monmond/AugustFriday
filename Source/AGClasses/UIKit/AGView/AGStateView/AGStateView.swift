@@ -91,7 +91,7 @@ public enum AGStateViewModel {
 
 public class AGStateView: UIView, AGReusable {
   
-  //MARK: UI
+  //MARK: - UI
   @IBOutlet weak var v_container: UIView!
   @IBOutlet weak var img_background: UIImageView!
   @IBOutlet weak var stv_center: UIStackView!
@@ -101,23 +101,23 @@ public class AGStateView: UIView, AGReusable {
   @IBOutlet weak var iv_center: NVActivityIndicatorView!
   
   
-  //MARK: Constraint
+  //MARK: - Constraint
   
   
   
-  //MARK: Instance
+  //MARK: - Instance
   
   
   
-  //MARK: Storage
+  //MARK: - Storage
   
   
   
-  //MARK: Event
+  //MARK: - Event
   
   
   
-  //MARK: Initial
+  //MARK: - Initial
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -135,7 +135,7 @@ public class AGStateView: UIView, AGReusable {
 
 
 
-//MARK: - Life Cycle
+//MARK: -  Life Cycle
 public extension AGStateView {
   
   override func awakeFromNib() {
@@ -147,7 +147,7 @@ public extension AGStateView {
 
 
 
-//MARK: - Setup UI
+//MARK: -  Setup UI
 extension AGStateView {
   
   func setupNib() {
@@ -218,7 +218,7 @@ extension AGStateView {
 
 
 
-//MARK: - Display Data
+//MARK: -  Display Data
 public extension AGStateView {
 
   public func setupData(with setting: AGStateViewModel.Setting) {

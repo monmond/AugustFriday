@@ -34,30 +34,30 @@ public enum AGLoadingViewModel {
 
 public class AGLoadingView: UIView, AGReusable {
   
-  //MARK: UI
+  //MARK: - UI
   @IBOutlet weak var v_container: UIView!
   @IBOutlet weak var stv_center: UIStackView!
   @IBOutlet weak var img_logo: UIImageView!
   @IBOutlet weak var iv_center: NVActivityIndicatorView!
   
   
-  //MARK: Constraint
+  //MARK: - Constraint
   
   
   
-  //MARK: Instance
+  //MARK: - Instance
   
   
   
-  //MARK: Storage
+  //MARK: - Storage
   
   
   
-  //MARK: Event
+  //MARK: - Event
   
   
   
-  //MARK: Initial
+  //MARK: - Initial
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -74,7 +74,7 @@ public class AGLoadingView: UIView, AGReusable {
 }
 
 
-//MARK: - Life Cycle
+//MARK: -  Life Cycle
 public extension AGLoadingView {
   
   override func awakeFromNib() {
@@ -85,7 +85,7 @@ public extension AGLoadingView {
 }
 
 
-//MARK: - Setup UI
+//MARK: -  Setup UI
 public extension AGLoadingView {
   
   func setupNib() {
@@ -154,7 +154,7 @@ public extension AGLoadingView {
 
 
 
-//MARK: - Display Data
+//MARK: -  Display Data
 public extension AGLoadingView {
   
   public func setupData(with viewModel: AGLoadingViewModel.ViewModel) {
