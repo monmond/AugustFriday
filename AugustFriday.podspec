@@ -83,6 +83,11 @@ s.default_subspec = 'Core'
 # Warning - beware of using the quote
 str_source = 'Source'
 
+# AGFirebase
+str_agf = "#{str_source}/AGFirebase"
+str_agf_core = "#{str_agc}/Core"
+str_agf_messagging = "#{str_agc}/Messagging"
+
 # AGClasses
 str_agc = "#{str_source}/AGClasses"
 str_agc_main = "#{str_agc}/Main"
@@ -95,6 +100,25 @@ str_ext_uikit = "#{str_ext}/UIKit"
 str_ext_foundation = "#{str_ext}/Foundation"
 
 
+
+# Firebase
+s.subspec 'Firebase' do |c|
+	c.frameworks = 'UIKit'
+	c.source_files = PodUtility.mapSwiftFiles(str_agf_core, 2)
+	c.dependency 'AugustFriday/Core'
+	c.dependency 'Firebase/Core'
+
+end	
+
+# Messaging
+s.subspec 'Messaging' do |c|
+	c.frameworks = 'UIKit'
+	c.source_files = PodUtility.mapSwiftFiles(str_agf_messagging, 2)
+	c.dependency 'AugustFriday/Core'
+	c.dependency 'AugustFriday/Firebase'
+	c.dependency 'Firebase/Messaging'
+
+end	
 
 # Core
 s.subspec 'Core' do |c|
@@ -115,9 +139,7 @@ s.subspec 'Core' do |c|
 		# Main
 		agc.subspec 'Main' do |m|
 			m.source_files = PodUtility.mapSwiftFiles(str_agc_main, 2)
-			m.dependency 'Firebase/Core'
-			m.dependency 'Firebase/Messaging'
-
+			
 		end
 
 		# UIKit

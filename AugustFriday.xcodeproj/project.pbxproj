@@ -385,8 +385,8 @@
 		A434A101211004E8004898DE /* AGClasses */ = {
 			isa = PBXGroup;
 			children = (
-				A434A16221101EA9004898DE /* UIKit */,
 				A434A15F21101BBA004898DE /* Main */,
+				A434A16221101EA9004898DE /* UIKit */,
 				A434A14B21101B8F004898DE /* Foundation */,
 			);
 			path = AGClasses;
@@ -668,8 +668,6 @@
 				A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */,
 				A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */,
 				A479EB53213E4B3200A4F143 /* AGApplicationBlurable.swift */,
-				A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */,
-				A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -918,6 +916,31 @@
 			path = UIAlertController;
 			sourceTree = "<group>";
 		};
+		A46D63422140D06600E7D26E /* AGFirebase */ = {
+			isa = PBXGroup;
+			children = (
+				A46D63432140D08100E7D26E /* Core */,
+				A46D63442140D08600E7D26E /* Messagging */,
+			);
+			path = AGFirebase;
+			sourceTree = "<group>";
+		};
+		A46D63432140D08100E7D26E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A46D63442140D08600E7D26E /* Messagging */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */,
+			);
+			path = Messagging;
+			sourceTree = "<group>";
+		};
 		A477729621172F7000D82F7D /* AGSafeArea */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,6 +990,7 @@
 		A47C8AAD20D3BC05009F8183 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A46D63422140D06600E7D26E /* AGFirebase */,
 				A434A101211004E8004898DE /* AGClasses */,
 				A434A102211011A9004898DE /* Extensions */,
 			);
