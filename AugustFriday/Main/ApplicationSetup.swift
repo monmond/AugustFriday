@@ -10,7 +10,6 @@
 
 //MARK: - Imports
 import UIKit
-import AugustFriday
 
 
 
@@ -73,7 +72,7 @@ public extension ApplicationSetup {
 public extension ApplicationSetup {
   
   private func setupLogLevel() {
-    AGLogManager.shared.logLevel = .debug
+    AGLogConfiguration.shared.logLevel = .debug
     
   }
   

@@ -83,6 +83,9 @@ s.default_subspec = 'Core'
 # Warning - beware of using the quote
 str_source = 'Source'
 
+# AGAlamofire
+str_aga = "#{str_source}/AGAlamofire"
+
 # AGFirebase
 str_agf = "#{str_source}/AGFirebase"
 str_agf_core = "#{str_agf}/Core"
@@ -100,6 +103,16 @@ str_ext_uikit = "#{str_ext}/UIKit"
 str_ext_foundation = "#{str_ext}/Foundation"
 
 
+
+# Firebase
+s.subspec 'Alamofire' do |c|
+	c.frameworks = 'UIKit'
+	c.source_files = PodUtility.mapSwiftFiles(str_aga, 1)
+	c.dependency 'AugustFriday/Core'
+	c.dependency 'Alamofire', '~> 4.7.2'
+	c.dependency 'Alamofire', '~> 4.1.0'
+
+end	
 
 # Firebase
 s.subspec 'Firebase' do |c|

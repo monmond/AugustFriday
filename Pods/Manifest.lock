@@ -36,12 +36,14 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.0.1)
   - NVActivityIndicatorView/Presenter (4.0.1)
   - Protobuf (3.6.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - Firebase/Core
   - Firebase/Messaging
   - NVActivityIndicatorView (~> 4.0.0)
+  - SwiftyJSON (~> 4.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -55,6 +57,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - Protobuf
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -67,7 +70,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 77ed6d7b571643e24899e7858bf9ae2ee4c21f31
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: f791732f4c9e2364f3abcd94532d5696ba4c7ace
+PODFILE CHECKSUM: afdd728528e3bf9801904d14a5e489dca9827c8f
 
 COCOAPODS: 1.5.3

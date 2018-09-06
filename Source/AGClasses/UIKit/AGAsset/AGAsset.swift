@@ -6,11 +6,15 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
+
+
 import UIKit
 
+
+//MARK: - AGAsset
 public protocol AGAsset {
   
-  var prefix: String { get }
+  var bundle: Bundle? { get }
   var name: String { get }
   init(raw: String)
   var image: UIImage { get }
@@ -18,23 +22,40 @@ public protocol AGAsset {
   
 }
 
+
+
+//MARK: - Implements
 public extension AGAsset {
   
   fileprivate var assetName: String {
-    let assetName = "\(prefix)\(name)"
+    let assetName = name
     return assetName.lowercased()
+    
+  }
+  
+  fileprivate func create() -> UIImage? {
+    let image: UIImage?
+    if let b = bundle {
+      image = UIImage(named: assetName, in: b, compatibleWith: nil)
+    } else {
+      image = UIImage(named: assetName)
+    }
+    return image
+    
   }
   
   public var image: UIImage {
-    return UIImage(named: assetName) ?? UIImage()
+    return create() ?? UIImage()
+    
   }
   
   public func image(_ overlayColor: AGColor) -> UIImage {
-    let image = UIImage(named: assetName)
+    let image = create()
     if let newColor = image?.overlay(color: overlayColor.color) {
       return newColor
     }
     return image ?? UIImage()
+    
   }
   
 }

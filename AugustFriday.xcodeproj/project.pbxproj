@@ -18,6 +18,20 @@
 		A42D8996213DA480002A7E01 /* AGLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8995213DA480002A7E01 /* AGLog.swift */; };
 		A42D8998213DAA08002A7E01 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8997213DAA08002A7E01 /* Storyboard.swift */; };
 		A42D899A213DAA89002A7E01 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8999213DAA89002A7E01 /* MainVC.swift */; };
+		A42DA3E421417A2600F1033F /* AGAlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3E321417A2600F1033F /* AGAlamofireHelper.swift */; };
+		A42DA3E821417C5900F1033F /* AGReachabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3E721417C5900F1033F /* AGReachabilityStatus.swift */; };
+		A42DA3EC21417CFB00F1033F /* AGRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3EB21417CFB00F1033F /* AGRouter.swift */; };
+		A42DA3EE21417E6400F1033F /* AGRouterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3ED21417E6400F1033F /* AGRouterResponse.swift */; };
+		A42DA3F121417E9200F1033F /* AGRouterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F021417E9200F1033F /* AGRouterRequest.swift */; };
+		A42DA3F521417F3A00F1033F /* Notification+AGAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F421417F3A00F1033F /* Notification+AGAlamofire.swift */; };
+		A42DA3F721417FA300F1033F /* Typealias+AGAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F621417FA300F1033F /* Typealias+AGAlamofire.swift */; };
+		A42DA3F92141804D00F1033F /* AGResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F82141804D00F1033F /* AGResponse.swift */; };
+		A42DA3FB2141805600F1033F /* AGResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3FA2141805600F1033F /* AGResponseResult.swift */; };
+		A42DA3FE2141838600F1033F /* AGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3FD2141838600F1033F /* AGNetworkManager.swift */; };
+		A42DA400214183BA00F1033F /* AGLogConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3FF214183BA00F1033F /* AGLogConfiguration.swift */; };
+		A42DA4032141851200F1033F /* AGAlamofireConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4022141851200F1033F /* AGAlamofireConfiguration.swift */; };
+		A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4042141880100F1033F /* AGOperationStatus.swift */; };
+		A42DA4072141884100F1033F /* AGModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4062141884100F1033F /* AGModelHelper.swift */; };
 		A434A1072110141A004898DE /* UIAlertController+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A1062110141A004898DE /* UIAlertController+AG.swift */; };
 		A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10A21101855004898DE /* UITableViewCell+AG.swift */; };
 		A434A11621101855004898DE /* UICollectionView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10C21101855004898DE /* UICollectionView+AG.swift */; };
@@ -105,6 +119,8 @@
 		A4C0C258213E7E6E00288AFB /* AGApplicationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */; };
 		A4C0C25A213E830800288AFB /* AGApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */; };
 		A4EB82012141317500BBAC2D /* AGInteractivePopHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB82002141317500BBAC2D /* AGInteractivePopHelper.swift */; };
+		A4EB820D21413DF600BBAC2D /* AGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB820C21413DF600BBAC2D /* AGError.swift */; };
+		A4EB821021413E4900BBAC2D /* AGReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB820F21413E4900BBAC2D /* AGReachability.swift */; };
 		C15DE745382C471E3C1F5210 /* Pods_AugustFriday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7752691B00FF4C7AFA2771 /* Pods_AugustFriday.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +138,20 @@
 		A42D8995213DA480002A7E01 /* AGLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLog.swift; sourceTree = "<group>"; };
 		A42D8997213DAA08002A7E01 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		A42D8999213DAA89002A7E01 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		A42DA3E321417A2600F1033F /* AGAlamofireHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireHelper.swift; sourceTree = "<group>"; };
+		A42DA3E721417C5900F1033F /* AGReachabilityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGReachabilityStatus.swift; sourceTree = "<group>"; };
+		A42DA3EB21417CFB00F1033F /* AGRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRouter.swift; sourceTree = "<group>"; };
+		A42DA3ED21417E6400F1033F /* AGRouterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRouterResponse.swift; sourceTree = "<group>"; };
+		A42DA3F021417E9200F1033F /* AGRouterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRouterRequest.swift; sourceTree = "<group>"; };
+		A42DA3F421417F3A00F1033F /* Notification+AGAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+AGAlamofire.swift"; sourceTree = "<group>"; };
+		A42DA3F621417FA300F1033F /* Typealias+AGAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typealias+AGAlamofire.swift"; sourceTree = "<group>"; };
+		A42DA3F82141804D00F1033F /* AGResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGResponse.swift; sourceTree = "<group>"; };
+		A42DA3FA2141805600F1033F /* AGResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGResponseResult.swift; sourceTree = "<group>"; };
+		A42DA3FD2141838600F1033F /* AGNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGNetworkManager.swift; sourceTree = "<group>"; };
+		A42DA3FF214183BA00F1033F /* AGLogConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLogConfiguration.swift; sourceTree = "<group>"; };
+		A42DA4022141851200F1033F /* AGAlamofireConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireConfiguration.swift; sourceTree = "<group>"; };
+		A42DA4042141880100F1033F /* AGOperationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGOperationStatus.swift; sourceTree = "<group>"; };
+		A42DA4062141884100F1033F /* AGModelHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGModelHelper.swift; sourceTree = "<group>"; };
 		A434A1062110141A004898DE /* UIAlertController+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+AG.swift"; sourceTree = "<group>"; };
 		A434A10A21101855004898DE /* UITableViewCell+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+AG.swift"; sourceTree = "<group>"; };
 		A434A10C21101855004898DE /* UICollectionView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+AG.swift"; sourceTree = "<group>"; };
@@ -210,6 +240,8 @@
 		A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationSetup.swift; sourceTree = "<group>"; };
 		A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebaseMessaging.swift; sourceTree = "<group>"; };
 		A4EB82002141317500BBAC2D /* AGInteractivePopHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGInteractivePopHelper.swift; sourceTree = "<group>"; };
+		A4EB820C21413DF600BBAC2D /* AGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGError.swift; sourceTree = "<group>"; };
+		A4EB820F21413E4900BBAC2D /* AGReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGReachability.swift; sourceTree = "<group>"; };
 		A5A4B23F8CF11F08AA61D4A3 /* Pods-AugustFriday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugustFriday.release.xcconfig"; path = "Pods/Target Support Files/Pods-AugustFriday/Pods-AugustFriday.release.xcconfig"; sourceTree = "<group>"; };
 		E8793D4AC79E433907C0127E /* Pods-AugustFriday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AugustFriday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AugustFriday/Pods-AugustFriday.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,6 +413,42 @@
 				A42D8997213DAA08002A7E01 /* Storyboard.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A42DA3E521417C2300F1033F /* AGAlamofire */ = {
+			isa = PBXGroup;
+			children = (
+				A42DA3F82141804D00F1033F /* AGResponse.swift */,
+				A42DA3FA2141805600F1033F /* AGResponseResult.swift */,
+				A42DA3E321417A2600F1033F /* AGAlamofireHelper.swift */,
+				A4EB820F21413E4900BBAC2D /* AGReachability.swift */,
+				A42DA3EB21417CFB00F1033F /* AGRouter.swift */,
+				A42DA3F021417E9200F1033F /* AGRouterRequest.swift */,
+				A42DA3FD2141838600F1033F /* AGNetworkManager.swift */,
+				A42DA3ED21417E6400F1033F /* AGRouterResponse.swift */,
+				A42DA3F421417F3A00F1033F /* Notification+AGAlamofire.swift */,
+				A42DA3F621417FA300F1033F /* Typealias+AGAlamofire.swift */,
+				A42DA4022141851200F1033F /* AGAlamofireConfiguration.swift */,
+				A42DA4042141880100F1033F /* AGOperationStatus.swift */,
+				A42DA4062141884100F1033F /* AGModelHelper.swift */,
+			);
+			path = AGAlamofire;
+			sourceTree = "<group>";
+		};
+		A42DA3F221417E9800F1033F /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		A42DA3F321417EB300F1033F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		A434A101211004E8004898DE /* AGClasses */ = {
@@ -611,56 +679,19 @@
 		A434A14B21101B8F004898DE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				A46D63452140DECE00E7D26E /* AGLog */,
-				A434A14C21101B8F004898DE /* AGDate */,
-				A434A14E21101B8F004898DE /* AGEnum */,
-				A434A15021101B8F004898DE /* AGTypealias */,
-				A434A15221101B8F004898DE /* AGPresenter */,
-				A434A15521101B8F004898DE /* AGLocalize */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		A434A14C21101B8F004898DE /* AGDate */ = {
-			isa = PBXGroup;
-			children = (
+				A434A15621101B8F004898DE /* AGLocalizeManager.swift */,
+				A434A15721101B8F004898DE /* AGLocalize.swift */,
+				A42DA3E721417C5900F1033F /* AGReachabilityStatus.swift */,
+				A4EB820C21413DF600BBAC2D /* AGError.swift */,
+				A42D8995213DA480002A7E01 /* AGLog.swift */,
+				A42DA3FF214183BA00F1033F /* AGLogConfiguration.swift */,
 				A434A14D21101B8F004898DE /* AGDate.swift */,
-			);
-			path = AGDate;
-			sourceTree = "<group>";
-		};
-		A434A14E21101B8F004898DE /* AGEnum */ = {
-			isa = PBXGroup;
-			children = (
 				A434A14F21101B8F004898DE /* AGEnum.swift */,
-			);
-			path = AGEnum;
-			sourceTree = "<group>";
-		};
-		A434A15021101B8F004898DE /* AGTypealias */ = {
-			isa = PBXGroup;
-			children = (
 				A434A15121101B8F004898DE /* Typealias+AG.swift */,
-			);
-			path = AGTypealias;
-			sourceTree = "<group>";
-		};
-		A434A15221101B8F004898DE /* AGPresenter */ = {
-			isa = PBXGroup;
-			children = (
 				A434A15321101B8F004898DE /* AGValidator.swift */,
 				A434A15421101B8F004898DE /* AGFormatter.swift */,
 			);
-			path = AGPresenter;
-			sourceTree = "<group>";
-		};
-		A434A15521101B8F004898DE /* AGLocalize */ = {
-			isa = PBXGroup;
-			children = (
-				A434A15621101B8F004898DE /* AGLocalizeManager.swift */,
-				A434A15721101B8F004898DE /* AGLocalize.swift */,
-			);
-			path = AGLocalize;
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		A434A15F21101BBA004898DE /* Main */ = {
@@ -921,34 +952,10 @@
 		A46D63422140D06600E7D26E /* AGFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				A46D63432140D08100E7D26E /* Core */,
-				A46D63442140D08600E7D26E /* Messagging */,
+				A42DA3F221417E9800F1033F /* Messaging */,
+				A42DA3F321417EB300F1033F /* Core */,
 			);
 			path = AGFirebase;
-			sourceTree = "<group>";
-		};
-		A46D63432140D08100E7D26E /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		A46D63442140D08600E7D26E /* Messagging */ = {
-			isa = PBXGroup;
-			children = (
-				A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */,
-			);
-			path = Messagging;
-			sourceTree = "<group>";
-		};
-		A46D63452140DECE00E7D26E /* AGLog */ = {
-			isa = PBXGroup;
-			children = (
-				A42D8995213DA480002A7E01 /* AGLog.swift */,
-			);
-			path = AGLog;
 			sourceTree = "<group>";
 		};
 		A477729621172F7000D82F7D /* AGSafeArea */ = {
@@ -1000,8 +1007,9 @@
 		A47C8AAD20D3BC05009F8183 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A46D63422140D06600E7D26E /* AGFirebase */,
+				A42DA3E521417C2300F1033F /* AGAlamofire */,
 				A434A101211004E8004898DE /* AGClasses */,
+				A46D63422140D06600E7D26E /* AGFirebase */,
 				A434A102211011A9004898DE /* Extensions */,
 			);
 			path = Source;
@@ -1141,6 +1149,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1149,6 +1158,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1164,13 +1174,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A434A1BF21101EA9004898DE /* AGLoadingView.swift in Sources */,
+				A42DA3F92141804D00F1033F /* AGResponse.swift in Sources */,
+				A42DA3EE21417E6400F1033F /* AGRouterResponse.swift in Sources */,
 				A434A1AB21101EA9004898DE /* UIColor+AGAsset.swift in Sources */,
+				A42DA3F521417F3A00F1033F /* Notification+AGAlamofire.swift in Sources */,
 				A434A11721101855004898DE /* UICollectionViewCell+AG.swift in Sources */,
 				A434A1A221101EA9004898DE /* AGLoadingViewManager.swift in Sources */,
 				A434A1AC21101EA9004898DE /* AGReusable.swift in Sources */,
 				A42D899A213DAA89002A7E01 /* MainVC.swift in Sources */,
+				A42DA3F721417FA300F1033F /* Typealias+AGAlamofire.swift in Sources */,
 				A434A12C21101959004898DE /* Int+AG.swift in Sources */,
 				A434A13321101992004898DE /* CGFloat+AG.swift in Sources */,
+				A42DA3EC21417CFB00F1033F /* AGRouter.swift in Sources */,
 				A434A19F21101EA9004898DE /* AGNavigationBarProtocol.swift in Sources */,
 				A42D8982213D7878002A7E01 /* TemplateVC.swift in Sources */,
 				A47C8A9620D3A828009F8183 /* ViewController.swift in Sources */,
@@ -1181,19 +1196,26 @@
 				A434A1B621101EA9004898DE /* AGCollectionReusableView.swift in Sources */,
 				A434A13021101959004898DE /* Error+AG.swift in Sources */,
 				A434A1AE21101EA9004898DE /* AGTransitionViewController.swift in Sources */,
+				A42DA3E821417C5900F1033F /* AGReachabilityStatus.swift in Sources */,
+				A42DA3E421417A2600F1033F /* AGAlamofireHelper.swift in Sources */,
 				A434A1B321101EA9004898DE /* AGFont.swift in Sources */,
 				A479EB54213E4B3200A4F143 /* AGApplicationBlurable.swift in Sources */,
 				A434A1072110141A004898DE /* UIAlertController+AG.swift in Sources */,
 				A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */,
 				A434A1A921101EA9004898DE /* AGColor.swift in Sources */,
 				A434A12E21101959004898DE /* NotificationName+AG.swift in Sources */,
+				A42DA4072141884100F1033F /* AGModelHelper.swift in Sources */,
 				A434A12A21101959004898DE /* Collection+AG.swift in Sources */,
+				A42DA3FB2141805600F1033F /* AGResponseResult.swift in Sources */,
 				A434A11921101855004898DE /* UITableViewHeaderFooterView+AG.swift in Sources */,
+				A4EB821021413E4900BBAC2D /* AGReachability.swift in Sources */,
 				A4B61D6721185CA6003F98FF /* AGBouncingView.swift in Sources */,
 				A42D898B213D9AA6002A7E01 /* ApplicationBlurable.swift in Sources */,
 				A44DBECC211AA6DC0002D75B /* AGStateViewProtocol.swift in Sources */,
 				A418518721241E1D00765969 /* URL+AG.swift in Sources */,
+				A42DA3F121417E9200F1033F /* AGRouterRequest.swift in Sources */,
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
+				A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */,
 				A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */,
 				A42D8998213DAA08002A7E01 /* Storyboard.swift in Sources */,
 				A434A15921101B8F004898DE /* AGEnum.swift in Sources */,
@@ -1222,12 +1244,14 @@
 				A434A15D21101B8F004898DE /* AGLocalizeManager.swift in Sources */,
 				A434A1BC21101EA9004898DE /* AGStateView.swift in Sources */,
 				A477729821172F7E00D82F7D /* AGSafeArea.swift in Sources */,
+				A42DA400214183BA00F1033F /* AGLogConfiguration.swift in Sources */,
 				A434A1AA21101EA9004898DE /* BaseColor.swift in Sources */,
 				A434A12D21101959004898DE /* Float+AG.swift in Sources */,
 				A434A1A321101EA9004898DE /* AGNavigationViewManager.swift in Sources */,
 				A434A13D21101A32004898DE /* UINavigationController+AG.swift in Sources */,
 				A434A14621101A46004898DE /* UIDevice.swift in Sources */,
 				A434A1C121101EA9004898DE /* AGInstantiatable.swift in Sources */,
+				A42DA4032141851200F1033F /* AGAlamofireConfiguration.swift in Sources */,
 				A479EB4F213E38A900A4F143 /* AGVC.swift in Sources */,
 				A434A12F21101959004898DE /* String+AG.swift in Sources */,
 				A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */,
@@ -1245,7 +1269,9 @@
 				A41C2D4C2115AAF800EA8282 /* AGKeyboardProtocol.swift in Sources */,
 				A434A11821101855004898DE /* UITableView+AG.swift in Sources */,
 				A434A1A421101EA9004898DE /* AGIntrinsicTableView.swift in Sources */,
+				A4EB820D21413DF600BBAC2D /* AGError.swift in Sources */,
 				A4B457E0213E9B3A005A7783 /* AGVCEventable.swift in Sources */,
+				A42DA3FE2141838600F1033F /* AGNetworkManager.swift in Sources */,
 				A434A1A721101EA9004898DE /* UIImage+AGAsset.swift in Sources */,
 				A434A1A621101EA9004898DE /* BaseAsset.swift in Sources */,
 				A434A1BE21101EA9004898DE /* AGRadiusable.swift in Sources */,

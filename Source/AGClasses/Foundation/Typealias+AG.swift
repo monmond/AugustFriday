@@ -14,6 +14,7 @@ import Foundation
 
 //MARK: - 1
 public typealias LambdaVoid = (() -> Swift.Void)
+public typealias LambdaInt = ((Int) -> Swift.Void)
 public typealias CallbackVoid = (() -> Swift.Void)
 public typealias CallbackError = ((_ error: Error) -> Swift.Void)
 public typealias CallbackBool = ((_ isSelected: Bool) -> Swift.Void)
