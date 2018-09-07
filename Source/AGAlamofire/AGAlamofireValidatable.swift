@@ -22,6 +22,4 @@ public protocol AGAlamofireValidatable {
   
   init?(json: JSON?)
   
-  static func create(from json: JSON?) -> AGAlamofireValidatable?
-  
 }

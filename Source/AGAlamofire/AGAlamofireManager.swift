@@ -132,11 +132,18 @@ public extension AGAlamofireManager {
         data = json
         self.printResponseData(data: data)
         
-        guard let v = validator else {
+        var validatable: AGAlamofireValidatable.Type?
+        if let v = validator {
+          validatable = v
+        } else if let v = AGAlamofireConfiguration.shared.validator {
+          validatable = v
+        }
+        
+        guard let v = validatable else {
           break
         }
         
-        guard let os = v.create(from: json) else {
+        guard let os = v.init(json: json) else {
           error = .operationstatus
           break
         }

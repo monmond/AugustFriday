@@ -20,6 +20,7 @@ public class AGAlamofireConfiguration {
     
   }
   public var timeoutIntervalForRequest: TimeInterval = 30
+  public var validator: AGAlamofireValidatable.Type? = AGOperationStatus.self
   
 }
 

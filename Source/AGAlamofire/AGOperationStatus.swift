@@ -24,10 +24,6 @@ extension AGOperationStatus: AGAlamofireValidatable { }
 //MARK: - Main
 public final class AGOperationStatus {
   
-  public static func create(from json: JSON?) -> AGAlamofireValidatable? {
-    return AGOperationStatus(json: json)
-  }
-  
   public var _status: Bool?
   public var _code: Int?
   public var _description: String?
