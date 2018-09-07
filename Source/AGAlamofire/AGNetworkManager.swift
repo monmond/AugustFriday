@@ -22,13 +22,8 @@ import SystemConfiguration
 
 
 
-extension Notification.Name {
-  
-}
-
-
-
-class AGNetworkManager {
+//MARK: - AGNetworkManager
+public class AGNetworkManager {
   
   /*
    let host = "www.google.com"

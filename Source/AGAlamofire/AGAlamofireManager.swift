@@ -173,23 +173,23 @@ public extension AGAlamofireManager {
 
 
 //MARK: - Log
-extension AGAlamofireManager {
+fileprivate extension AGAlamofireManager {
   
-  func printStart() {
+  fileprivate func printStart() {
     AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     AGLog.debug(">>>>>>>>>> START REQUEST >>>>>>>>>>>")
     AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   }
   
-  func printSuccess() {
+  fileprivate func printSuccess() {
     AGLog.debug("========= SUCCESS RESPONSE =========")
   }
   
-  func printFailure() {
+  fileprivate func printFailure() {
     AGLog.debug("========= FAILED RESPONSE ==========")
   }
   
-  func printRequest(request: URLRequest?) {
+  fileprivate func printRequest(request: URLRequest?) {
     guard let req = request else {
       return
     }
@@ -197,7 +197,7 @@ extension AGAlamofireManager {
     AGLog.debug(req)
   }
   
-  func printRequestHeader(request: URLRequest?) {
+  fileprivate func printRequestHeader(request: URLRequest?) {
     guard let req = request?.allHTTPHeaderFields else {
       return
     }
@@ -206,7 +206,7 @@ extension AGAlamofireManager {
     AGLog.debug(parameter)
   }
   
-  func printRequestParameter(urlRequest: URLRequest?) {
+  fileprivate func printRequestParameter(urlRequest: URLRequest?) {
     guard let httpBody = urlRequest?.httpBody else {
       return
     }
@@ -215,7 +215,7 @@ extension AGAlamofireManager {
     AGLog.debug(parameters)
   }
   
-  func printHTTPURLResponse(data: HTTPURLResponse?) {
+  fileprivate func printHTTPURLResponse(data: HTTPURLResponse?) {
     guard let tmp = data else {
       return
     }
@@ -223,7 +223,7 @@ extension AGAlamofireManager {
     AGLog.debug(tmp.statusCode)
   }
   
-  func printResponseData(data: JSON?) {
+  fileprivate func printResponseData(data: JSON?) {
     guard let tmp = data else {
       return
     }
@@ -231,13 +231,13 @@ extension AGAlamofireManager {
     AGLog.debug(tmp)
   }
   
-  func printHTTPmapper(status: AGOperationStatus) {
+  fileprivate func printHTTPmapper(status: AGOperationStatus) {
     AGLog.debug("============ HTTP MAPPER ===========")
     AGLog.debug(status.code)
     AGLog.debug(status.description)
   }
   
-  func printResponseError(error: Error?) {
+  fileprivate func printResponseError(error: Error?) {
     guard let err = error else {
       return
     }
