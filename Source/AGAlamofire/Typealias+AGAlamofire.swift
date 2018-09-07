@@ -16,9 +16,10 @@ import SwiftyJSON
 
 
 //MARK: - typealias
+public typealias TaskIdentifier = Int
+public typealias SessionIdentifier = String
 public typealias AGURLRequestConvertible = (URLRequestConvertible & AGRouter)
 public typealias CallbackJsonOptional = ((JSON?) -> Void)
 public typealias CallbackAGResponseJSON = ((AGResponse<JSON>) -> Void)
-public typealias TaskIdentifier = Int
 public typealias CallbackTaskIdentifier = ((TaskIdentifier?) -> Void)
 

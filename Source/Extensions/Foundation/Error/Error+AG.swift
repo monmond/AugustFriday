@@ -16,7 +16,11 @@ import Foundation
 public extension Error {
   
   public var isTimedOut: Bool {
-    return self._code == NSURLErrorTimedOut
+    return _code == NSURLErrorTimedOut
+  }
+  
+  public var cancelled: Bool {
+    return _code == NSURLErrorCancelled
   }
   
 }

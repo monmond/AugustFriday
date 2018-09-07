@@ -14,10 +14,10 @@ import SwiftyJSON
 
 
 
-//MARK: - AFWrapper
-public class AGAlamofireHelper: NSObject {
+//MARK: - AGAlamofireManager
+public class AGAlamofireManager: NSObject {
   
-  public static let shared = AGAlamofireHelper()
+  public static let shared = AGAlamofireManager()
   private var normal: SessionManager = {
     let configuration = URLSessionConfiguration.default
     configuration.timeoutIntervalForRequest = 30
@@ -25,19 +25,66 @@ public class AGAlamofireHelper: NSObject {
     sessionManager.retrier = AGRetryHandler()
     return sessionManager
   }()
-  //  private var request: [AGDataRequest] = []
-  
+  private var tasks: [AGAlamofireTask] = []
   private override init() { }
   
+  private func insertTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
+    guard let st = sessionTask else { return }
+    let task_id = st.taskIdentifier
+    AGLog.info(#function, scope: AGAlamofireManager.self)
+    AGLog.info("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
+    if let t = tasks.first(where: { $0.sessionId == sessionId }) {
+      t.taskIds.append(task_id)
+    } else {
+      let t = AGAlamofireTask(sessionId: sessionId, taskIds: [task_id])
+      tasks.append(t)
+    }
+    logTask()
+  }
+  
+  private func removeTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
+    guard let st = sessionTask else { return }
+    let task_id = st.taskIdentifier
+    AGLog.info(#function, scope: AGAlamofireManager.self)
+    AGLog.info("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
+    for t in tasks {
+      if t.sessionId == sessionId {
+        t.taskIds = t.taskIds.filter({ $0 != task_id })
+      }
+      if t.taskIds.isEmpty {
+        tasks = tasks.filter({ $0.sessionId != t.sessionId })
+      }
+    }
+    logTask()
+  }
+  
+  private func logTask() {
+    AGLog.info(#function, scope: AGAlamofireManager.self)
+    for t in tasks {
+      AGLog.info("\(t.sessionId) \(t.taskIds)", scope: AGAlamofireManager.self)
+    }
+  }
+  
+  public func cancelSession(with sessionId: SessionIdentifier = "") {
+    AGLog.info(#function, scope: AGAlamofireManager.self)
+    guard let task = tasks.first(where: { $0.sessionId == sessionId }) else { return }
+    let taskIds = task.taskIds
+    normal.session.getAllTasks() {
+      for st in $0.reversed() {
+        guard taskIds.contains(st.taskIdentifier) else { continue }
+        st.cancel()
+      }
+    }
+  }
+  
   public func request(_ endpoint: (URLRequestConvertible & AGRouter),
-                      taskIdentifier: LambdaInt? = nil,
+                      session: SessionIdentifier = "",
                       onComplete: @escaping CallbackAGResponseJSON) {
-    AGLog.debug(#function, scope: AGAlamofireHelper.self)
     if let r = AGNetworkManager.shared.reachability, r.currentReachabilityStatus == .notReachable {
       let message = r.currentReachabilityStatus
       onComplete(AGResponse<JSON>(data: nil, error: .reachability(message)))
     } else {
-      self.requestJSON(endpoint, taskIdentifier: taskIdentifier) {
+      self.requestJSON(endpoint, session: session) {
         onComplete($0)
       }
     }
@@ -45,18 +92,15 @@ public class AGAlamofireHelper: NSObject {
   }
   
   private func requestJSON(_ endpoint: (URLRequestConvertible & AGRouter),
-                           taskIdentifier: LambdaInt? = nil,
+                           session: SessionIdentifier = "",
                            onComplete: @escaping CallbackAGResponseJSON) {
-    AGLog.debug(#function, scope: AGAlamofireHelper.self)
     let request = normal.request(endpoint)
-    if let t = request.task {
-      taskIdentifier?(t.taskIdentifier)
-    }
     request.validate(statusCode: 200..<300)
     request.validate(contentType: ["application/json"])
+    insertTask(with: session, sessionTask: request.task)
+    printStart()
     request.responseJSON {
-      
-      self.printSuccess()
+      self.removeTask(with: session, sessionTask: request.task)
       self.printRequest(request: $0.request)
       self.printRequestHeader(request: $0.request)
       self.printRequestParameter(urlRequest: endpoint.urlRequest)
@@ -67,6 +111,7 @@ public class AGAlamofireHelper: NSObject {
       switch $0.result {
       case let .success(v):
         
+        self.printSuccess()
         let json = JSON(v)
         data = json
         self.printResponseData(data: data)
@@ -82,11 +127,13 @@ public class AGAlamofireHelper: NSObject {
         }
         
       case let .failure(e):
-        
         self.printFailure()
-        self.printRequest(request: $0.request)
         self.printResponseError(error: $0.error)
         
+        guard !e.cancelled else {
+          error = .cancelled
+          break
+        }
         
         guard !e.isTimedOut else {
           error = .timedOut(e)
@@ -107,25 +154,27 @@ public class AGAlamofireHelper: NSObject {
 
 
 //MARK: - Log
-extension AGAlamofireHelper {
+extension AGAlamofireManager {
   
-  func printSuccess() {
+  func printStart() {
     AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    AGLog.debug(">>>>>>>>> SUCCESS RESPONSE >>>>>>>>>")
+    AGLog.debug(">>>>>>>>>> START REQUEST >>>>>>>>>>>")
     AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   }
   
+  func printSuccess() {
+    AGLog.debug("========= SUCCESS RESPONSE =========")
+  }
+  
   func printFailure() {
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    AGLog.debug(">>>>>>>>> FAILED RESPONSE >>>>>>>>>>")
-    AGLog.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    AGLog.debug("========= FAILED RESPONSE ==========")
   }
   
   func printRequest(request: URLRequest?) {
     guard let req = request else {
       return
     }
-    AGLog.debug("============= REQUEST =============")
+    AGLog.debug("============ URLREQUEST ============")
     AGLog.debug(req)
   }
   
