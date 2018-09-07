@@ -15,8 +15,18 @@ import SwiftyJSON
 
 
 
+//MARK: - Extensions
+extension AGOperationStatus: AGModelHelper { }
+extension AGOperationStatus: AGAlamofireValidatable { }
+
+
+
 //MARK: - Main
-public class AGOperationStatus: AGModelHelper {
+public final class AGOperationStatus {
+  
+  public static func create(from json: JSON?) -> AGAlamofireValidatable? {
+    return AGOperationStatus(json: json)
+  }
   
   public var _status: Bool?
   public var _code: Int?
@@ -88,11 +98,11 @@ public extension AGOperationStatus {
   }
   public var getJson: JSON {
     let json: JSON = [
-      Key.status : status,
-      Key.code : code,
-      Key.description : description,
-      Key.error : error,
-      Key.http_code : http_code
+      Key.status: status,
+      Key.code: code,
+      Key.description: description,
+      Key.error: error,
+      Key.http_code: http_code
     ]
     return json
   }

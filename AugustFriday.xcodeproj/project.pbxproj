@@ -18,7 +18,7 @@
 		A42D8996213DA480002A7E01 /* AGLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8995213DA480002A7E01 /* AGLog.swift */; };
 		A42D8998213DAA08002A7E01 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8997213DAA08002A7E01 /* Storyboard.swift */; };
 		A42D899A213DAA89002A7E01 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8999213DAA89002A7E01 /* MainVC.swift */; };
-		A42DA3E421417A2600F1033F /* AGAlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3E321417A2600F1033F /* AGAlamofireHelper.swift */; };
+		A42DA3E421417A2600F1033F /* AGAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3E321417A2600F1033F /* AGAlamofireManager.swift */; };
 		A42DA3E821417C5900F1033F /* AGReachabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3E721417C5900F1033F /* AGReachabilityStatus.swift */; };
 		A42DA3EC21417CFB00F1033F /* AGRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3EB21417CFB00F1033F /* AGRouter.swift */; };
 		A42DA3EE21417E6400F1033F /* AGRouterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3ED21417E6400F1033F /* AGRouterResponse.swift */; };
@@ -113,6 +113,8 @@
 		A47C8A9920D3A828009F8183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47C8A9720D3A828009F8183 /* Main.storyboard */; };
 		A47C8A9B20D3A829009F8183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A47C8A9A20D3A829009F8183 /* Assets.xcassets */; };
 		A47C8A9E20D3A829009F8183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47C8A9C20D3A829009F8183 /* LaunchScreen.storyboard */; };
+		A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */; };
+		A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */; };
 		A4B457DD213E8CC3005A7783 /* ApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8992213DA390002A7E01 /* ApplicationFirebaseMessaging.swift */; };
 		A4B457E0213E9B3A005A7783 /* AGVCEventable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B457DF213E9B3A005A7783 /* AGVCEventable.swift */; };
 		A4B61D6321183979003F98FF /* AGNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6221183979003F98FF /* AGNavigationView.swift */; };
@@ -141,7 +143,7 @@
 		A42D8995213DA480002A7E01 /* AGLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLog.swift; sourceTree = "<group>"; };
 		A42D8997213DAA08002A7E01 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		A42D8999213DAA89002A7E01 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		A42DA3E321417A2600F1033F /* AGAlamofireHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireHelper.swift; sourceTree = "<group>"; };
+		A42DA3E321417A2600F1033F /* AGAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireManager.swift; sourceTree = "<group>"; };
 		A42DA3E721417C5900F1033F /* AGReachabilityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGReachabilityStatus.swift; sourceTree = "<group>"; };
 		A42DA3EB21417CFB00F1033F /* AGRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRouter.swift; sourceTree = "<group>"; };
 		A42DA3ED21417E6400F1033F /* AGRouterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRouterResponse.swift; sourceTree = "<group>"; };
@@ -238,6 +240,8 @@
 		A47C8A9A20D3A829009F8183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A47C8A9D20D3A829009F8183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A47C8A9F20D3A829009F8183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireTask.swift; sourceTree = "<group>"; };
+		A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireValidatable.swift; sourceTree = "<group>"; };
 		A4B457DF213E9B3A005A7783 /* AGVCEventable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGVCEventable.swift; sourceTree = "<group>"; };
 		A4B61D6221183979003F98FF /* AGNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGNavigationView.swift; sourceTree = "<group>"; };
 		A4B61D6621185CA6003F98FF /* AGBouncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBouncingView.swift; sourceTree = "<group>"; };
@@ -425,7 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				A42DA4022141851200F1033F /* AGAlamofireConfiguration.swift */,
-				A42DA3E321417A2600F1033F /* AGAlamofireHelper.swift */,
+				A42DA3E321417A2600F1033F /* AGAlamofireManager.swift */,
 				A42DA4062141884100F1033F /* AGModelHelper.swift */,
 				A42DA3FD2141838600F1033F /* AGNetworkManager.swift */,
 				A42DA4042141880100F1033F /* AGOperationStatus.swift */,
@@ -438,6 +442,8 @@
 				A42DA3F421417F3A00F1033F /* Notification+AGAlamofire.swift */,
 				A42DA3F621417FA300F1033F /* Typealias+AGAlamofire.swift */,
 				A42DA4162141992D00F1033F /* AGRetryHandler.swift */,
+				A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */,
+				A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */,
 			);
 			path = AGAlamofire;
 			sourceTree = "<group>";
@@ -1183,6 +1189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A434A1BF21101EA9004898DE /* AGLoadingView.swift in Sources */,
+				A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */,
 				A42DA3F92141804D00F1033F /* AGResponse.swift in Sources */,
 				A42DA3EE21417E6400F1033F /* AGRouterResponse.swift in Sources */,
 				A434A1AB21101EA9004898DE /* UIColor+AGAsset.swift in Sources */,
@@ -1206,7 +1213,7 @@
 				A434A13021101959004898DE /* Error+AG.swift in Sources */,
 				A434A1AE21101EA9004898DE /* AGTransitionViewController.swift in Sources */,
 				A42DA3E821417C5900F1033F /* AGReachabilityStatus.swift in Sources */,
-				A42DA3E421417A2600F1033F /* AGAlamofireHelper.swift in Sources */,
+				A42DA3E421417A2600F1033F /* AGAlamofireManager.swift in Sources */,
 				A42DA4172141992D00F1033F /* AGRetryHandler.swift in Sources */,
 				A434A1B321101EA9004898DE /* AGFont.swift in Sources */,
 				A479EB54213E4B3200A4F143 /* AGApplicationBlurable.swift in Sources */,
@@ -1225,6 +1232,7 @@
 				A44DBECC211AA6DC0002D75B /* AGStateViewProtocol.swift in Sources */,
 				A418518721241E1D00765969 /* URL+AG.swift in Sources */,
 				A42DA3F121417E9200F1033F /* AGRouterRequest.swift in Sources */,
+				A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */,
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
 				A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */,
 				A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */,

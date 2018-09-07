@@ -19,6 +19,7 @@ public class AGAlamofireConfiguration {
   private init() {
     
   }
+  public var timeoutIntervalForRequest: TimeInterval = 30
   
 }
 

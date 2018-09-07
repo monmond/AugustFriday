@@ -18,21 +18,28 @@ import SwiftyJSON
 public class AGAlamofireManager: NSObject {
   
   public static let shared = AGAlamofireManager()
-  private var normal: SessionManager = {
+  fileprivate var normal: SessionManager = {
     let configuration = URLSessionConfiguration.default
-    configuration.timeoutIntervalForRequest = 30
+    configuration.timeoutIntervalForRequest = AGAlamofireConfiguration.shared.timeoutIntervalForRequest
     let sessionManager = SessionManager(configuration: configuration)
     sessionManager.retrier = AGRetryHandler()
     return sessionManager
   }()
-  private var tasks: [AGAlamofireTask] = []
+  fileprivate var tasks: [AGAlamofireTask] = []
   private override init() { }
   
-  private func insertTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
+}
+
+
+
+//MARK: - Task
+public extension AGAlamofireManager {
+  
+  fileprivate func insertTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
     guard let st = sessionTask else { return }
     let task_id = st.taskIdentifier
     AGLog.info(#function, scope: AGAlamofireManager.self)
-    AGLog.info("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
+    AGLog.debug("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
     if let t = tasks.first(where: { $0.sessionId == sessionId }) {
       t.taskIds.append(task_id)
     } else {
@@ -42,11 +49,11 @@ public class AGAlamofireManager: NSObject {
     logTask()
   }
   
-  private func removeTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
+  fileprivate func removeTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
     guard let st = sessionTask else { return }
     let task_id = st.taskIdentifier
     AGLog.info(#function, scope: AGAlamofireManager.self)
-    AGLog.info("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
+    AGLog.debug("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
     for t in tasks {
       if t.sessionId == sessionId {
         t.taskIds = t.taskIds.filter({ $0 != task_id })
@@ -58,10 +65,10 @@ public class AGAlamofireManager: NSObject {
     logTask()
   }
   
-  private func logTask() {
+  fileprivate func logTask() {
     AGLog.info(#function, scope: AGAlamofireManager.self)
     for t in tasks {
-      AGLog.info("\(t.sessionId) \(t.taskIds)", scope: AGAlamofireManager.self)
+      AGLog.debug("\(t.sessionId) \(t.taskIds)", scope: AGAlamofireManager.self)
     }
   }
   
@@ -77,23 +84,32 @@ public class AGAlamofireManager: NSObject {
     }
   }
   
+}
+
+
+
+//MARK: - Request
+public extension AGAlamofireManager {
+  
   public func request(_ endpoint: (URLRequestConvertible & AGRouter),
                       session: SessionIdentifier = "",
+                      validator: AGAlamofireValidatable.Type? = nil,
                       onComplete: @escaping CallbackAGResponseJSON) {
     if let r = AGNetworkManager.shared.reachability, r.currentReachabilityStatus == .notReachable {
       let message = r.currentReachabilityStatus
       onComplete(AGResponse<JSON>(data: nil, error: .reachability(message)))
     } else {
-      self.requestJSON(endpoint, session: session) {
+      self.requestJSON(endpoint, session: session, validator: validator) {
         onComplete($0)
       }
     }
     
   }
   
-  private func requestJSON(_ endpoint: (URLRequestConvertible & AGRouter),
-                           session: SessionIdentifier = "",
-                           onComplete: @escaping CallbackAGResponseJSON) {
+  fileprivate func requestJSON(_ endpoint: (URLRequestConvertible & AGRouter),
+                               session: SessionIdentifier = "",
+                               validator: AGAlamofireValidatable.Type? = nil,
+                               onComplete: @escaping CallbackAGResponseJSON) {
     let request = normal.request(endpoint)
     request.validate(statusCode: 200..<300)
     request.validate(contentType: ["application/json"])
@@ -116,7 +132,11 @@ public class AGAlamofireManager: NSObject {
         data = json
         self.printResponseData(data: data)
         
-        guard let os = AGOperationStatus(json: json) else {
+        guard let v = validator else {
+          break
+        }
+        
+        guard let os = v.create(from: json) else {
           error = .operationstatus
           break
         }
@@ -150,7 +170,6 @@ public class AGAlamofireManager: NSObject {
   }
   
 }
-
 
 
 //MARK: - Log
