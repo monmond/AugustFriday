@@ -6,4 +6,17 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
+
+
+//MARK: - Imports
 import Foundation
+
+
+
+//MARK: - AGAlamofireCodableResponse
+public protocol AGAlamofireCodableResponse: Codable {
+  
+  var _operation_status: AGOperationStatus? { get set }
+  var operation_status: AGOperationStatus { get }
+  
+}

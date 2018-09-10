@@ -113,6 +113,7 @@
 		A47C8A9920D3A828009F8183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47C8A9720D3A828009F8183 /* Main.storyboard */; };
 		A47C8A9B20D3A829009F8183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A47C8A9A20D3A829009F8183 /* Assets.xcassets */; };
 		A47C8A9E20D3A829009F8183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47C8A9C20D3A829009F8183 /* LaunchScreen.storyboard */; };
+		A4960EDC214620FB001D8E43 /* AGAlamofireCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */; };
 		A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */; };
 		A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */; };
 		A4B457DD213E8CC3005A7783 /* ApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8992213DA390002A7E01 /* ApplicationFirebaseMessaging.swift */; };
@@ -240,6 +241,7 @@
 		A47C8A9A20D3A829009F8183 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A47C8A9D20D3A829009F8183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A47C8A9F20D3A829009F8183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireCodableResponse.swift; sourceTree = "<group>"; };
 		A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireTask.swift; sourceTree = "<group>"; };
 		A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireValidatable.swift; sourceTree = "<group>"; };
 		A4B457DF213E9B3A005A7783 /* AGVCEventable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGVCEventable.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				A42DA4162141992D00F1033F /* AGRetryHandler.swift */,
 				A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */,
 				A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */,
+				A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */,
 			);
 			path = AGAlamofire;
 			sourceTree = "<group>";
@@ -1308,6 +1311,7 @@
 				A42D898D213D9AC1002A7E01 /* ApplicationRoutable.swift in Sources */,
 				A434A15B21101B8F004898DE /* AGValidator.swift in Sources */,
 				A434A1B421101EA9004898DE /* AGTableViewHeaderFooterView.swift in Sources */,
+				A4960EDC214620FB001D8E43 /* AGAlamofireCodableResponse.swift in Sources */,
 				A434A15C21101B8F004898DE /* AGFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

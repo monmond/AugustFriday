@@ -24,12 +24,3 @@ public protocol AGAlamofireValidatable: Codable {
   
 }
 
-
-
-//MARK: - AGAlamofireStatusable
-public protocol AGAlamofireCodableResponse: Codable {
-  
-  var _operation_status: AGOperationStatus? { get set }
-  var operation_status: AGOperationStatus { get }
-  
-}
