@@ -25,8 +25,9 @@ public class AvatarApi {
   public class func getAvatar(_ param: GetAvatar.Request,
                               onComplete: @escaping CallbackAvatarApiGetAvatar) {
     let endpoint = AvatarRouter.getAvatar(param)
-    AGAlamofireManager.shared.requestCodable(endpoint) {
-      onComplete($0)
+    AGAlamofireManager.shared.requestJSON(endpoint) {
+      let data = GetAvatar.Response(json: $0.data)
+      onComplete(AGAlamofireResponse<GetAvatar.Response>(data: data, error: $0.error))
     }
     
   }
