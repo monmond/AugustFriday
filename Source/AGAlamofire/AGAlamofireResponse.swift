@@ -13,8 +13,8 @@ import Foundation
 
 
 
-//MARK: - AGResponse
-public class AGResponse<T> {
+//MARK: - AGAlamofireResponse
+public class AGAlamofireResponse<T> {
   
   public var data: T?
   public var error: AGError?
@@ -24,7 +24,7 @@ public class AGResponse<T> {
     self.error = error
   }
   
-  public var result: AGResponseResult<T> {
+  public var result: AGAlamofireResponseResult<T> {
     if let error = error {
       return .failure(error)
     }

@@ -68,16 +68,20 @@ public extension ApplicationRoutable {
 public extension ApplicationRoutable {
 
   public func routeToMain() {
-    Storyboard.Main.mainVC()
+    let vc = MainVC.vc
+    vc.observe(on: .didLoad) {
+      AGLog.debug("\(#function) vc.observe(on: .didLoad)", scope: ApplicationRoutable.self)
+    }
+    window?.rootViewController = vc
     
   }
   
   public func routeToLogin() {
-    let sb = UIStoryboard(name: "Main", bundle: nil)
-    let vc = sb.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+    let vc = MainVC.vc
+    vc.observe(on: .didLoad) {
+      AGLog.debug("\(#function) vc.observe(on: .didLoad)", scope: ApplicationRoutable.self)
+    }
     window?.rootViewController = vc
-    window?.makeKeyAndVisible()
-    Storyboard.Login.loginVC()
     
   }
   

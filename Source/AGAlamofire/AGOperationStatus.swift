@@ -22,7 +22,15 @@ extension AGOperationStatus: AGAlamofireValidatable { }
 
 
 //MARK: - Main
-public final class AGOperationStatus {
+public final class AGOperationStatus: Codable {
+  
+  enum CodingKeys: String, CodingKey {
+    case _status = "status"
+    case _code = "code"
+    case _description = "description"
+    case _error = "error"
+    case _http_code = "http_code"
+  }
   
   public var _status: Bool?
   public var _code: Int?

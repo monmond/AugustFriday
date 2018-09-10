@@ -26,9 +26,10 @@ def networking_pods
   # Firebase Messaging 3.0.2
   pod 'Firebase/Messaging'
   # Networking
-  pod 'Alamofire', '~> 4.5'
+#  pod 'Alamofire', '~> 4.5'
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
   # Json reader
-   pod 'SwiftyJSON', '~> 4.1.0'
+  pod 'SwiftyJSON', '~> 4.1.0'
   # Image downloader and cacheing
   # pod 'Kingfisher' , '~> 4.8'
   

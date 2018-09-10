@@ -76,6 +76,13 @@ public extension ApplicationSetup {
     
   }
   
+  private func setupAlamofire() {
+    let agac = AGAlamofireConfiguration.shared
+    agac.timeoutIntervalForRequest = 30
+    //    agac.validator = nil
+    
+  }
+  
 }
 
 

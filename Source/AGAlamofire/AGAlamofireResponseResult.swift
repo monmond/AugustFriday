@@ -13,8 +13,8 @@ import Foundation
 
 
 
-//MARK: - AGResponseResult
-public enum AGResponseResult<T> {
+//MARK: - AGAlamofireResponseResult
+public enum AGAlamofireResponseResult<T> {
   
   case success(T)
   case failure(AGError)

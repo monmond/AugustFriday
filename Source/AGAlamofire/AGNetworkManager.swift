@@ -47,7 +47,7 @@ public class AGNetworkManager {
   
   private var ping: NetworkReachabilityManager? = {
     let host = "www.google.com"
-    let reachabilityManager = Alamofire.NetworkReachabilityManager(host: host)
+    let reachabilityManager = NetworkReachabilityManager(host: host)
     reachabilityManager?.listener = { status in
       switch status {
       case .notReachable:

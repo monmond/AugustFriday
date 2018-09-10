@@ -13,14 +13,20 @@ import UIKit
 
 
 //MARK: - Extensions
-extension MainVC { }
+extension MainVC: AGVCInstantiatable { }
 
 
 
 //MARK: - MainVC
 class MainVC: AGVC {
-  //MARK: - UI
+  //MARK: - AGInstantiatable
+  static var sb_name: String = "Main"
+  static var vc_name: String = "MainVC"
   
+  
+  //MARK: - UI
+  @IBOutlet weak var btn_retry: UIButton!
+  @IBOutlet weak var btn_cancle: UIButton!
   
   
   //MARK: - NSLayout
@@ -85,10 +91,14 @@ extension MainVC {
 extension MainVC {
   
   fileprivate func setupViewOnViewDidLoad() {
+    setupUI()
+    setupSnp()
     
   }
   
   fileprivate func setupUI() {
+    btn_retry.addTarget(self, action: #selector(retryButtonPressed), for: .touchUpInside)
+    btn_cancle.addTarget(self, action: #selector(cancleButtonPressed), for: .touchUpInside)
     
   }
   
@@ -104,7 +114,7 @@ extension MainVC {
 extension MainVC {
   
   fileprivate func setupDataOnViewDidLoad() {
-    
+    fetchTest()
   }
   
 }
@@ -113,6 +123,17 @@ extension MainVC {
 
 //MARK: - Event
 extension MainVC {
+  
+  @objc
+  func retryButtonPressed() {
+    fetchTest()
+  }
+  
+  @objc
+  func cancleButtonPressed() {
+    AGAlamofireManager.shared.cancelSession(with: "Main")
+    
+  }
   
 }
 
@@ -134,6 +155,19 @@ extension MainVC {
 
 //MARK: - Interaction & Presentation
 extension MainVC {
+  
+  func fetchTest() {
+    
+    let param = GetAvatar.Request()
+    AvatarApi.getAvatar(param) {
+      switch $0.result {
+      case let .success(d):
+        AGLog.info("\(#function) success \(d)", scope: MainVC.self)
+      case let .failure(e):
+        AGLog.info("\(#function) failure \(e)", scope: MainVC.self)
+      }
+    }
+  }
   
 }
 
@@ -164,7 +198,6 @@ extension MainVC {
 extension MainVC {
   
 }
-
 
 
 
