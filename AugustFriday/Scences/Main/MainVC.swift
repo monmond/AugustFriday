@@ -14,6 +14,8 @@ import UIKit
 
 //MARK: - Extensions
 extension MainVC: AGVCInstantiatable { }
+extension MainVC: UITableViewDelegate { }
+extension MainVC: UITableViewDataSource { }
 
 
 
@@ -24,9 +26,9 @@ class MainVC: AGVC {
   static var vc_name: String = "MainVC"
   
   
-  //MARK: - UI
-  @IBOutlet weak var btn_retry: UIButton!
-  @IBOutlet weak var btn_cancle: UIButton!
+  //MARK: - UI  
+  @IBOutlet weak var table_vc: UITableView!
+
   
   
   //MARK: - NSLayout
@@ -46,6 +48,10 @@ class MainVC: AGVC {
   
   
   //MARK: - Storage
+  let bm_vcs: [UIViewController.Type] = [
+    AlamofireVC.self,
+    FirebaseVC.self
+  ]
   
   
   
@@ -97,8 +103,9 @@ extension MainVC {
   }
   
   fileprivate func setupUI() {
-    btn_retry.addTarget(self, action: #selector(retryButtonPressed), for: .touchUpInside)
-    btn_cancle.addTarget(self, action: #selector(cancleButtonPressed), for: .touchUpInside)
+    title = MainVC.vc_name
+    table_vc.delegate = self
+    table_vc.dataSource = self
     
   }
   
@@ -114,7 +121,7 @@ extension MainVC {
 extension MainVC {
   
   fileprivate func setupDataOnViewDidLoad() {
-    fetchTest()
+    
   }
   
 }
@@ -123,17 +130,6 @@ extension MainVC {
 
 //MARK: - Event
 extension MainVC {
-  
-  @objc
-  func retryButtonPressed() {
-    fetchTest()
-  }
-  
-  @objc
-  func cancleButtonPressed() {
-    AGAlamofireManager.shared.cancelSession(with: "Main")
-    
-  }
   
 }
 
@@ -156,19 +152,6 @@ extension MainVC {
 //MARK: - Interaction & Presentation
 extension MainVC {
   
-  func fetchTest() {
-    
-    let param = GetAvatar.Request()
-    AvatarApi.getAvatar(param) {
-      switch $0.result {
-      case let .success(d):
-        AGLog.info("\(#function) success \(d)", scope: MainVC.self)
-      case let .failure(e):
-        AGLog.info("\(#function) failure \(e)", scope: MainVC.self)
-      }
-    }
-  }
-  
 }
 
 
@@ -180,8 +163,42 @@ extension MainVC {
 
 
 
-//MARK: - Core - Protocol
+//MARK: - Core - UITableViewDataSource
 extension MainVC {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return bm_vcs.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let vc = bm_vcs[indexPath.row] as? AGVCInstantiatable.Type else {
+      return UITableViewCell()
+    }
+    let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+    cell.textLabel?.text = vc.vc_name
+    cell.detailTextLabel?.text = "subtitle"
+    return cell
+  }
+  
+}
+
+
+
+//MARK: - Core - UITableViewDelegate
+extension MainVC {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let vc = bm_vcs[indexPath.row]
+    switch vc {
+    case let vc as AlamofireVC.Type:
+      navigationController?.pushViewController(vc.vc, animated: true)
+    case let vc as FirebaseVC.Type:
+      navigationController?.pushViewController(vc.vc, animated: true)
+    default:
+      break
+    }
+    
+  }
   
 }
 

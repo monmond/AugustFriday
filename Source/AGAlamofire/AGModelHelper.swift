@@ -12,6 +12,23 @@
 import Foundation
 
 
+//MARK: - AGModelHelper
 public protocol AGModelHelper {
+  
+}
+
+
+extension AGModelHelper {
+  
+  var description: String {
+    var description = ""
+    let mirror = Mirror(reflecting: self)
+    for m in mirror.children {
+      if let p = m.label {
+        description += "\(p): \(m.value)\n"
+      }
+    }
+    return description
+  }
   
 }

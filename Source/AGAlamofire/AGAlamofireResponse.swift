@@ -29,7 +29,7 @@ public class AGAlamofireResponse<T> {
       return .failure(error)
     }
     guard let data = data else {
-      return .failure(error ?? .jsonDataNil)
+      return .failure(error ?? .responseDataNotValid)
     }
     return .success(data)
   }

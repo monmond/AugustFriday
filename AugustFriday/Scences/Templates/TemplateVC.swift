@@ -8,16 +8,24 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
+
 //MARK: - Extensions
-extension TemplateVC { }
+extension TemplateVC: AGVCInstantiatable { }
 
 
 
 //MARK: - TemplateVC
 class TemplateVC: UIViewController {
+  //MARK: - AGInstantiatable
+  static var sb_name: String = "Template"
+  static var vc_name: String = "TemplateVC"
+  
+  
+  
   //MARK: - UI
   
   
@@ -43,6 +51,12 @@ class TemplateVC: UIViewController {
   
   
   //MARK: - Initial
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    onInit()
+    
+  }
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     onInit()

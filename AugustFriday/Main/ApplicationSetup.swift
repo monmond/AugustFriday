@@ -34,6 +34,7 @@ public extension ApplicationSetup {
   public func setupOnApplicationDidFinishLaunching() {
     setupNavigationBar()
     setupLogLevel()
+    setupAlamofire()
     
   }
   
@@ -62,6 +63,14 @@ public extension ApplicationSetup {
     nb.isTranslucent = true
     nb.backgroundColor = .clear
     nb.shadowImage = UIImage()
+//    nb.backgroundColor = .black
+    nb.barTintColor = .black
+    nb.tintColor = .black
+    
+    let tb = UITabBar.appearance()
+//    tb.backgroundColor = .black
+    tb.tintColor = .black
+    tb.unselectedItemTintColor = .darkGray
     
   }
   

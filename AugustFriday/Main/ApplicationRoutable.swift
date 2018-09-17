@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
@@ -72,7 +73,8 @@ public extension ApplicationRoutable {
     vc.observe(on: .didLoad) {
       AGLog.debug("\(#function) vc.observe(on: .didLoad)", scope: ApplicationRoutable.self)
     }
-    window?.rootViewController = vc
+    let nvc = UINavigationController(rootViewController: vc)
+    window?.rootViewController = nvc
     
   }
   
@@ -81,7 +83,8 @@ public extension ApplicationRoutable {
     vc.observe(on: .didLoad) {
       AGLog.debug("\(#function) vc.observe(on: .didLoad)", scope: ApplicationRoutable.self)
     }
-    window?.rootViewController = vc
+    let nvc = UINavigationController(rootViewController: vc)
+    window?.rootViewController = nvc
     
   }
   

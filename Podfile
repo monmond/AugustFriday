@@ -10,6 +10,8 @@ def ui_pods
   
   # Indicator
   pod 'NVActivityIndicatorView', '~> 4.0.0'
+  # Auto layout helper
+  pod 'SnapKit', '~> 4.0.0'
   
   
 end
@@ -25,6 +27,10 @@ def networking_pods
   pod 'Firebase/Core'
   # Firebase Messaging 3.0.2
   pod 'Firebase/Messaging'
+  # Firebase Database 5.0.2
+  pod 'Firebase/Database'
+  # Firebase Auth 5.0.3
+  pod 'Firebase/Auth'
   # Networking
   pod 'Alamofire', '~> 4.7'
 #  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
@@ -32,6 +38,8 @@ def networking_pods
   pod 'SwiftyJSON', '~> 4.1.0'
   # Image downloader and cacheing
   # pod 'Kingfisher' , '~> 4.8'
+  # Codable Firebase 0.2.0
+  pod 'CodableFirebase'
   
 end
 

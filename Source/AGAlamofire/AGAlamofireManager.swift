@@ -171,7 +171,7 @@ public extension AGAlamofireManager {
 //MARK: - RequestJSON
 public extension AGAlamofireManager {
   
-  public func requestJSON(_ endpoint: (URLRequestConvertible & AGRouter),
+  public func requestJSON(_ endpoint: (URLRequestConvertible & AGAlamofireRouter),
                           session: SessionIdentifier = "",
                           validator: AGAlamofireValidatable.Type? = nil,
                           onComplete: @escaping CallbackAGAlamofireResponseJSON) {
@@ -186,7 +186,7 @@ public extension AGAlamofireManager {
     
   }
   
-  fileprivate func json(_ endpoint: (URLRequestConvertible & AGRouter),
+  fileprivate func json(_ endpoint: (URLRequestConvertible & AGAlamofireRouter),
                                session: SessionIdentifier = "",
                                validator: AGAlamofireValidatable.Type? = nil,
                                onComplete: @escaping CallbackAGAlamofireResponseJSON) {

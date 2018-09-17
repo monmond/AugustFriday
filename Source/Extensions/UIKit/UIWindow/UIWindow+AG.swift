@@ -25,7 +25,7 @@ public extension UIWindow {
     case fade
   }
   
-  public func set(rootViewController newRootViewController: UIViewController, withTransition transition: Transition? = nil) {
+  public func set(with root: UIViewController, transition: Transition? = nil) {
     let previousViewController = rootViewController
     if let type = transition {
       let transition = CATransition()
@@ -36,14 +36,14 @@ public extension UIWindow {
       }
       layer.add(transition, forKey: kCATransition)
     }
-    rootViewController = newRootViewController
+    rootViewController = root
     
     if UIView.areAnimationsEnabled {
       UIView.animate(withDuration: CATransaction.animationDuration()) {
-        newRootViewController.setNeedsStatusBarAppearanceUpdate()
+        root.setNeedsStatusBarAppearanceUpdate()
       }
     } else {
-      newRootViewController.setNeedsStatusBarAppearanceUpdate()
+      root.setNeedsStatusBarAppearanceUpdate()
     }
     
     if let transitionViewClass = NSClassFromString("UITransitionView") {
