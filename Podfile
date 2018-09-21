@@ -12,7 +12,8 @@ def ui_pods
   pod 'NVActivityIndicatorView', '~> 4.0.0'
   # Auto layout helper
   pod 'SnapKit', '~> 4.0.0'
-  
+  # A library to simplify iOS animations in Swift
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   
 end
 

@@ -420,101 +420,101 @@ extension FirebaseVC {
 extension FirebaseVC {
 
   func displayFetchUserById(with response: User) {
-    AGLog.info(response.description, scope: FirebaseVC.self)
+    AGLog.info(response.description)
   }
   
   func displayFetchUserById(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayInsertUser(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayInsertUser(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayUpdateUser(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayUpdateUser(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayDeleteUser(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayDeleteUser(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayFetchPet(with response: [Pet]) {
     for u in response {
-      AGLog.info(u.description, scope: FirebaseVC.self)
+      AGLog.info(u.description)
     }
   }
   
   func displayFetchPet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayFetchPetById(with response: Pet) {
-    AGLog.info(response.description, scope: FirebaseVC.self)
+    AGLog.info(response.description)
   }
   
   func displayFetchPetById(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayInsertPet(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayInsertPet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayUpdatePet(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayUpdatePet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayDeletePet(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayDeletePet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayFetchUserPet(with response: User) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayFetchUserPet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayInsertUserPet(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayInsertUserPet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
   func displayDeleteUserPet(with response: String) {
-    AGLog.info(response, scope: FirebaseVC.self)
+    AGLog.info(response)
   }
   
   func displayDeleteUserPet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseVC.self)
+    AGLog.info(error)
   }
   
 }
@@ -661,7 +661,7 @@ extension FirebaseVC {
 extension FirebaseVC {
   
   func agHeaderReusableDidSelect(section: Int) {
-    AGLog.info(#function, scope: FirebaseVC.self)
+    AGLog.info(#function)
     vm_all.displayed[section].isCollpase = !vm_all.displayed[section].isCollpase
     table_fb.reloadSections(section.toIndexSet, with: .automatic)
     
@@ -675,7 +675,7 @@ extension FirebaseVC {
 extension FirebaseVC {
   
   func firebaseDetailViewTableDidSelect(item: String, action: FirebaseDetailVC.Display.Action) {
-    AGLog.info(#function, scope: FirebaseVC.self)
+    AGLog.info(#function)
     navigationController?.popViewController(animated: true)
     switch action {
     case .user:

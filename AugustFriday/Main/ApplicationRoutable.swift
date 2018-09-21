@@ -71,7 +71,7 @@ public extension ApplicationRoutable {
   public func routeToMain() {
     let vc = MainVC.vc
     vc.observe(on: .didLoad) {
-      AGLog.debug("\(#function) vc.observe(on: .didLoad)", scope: ApplicationRoutable.self)
+      AGLog.debug("vc.observe(on: .didLoad)")
     }
     let nvc = UINavigationController(rootViewController: vc)
     window?.rootViewController = nvc
@@ -81,7 +81,7 @@ public extension ApplicationRoutable {
   public func routeToLogin() {
     let vc = MainVC.vc
     vc.observe(on: .didLoad) {
-      AGLog.debug("\(#function) vc.observe(on: .didLoad)", scope: ApplicationRoutable.self)
+      AGLog.debug("vc.observe(on: .didLoad)")
     }
     let nvc = UINavigationController(rootViewController: vc)
     window?.rootViewController = nvc

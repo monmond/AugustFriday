@@ -20,6 +20,8 @@ public enum AGError: Error {
   //MARK: - AFWrapper & AFResponse
   case alamofire(Error)
   case firebase(Error)
+  case facebook(Error)
+  case google(Error)
   case reachability(AGReachabilityStatus)
   case cancelled
   case timedOut(Error)

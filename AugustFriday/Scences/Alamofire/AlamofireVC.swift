@@ -175,9 +175,9 @@ extension AlamofireVC {
     AvatarApi.getAvatar(param) {
       switch $0.result {
       case let .success(d):
-        AGLog.info("\(#function) success \(d)", scope: AlamofireVC.self)
+        AGLog.info("success \(d)")
       case let .failure(e):
-        AGLog.info("\(#function) failure \(e)", scope: AlamofireVC.self)
+        AGLog.info("failure \(e)")
       }
     }
     

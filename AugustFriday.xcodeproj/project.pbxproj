@@ -129,6 +129,7 @@
 		A4B61D6321183979003F98FF /* AGNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6221183979003F98FF /* AGNavigationView.swift */; };
 		A4B61D6721185CA6003F98FF /* AGBouncingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6621185CA6003F98FF /* AGBouncingView.swift */; };
 		A4B61D6A21185EA8003F98FF /* AGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6921185EA8003F98FF /* AGView.swift */; };
+		A4BB9BFE2154CC3C00EAEBAF /* CATransition+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */; };
 		A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */; };
 		A4C0C258213E7E6E00288AFB /* AGApplicationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */; };
 		A4C0C25A213E830800288AFB /* AGApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */; };
@@ -270,6 +271,7 @@
 		A4B61D6221183979003F98FF /* AGNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGNavigationView.swift; sourceTree = "<group>"; };
 		A4B61D6621185CA6003F98FF /* AGBouncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBouncingView.swift; sourceTree = "<group>"; };
 		A4B61D6921185EA8003F98FF /* AGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGView.swift; sourceTree = "<group>"; };
+		A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+AG.swift"; sourceTree = "<group>"; };
 		A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebase.swift; sourceTree = "<group>"; };
 		A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationSetup.swift; sourceTree = "<group>"; };
 		A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebaseMessaging.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 		A434A11C21101959004898DE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				A4BB9BFC2154CC3400EAEBAF /* CATransition */,
 				A418518521241E1000765969 /* URL */,
 				A434A12521101959004898DE /* NotificationName+AG.swift */,
 				A434A11D21101959004898DE /* Collection */,
@@ -1135,6 +1138,14 @@
 			path = AGView;
 			sourceTree = "<group>";
 		};
+		A4BB9BFC2154CC3400EAEBAF /* CATransition */ = {
+			isa = PBXGroup;
+			children = (
+				A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */,
+			);
+			path = CATransition;
+			sourceTree = "<group>";
+		};
 		A4EB81FE2141286100BBAC2D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1192,6 +1203,7 @@
 				A47C8A8D20D3A828009F8183 /* Frameworks */,
 				A47C8A8E20D3A828009F8183 /* Resources */,
 				A41A07B8A102A2FA4CDABADC /* [CP] Embed Pods Frameworks */,
+				2B2F4E4BD37B324E030DD458 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1255,6 +1267,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2B2F4E4BD37B324E030DD458 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AugustFriday/Pods-AugustFriday-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		70E6516547884719521D7C30 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1287,6 +1314,7 @@
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -1300,6 +1328,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1324,6 +1353,7 @@
 				A42DA3F521417F3A00F1033F /* Notification+AGAlamofire.swift in Sources */,
 				A434A11721101855004898DE /* UICollectionViewCell+AG.swift in Sources */,
 				A434A1A221101EA9004898DE /* AGLoadingViewManager.swift in Sources */,
+				A4BB9BFE2154CC3C00EAEBAF /* CATransition+AG.swift in Sources */,
 				A434A1AC21101EA9004898DE /* AGReusable.swift in Sources */,
 				A42D899A213DAA89002A7E01 /* MainVC.swift in Sources */,
 				A42DA3F721417FA300F1033F /* Typealias+AGAlamofire.swift in Sources */,

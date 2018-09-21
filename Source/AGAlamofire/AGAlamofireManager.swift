@@ -38,8 +38,8 @@ public extension AGAlamofireManager {
   fileprivate func insertTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
     guard let st = sessionTask else { return }
     let task_id = st.taskIdentifier
-    AGLog.info(#function, scope: AGAlamofireManager.self)
-    AGLog.debug("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
+    AGLog.info()
+    AGLog.debug("\(sessionId) \(task_id)")
     if let t = tasks.first(where: { $0.sessionId == sessionId }) {
       t.taskIds.append(task_id)
     } else {
@@ -52,8 +52,8 @@ public extension AGAlamofireManager {
   fileprivate func removeTask(with sessionId: String = "", sessionTask: URLSessionTask?) {
     guard let st = sessionTask else { return }
     let task_id = st.taskIdentifier
-    AGLog.info(#function, scope: AGAlamofireManager.self)
-    AGLog.debug("\(sessionId) \(task_id)", scope: AGAlamofireManager.self)
+    AGLog.info()
+    AGLog.debug("\(sessionId) \(task_id)")
     for t in tasks {
       if t.sessionId == sessionId {
         t.taskIds = t.taskIds.filter({ $0 != task_id })
@@ -66,14 +66,14 @@ public extension AGAlamofireManager {
   }
   
   fileprivate func logTask() {
-    AGLog.info(#function, scope: AGAlamofireManager.self)
+    AGLog.info()
     for t in tasks {
-      AGLog.debug("\(t.sessionId) \(t.taskIds)", scope: AGAlamofireManager.self)
+      AGLog.debug("\(t.sessionId) \(t.taskIds)")
     }
   }
   
   public func cancelSession(with sessionId: SessionIdentifier = "") {
-    AGLog.info(#function, scope: AGAlamofireManager.self)
+    AGLog.info()
     guard let task = tasks.first(where: { $0.sessionId == sessionId }) else { return }
     let taskIds = task.taskIds
     normal.session.getAllTasks() {

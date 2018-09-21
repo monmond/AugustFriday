@@ -223,7 +223,7 @@ extension FirebaseDetailVC {
   }
   
   func displayFetchUser(with error: AGError) {
-    AGLog.info(error, scope: FirebaseDetailVC.self)
+    AGLog.info(error)
   }
   
   func displayFetchPet(with response: [Pet]) {
@@ -234,7 +234,7 @@ extension FirebaseDetailVC {
   }
   
   func displayFetchPet(with error: AGError) {
-    AGLog.info(error, scope: FirebaseDetailVC.self)
+    AGLog.info(error)
   }
   
 }

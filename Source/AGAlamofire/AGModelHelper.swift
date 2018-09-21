@@ -18,9 +18,9 @@ public protocol AGModelHelper {
 }
 
 
-extension AGModelHelper {
+public extension AGModelHelper {
   
-  var description: String {
+  public var description: String {
     var description = ""
     let mirror = Mirror(reflecting: self)
     for m in mirror.children {

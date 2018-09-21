@@ -16,10 +16,12 @@ import Foundation
 //MARK: - AGLogLevel
 public enum AGLogLevel: Int {
   
-  case off = 0, error, warning, info, debug
+  case off = 0, error, warning, info, debug, verbose
   
   public func description() -> String {
     switch self {
+    case .verbose:
+      return "VERBOSE"
     case .debug:
       return "DEBUG"
     case .info:
@@ -41,57 +43,32 @@ public enum AGLogLevel: Int {
 //MARK: - AGLog
 open class AGLog: NSObject {
   
-  fileprivate class func log(_ level: AGLogLevel, message: Any) {
+  fileprivate class func log(_ level: AGLogLevel, message: Any = "", fileName: String = #file, line: Int = #line, function: String = #function) {
+    let reflecting = "[\(URL(fileURLWithPath: fileName).deletingPathExtension().lastPathComponent)|\(line)|\(function)]"
     if level.rawValue <= AGLogConfiguration.shared.logLevel.rawValue {
-      print("\(level.description()) \(message)")
+      print("\(level.description()) \(reflecting) \(message)")
     }
-    
   }
   
-  fileprivate class func log<T>(_ level: AGLogLevel, scope: T.Type, message: Any) {
-    let reflecting: String = String(reflecting: scope).lazy.split(separator: ".").dropFirst().joined(separator: ".")
-    log(level, message: "[\(reflecting)] \(message)")
-    
+  open class func error(_ message: Any = "", fileName: String = #file, line: Int = #line, function: String = #function) {
+    log(.error, message: message, fileName: fileName, line: line, function: function)
   }
   
-  open class func error<T>(_ message: Any, scope: T.Type) {
-    log(.error, scope: scope, message: message)
-    
+  open class func warning(_ message: Any = "", fileName: String = #file, line: Int = #line, function: String = #function) {
+    log(.warning, message: message, fileName: fileName, line: line, function: function)
   }
   
-  open class func warn<T>(_ message: Any, scope: T.Type) {
-    log(.warning, scope: scope, message: message)
-    
+  open class func info(_ message: Any = "", fileName: String = #file, line: Int = #line, function: String = #function) {
+    log(.info, message: message, fileName: fileName, line: line, function: function)
   }
   
-  open class func info<T>(_ message: Any, scope: T.Type) {
-    log(.info, scope: scope, message: message)
-    
+  open class func debug(_ message: Any = "", fileName: String = #file, line: Int = #line, function: String = #function) {
+    log(.debug, message: message, fileName: fileName, line: line, function: function)
   }
   
-  open class func debug<T>(_ message: Any, scope: T.Type) {
-    log(.debug, scope: scope, message: message)
-    
+  open class func verbose(_ message: Any = "", fileName: String = #file, line: Int = #line, function: String = #function) {
+    log(.verbose, message: message, fileName: fileName, line: line, function: function)
   }
   
-  open class func error(_ message: Any) {
-    log(.debug, message: message)
-    
-  }
-  
-  open class func warn(_ message: Any) {
-    log(.warning, message: message)
-    
-  }
-  
-  open class func info(_ message: Any) {
-    log(.info, message: message)
-    
-  }
-  
-  open class func debug(_ message: Any) {
-    log(.debug, message: message)
-    
-  }
   
 }

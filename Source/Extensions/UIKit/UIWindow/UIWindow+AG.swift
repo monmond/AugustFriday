@@ -21,20 +21,10 @@ public extension UIWindow {
 
 public extension UIWindow {
   
-  public enum Transition {
-    case fade
-  }
-  
-  public func set(with root: UIViewController, transition: Transition? = nil) {
+  public func set(with root: UIViewController, transition: CATransition? = nil) {
     let previousViewController = rootViewController
-    if let type = transition {
-      let transition = CATransition()
-      transition.duration = 0.3
-      switch type {
-      case .fade:
-        transition.type = kCATransitionFade
-      }
-      layer.add(transition, forKey: kCATransition)
+    if let t = transition {
+      layer.add(t, forKey: kCATransition)
     }
     rootViewController = root
     
@@ -45,6 +35,7 @@ public extension UIWindow {
     } else {
       root.setNeedsStatusBarAppearanceUpdate()
     }
+    
     
     if let transitionViewClass = NSClassFromString("UITransitionView") {
       for subview in subviews where subview.isKind(of: transitionViewClass) {

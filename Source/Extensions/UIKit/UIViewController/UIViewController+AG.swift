@@ -45,15 +45,19 @@ public extension UIViewController {
 
 //MARK: - Flow control
 public extension UIViewController {
+
+  public func present(viewControllerToPresent: UIViewController, transition: CATransition? = nil, completion: CallbackVoid? = nil) {
+    if let t = transition {
+      view.layer.add(t, forKey: nil)
+    }
+    present(viewControllerToPresent, animated: false, completion: completion)
+  }
   
-  //MARK: - Unused
-  public func pushTransition() -> CATransition {
-    let transition = CATransition()
-    transition.duration = 0.3
-    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    transition.type = kCATransitionPush
-    transition.subtype = kCATransitionFade
-    return transition
+  public func dismiss(transition: CATransition? = nil, completion: CallbackVoid? = nil) {
+    if let t = transition {
+      view.layer.add(t, forKey: nil)
+    }
+    dismiss(animated: false, completion: completion)
   }
   
 }

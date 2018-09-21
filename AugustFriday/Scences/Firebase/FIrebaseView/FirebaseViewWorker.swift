@@ -163,15 +163,15 @@ class FirebaseViewWorker {
           return
         }
         let u = d[Int(arc4random_uniform(UInt32(d.count)))]
-        AGLog.debug("pre", scope: FirebaseViewWorker.self)
-        AGLog.debug(u.description, scope: FirebaseViewWorker.self)
+        AGLog.debug("pre")
+        AGLog.debug(u.description)
         u._name = _s.users[Int(arc4random_uniform(UInt32(_s.users.count)))].name
         u._gender = _s.users[Int(arc4random_uniform(UInt32(_s.users.count)))].gender
         u._age = _s.users[Int(arc4random_uniform(UInt32(_s.users.count)))].age
         u._height = _s.users[Int(arc4random_uniform(UInt32(_s.users.count)))].height
         u._weight = _s.users[Int(arc4random_uniform(UInt32(_s.users.count)))].weight
-        AGLog.debug("post", scope: FirebaseViewWorker.self)
-        AGLog.debug(u.description, scope: FirebaseViewWorker.self)
+        AGLog.debug("post")
+        AGLog.debug(u.description)
         let ref_user = _s.db.reference(withPath: User.path)
         ref_user.updateChildValues([u.id: u.toAny]) {
           var data: String?
@@ -182,7 +182,7 @@ class FirebaseViewWorker {
         }
         
       case let .failure(e):
-        AGLog.debug(e, scope: FirebaseVC.self)
+        AGLog.debug(e)
         onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
         
       }
@@ -197,7 +197,7 @@ class FirebaseViewWorker {
     fetchUserById(id: id) {
       switch $0.result {
       case let .success(d):
-        AGLog.debug(d.description, scope: FirebaseVC.self)
+        AGLog.debug(d.description)
         d._ref?.removeValue { e, ref in
           let data = ref.key
           var error: AGError? = nil
@@ -206,7 +206,7 @@ class FirebaseViewWorker {
         }
         
       case let .failure(e):
-        AGLog.debug(e, scope: FirebaseVC.self)
+        AGLog.debug(e)
         onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
         
       }
@@ -259,12 +259,12 @@ class FirebaseViewWorker {
           return
         }
         let p = d[Int(arc4random_uniform(UInt32(d.count)))]
-        AGLog.debug("pre", scope: FirebaseViewWorker.self)
-        AGLog.debug(p.description, scope: FirebaseViewWorker.self)
+        AGLog.debug("pre")
+        AGLog.debug(p.description)
         p._name = _s.pets[Int(arc4random_uniform(UInt32(_s.pets.count)))].name
         p._type = _s.pets[Int(arc4random_uniform(UInt32(_s.pets.count)))].type
-        AGLog.debug("post", scope: FirebaseViewWorker.self)
-        AGLog.debug(p.description, scope: FirebaseViewWorker.self)
+        AGLog.debug("post")
+        AGLog.debug(p.description)
         let ref_pet = _s.db.reference(withPath: Pet.path)
         ref_pet.updateChildValues([p.id: p.toAny]) {
           let data = $1.key
@@ -274,7 +274,7 @@ class FirebaseViewWorker {
         }
         
       case let .failure(e):
-        AGLog.debug(e, scope: FirebaseVC.self)
+        AGLog.debug(e)
         onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
         
       }
@@ -289,7 +289,7 @@ class FirebaseViewWorker {
     fetchUserById(id: id) {
       switch $0.result {
       case let .success(d):
-        AGLog.debug(d.description, scope: FirebaseVC.self)
+        AGLog.debug(d.description)
         d._ref?.removeValue {
           let data = $1.key
           var error: AGError?
@@ -298,7 +298,7 @@ class FirebaseViewWorker {
         }
         
       case let .failure(e):
-        AGLog.debug(e, scope: FirebaseVC.self)
+        AGLog.debug(e)
         onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
         
       }
@@ -325,7 +325,7 @@ class FirebaseViewWorker {
           onComplete?(AGDataResponse<User>(data: nil, error: .firebase(e)))
         }
       case let .failure(e):
-        AGLog.debug(e, scope: FirebaseVC.self)
+        AGLog.debug(e)
         onComplete?(AGDataResponse<User>(data: nil, error: .firebase(e)))
       }
     }
@@ -354,14 +354,14 @@ class FirebaseViewWorker {
             }
             
           case let .failure(e):
-            AGLog.debug(e, scope: FirebaseVC.self)
+            AGLog.debug(e)
             onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
             
           }
         }
 
       case let .failure(e):
-        AGLog.debug(e, scope: FirebaseVC.self)
+        AGLog.debug(e)
         onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
         
       }
