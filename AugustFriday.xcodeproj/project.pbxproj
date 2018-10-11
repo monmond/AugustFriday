@@ -190,8 +190,8 @@
 		A433E979216F3EDE0068DAD9 /* AGSizeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClass.swift; sourceTree = "<group>"; };
 		A433E97B216F3F970068DAD9 /* AGSizeClassUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClassUI.swift; sourceTree = "<group>"; };
 		A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClassUICollection.swift; sourceTree = "<group>"; };
-		A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDefaultsFoundation.swift; sourceTree = "<group>"; };
-		A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDefaultsCodable.swift; sourceTree = "<group>"; };
+		A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDefaultsFoundation.swift; sourceTree = "<group>"; };
+		A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDefaultsCodable.swift; sourceTree = "<group>"; };
 		A433E983216F405B0068DAD9 /* PanningUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanningUtil.swift; sourceTree = "<group>"; };
 		A433E985216F40CA0068DAD9 /* ApplicationOrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationOrientationManager.swift; sourceTree = "<group>"; };
 		A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationOrientationDependency.swift; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 		A4B61D6621185CA6003F98FF /* AGBouncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBouncingView.swift; sourceTree = "<group>"; };
 		A4B61D6921185EA8003F98FF /* AGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGView.swift; sourceTree = "<group>"; };
 		A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+AG.swift"; sourceTree = "<group>"; };
-		A4BB9C012154E76700EAEBAF /* AGDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDefaults.swift; sourceTree = "<group>"; };
+		A4BB9C012154E76700EAEBAF /* AGDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDefaults.swift; sourceTree = "<group>"; };
 		A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebase.swift; sourceTree = "<group>"; };
 		A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationSetup.swift; sourceTree = "<group>"; };
 		A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebaseMessaging.swift; sourceTree = "<group>"; };
