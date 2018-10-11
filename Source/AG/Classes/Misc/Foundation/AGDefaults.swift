@@ -14,7 +14,7 @@ import Foundation
 
 
 //MARK: - AGDefaults
-protocol AGDefaults {
+public protocol AGDefaults {
   static func getAll() -> [String: Any]
   static func removeAll()
 }
@@ -22,14 +22,14 @@ protocol AGDefaults {
 
 
 //MARK: - Implements
-extension AGDefaults {
+public extension AGDefaults {
   
-  static func getAll() -> [String: Any] {
+  public static func getAll() -> [String: Any] {
     let ud = UserDefaults.standard
     return ud.dictionaryRepresentation()
   }
   
-  static func removeAll() {
+  public static func removeAll() {
     let ud = UserDefaults.standard
     ud.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
     ud.synchronize()

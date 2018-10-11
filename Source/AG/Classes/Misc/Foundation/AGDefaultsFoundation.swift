@@ -14,7 +14,7 @@ import Foundation
 
 
 //MARK: - AGDefaultsFoundation
-protocol AGDefaultsFoundation {
+public protocol AGDefaultsFoundation {
   associatedtype T
   static var key: String { get }
   static func get() -> T?
@@ -25,19 +25,19 @@ protocol AGDefaultsFoundation {
 
 
 //MARK: - Implements
-extension AGDefaultsFoundation {
+public extension AGDefaultsFoundation {
   
-  static func get() -> T? {
+  public static func get() -> T? {
     let ud = UserDefaults.standard
     return ud.object(forKey: key) as? T
   }
   
-  static func set(data: T) {
+  public static func set(data: T) {
     let ud = UserDefaults.standard
     ud.set(data, forKey: key)
   }
   
-  static func remove() {
+  public static func remove() {
     let ud = UserDefaults.standard
     ud.removeObject(forKey: key)
   }

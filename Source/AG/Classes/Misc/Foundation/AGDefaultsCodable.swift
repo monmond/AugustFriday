@@ -14,16 +14,16 @@ import Foundation
 
 
 //MARK: - AGDefaultsCodable
-protocol AGDefaultsCodable: AGDefaultsFoundation where T: Codable {
+public protocol AGDefaultsCodable: AGDefaultsFoundation where T: Codable {
   
 }
 
 
 
 //MARK: - Implements
-extension AGDefaultsCodable {
+public extension AGDefaultsCodable {
   
-  static func get() -> T? {
+  public static func get() -> T? {
     let ud = UserDefaults.standard
     guard let userData = ud.data(forKey: key), let t = try? JSONDecoder().decode(T.self, from: userData) else {
       return nil
@@ -31,7 +31,7 @@ extension AGDefaultsCodable {
     return t
   }
   
-  static func set(data: T) {
+  public static func set(data: T) {
     guard let encoded = try? JSONEncoder().encode(data) else {
       return
     }
@@ -39,7 +39,7 @@ extension AGDefaultsCodable {
     ud.set(encoded, forKey: key)
   }
   
-  static func remove() {
+  public static func remove() {
     let ud = UserDefaults.standard
     ud.removeObject(forKey: key)
   }
