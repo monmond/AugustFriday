@@ -152,7 +152,7 @@ s.subspec 'Core' do |c|
 		# Resources
 		agc.subspec 'Resources' do |ui|
 			ui.source_files = PodUtility.mapSwiftFiles(str_ag_resources, 4)
-			c.resource_bundle = {
+			agc.resource_bundle = {
 				'AugustFriday' => PodUtility.mapResourceFiles(str_ag_resources, 4)
 			}
 
