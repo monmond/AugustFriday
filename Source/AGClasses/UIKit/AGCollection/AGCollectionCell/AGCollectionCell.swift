@@ -8,62 +8,28 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
 
-open class AGCollectionCell: UICollectionViewCell, AGReusable, AGShadowable, AGRadiusable, AGBouncingView {
-  
-  //MARK: - Sizing
-//  open class func inset() -> UIEdgeInsets {
-//    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//  }
-//
-//  open class func size(_ bound: CGRect) -> CGSize {
-//    return CGSize(width: 0, height: 0)
-//  }
-//
-//  open class func itemSpace() -> CGFloat {
-//    return 0
-//  }
-//
-//  open class func lineSpace() -> CGFloat {
-//    return 0
-//  }
-//
-//  open class func offset() -> CGPoint {
-//    return CGPoint.zero
-//  }
+//MARK: - Extensions
+extension AGCollectionCell: AGReusable { }
+extension AGCollectionCell: AGShadowable { }
+extension AGCollectionCell: AGRadiusable { }
+extension AGCollectionCell: AGBouncingView { }
 
+
+
+//MARK: - AGCollectionCell
+open class AGCollectionCell: UICollectionViewCell {
   
-  
-  //MARK: - UI
-  
-  
-  
-  //MARK: - Constraint
-  
-  
-  
-  //MARK: - Instance
-  
-  
-  
-  //MARK: - Storage
   open var setting_shadow = AGShadowSetting()
   open var setting_radius = AGRadiusSetting()
   
   
   
-  //MARK: - Event
-  
-  
-  
-  //MARK: - Initial
-
-  
-  
-  // MARK: Life Cycle
+  //MARK: - Life Cycle
   open override func awakeFromNib() {
     super.awakeFromNib()
 //    setupView()
@@ -73,15 +39,10 @@ open class AGCollectionCell: UICollectionViewCell, AGReusable, AGShadowable, AGR
     super.prepareForReuse()
     
   }
+ 
   
-  // MARK: Setup UI
   
-//  open func setupView() {
-//
-//  }
-  
-
-  // MARK: Shadowable
+  //MARK: - Shadowable
   open func settingShadow() {
     setting_shadow.color = BaseColor.gray_dark
     setting_shadow.offset = CGSize(width:0, height: 1.0)
@@ -100,7 +61,8 @@ open class AGCollectionCell: UICollectionViewCell, AGReusable, AGShadowable, AGR
   }
   
   
-  // MARK: Radiusable
+  
+  //MARK: - Radiusable
   open func settingRadius() {
     setting_radius.color = BaseColor.clear
     setting_radius.radius = 6.0

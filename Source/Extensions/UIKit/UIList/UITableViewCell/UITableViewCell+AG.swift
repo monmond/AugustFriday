@@ -10,10 +10,4 @@ import UIKit
 
 public extension UITableViewCell {
 
-  public func setupDefault() {
-    selectionStyle = .none
-    backgroundColor = BaseColor.clear.color
-    contentView.backgroundColor = BaseColor.clear.color
-  }
-  
 }

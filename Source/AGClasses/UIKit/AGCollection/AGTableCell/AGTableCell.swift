@@ -8,50 +8,26 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
 
-open class AGTableCell: UITableViewCell, AGReusable, AGShadowable, AGRadiusable {
+//MARK: - Extensions
+extension AGTableCell: AGReusable { }
+extension AGTableCell: AGShadowable { }
+extension AGTableCell: AGRadiusable { }
+extension AGTableCell: AGBouncingView { }
+
+
+
+//MARK: - AGTableCell
+open class AGTableCell: UITableViewCell {
   
-  //MARK: - Sizing
-  //  open class func inset() -> UIEdgeInsets {
-  //    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-  //  }
-  //
-  //  open class func height() -> CGFloat {
-  //    return 0
-  //  }
-  
-  
-  
-  //MARK: - UI
-  
-  
-  
-  //MARK: - Constraint
-  
-  
-  
-  //MARK: - Instance
-  
-  
-  
-  //MARK: - Storage
   open var setting_shadow = AGShadowSetting()
   open var setting_radius = AGRadiusSetting()
   
-  
-  
-  //MARK: - Event
-  
-  
-  
-  //MARK: - Initial
-  
-  
-  
-  // MARK: Life Cycle
+  //MARK: - Life Cycle
   override open func awakeFromNib() {
     super.awakeFromNib()
     //    setupView()
@@ -62,15 +38,7 @@ open class AGTableCell: UITableViewCell, AGReusable, AGShadowable, AGRadiusable 
     
   }
   
-  
-  
-  // MARK: Setup UI
-  //  open func setupView() {
-  //
-  //  }
-  
-  
-  // MARK: Shadowable
+  //MARK: - Shadowable
   open func settingShadow() {
     setting_shadow.color = BaseColor.gray_dark
     setting_shadow.offset = CGSize(width:0, height: 1.0)
@@ -89,8 +57,7 @@ open class AGTableCell: UITableViewCell, AGReusable, AGShadowable, AGRadiusable 
   }
   
   
-  
-  // MARK: Radiusable
+  //MARK: - Radiusable
   open func settingRadius() {
     setting_radius.color = BaseColor.clear
     setting_radius.radius = 6.0
@@ -103,7 +70,7 @@ open class AGTableCell: UITableViewCell, AGReusable, AGShadowable, AGRadiusable 
     contentView.layer.borderWidth = setting_radius.width
     contentView.layer.masksToBounds = true
   }
-  
+
 }
 
 

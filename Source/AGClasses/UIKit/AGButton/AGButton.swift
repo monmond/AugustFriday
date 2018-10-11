@@ -460,7 +460,7 @@ public extension AGButton {
 
 
 
-// MARK: - TransitionButton
+//MARK: - TransitionButton
 //  Credit by Alaeddine M. on 11/1/15.
 public extension AGButton {
   

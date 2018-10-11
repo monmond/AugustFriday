@@ -10,8 +10,4 @@ import UIKit
 
 public extension UICollectionReusableView {
   
-  public func setupDefault1() {
-    backgroundColor = BaseColor.clear.color
-  }
-  
 }

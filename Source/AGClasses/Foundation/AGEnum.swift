@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS, deprecated, message: "Use CaseIterable")
 public protocol AGEnum: Hashable {
   
   static func cases() -> AnySequence<Self>

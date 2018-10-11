@@ -10,9 +10,5 @@ import UIKit
 
 public extension UITableViewHeaderFooterView {
   
-  public func setupDefault() {
-    backgroundColor = BaseColor.clear.color
-    contentView.backgroundColor = BaseColor.clear.color
-  }
   
 }
