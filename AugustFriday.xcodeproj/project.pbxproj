@@ -491,7 +491,6 @@
 			children = (
 				A42DA4022141851200F1033F /* AGAlamofireConfiguration.swift */,
 				A42DA3E321417A2600F1033F /* AGAlamofireManager.swift */,
-				A42DA4062141884100F1033F /* AGModelHelper.swift */,
 				A42DA3FD2141838600F1033F /* AGNetworkManager.swift */,
 				A42DA4042141880100F1033F /* AGOperationStatus.swift */,
 				A4EB820F21413E4900BBAC2D /* AGReachability.swift */,
@@ -755,6 +754,7 @@
 		A434A14B21101B8F004898DE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				A42DA4062141884100F1033F /* AGModelHelper.swift */,
 				A420A29F2148CF670027AAB4 /* AGDataResponse.swift */,
 				A420A2A12148CF7F0027AAB4 /* AGDataResponseResult.swift */,
 				A434A15621101B8F004898DE /* AGLocalizeManager.swift */,

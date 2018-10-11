@@ -1,5 +1,5 @@
 //
-//  AFManager.swift
+//  AGAlamofireManager.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 6/9/18.
@@ -94,75 +94,75 @@ public extension AGAlamofireManager {
  */
 public extension AGAlamofireManager {
   
-//  public func requestCodable<T: AGAlamofireCodableResponse>(_ endpoint: (URLRequestConvertible & AGRouter),
-//                                                       session: SessionIdentifier = "",
-//                                                       onComplete: @escaping ((AGAlamofireResponse<T>) -> Void)) {
-//    if let r = AGNetworkManager.shared.reachability, r.currentReachabilityStatus == .notReachable {
-//      let message = r.currentReachabilityStatus
-//      onComplete(AGAlamofireResponse<T>(data: nil, error: .reachability(message)))
-//    } else {
-//      self.codable(endpoint, session: session) {
-//        onComplete($0)
-//      }
-//    }
-//
-//  }
-//
-//  func codable<T: AGAlamofireCodableResponse>(_ endpoint: (URLRequestConvertible & AGRouter),
-//                                         session: SessionIdentifier = "",
-//                                         onComplete: @escaping ((AGAlamofireResponse<T>) -> Void)) {
-//    let request = normal.request(endpoint)
-//    request.validate(statusCode: 200..<300)
-//    request.validate(contentType: ["application/json"])
-//    printStart()
-//    request.responseJSONDecodable { (response: DataResponse<T>) in
-//
-//      self.printRequest(request: response.request)
-//      self.printRequestHeader(request: response.request)
-//      self.printRequestParameter(urlRequest: endpoint.urlRequest)
-//
-//      var data: T?
-//      var error: AGError?
-//
-//      switch response.result {
-//      case let .success(d):
-//        self.printSuccess()
-//        data = d
-//        self.printResponseData(data: data)
-//
-//        guard let os = d._operation_status else {
-//          error = .operationstatus
-//          break
-//        }
-//
-//        guard os.status else {
-//          error = .notsuccess
-//          break
-//        }
-//
-//      case let .failure(e):
-//        self.printFailure()
-//        self.printResponseError(error: response.error)
-//
-//        guard !e.cancelled else {
-//          error = .cancelled
-//          break
-//        }
-//
-//        guard !e.isTimedOut else {
-//          error = .timedOut(e)
-//          break
-//        }
-//
-//        error = .alamofire(e)
-//
-//      }
-//
-//      onComplete(AGAlamofireResponse<T>(data: data, error: error))
-//
-//    }
-//
-//  }
+  //  public func requestCodable<T: AGAlamofireCodableResponse>(_ endpoint: (URLRequestConvertible & AGRouter),
+  //                                                       session: SessionIdentifier = "",
+  //                                                       onComplete: @escaping ((AGAlamofireResponse<T>) -> Void)) {
+  //    if let r = AGNetworkManager.shared.reachability, r.currentReachabilityStatus == .notReachable {
+  //      let message = r.currentReachabilityStatus
+  //      onComplete(AGAlamofireResponse<T>(data: nil, error: .reachability(message)))
+  //    } else {
+  //      self.codable(endpoint, session: session) {
+  //        onComplete($0)
+  //      }
+  //    }
+  //
+  //  }
+  //
+  //  func codable<T: AGAlamofireCodableResponse>(_ endpoint: (URLRequestConvertible & AGRouter),
+  //                                         session: SessionIdentifier = "",
+  //                                         onComplete: @escaping ((AGAlamofireResponse<T>) -> Void)) {
+  //    let request = normal.request(endpoint)
+  //    request.validate(statusCode: 200..<300)
+  //    request.validate(contentType: ["application/json"])
+  //    printStart()
+  //    request.responseJSONDecodable { (response: DataResponse<T>) in
+  //
+  //      self.printRequest(request: response.request)
+  //      self.printRequestHeader(request: response.request)
+  //      self.printRequestParameter(urlRequest: endpoint.urlRequest)
+  //
+  //      var data: T?
+  //      var error: AGError?
+  //
+  //      switch response.result {
+  //      case let .success(d):
+  //        self.printSuccess()
+  //        data = d
+  //        self.printResponseData(data: data)
+  //
+  //        guard let os = d._operation_status else {
+  //          error = .operationstatus
+  //          break
+  //        }
+  //
+  //        guard os.status else {
+  //          error = .notsuccess
+  //          break
+  //        }
+  //
+  //      case let .failure(e):
+  //        self.printFailure()
+  //        self.printResponseError(error: response.error)
+  //
+  //        guard !e.cancelled else {
+  //          error = .cancelled
+  //          break
+  //        }
+  //
+  //        guard !e.isTimedOut else {
+  //          error = .timedOut(e)
+  //          break
+  //        }
+  //
+  //        error = .alamofire(e)
+  //
+  //      }
+  //
+  //      onComplete(AGAlamofireResponse<T>(data: data, error: error))
+  //
+  //    }
+  //
+  //  }
   
 }
 
@@ -174,10 +174,10 @@ public extension AGAlamofireManager {
   public func requestJSON(_ endpoint: (URLRequestConvertible & AGAlamofireRouter),
                           session: SessionIdentifier = "",
                           validator: AGAlamofireValidatable.Type? = nil,
-                          onComplete: @escaping CallbackAGAlamofireResponseJSON) {
+                          onComplete: @escaping CallbackAGDataResponseJSON) {
     if let r = AGNetworkManager.shared.reachability, r.currentReachabilityStatus == .notReachable {
       let message = r.currentReachabilityStatus
-      onComplete(AGAlamofireResponse<JSON>(data: nil, error: .reachability(message)))
+      onComplete(AGDataResponse<JSON>(data: nil, error: .reachability(message)))
     } else {
       self.json(endpoint, session: session, validator: validator) {
         onComplete($0)
@@ -187,14 +187,17 @@ public extension AGAlamofireManager {
   }
   
   fileprivate func json(_ endpoint: (URLRequestConvertible & AGAlamofireRouter),
-                               session: SessionIdentifier = "",
-                               validator: AGAlamofireValidatable.Type? = nil,
-                               onComplete: @escaping CallbackAGAlamofireResponseJSON) {
+                        session: SessionIdentifier = "",
+                        validator: AGAlamofireValidatable.Type? = nil,
+                        onComplete: @escaping CallbackAGDataResponseJSON) {
     let request = normal.request(endpoint)
     request.validate(statusCode: 200..<300)
     request.validate(contentType: ["application/json"])
     insertTask(with: session, sessionTask: request.task)
     printStart()
+    request.downloadProgress(queue: DispatchQueue.global(qos: .utility)) {
+      AGLog.info("fractionCompleted: \($0.fractionCompleted)")
+    }
     request.responseJSON {
       self.removeTask(with: session, sessionTask: request.task)
       self.printRequest(request: $0.request)
@@ -251,7 +254,7 @@ public extension AGAlamofireManager {
         
       }
       
-      onComplete(AGAlamofireResponse<JSON>(data: data, error: error))
+      onComplete(AGDataResponse<JSON>(data: data, error: error))
       
     }
   }

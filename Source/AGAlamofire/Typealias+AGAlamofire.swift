@@ -20,6 +20,7 @@ public typealias TaskIdentifier = Int
 public typealias SessionIdentifier = String
 public typealias AGURLRequestConvertible = (URLRequestConvertible & AGAlamofireRouter)
 public typealias CallbackJsonOptional = ((JSON?) -> Void)
-public typealias CallbackAGAlamofireResponseJSON = ((AGAlamofireResponse<JSON>) -> Void)
+public typealias CallbackAGDataResponseJSON = ((AGDataResponse<JSON>) -> Void)
 public typealias CallbackTaskIdentifier = ((TaskIdentifier?) -> Void)
+
 
