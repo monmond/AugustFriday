@@ -39,6 +39,14 @@
 		A42DA4132141982800F1033F /* AGDateStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4122141982800F1033F /* AGDateStyle.swift */; };
 		A42DA4152141984A00F1033F /* AGDateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4142141984A00F1033F /* AGDateConfiguration.swift */; };
 		A42DA4172141992D00F1033F /* AGRetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4162141992D00F1033F /* AGRetryHandler.swift */; };
+		A433E97A216F3EDE0068DAD9 /* AGSizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E979216F3EDE0068DAD9 /* AGSizeClass.swift */; };
+		A433E97C216F3F970068DAD9 /* AGSizeClassUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E97B216F3F970068DAD9 /* AGSizeClassUI.swift */; };
+		A433E97E216F3FAC0068DAD9 /* AGSizeClassUICollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */; };
+		A433E980216F3FBC0068DAD9 /* AGDefaultsFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */; };
+		A433E982216F3FE00068DAD9 /* AGDefaultsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */; };
+		A433E984216F405B0068DAD9 /* PanningUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E983216F405B0068DAD9 /* PanningUtil.swift */; };
+		A433E986216F40CA0068DAD9 /* ApplicationOrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E985216F40CA0068DAD9 /* ApplicationOrientationManager.swift */; };
+		A433E988216F40EB0068DAD9 /* ApplicationOrientationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */; };
 		A434A1072110141A004898DE /* UIAlertController+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A1062110141A004898DE /* UIAlertController+AG.swift */; };
 		A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10A21101855004898DE /* UITableViewCell+AG.swift */; };
 		A434A11621101855004898DE /* UICollectionView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10C21101855004898DE /* UICollectionView+AG.swift */; };
@@ -46,7 +54,7 @@
 		A434A11821101855004898DE /* UITableView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A11021101855004898DE /* UITableView+AG.swift */; };
 		A434A11921101855004898DE /* UITableViewHeaderFooterView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A11221101855004898DE /* UITableViewHeaderFooterView+AG.swift */; };
 		A434A11A21101855004898DE /* UICollectionReusableView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A11421101855004898DE /* UICollectionReusableView+AG.swift */; };
-		A434A12A21101959004898DE /* Collection+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A11E21101959004898DE /* Collection+AG.swift */; };
+		A434A12A21101959004898DE /* MutableCollection+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A11E21101959004898DE /* MutableCollection+AG.swift */; };
 		A434A12B21101959004898DE /* Bundle+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A12021101959004898DE /* Bundle+AG.swift */; };
 		A434A12C21101959004898DE /* Int+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A12221101959004898DE /* Int+AG.swift */; };
 		A434A12D21101959004898DE /* Float+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A12421101959004898DE /* Float+AG.swift */; };
@@ -58,18 +66,17 @@
 		A434A13D21101A32004898DE /* UINavigationController+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A13821101A32004898DE /* UINavigationController+AG.swift */; };
 		A434A13E21101A32004898DE /* UIView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A13A21101A32004898DE /* UIView+AG.swift */; };
 		A434A13F21101A32004898DE /* UIViewController+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A13C21101A32004898DE /* UIViewController+AG.swift */; };
-		A434A14621101A46004898DE /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14121101A46004898DE /* UIDevice.swift */; };
+		A434A14621101A46004898DE /* UIDevice+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14121101A46004898DE /* UIDevice+AG.swift */; };
 		A434A14721101A46004898DE /* UIWindow+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14321101A46004898DE /* UIWindow+AG.swift */; };
 		A434A14821101A46004898DE /* UIApplication+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14521101A46004898DE /* UIApplication+AG.swift */; };
 		A434A15821101B8F004898DE /* AGDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14D21101B8F004898DE /* AGDate.swift */; };
-		A434A15921101B8F004898DE /* AGEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14F21101B8F004898DE /* AGEnum.swift */; };
 		A434A15A21101B8F004898DE /* Typealias+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15121101B8F004898DE /* Typealias+AG.swift */; };
 		A434A15B21101B8F004898DE /* AGValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15321101B8F004898DE /* AGValidator.swift */; };
 		A434A15C21101B8F004898DE /* AGFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15421101B8F004898DE /* AGFormatter.swift */; };
 		A434A15D21101B8F004898DE /* AGLocalizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15621101B8F004898DE /* AGLocalizeManager.swift */; };
 		A434A15E21101B8F004898DE /* AGLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15721101B8F004898DE /* AGLocalize.swift */; };
 		A434A16121101BBA004898DE /* AGConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16021101BBA004898DE /* AGConfiguration.swift */; };
-		A434A19D21101EA9004898DE /* CGRect+AGSpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16421101EA9004898DE /* CGRect+AGSpinerLayer.swift */; };
+		A434A19D21101EA9004898DE /* CGRect+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16421101EA9004898DE /* CGRect+AG.swift */; };
 		A434A19E21101EA9004898DE /* AGSpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16521101EA9004898DE /* AGSpinerLayer.swift */; };
 		A434A19F21101EA9004898DE /* AGNavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */; };
 		A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16921101EA9004898DE /* AGKeyboardHelper.swift */; };
@@ -180,6 +187,14 @@
 		A42DA4122141982800F1033F /* AGDateStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDateStyle.swift; sourceTree = "<group>"; };
 		A42DA4142141984A00F1033F /* AGDateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDateConfiguration.swift; sourceTree = "<group>"; };
 		A42DA4162141992D00F1033F /* AGRetryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRetryHandler.swift; sourceTree = "<group>"; };
+		A433E979216F3EDE0068DAD9 /* AGSizeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClass.swift; sourceTree = "<group>"; };
+		A433E97B216F3F970068DAD9 /* AGSizeClassUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClassUI.swift; sourceTree = "<group>"; };
+		A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClassUICollection.swift; sourceTree = "<group>"; };
+		A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDefaultsFoundation.swift; sourceTree = "<group>"; };
+		A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDefaultsCodable.swift; sourceTree = "<group>"; };
+		A433E983216F405B0068DAD9 /* PanningUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanningUtil.swift; sourceTree = "<group>"; };
+		A433E985216F40CA0068DAD9 /* ApplicationOrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationOrientationManager.swift; sourceTree = "<group>"; };
+		A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationOrientationDependency.swift; sourceTree = "<group>"; };
 		A434A1062110141A004898DE /* UIAlertController+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+AG.swift"; sourceTree = "<group>"; };
 		A434A10A21101855004898DE /* UITableViewCell+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+AG.swift"; sourceTree = "<group>"; };
 		A434A10C21101855004898DE /* UICollectionView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+AG.swift"; sourceTree = "<group>"; };
@@ -187,7 +202,7 @@
 		A434A11021101855004898DE /* UITableView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+AG.swift"; sourceTree = "<group>"; };
 		A434A11221101855004898DE /* UITableViewHeaderFooterView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+AG.swift"; sourceTree = "<group>"; };
 		A434A11421101855004898DE /* UICollectionReusableView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+AG.swift"; sourceTree = "<group>"; };
-		A434A11E21101959004898DE /* Collection+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+AG.swift"; sourceTree = "<group>"; };
+		A434A11E21101959004898DE /* MutableCollection+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutableCollection+AG.swift"; sourceTree = "<group>"; };
 		A434A12021101959004898DE /* Bundle+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+AG.swift"; sourceTree = "<group>"; };
 		A434A12221101959004898DE /* Int+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+AG.swift"; sourceTree = "<group>"; };
 		A434A12421101959004898DE /* Float+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+AG.swift"; sourceTree = "<group>"; };
@@ -199,18 +214,17 @@
 		A434A13821101A32004898DE /* UINavigationController+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+AG.swift"; sourceTree = "<group>"; };
 		A434A13A21101A32004898DE /* UIView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AG.swift"; sourceTree = "<group>"; };
 		A434A13C21101A32004898DE /* UIViewController+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+AG.swift"; sourceTree = "<group>"; };
-		A434A14121101A46004898DE /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
+		A434A14121101A46004898DE /* UIDevice+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+AG.swift"; sourceTree = "<group>"; };
 		A434A14321101A46004898DE /* UIWindow+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+AG.swift"; sourceTree = "<group>"; };
 		A434A14521101A46004898DE /* UIApplication+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AG.swift"; sourceTree = "<group>"; };
 		A434A14D21101B8F004898DE /* AGDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDate.swift; sourceTree = "<group>"; };
-		A434A14F21101B8F004898DE /* AGEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEnum.swift; sourceTree = "<group>"; };
 		A434A15121101B8F004898DE /* Typealias+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+AG.swift"; sourceTree = "<group>"; };
 		A434A15321101B8F004898DE /* AGValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGValidator.swift; sourceTree = "<group>"; };
 		A434A15421101B8F004898DE /* AGFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGFormatter.swift; sourceTree = "<group>"; };
 		A434A15621101B8F004898DE /* AGLocalizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLocalizeManager.swift; sourceTree = "<group>"; };
 		A434A15721101B8F004898DE /* AGLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLocalize.swift; sourceTree = "<group>"; };
 		A434A16021101BBA004898DE /* AGConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGConfiguration.swift; sourceTree = "<group>"; };
-		A434A16421101EA9004898DE /* CGRect+AGSpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AGSpinerLayer.swift"; sourceTree = "<group>"; };
+		A434A16421101EA9004898DE /* CGRect+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AG.swift"; sourceTree = "<group>"; };
 		A434A16521101EA9004898DE /* AGSpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGSpinerLayer.swift; sourceTree = "<group>"; };
 		A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationBarProtocol.swift; sourceTree = "<group>"; };
 		A434A16921101EA9004898DE /* AGKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGKeyboardHelper.swift; sourceTree = "<group>"; };
@@ -248,7 +262,7 @@
 		A434A19A21101EA9004898DE /* AGLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGLoadingView.xib; sourceTree = "<group>"; };
 		A434A19C21101EA9004898DE /* AGInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGInstantiatable.swift; sourceTree = "<group>"; };
 		A4354E94214289A100093894 /* AvatarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRouter.swift; sourceTree = "<group>"; };
-		A44A431020E5E34A003F56E6 /* UIImage+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+AG.swift"; path = "Extensions/UIKit/UIImage/UIImage+AG.swift"; sourceTree = "<group>"; };
+		A44A431020E5E34A003F56E6 /* UIImage+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AG.swift"; sourceTree = "<group>"; };
 		A44DBECB211AA6DC0002D75B /* AGStateViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGStateViewProtocol.swift; sourceTree = "<group>"; };
 		A477729721172F7E00D82F7D /* AGSafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSafeArea.swift; sourceTree = "<group>"; };
 		A479EB4E213E38A900A4F143 /* AGVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGVC.swift; sourceTree = "<group>"; };
@@ -315,14 +329,6 @@
 				A5A4B23F8CF11F08AA61D4A3 /* Pods-AugustFriday.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		A418518521241E1000765969 /* URL */ = {
-			isa = PBXGroup;
-			children = (
-				A418518621241E1D00765969 /* URL+AG.swift */,
-			);
-			path = URL;
 			sourceTree = "<group>";
 		};
 		A420A29E2148CF4E0027AAB4 /* Database */ = {
@@ -525,14 +531,135 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		A434A101211004E8004898DE /* AGClasses */ = {
+		A433E967216F38BA0068DAD9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A434A15F21101BBA004898DE /* Main */,
+				A433E973216F3B670068DAD9 /* Asset */,
+				A433E969216F38F50068DAD9 /* Value */,
+				A433E968216F38C90068DAD9 /* Layout */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A433E968216F38C90068DAD9 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				A434A18521101EA9004898DE /* AGCollection */,
+				A434A18C21101EA9004898DE /* AGButton */,
+				A434A19021101EA9004898DE /* AGView */,
+				A434A19B21101EA9004898DE /* AGStoryboard */,
+				A434A16321101EA9004898DE /* AGSpinerLayer */,
+				A434A16621101EA9004898DE /* AGViewController */,
+				A434A16E21101EA9004898DE /* AGIntrinsicTableView */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		A433E969216F38F50068DAD9 /* Value */ = {
+			isa = PBXGroup;
+			children = (
+				A434A17021101EA9004898DE /* AGAsset */,
+				A434A17621101EA9004898DE /* AGColor */,
+				A434A17A21101EA9004898DE /* AGNib */,
+				A434A18121101EA9004898DE /* AGFont */,
+			);
+			path = Value;
+			sourceTree = "<group>";
+		};
+		A433E96A216F39890068DAD9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A433E974216F3DE40068DAD9 /* NeedRemove */,
+				A433E989216F42F80068DAD9 /* Misc */,
+				A434A102211011A9004898DE /* Extensions */,
+				A433E970216F39C70068DAD9 /* Builders */,
+				A433E96F216F39BF0068DAD9 /* Managers */,
+				A433E96E216F39B70068DAD9 /* Protocols */,
+				A433E96D216F39AA0068DAD9 /* Utilities */,
+				A433E96C216F399F0068DAD9 /* Helpers */,
+				A433E96B216F398F0068DAD9 /* Constraints */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A433E96B216F398F0068DAD9 /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constraints;
+			sourceTree = "<group>";
+		};
+		A433E96C216F399F0068DAD9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A433E96D216F39AA0068DAD9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A433E96E216F39B70068DAD9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A433E96F216F39BF0068DAD9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A433E985216F40CA0068DAD9 /* ApplicationOrientationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A433E970216F39C70068DAD9 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		A433E973216F3B670068DAD9 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		A433E974216F3DE40068DAD9 /* NeedRemove */ = {
+			isa = PBXGroup;
+			children = (
+				A477729721172F7E00D82F7D /* AGSafeArea.swift */,
+				A434A17D21101EA9004898DE /* AGFadeTransition.swift */,
+				A434A17E21101EA9004898DE /* AGTransitionViewController.swift */,
+			);
+			path = NeedRemove;
+			sourceTree = "<group>";
+		};
+		A433E989216F42F80068DAD9 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
 				A434A16221101EA9004898DE /* UIKit */,
 				A434A14B21101B8F004898DE /* Foundation */,
 			);
-			path = AGClasses;
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		A434A101211004E8004898DE /* AG */ = {
+			isa = PBXGroup;
+			children = (
+				A433E96A216F39890068DAD9 /* Classes */,
+				A433E967216F38BA0068DAD9 /* Resources */,
+				A434A15F21101BBA004898DE /* Main */,
+			);
+			path = AG;
 			sourceTree = "<group>";
 		};
 		A434A102211011A9004898DE /* Extensions */ = {
@@ -547,208 +674,41 @@
 		A434A1032110127E004898DE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A434A13421101997004898DE /* UIButton */,
-				A434A13121101992004898DE /* CGFloat */,
-				A434A10821101855004898DE /* UIList */,
-				A45C0258210D4DB800B1C907 /* UIAlertController */,
-				A44A430F20E5E33F003F56E6 /* UIImage */,
-				A434A13721101A32004898DE /* UINavigationController */,
-				A434A13921101A32004898DE /* UIView */,
-				A434A13B21101A32004898DE /* UIViewController */,
-				A434A14421101A46004898DE /* UIApplication */,
-				A434A14021101A46004898DE /* UIDevice */,
-				A434A14221101A46004898DE /* UIWindow */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		A434A10821101855004898DE /* UIList */ = {
-			isa = PBXGroup;
-			children = (
-				A434A10921101855004898DE /* UITableViewCell */,
-				A434A10B21101855004898DE /* UICollectionView */,
-				A434A10D21101855004898DE /* UICollectionViewCell */,
-				A434A10F21101855004898DE /* UITableView */,
-				A434A11121101855004898DE /* UITableViewHeaderFooterView */,
-				A434A11321101855004898DE /* UICollectionReusableView */,
-			);
-			path = UIList;
-			sourceTree = "<group>";
-		};
-		A434A10921101855004898DE /* UITableViewCell */ = {
-			isa = PBXGroup;
-			children = (
+				A434A13521101997004898DE /* UIButton+AG.swift */,
+				A434A16421101EA9004898DE /* CGRect+AG.swift */,
+				A434A13221101992004898DE /* CGFloat+AG.swift */,
+				A434A1062110141A004898DE /* UIAlertController+AG.swift */,
+				A44A431020E5E34A003F56E6 /* UIImage+AG.swift */,
+				A434A13821101A32004898DE /* UINavigationController+AG.swift */,
+				A434A13A21101A32004898DE /* UIView+AG.swift */,
+				A434A13C21101A32004898DE /* UIViewController+AG.swift */,
+				A434A14521101A46004898DE /* UIApplication+AG.swift */,
+				A434A14121101A46004898DE /* UIDevice+AG.swift */,
+				A434A14321101A46004898DE /* UIWindow+AG.swift */,
 				A434A10A21101855004898DE /* UITableViewCell+AG.swift */,
-			);
-			path = UITableViewCell;
-			sourceTree = "<group>";
-		};
-		A434A10B21101855004898DE /* UICollectionView */ = {
-			isa = PBXGroup;
-			children = (
 				A434A10C21101855004898DE /* UICollectionView+AG.swift */,
-			);
-			path = UICollectionView;
-			sourceTree = "<group>";
-		};
-		A434A10D21101855004898DE /* UICollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
 				A434A10E21101855004898DE /* UICollectionViewCell+AG.swift */,
-			);
-			path = UICollectionViewCell;
-			sourceTree = "<group>";
-		};
-		A434A10F21101855004898DE /* UITableView */ = {
-			isa = PBXGroup;
-			children = (
 				A434A11021101855004898DE /* UITableView+AG.swift */,
-			);
-			path = UITableView;
-			sourceTree = "<group>";
-		};
-		A434A11121101855004898DE /* UITableViewHeaderFooterView */ = {
-			isa = PBXGroup;
-			children = (
 				A434A11221101855004898DE /* UITableViewHeaderFooterView+AG.swift */,
-			);
-			path = UITableViewHeaderFooterView;
-			sourceTree = "<group>";
-		};
-		A434A11321101855004898DE /* UICollectionReusableView */ = {
-			isa = PBXGroup;
-			children = (
 				A434A11421101855004898DE /* UICollectionReusableView+AG.swift */,
 			);
-			path = UICollectionReusableView;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		A434A11C21101959004898DE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				A4BB9BFC2154CC3400EAEBAF /* CATransition */,
-				A418518521241E1000765969 /* URL */,
 				A434A12521101959004898DE /* NotificationName+AG.swift */,
-				A434A11D21101959004898DE /* Collection */,
-				A434A11F21101959004898DE /* Bundle */,
-				A434A12121101959004898DE /* Int */,
-				A434A12321101959004898DE /* Float */,
-				A434A12621101959004898DE /* String */,
-				A434A12821101959004898DE /* Error */,
+				A434A12021101959004898DE /* Bundle+AG.swift */,
+				A434A12221101959004898DE /* Int+AG.swift */,
+				A434A12421101959004898DE /* Float+AG.swift */,
+				A434A12721101959004898DE /* String+AG.swift */,
+				A434A12921101959004898DE /* Error+AG.swift */,
+				A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */,
+				A418518621241E1D00765969 /* URL+AG.swift */,
+				A434A11E21101959004898DE /* MutableCollection+AG.swift */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		A434A11D21101959004898DE /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				A434A11E21101959004898DE /* Collection+AG.swift */,
-			);
-			path = Collection;
-			sourceTree = "<group>";
-		};
-		A434A11F21101959004898DE /* Bundle */ = {
-			isa = PBXGroup;
-			children = (
-				A434A12021101959004898DE /* Bundle+AG.swift */,
-			);
-			path = Bundle;
-			sourceTree = "<group>";
-		};
-		A434A12121101959004898DE /* Int */ = {
-			isa = PBXGroup;
-			children = (
-				A434A12221101959004898DE /* Int+AG.swift */,
-			);
-			path = Int;
-			sourceTree = "<group>";
-		};
-		A434A12321101959004898DE /* Float */ = {
-			isa = PBXGroup;
-			children = (
-				A434A12421101959004898DE /* Float+AG.swift */,
-			);
-			path = Float;
-			sourceTree = "<group>";
-		};
-		A434A12621101959004898DE /* String */ = {
-			isa = PBXGroup;
-			children = (
-				A434A12721101959004898DE /* String+AG.swift */,
-			);
-			path = String;
-			sourceTree = "<group>";
-		};
-		A434A12821101959004898DE /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				A434A12921101959004898DE /* Error+AG.swift */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
-		A434A13121101992004898DE /* CGFloat */ = {
-			isa = PBXGroup;
-			children = (
-				A434A13221101992004898DE /* CGFloat+AG.swift */,
-			);
-			path = CGFloat;
-			sourceTree = "<group>";
-		};
-		A434A13421101997004898DE /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				A434A13521101997004898DE /* UIButton+AG.swift */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		A434A13721101A32004898DE /* UINavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				A434A13821101A32004898DE /* UINavigationController+AG.swift */,
-			);
-			path = UINavigationController;
-			sourceTree = "<group>";
-		};
-		A434A13921101A32004898DE /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				A434A13A21101A32004898DE /* UIView+AG.swift */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		A434A13B21101A32004898DE /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				A434A13C21101A32004898DE /* UIViewController+AG.swift */,
-			);
-			path = UIViewController;
-			sourceTree = "<group>";
-		};
-		A434A14021101A46004898DE /* UIDevice */ = {
-			isa = PBXGroup;
-			children = (
-				A434A14121101A46004898DE /* UIDevice.swift */,
-			);
-			path = UIDevice;
-			sourceTree = "<group>";
-		};
-		A434A14221101A46004898DE /* UIWindow */ = {
-			isa = PBXGroup;
-			children = (
-				A434A14321101A46004898DE /* UIWindow+AG.swift */,
-			);
-			path = UIWindow;
-			sourceTree = "<group>";
-		};
-		A434A14421101A46004898DE /* UIApplication */ = {
-			isa = PBXGroup;
-			children = (
-				A434A14521101A46004898DE /* UIApplication+AG.swift */,
-			);
-			path = UIApplication;
 			sourceTree = "<group>";
 		};
 		A434A14B21101B8F004898DE /* Foundation */ = {
@@ -766,11 +726,12 @@
 				A434A14D21101B8F004898DE /* AGDate.swift */,
 				A42DA4142141984A00F1033F /* AGDateConfiguration.swift */,
 				A42DA4122141982800F1033F /* AGDateStyle.swift */,
-				A434A14F21101B8F004898DE /* AGEnum.swift */,
 				A434A15121101B8F004898DE /* Typealias+AG.swift */,
 				A434A15321101B8F004898DE /* AGValidator.swift */,
 				A434A15421101B8F004898DE /* AGFormatter.swift */,
 				A4BB9C012154E76700EAEBAF /* AGDefaults.swift */,
+				A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */,
+				A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -778,6 +739,7 @@
 		A434A15F21101BBA004898DE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A434A17521101EA9004898DE /* AGApplicationRouter.swift */,
 				A434A16021101BBA004898DE /* AGConfiguration.swift */,
 				A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */,
 				A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */,
@@ -789,20 +751,12 @@
 		A434A16221101EA9004898DE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A477729621172F7000D82F7D /* AGSafeArea */,
-				A434A16321101EA9004898DE /* AGSpinerLayer */,
-				A434A16621101EA9004898DE /* AGViewController */,
-				A434A16E21101EA9004898DE /* AGIntrinsicTableView */,
-				A434A17021101EA9004898DE /* AGAsset */,
-				A434A17421101EA9004898DE /* AGApplication */,
-				A434A17621101EA9004898DE /* AGColor */,
-				A434A17A21101EA9004898DE /* AGNib */,
-				A434A17C21101EA9004898DE /* AGAnimation */,
-				A434A18121101EA9004898DE /* AGFont */,
-				A434A18521101EA9004898DE /* AGCollection */,
-				A434A18C21101EA9004898DE /* AGButton */,
-				A434A19021101EA9004898DE /* AGView */,
-				A434A19B21101EA9004898DE /* AGStoryboard */,
+				A433E979216F3EDE0068DAD9 /* AGSizeClass.swift */,
+				A433E97B216F3F970068DAD9 /* AGSizeClassUI.swift */,
+				A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */,
+				A434A17F21101EA9004898DE /* CAAnimation+Constraint+AG.swift */,
+				A434A18021101EA9004898DE /* AGViewAnimation.swift */,
+				A433E983216F405B0068DAD9 /* PanningUtil.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -810,7 +764,6 @@
 		A434A16321101EA9004898DE /* AGSpinerLayer */ = {
 			isa = PBXGroup;
 			children = (
-				A434A16421101EA9004898DE /* CGRect+AGSpinerLayer.swift */,
 				A434A16521101EA9004898DE /* AGSpinerLayer.swift */,
 			);
 			path = AGSpinerLayer;
@@ -862,14 +815,6 @@
 			path = AGAsset;
 			sourceTree = "<group>";
 		};
-		A434A17421101EA9004898DE /* AGApplication */ = {
-			isa = PBXGroup;
-			children = (
-				A434A17521101EA9004898DE /* AGApplicationRouter.swift */,
-			);
-			path = AGApplication;
-			sourceTree = "<group>";
-		};
 		A434A17621101EA9004898DE /* AGColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -888,17 +833,6 @@
 			path = AGNib;
 			sourceTree = "<group>";
 		};
-		A434A17C21101EA9004898DE /* AGAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				A434A17D21101EA9004898DE /* AGFadeTransition.swift */,
-				A434A17E21101EA9004898DE /* AGTransitionViewController.swift */,
-				A434A17F21101EA9004898DE /* CAAnimation+Constraint+AG.swift */,
-				A434A18021101EA9004898DE /* AGViewAnimation.swift */,
-			);
-			path = AGAnimation;
-			sourceTree = "<group>";
-		};
 		A434A18121101EA9004898DE /* AGFont */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,28 +846,12 @@
 		A434A18521101EA9004898DE /* AGCollection */ = {
 			isa = PBXGroup;
 			children = (
-				A434A18621101EA9004898DE /* AGTableCell */,
-				A434A18921101EA9004898DE /* AGCollectionCell */,
-			);
-			path = AGCollection;
-			sourceTree = "<group>";
-		};
-		A434A18621101EA9004898DE /* AGTableCell */ = {
-			isa = PBXGroup;
-			children = (
 				A434A18721101EA9004898DE /* AGTableViewHeaderFooterView.swift */,
 				A434A18821101EA9004898DE /* AGTableCell.swift */,
-			);
-			path = AGTableCell;
-			sourceTree = "<group>";
-		};
-		A434A18921101EA9004898DE /* AGCollectionCell */ = {
-			isa = PBXGroup;
-			children = (
 				A434A18A21101EA9004898DE /* AGCollectionReusableView.swift */,
 				A434A18B21101EA9004898DE /* AGCollectionCell.swift */,
 			);
-			path = AGCollectionCell;
+			path = AGCollection;
 			sourceTree = "<group>";
 		};
 		A434A18C21101EA9004898DE /* AGButton */ = {
@@ -949,49 +867,17 @@
 		A434A19021101EA9004898DE /* AGView */ = {
 			isa = PBXGroup;
 			children = (
-				A4B61D6821185E9F003F98FF /* AGView */,
-				A4B61D6521185C98003F98FF /* AGBouncingView */,
-				A4B61D612118396B003F98FF /* AGNavigationView */,
-				A434A19121101EA9004898DE /* AGShadowable */,
-				A434A19321101EA9004898DE /* AGStateView */,
-				A434A19621101EA9004898DE /* AGRadiusable */,
-				A434A19821101EA9004898DE /* AGLoadingView */,
-			);
-			path = AGView;
-			sourceTree = "<group>";
-		};
-		A434A19121101EA9004898DE /* AGShadowable */ = {
-			isa = PBXGroup;
-			children = (
+				A4B61D6921185EA8003F98FF /* AGView.swift */,
+				A4B61D6621185CA6003F98FF /* AGBouncingView.swift */,
+				A4B61D6221183979003F98FF /* AGNavigationView.swift */,
 				A434A19221101EA9004898DE /* AGShadowable.swift */,
-			);
-			path = AGShadowable;
-			sourceTree = "<group>";
-		};
-		A434A19321101EA9004898DE /* AGStateView */ = {
-			isa = PBXGroup;
-			children = (
 				A434A19421101EA9004898DE /* AGStateView.swift */,
 				A434A19521101EA9004898DE /* AGStateView.xib */,
-			);
-			path = AGStateView;
-			sourceTree = "<group>";
-		};
-		A434A19621101EA9004898DE /* AGRadiusable */ = {
-			isa = PBXGroup;
-			children = (
 				A434A19721101EA9004898DE /* AGRadiusable.swift */,
-			);
-			path = AGRadiusable;
-			sourceTree = "<group>";
-		};
-		A434A19821101EA9004898DE /* AGLoadingView */ = {
-			isa = PBXGroup;
-			children = (
 				A434A19921101EA9004898DE /* AGLoadingView.swift */,
 				A434A19A21101EA9004898DE /* AGLoadingView.xib */,
 			);
-			path = AGLoadingView;
+			path = AGView;
 			sourceTree = "<group>";
 		};
 		A434A19B21101EA9004898DE /* AGStoryboard */ = {
@@ -1011,15 +897,6 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		A44A430F20E5E33F003F56E6 /* UIImage */ = {
-			isa = PBXGroup;
-			children = (
-				A44A431020E5E34A003F56E6 /* UIImage+AG.swift */,
-			);
-			name = UIImage;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		A44DBECD211AA7070002D75B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,14 +908,6 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		A45C0258210D4DB800B1C907 /* UIAlertController */ = {
-			isa = PBXGroup;
-			children = (
-				A434A1062110141A004898DE /* UIAlertController+AG.swift */,
-			);
-			path = UIAlertController;
-			sourceTree = "<group>";
-		};
 		A46D63422140D06600E7D26E /* AGFirebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -1047,14 +916,6 @@
 				A42DA3F321417EB300F1033F /* Core */,
 			);
 			path = AGFirebase;
-			sourceTree = "<group>";
-		};
-		A477729621172F7000D82F7D /* AGSafeArea */ = {
-			isa = PBXGroup;
-			children = (
-				A477729721172F7E00D82F7D /* AGSafeArea.swift */,
-			);
-			path = AGSafeArea;
 			sourceTree = "<group>";
 		};
 		A479EB4C213E389D00A4F143 /* AGVC */ = {
@@ -1100,9 +961,8 @@
 			isa = PBXGroup;
 			children = (
 				A42DA3E521417C2300F1033F /* AGAlamofire */,
-				A434A101211004E8004898DE /* AGClasses */,
+				A434A101211004E8004898DE /* AG */,
 				A46D63422140D06600E7D26E /* AGFirebase */,
-				A434A102211011A9004898DE /* Extensions */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1113,38 +973,6 @@
 				A48A3400214B681F00B220A9 /* AGHeaderReusable.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		A4B61D612118396B003F98FF /* AGNavigationView */ = {
-			isa = PBXGroup;
-			children = (
-				A4B61D6221183979003F98FF /* AGNavigationView.swift */,
-			);
-			path = AGNavigationView;
-			sourceTree = "<group>";
-		};
-		A4B61D6521185C98003F98FF /* AGBouncingView */ = {
-			isa = PBXGroup;
-			children = (
-				A4B61D6621185CA6003F98FF /* AGBouncingView.swift */,
-			);
-			path = AGBouncingView;
-			sourceTree = "<group>";
-		};
-		A4B61D6821185E9F003F98FF /* AGView */ = {
-			isa = PBXGroup;
-			children = (
-				A4B61D6921185EA8003F98FF /* AGView.swift */,
-			);
-			path = AGView;
-			sourceTree = "<group>";
-		};
-		A4BB9BFC2154CC3400EAEBAF /* CATransition */ = {
-			isa = PBXGroup;
-			children = (
-				A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */,
-			);
-			path = CATransition;
 			sourceTree = "<group>";
 		};
 		A4EB81FE2141286100BBAC2D /* Helper */ = {
@@ -1376,15 +1204,18 @@
 				A434A1B321101EA9004898DE /* AGFont.swift in Sources */,
 				A48C2F87214C2FA500778557 /* UserPet.swift in Sources */,
 				A479EB54213E4B3200A4F143 /* AGApplicationBlurable.swift in Sources */,
+				A433E97A216F3EDE0068DAD9 /* AGSizeClass.swift in Sources */,
 				A434A1072110141A004898DE /* UIAlertController+AG.swift in Sources */,
 				A4BB9C022154E76700EAEBAF /* AGDefaults.swift in Sources */,
 				A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */,
 				A434A1A921101EA9004898DE /* AGColor.swift in Sources */,
 				A48A3401214B681F00B220A9 /* AGHeaderReusable.swift in Sources */,
+				A433E97C216F3F970068DAD9 /* AGSizeClassUI.swift in Sources */,
 				A42DA4132141982800F1033F /* AGDateStyle.swift in Sources */,
+				A433E986216F40CA0068DAD9 /* ApplicationOrientationManager.swift in Sources */,
 				A434A12E21101959004898DE /* NotificationName+AG.swift in Sources */,
 				A42DA4072141884100F1033F /* AGModelHelper.swift in Sources */,
-				A434A12A21101959004898DE /* Collection+AG.swift in Sources */,
+				A434A12A21101959004898DE /* MutableCollection+AG.swift in Sources */,
 				A42DA3FB2141805600F1033F /* AGAlamofireResponseResult.swift in Sources */,
 				A434A11921101855004898DE /* UITableViewHeaderFooterView+AG.swift in Sources */,
 				A4EB821021413E4900BBAC2D /* AGReachability.swift in Sources */,
@@ -1397,7 +1228,6 @@
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
 				A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */,
 				A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */,
-				A434A15921101B8F004898DE /* AGEnum.swift in Sources */,
 				A434A11A21101855004898DE /* UICollectionReusableView+AG.swift in Sources */,
 				A48A33FB214B64AD00B220A9 /* FirebaseViewConfiguration.swift in Sources */,
 				A434A1AD21101EA9004898DE /* AGFadeTransition.swift in Sources */,
@@ -1408,10 +1238,11 @@
 				A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */,
 				A4C0C258213E7E6E00288AFB /* AGApplicationSetup.swift in Sources */,
 				A4B61D6321183979003F98FF /* AGNavigationView.swift in Sources */,
+				A433E982216F3FE00068DAD9 /* AGDefaultsCodable.swift in Sources */,
 				A434A12B21101959004898DE /* Bundle+AG.swift in Sources */,
 				A42D898F213D9BDF002A7E01 /* ApplicationSetup.swift in Sources */,
 				A434A1BA21101EA9004898DE /* BaseButton.swift in Sources */,
-				A434A19D21101EA9004898DE /* CGRect+AGSpinerLayer.swift in Sources */,
+				A434A19D21101EA9004898DE /* CGRect+AG.swift in Sources */,
 				A434A14821101A46004898DE /* UIApplication+AG.swift in Sources */,
 				A434A13F21101A32004898DE /* UIViewController+AG.swift in Sources */,
 				A434A1A121101EA9004898DE /* AGStateViewManager.swift in Sources */,
@@ -1433,7 +1264,7 @@
 				A434A13D21101A32004898DE /* UINavigationController+AG.swift in Sources */,
 				A4F3EEE121480753009CEFF5 /* FirebaseVC.swift in Sources */,
 				A427F523214AAD2A007584D6 /* Pet.swift in Sources */,
-				A434A14621101A46004898DE /* UIDevice.swift in Sources */,
+				A434A14621101A46004898DE /* UIDevice+AG.swift in Sources */,
 				A4F3EEE321481A80009CEFF5 /* FirebaseViewWorker.swift in Sources */,
 				A4F3EEE621481C5C009CEFF5 /* User.swift in Sources */,
 				A434A1C121101EA9004898DE /* AGInstantiatable.swift in Sources */,
@@ -1445,6 +1276,7 @@
 				A42D8996213DA480002A7E01 /* AGLog.swift in Sources */,
 				A4354E95214289A100093894 /* AvatarRouter.swift in Sources */,
 				A434A1B121101EA9004898DE /* UIFont+AGAsset.swift in Sources */,
+				A433E988216F40EB0068DAD9 /* ApplicationOrientationDependency.swift in Sources */,
 				A434A13621101997004898DE /* UIButton+AG.swift in Sources */,
 				A4B61D6A21185EA8003F98FF /* AGView.swift in Sources */,
 				A44A431120E5E34A003F56E6 /* UIImage+AG.swift in Sources */,
@@ -1455,10 +1287,13 @@
 				A434A1AF21101EA9004898DE /* CAAnimation+Constraint+AG.swift in Sources */,
 				A434A1B921101EA9004898DE /* UIButton+AGButton.swift in Sources */,
 				A41C2D4C2115AAF800EA8282 /* AGKeyboardProtocol.swift in Sources */,
+				A433E984216F405B0068DAD9 /* PanningUtil.swift in Sources */,
+				A433E980216F3FBC0068DAD9 /* AGDefaultsFoundation.swift in Sources */,
 				A434A11821101855004898DE /* UITableView+AG.swift in Sources */,
 				A434A1A421101EA9004898DE /* AGIntrinsicTableView.swift in Sources */,
 				A4EB820D21413DF600BBAC2D /* AGError.swift in Sources */,
 				A4B457E0213E9B3A005A7783 /* AGVCEventable.swift in Sources */,
+				A433E97E216F3FAC0068DAD9 /* AGSizeClassUICollection.swift in Sources */,
 				A42DA3FE2141838600F1033F /* AGNetworkManager.swift in Sources */,
 				A434A1A721101EA9004898DE /* UIImage+AGAsset.swift in Sources */,
 				A434A1A621101EA9004898DE /* BaseAsset.swift in Sources */,

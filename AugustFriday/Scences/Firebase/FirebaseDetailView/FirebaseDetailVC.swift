@@ -69,7 +69,7 @@ class FirebaseDetailVC: UIViewController {
   }
   
   struct Display {
-    enum Action: String, AGEnum {
+    enum Action: String, CaseIterable {
       case user
       case pet
     }

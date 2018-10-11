@@ -51,9 +51,9 @@ class AlamofireVC: AGVC {
   
   
   //MARK: - Storage
-  var bm_actions: [AlamofireAction] = AlamofireAction.allValues
+  var bm_actions: [AlamofireAction] = AlamofireAction.allCases
   
-  enum AlamofireAction: String, AGEnum {
+  enum AlamofireAction: String, CaseIterable {
     case fetchTest
     case b
   }

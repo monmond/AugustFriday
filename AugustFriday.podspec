@@ -91,8 +91,8 @@ str_agf = "#{str_source}/AGFirebase"
 str_agf_core = "#{str_agf}/Core"
 str_agf_messagging = "#{str_agf}/Messagging"
 
-# AGClasses
-str_agc = "#{str_source}/AGClasses"
+# AG
+str_agc = "#{str_source}/AG"
 str_agc_main = "#{str_agc}/Main"
 str_agc_uikit = "#{str_agc}/UIKit"
 str_agc_foundation = "#{str_agc}/Foundation"
@@ -145,8 +145,8 @@ s.subspec 'Core' do |c|
 	c.requires_arc = true
 	c.dependency 'NVActivityIndicatorView', '~> 4.0'
 
-	# AGClasses
-	c.subspec 'AGClasses' do |agc|
+	# AG
+	c.subspec 'AG' do |agc|
 		agc.source_files = PodUtility.mapSwiftFiles(str_agc, 0)
 
 		# Main

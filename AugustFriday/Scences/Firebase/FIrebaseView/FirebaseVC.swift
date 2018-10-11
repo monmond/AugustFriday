@@ -54,19 +54,19 @@ class FirebaseVC: AGVC, FirebaseViewConfigurationDependency {
   
   //MARK: - Storage
   var vm_select: [Select] = {
-    return Select.Action.allValues.map { Select(name: $0, detail: nil) }
+    return Select.Action.allCases.map { Select(name: $0, detail: nil) }
   }()
-  var vm_user: [UserAction] = UserAction.allValues
-  var vm_pet: [PetAction] = PetAction.allValues
-  var vm_userpet: [UserPetAction] = UserPetAction.allValues
+  var vm_user: [UserAction] = UserAction.allCases
+  var vm_pet: [PetAction] = PetAction.allCases
+  var vm_userpet: [UserPetAction] = UserPetAction.allCases
   var vm_all: ViewModel = {
-    return ViewModel(displayed: ViewModel.Action.allValues.map { ViewModel.ActionItem(name: $0, isCollpase: false) })
+    return ViewModel(displayed: ViewModel.Action.allCases.map { ViewModel.ActionItem(name: $0, isCollpase: false) })
   }()
   
   
   struct ViewModel {
     
-    enum Action: String, AGEnum {
+    enum Action: String, CaseIterable {
       case selectAction
       case userAction
       case petAction
@@ -85,7 +85,7 @@ class FirebaseVC: AGVC, FirebaseViewConfigurationDependency {
   
   struct Select {
     
-    enum Action: String, AGEnum {
+    enum Action: String, CaseIterable {
       case selectUser
       case selectPet
     }
@@ -95,7 +95,7 @@ class FirebaseVC: AGVC, FirebaseViewConfigurationDependency {
     
   }
   
-  enum UserAction: String, AGEnum {
+  enum UserAction: String, CaseIterable {
     case fetchUser
     case fetchUserById
     case insertUser
@@ -103,7 +103,7 @@ class FirebaseVC: AGVC, FirebaseViewConfigurationDependency {
     case deleteUser
   }
   
-  enum PetAction: String, AGEnum {
+  enum PetAction: String, CaseIterable {
     case fetchPet
     case fetchPetById
     case insertPet
@@ -111,7 +111,7 @@ class FirebaseVC: AGVC, FirebaseViewConfigurationDependency {
     case deletePet
   }
   
-  enum UserPetAction: String, AGEnum {
+  enum UserPetAction: String, CaseIterable {
     case fetchUserPet
     case insertUserPet
     case deleteUserPet
