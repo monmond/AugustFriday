@@ -92,16 +92,10 @@ str_agf_core = "#{str_agf}/Core"
 str_agf_messagging = "#{str_agf}/Messagging"
 
 # AG
-str_agc = "#{str_source}/AG"
-str_agc_main = "#{str_agc}/Main"
-str_agc_uikit = "#{str_agc}/UIKit"
-str_agc_foundation = "#{str_agc}/Foundation"
-
-# Extensions
-str_ext = "#{str_source}/Extensions"
-str_ext_uikit = "#{str_ext}/UIKit"
-str_ext_foundation = "#{str_ext}/Foundation"
-
+str_ag = "#{str_source}/AG"
+str_ag_classes = "#{str_ag}/Classes"
+str_ag_resources = "#{str_ag}/Resources"
+str_ag_main = "#{str_ag}/Main"
 
 
 # Alamofire
@@ -118,7 +112,7 @@ end
 # Firebase
 s.subspec 'Firebase' do |c|
 	c.frameworks = 'UIKit', 'Firebase'
-	c.source_files = PodUtility.mapSwiftFiles(str_agf_core, 2)
+	c.source_files = PodUtility.mapSwiftFiles(str_agf_core, 1)
 	c.dependency 'AugustFriday/Core'
 	c.dependency 'Firebase/Core', '~> 5.0'
 
@@ -139,56 +133,37 @@ s.subspec 'Core' do |c|
 	c.source_files = PodUtility.mapSwiftFiles(str_source, 0)
 	c.exclude_files = "Source/Exclude"
 	# PodUtility.mapResourceFiles(str_source, 0) may crash app
-	c.resource_bundle = {
-		'AugustFriday' => PodUtility.mapResourceFiles(str_source, 0)
-	}
+	# c.resource_bundle = {
+	# 	'AugustFriday' => PodUtility.mapResourceFiles(str_source, 0)
+	# }
 	c.requires_arc = true
 	c.dependency 'NVActivityIndicatorView', '~> 4.0'
 
 	# AG
 	c.subspec 'AG' do |agc|
-		agc.source_files = PodUtility.mapSwiftFiles(str_agc, 0)
+		agc.source_files = PodUtility.mapSwiftFiles(str_ag, 0)
 
-		# Main
-		agc.subspec 'Main' do |m|
-			m.source_files = PodUtility.mapSwiftFiles(str_agc_main, 2)
-			
+		# Classes
+		agc.subspec 'Classes' do |fd|
+			fd.source_files = PodUtility.mapSwiftFiles(str_ag_classes, 4)
+
 		end
 
-		# UIKit
-		agc.subspec 'UIKit' do |ui|
-			ui.source_files = PodUtility.mapSwiftFiles(str_agc_uikit, 2)
+		# Resources
+		agc.subspec 'Resources' do |ui|
+			ui.source_files = PodUtility.mapSwiftFiles(str_ag_resources, 4)
 			c.resource_bundle = {
-				'AugustFriday' => PodUtility.mapSBFiles(str_agc_uikit, 2)
+				'AugustFriday' => PodUtility.mapResourceFiles(str_ag_resources, 4)
 			}
 
 		end
 
-		# Foundation
-		agc.subspec 'Foundation' do |fd|
-			fd.source_files = PodUtility.mapSwiftFiles(str_agc_foundation, 2)
-
+		# Main
+		agc.subspec 'Main' do |m|
+			m.source_files = PodUtility.mapSwiftFiles(str_ag_main, 2)
+			
 		end
 
-	end
-
-
-
-	# Extensions
-	c.subspec 'Extensions' do |ext|
-		ext.source_files = PodUtility.mapSwiftFiles(str_ext, 0)
-
-		# UIKit
-		ext.subspec 'UIKit' do |ui|
-			ui.source_files = PodUtility.mapSwiftFiles(str_ext_uikit, 2)
-
-		end
-
-		# Foundation
-		ext.subspec 'Foundation' do |fd|
-			fd.source_files = PodUtility.mapSwiftFiles(str_ext_foundation, 2)
-
-		end
 
 	end
 

@@ -558,10 +558,16 @@
 		A433E969216F38F50068DAD9 /* Value */ = {
 			isa = PBXGroup;
 			children = (
-				A434A17021101EA9004898DE /* AGAsset */,
-				A434A17621101EA9004898DE /* AGColor */,
-				A434A17A21101EA9004898DE /* AGNib */,
-				A434A18121101EA9004898DE /* AGFont */,
+				A434A17121101EA9004898DE /* AGAsset.swift */,
+				A434A17221101EA9004898DE /* BaseAsset.swift */,
+				A434A17321101EA9004898DE /* UIImage+AGAsset.swift */,
+				A434A17721101EA9004898DE /* AGColor.swift */,
+				A434A17821101EA9004898DE /* BaseColor.swift */,
+				A434A17921101EA9004898DE /* UIColor+AGAsset.swift */,
+				A434A17B21101EA9004898DE /* AGReusable.swift */,
+				A434A18221101EA9004898DE /* UIFont+AGAsset.swift */,
+				A434A18321101EA9004898DE /* BaseFont.swift */,
+				A434A18421101EA9004898DE /* AGFont.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -803,44 +809,6 @@
 				A434A16F21101EA9004898DE /* AGIntrinsicTableView.swift */,
 			);
 			path = AGIntrinsicTableView;
-			sourceTree = "<group>";
-		};
-		A434A17021101EA9004898DE /* AGAsset */ = {
-			isa = PBXGroup;
-			children = (
-				A434A17121101EA9004898DE /* AGAsset.swift */,
-				A434A17221101EA9004898DE /* BaseAsset.swift */,
-				A434A17321101EA9004898DE /* UIImage+AGAsset.swift */,
-			);
-			path = AGAsset;
-			sourceTree = "<group>";
-		};
-		A434A17621101EA9004898DE /* AGColor */ = {
-			isa = PBXGroup;
-			children = (
-				A434A17721101EA9004898DE /* AGColor.swift */,
-				A434A17821101EA9004898DE /* BaseColor.swift */,
-				A434A17921101EA9004898DE /* UIColor+AGAsset.swift */,
-			);
-			path = AGColor;
-			sourceTree = "<group>";
-		};
-		A434A17A21101EA9004898DE /* AGNib */ = {
-			isa = PBXGroup;
-			children = (
-				A434A17B21101EA9004898DE /* AGReusable.swift */,
-			);
-			path = AGNib;
-			sourceTree = "<group>";
-		};
-		A434A18121101EA9004898DE /* AGFont */ = {
-			isa = PBXGroup;
-			children = (
-				A434A18221101EA9004898DE /* UIFont+AGAsset.swift */,
-				A434A18321101EA9004898DE /* BaseFont.swift */,
-				A434A18421101EA9004898DE /* AGFont.swift */,
-			);
-			path = AGFont;
 			sourceTree = "<group>";
 		};
 		A434A18521101EA9004898DE /* AGCollection */ = {
