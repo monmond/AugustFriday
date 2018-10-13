@@ -138,6 +138,7 @@ s.subspec 'Core' do |c|
 	# }
 	c.requires_arc = true
 	c.dependency 'NVActivityIndicatorView', '~> 4.0'
+	c.dependency 'SnapKit', '~> 4.0.0'
 
 	# AG
 	c.subspec 'AG' do |agc|

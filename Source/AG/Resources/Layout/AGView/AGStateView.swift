@@ -8,14 +8,17 @@
 
 
 
+//MARK: - Imports
 import UIKit
 import NVActivityIndicatorView
+import SnapKit
 
 
 
+//MARK: - AGStateViewModel
 public enum AGStateViewModel {
   
-  public enum State {
+  public enum State: CaseIterable {
     
     case normal
     case loading
@@ -27,35 +30,32 @@ public enum AGStateViewModel {
   
   open class Setting {
     
-    public var image: AGAsset?
+    public var image: UIImage?
     public var title: String?
     public var description: String?
     public var isIndicatorHidden: Bool = false
     
-    public var tint: AGColor?
-    public var bg_color: AGColor?
-    public var bg_image: AGAsset?
+    public var tint: UIColor?
+    public var bg_image: UIImage?
     
-    public var font: AGFont?
+    public var font: UIFont?
     
     public init() {
       
     }
     
-    public init(image: AGAsset?,
+    public init(image: UIImage?,
                 title: String?,
                 description: String?,
                 isIndicatorHidden: Bool = false,
-                tint: AGColor?,
-                bg_color: AGColor?,
-                bg_image: AGAsset?,
-                font: AGFont?) {
+                tint: UIColor?,
+                bg_image: UIImage?,
+                font: UIFont?) {
       self.image = image
       self.title = title
       self.description = description
       self.isIndicatorHidden = isIndicatorHidden
       self.tint = tint
-      self.bg_color = bg_color
       self.bg_image = bg_image
       self.font = font
     }
@@ -89,16 +89,28 @@ public enum AGStateViewModel {
 
 
 
+//MARK: - AGStateViewDelegate
+public protocol AGStateViewDelegate: class {
+  func stateViewPressed(with stateView: AGStateView , state: AGStateViewModel.State)
+}
+
+
+
+//MARK: - AGStateView
 public class AGStateView: UIView, AGReusable {
   
   //MARK: - UI
-  @IBOutlet weak var v_container: UIView!
-  @IBOutlet weak var img_background: UIImageView!
-  @IBOutlet weak var stv_center: UIStackView!
-  @IBOutlet weak var img_logo: UIImageView!
-  @IBOutlet weak var lb_title: UILabel!
-  @IBOutlet weak var lb_description: UILabel!
-  @IBOutlet weak var iv_center: NVActivityIndicatorView!
+  
+  var imgv_background: UIImageView!
+  var imgv_icon: UIImageView!
+  var lb_title: UILabel!
+  var lb_description: UILabel!
+  var iv_center: NVActivityIndicatorView!
+  
+  
+  
+  //MARK: - NSLayout
+  
   
   
   //MARK: - Constraint
@@ -106,29 +118,41 @@ public class AGStateView: UIView, AGReusable {
   
   
   //MARK: - Instance
+  weak var delegate: AGStateViewDelegate?
+  
+  
+  
+  //MARK: - Flag
   
   
   
   //MARK: - Storage
-  
-  
-  
-  //MARK: - Event
-  
+  fileprivate var state: AGStateViewModel.State = .normal
+  fileprivate var viewModel: AGStateViewModel.ViewModel = AGStateViewModel.ViewModel()
   
   
   //MARK: - Initial
   
+  convenience init(viewModel: AGStateViewModel.ViewModel) {
+    self.init(frame: .zero)
+    self.viewModel = viewModel
+  }
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
-    setupNib()
+    onInit()
     
   }
   
-  required public init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    //    setupAutoLayout()
-    //    setupView()
+    onInit()
+    
+  }
+  
+  deinit {
+    onDeinit()
+    
   }
   
 }
@@ -140,7 +164,22 @@ public extension AGStateView {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    setupAwakeFromNib()
+    setupViewOnAwakeFromNib()
+  }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+  }
+  
+  func onInit() {
+    setupUI()
+    setupSnp()
+    
+  }
+  
+  func onDeinit() {
+    
   }
   
 }
@@ -150,105 +189,204 @@ public extension AGStateView {
 //MARK: -  Setup UI
 extension AGStateView {
   
-  func setupNib() {
-    
-    Bundle(for: AGStateView.self).ag.loadNibNamed(AGStateView.name, owner: self, options: nil)
-    
-    // Container
-    v_container.translatesAutoresizingMaskIntoConstraints = false
-    addSubview(v_container)
-    v_container.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-    v_container.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-    v_container.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    v_container.topAnchor.constraint(equalTo: topAnchor).isActive = true
-    
-    setupView()
-    setupNVActivityIndicatorView()
-    
-    //    // Logo
-    //    img_logo = UIImageView(image: LogoAsset.omu_white_large.image)
-    //    img_logo.widthAnchor.constraint(equalTo: img_logo.heightAnchor, multiplier: 18/7).isActive = true
-    //
-    //    // Indicator
-    //    iv_center = NVActivityIndicatorView(frame: .zero)
-    //
-    //
-    //    // StackView
-    //    stv_center = UIStackView(arrangedSubviews: [])
-    //    stv_center.axis = .vertical
-    //    stv_center.distribution = .fill
-    //    stv_center.alignment = .center
-    //    stv_center.spacing = 30
-    //    stv_center.addArrangedSubview(img_logo)
-    //    stv_center.addArrangedSubview(iv_center)
-    //    stv_center.translatesAutoresizingMaskIntoConstraints = false
-    //    addSubview(stv_center)
-    //
-    //    iv_center.widthAnchor.constraint(equalTo: img_logo.heightAnchor, multiplier: 1).isActive = true
-    //    img_logo.widthAnchor.constraint(equalTo: stv_center.widthAnchor, multiplier: 0.6).isActive = true
-    //    iv_center.widthAnchor.constraint(equalTo: stv_center.widthAnchor, multiplier: 0.3).isActive = true
-    //
-    //    stv_center.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    //    if #available(iOS 11.0, *) {
-    //      stv_center.centerYAnchor.constraintEqualToSystemSpacingBelow(centerYAnchor, multiplier: 0.9).isActive = true
-    //    } else {
-    //      // Fallback on earlier versions
-    //    }
-    //    stv_center.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.4).isActive = true
-    
+  func setupViewOnAwakeFromNib() {
+    setupUI()
+    setupSnp()
   }
   
-  func setupAwakeFromNib() {
-    setupView()
-    setupNVActivityIndicatorView()
-  }
-  
-  func setupView() {
-    backgroundColor = BaseColor.clear.color
-    v_container.backgroundColor = BaseColor.clear.color
-    img_background.backgroundColor = BaseColor.clear.color
-    img_background.contentMode = .scaleAspectFill
-  }
-  
-  func setupNVActivityIndicatorView() {
+  func setupUI() {
+    backgroundColor = UIColor.clear
+    
+    imgv_background = UIImageView()
+    imgv_background.backgroundColor = UIColor.clear
+    imgv_background.contentMode = .scaleAspectFill
+    
+    imgv_icon = UIImageView()
+    imgv_icon.backgroundColor = UIColor.clear
+    imgv_icon.contentMode = .scaleAspectFit
+    
+    lb_title = UILabel()
+    lb_title.text = "title"
+    lb_title.textColor = UIColor.darkText
+    lb_title.backgroundColor = UIColor.clear
+    lb_title.textAlignment = .center
+    lb_title.numberOfLines = 0
+    lb_title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+    
+    lb_description = UILabel()
+    lb_description.text = "description"
+    lb_description.textColor = UIColor.darkText
+    lb_description.backgroundColor = UIColor.clear
+    lb_description.textAlignment = .center
+    lb_description.numberOfLines = 0
+    lb_description.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+    
+    iv_center = NVActivityIndicatorView(frame: .zero, type: .lineScale, color: UIColor.white, padding: nil)
     iv_center.startAnimating()
+    
+    let tapg = UITapGestureRecognizer(target: self, action: #selector(backgroundImagePressed(_:)))
+    imgv_background.addGestureRecognizer(tapg)
+    
+    addSubview(imgv_background)
+    addSubview(imgv_icon)
+    addSubview(lb_title)
+    addSubview(lb_description)
+    addSubview(iv_center)
+    
+  }
+  
+  func setupSnp() {
+    imgv_background.snp.makeConstraints {
+      $0.edges.equalToSuperview()
+    }
+    iv_center.snp.makeConstraints {
+      $0.center.equalToSuperview()
+      $0.width.equalToSuperview().multipliedBy(0.1)
+      $0.height.equalTo(iv_center.snp.width)
+    }
+    imgv_icon.snp.makeConstraints {
+      $0.centerX.equalToSuperview()
+      $0.bottom.equalTo(snp.centerY)
+      $0.width.equalToSuperview().multipliedBy(0.4)
+      $0.height.equalTo(imgv_icon.snp.width)
+    }
+    lb_title.snp.makeConstraints {
+      $0.top.equalTo(imgv_icon.snp.bottom).offset(20)
+      $0.width.equalToSuperview().multipliedBy(0.8)
+      $0.centerX.equalToSuperview()
+    }
+    lb_description.snp.makeConstraints {
+      $0.top.equalTo(lb_title.snp.bottom).offset(15)
+      $0.bottom.lessThanOrEqualToSuperview().inset(20)
+      $0.width.equalToSuperview().multipliedBy(0.8)
+      $0.centerX.equalToSuperview()
+    }
   }
   
 }
 
 
 
-//MARK: -  Display Data
+//MARK: - Setup Data
 public extension AGStateView {
+  
+}
 
+
+
+//MARK: - Event
+public extension AGStateView {
+  
+  @objc
+  fileprivate func backgroundImagePressed(_ sender: UITapGestureRecognizer) {
+    delegate?.stateViewPressed(with: self, state: state)
+  }
+  
+}
+
+
+
+//MARK: - Public
+public extension AGStateView {
+  
+  public func show(isForce: Bool = false) {
+    //    curveEaseIn
+    let duration = isForce ? 0.0 : 0.1
+    UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
+      , animations: {
+        self.alpha = 1
+    }, completion: { _ in
+      
+    })
+    
+  }
+  
+  public func hide(_ onComplete: CallbackVoid? = nil) {
+    UIView.transition(with: self, duration: 0.1, options: .transitionCrossDissolve
+      , animations: {
+        self.alpha = 0
+    }, completion: { _ in
+      onComplete?()
+    })
+    
+  }
+  
+  public func setState(state: AGStateViewModel.State) {
+    self.state = state
+    var setting: AGStateViewModel.Setting
+    switch state {
+    case .normal:
+      setting = viewModel.normal
+    case .loading:
+      setting = viewModel.loading
+    case .noResults:
+      setting = viewModel.noResults
+    case .noConnection:
+      setting = viewModel.noConnection
+    case .error:
+      setting = viewModel.error
+    }
+    setupData(with: setting)
+    
+  }
+  
+  public func show(with state: AGStateViewModel.State, isForce: Bool = false) {
+    setState(state: state)
+    show(isForce: isForce)
+    
+  }
+  
+}
+
+
+
+//MARK: - Private
+public extension AGStateView {
+  
+}
+
+
+
+//MARK: - Interaction & Presentation
+public extension AGStateView {
+  
+}
+
+
+
+//MARK: - Display
+public extension AGStateView {
+  
   public func setupData(with setting: AGStateViewModel.Setting) {
-    let tint = setting.tint ?? BaseColor.red_brown
-    let bg = setting.bg_color ?? BaseColor.gray_warm
+    let tint = setting.tint ?? UIColor.black
+    
+    if let img = setting.bg_image {
+      imgv_background.image = img
+    } else {
+      imgv_background.image = nil
+    }
+    
+    iv_center.isHidden = setting.isIndicatorHidden
+    iv_center.color = tint
+    if !setting.isIndicatorHidden {
+      iv_center.startAnimating()
+    }
     
     if let img = setting.image {
-      img_logo.image = img.image(tint)
+      imgv_icon.image = img
     } else {
-      img_logo.image = nil
+      imgv_icon.image = nil
     }
     
     lb_title.text = setting.title
     lb_description.text = setting.description
-    lb_title.textColor = tint.color
-    lb_description.textColor = tint.color
+    lb_title.textColor = tint
+    lb_description.textColor = tint
     if let font = setting.font {
-      lb_title.font = font.with(size: lb_title.font.pointSize)
-      lb_description.font = font.with(size: lb_description.font.pointSize)
+      lb_title.font = font
+      lb_description.font = font
     }
     
-    iv_center.isHidden = setting.isIndicatorHidden
-    
-    v_container.backgroundColor = bg.color
-    
-    if let img = setting.bg_image {
-      img_background.image = img.image
-    } else {
-      img_background.image = nil
-    }
   }
-
+  
 }

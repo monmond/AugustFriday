@@ -80,7 +80,6 @@
 		A434A19E21101EA9004898DE /* AGSpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16521101EA9004898DE /* AGSpinerLayer.swift */; };
 		A434A19F21101EA9004898DE /* AGNavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */; };
 		A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16921101EA9004898DE /* AGKeyboardHelper.swift */; };
-		A434A1A121101EA9004898DE /* AGStateViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16A21101EA9004898DE /* AGStateViewManager.swift */; };
 		A434A1A221101EA9004898DE /* AGLoadingViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */; };
 		A434A1A321101EA9004898DE /* AGNavigationViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */; };
 		A434A1A421101EA9004898DE /* AGIntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16F21101EA9004898DE /* AGIntrinsicTableView.swift */; };
@@ -108,7 +107,6 @@
 		A434A1BA21101EA9004898DE /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18F21101EA9004898DE /* BaseButton.swift */; };
 		A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19221101EA9004898DE /* AGShadowable.swift */; };
 		A434A1BC21101EA9004898DE /* AGStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19421101EA9004898DE /* AGStateView.swift */; };
-		A434A1BD21101EA9004898DE /* AGStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A434A19521101EA9004898DE /* AGStateView.xib */; };
 		A434A1BE21101EA9004898DE /* AGRadiusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19721101EA9004898DE /* AGRadiusable.swift */; };
 		A434A1BF21101EA9004898DE /* AGLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19921101EA9004898DE /* AGLoadingView.swift */; };
 		A434A1C021101EA9004898DE /* AGLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A434A19A21101EA9004898DE /* AGLoadingView.xib */; };
@@ -228,7 +226,6 @@
 		A434A16521101EA9004898DE /* AGSpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGSpinerLayer.swift; sourceTree = "<group>"; };
 		A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationBarProtocol.swift; sourceTree = "<group>"; };
 		A434A16921101EA9004898DE /* AGKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGKeyboardHelper.swift; sourceTree = "<group>"; };
-		A434A16A21101EA9004898DE /* AGStateViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStateViewManager.swift; sourceTree = "<group>"; };
 		A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLoadingViewManager.swift; sourceTree = "<group>"; };
 		A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationViewManager.swift; sourceTree = "<group>"; };
 		A434A16F21101EA9004898DE /* AGIntrinsicTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGIntrinsicTableView.swift; sourceTree = "<group>"; };
@@ -256,7 +253,6 @@
 		A434A18F21101EA9004898DE /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A434A19221101EA9004898DE /* AGShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGShadowable.swift; sourceTree = "<group>"; };
 		A434A19421101EA9004898DE /* AGStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStateView.swift; sourceTree = "<group>"; };
-		A434A19521101EA9004898DE /* AGStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGStateView.xib; sourceTree = "<group>"; };
 		A434A19721101EA9004898DE /* AGRadiusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGRadiusable.swift; sourceTree = "<group>"; };
 		A434A19921101EA9004898DE /* AGLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLoadingView.swift; sourceTree = "<group>"; };
 		A434A19A21101EA9004898DE /* AGLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGLoadingView.xib; sourceTree = "<group>"; };
@@ -789,7 +785,6 @@
 		A434A16721101EA9004898DE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A434A16A21101EA9004898DE /* AGStateViewManager.swift */,
 				A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */,
 				A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */,
 			);
@@ -840,7 +835,6 @@
 				A4B61D6221183979003F98FF /* AGNavigationView.swift */,
 				A434A19221101EA9004898DE /* AGShadowable.swift */,
 				A434A19421101EA9004898DE /* AGStateView.swift */,
-				A434A19521101EA9004898DE /* AGStateView.xib */,
 				A434A19721101EA9004898DE /* AGRadiusable.swift */,
 				A434A19921101EA9004898DE /* AGLoadingView.swift */,
 				A434A19A21101EA9004898DE /* AGLoadingView.xib */,
@@ -1048,7 +1042,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A434A1BD21101EA9004898DE /* AGStateView.xib in Resources */,
 				A47C8A9E20D3A829009F8183 /* LaunchScreen.storyboard in Resources */,
 				A47C8A9B20D3A829009F8183 /* Assets.xcassets in Resources */,
 				A4F3EEDF2148074D009CEFF5 /* FirebaseView.storyboard in Resources */,
@@ -1213,7 +1206,6 @@
 				A434A19D21101EA9004898DE /* CGRect+AG.swift in Sources */,
 				A434A14821101A46004898DE /* UIApplication+AG.swift in Sources */,
 				A434A13F21101A32004898DE /* UIViewController+AG.swift in Sources */,
-				A434A1A121101EA9004898DE /* AGStateViewManager.swift in Sources */,
 				A47C8A9420D3A828009F8183 /* AppDelegate.swift in Sources */,
 				A434A11621101855004898DE /* UICollectionView+AG.swift in Sources */,
 				A434A15E21101B8F004898DE /* AGLocalize.swift in Sources */,
