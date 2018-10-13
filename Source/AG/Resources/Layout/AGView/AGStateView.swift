@@ -118,7 +118,7 @@ public class AGStateView: UIView, AGReusable {
   
   
   //MARK: - Instance
-  weak var delegate: AGStateViewDelegate?
+  public weak var delegate: AGStateViewDelegate?
   
   
   
@@ -133,12 +133,12 @@ public class AGStateView: UIView, AGReusable {
   
   //MARK: - Initial
   
-  convenience init(viewModel: AGStateViewModel.ViewModel) {
+  public convenience init(viewModel: AGStateViewModel.ViewModel) {
     self.init(frame: .zero)
     self.viewModel = viewModel
   }
   
-  override init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     onInit()
     
@@ -187,7 +187,7 @@ public extension AGStateView {
 
 
 //MARK: -  Setup UI
-extension AGStateView {
+public extension AGStateView {
   
   func setupViewOnAwakeFromNib() {
     setupUI()
