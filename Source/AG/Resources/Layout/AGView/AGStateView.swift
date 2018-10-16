@@ -100,9 +100,10 @@ public protocol AGStateViewDelegate: class {
 public class AGStateView: UIView, AGReusable {
   
   //MARK: - UI
-  
   var imgv_background: UIImageView!
+  var v_top: UIView!
   var imgv_icon: UIImageView!
+  var stv_info: UIStackView!
   var lb_title: UILabel!
   var lb_description: UILabel!
   var iv_center: NVActivityIndicatorView!
@@ -129,17 +130,15 @@ public class AGStateView: UIView, AGReusable {
   //MARK: - Storage
   fileprivate var state: AGStateViewModel.State = .normal
   fileprivate var viewModel: AGStateViewModel.ViewModel = AGStateViewModel.ViewModel()
+  fileprivate var axis: NSLayoutConstraint.Axis = .vertical
   
   
   //MARK: - Initial
   
-  public convenience init(viewModel: AGStateViewModel.ViewModel) {
-    self.init(frame: .zero)
+  public init(viewModel: AGStateViewModel.ViewModel, axis: NSLayoutConstraint.Axis) {
+    super.init(frame: .zero)
     self.viewModel = viewModel
-  }
-  
-  public override init(frame: CGRect) {
-    super.init(frame: frame)
+    self.axis = axis
     onInit()
     
   }
@@ -201,15 +200,24 @@ public extension AGStateView {
     imgv_background.backgroundColor = UIColor.clear
     imgv_background.contentMode = .scaleAspectFill
     
+    v_top = UIView()
+    v_top.backgroundColor = UIColor.yellow
+    
     imgv_icon = UIImageView()
     imgv_icon.backgroundColor = UIColor.clear
     imgv_icon.contentMode = .scaleAspectFit
+    
+    stv_info = UIStackView()
+    stv_info.backgroundColor = UIColor.clear
+    stv_info.axis = .vertical
+    stv_info.alignment = .fill
+    stv_info.distribution = .fill
+    stv_info.spacing = 10
     
     lb_title = UILabel()
     lb_title.text = "title"
     lb_title.textColor = UIColor.darkText
     lb_title.backgroundColor = UIColor.clear
-    lb_title.textAlignment = .center
     lb_title.numberOfLines = 0
     lb_title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     
@@ -217,7 +225,6 @@ public extension AGStateView {
     lb_description.text = "description"
     lb_description.textColor = UIColor.darkText
     lb_description.backgroundColor = UIColor.clear
-    lb_description.textAlignment = .center
     lb_description.numberOfLines = 0
     lb_description.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     
@@ -227,40 +234,77 @@ public extension AGStateView {
     let tapg = UITapGestureRecognizer(target: self, action: #selector(backgroundImagePressed(_:)))
     imgv_background.addGestureRecognizer(tapg)
     
+    switch axis {
+    case .vertical:
+      lb_title.textAlignment = .center
+      lb_description.textAlignment = .center
+    case .horizontal:
+      lb_title.textAlignment = .left
+      lb_description.textAlignment = .left
+    }
+    
     addSubview(imgv_background)
-    addSubview(imgv_icon)
-    addSubview(lb_title)
-    addSubview(lb_description)
+    addSubview(v_top)
+    v_top.addSubview(imgv_icon)
+    addSubview(stv_info)
     addSubview(iv_center)
+    
+    stv_info.addArrangedSubview(lb_title)
+    stv_info.addArrangedSubview(lb_description)
     
   }
   
   func setupSnp() {
+    
+    lb_title.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+    lb_description.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+    
     imgv_background.snp.makeConstraints {
-      $0.edges.equalToSuperview()
+      $0.top.right.bottom.left.equalToSuperview()
     }
     iv_center.snp.makeConstraints {
       $0.center.equalToSuperview()
       $0.width.equalToSuperview().multipliedBy(0.1)
       $0.height.equalTo(iv_center.snp.width)
     }
-    imgv_icon.snp.makeConstraints {
-      $0.centerX.equalToSuperview()
-      $0.bottom.equalTo(snp.centerY)
-      $0.width.equalToSuperview().multipliedBy(0.4)
-      $0.height.equalTo(imgv_icon.snp.width)
+    
+    switch axis {
+    case .vertical:
+      v_top.snp.makeConstraints {
+        $0.top.right.left.equalToSuperview()
+        $0.bottom.equalTo(snp.centerY)
+      }
+      imgv_icon.snp.makeConstraints {
+        $0.bottom.equalToSuperview()
+        $0.centerX.equalToSuperview()
+        $0.height.equalToSuperview().multipliedBy(0.7)
+        $0.width.equalTo(imgv_icon.snp.height)
+      }
+      stv_info.snp.makeConstraints {
+        $0.top.equalTo(v_top.snp.bottom).offset(20)
+        $0.bottom.lessThanOrEqualToSuperview().inset(20)
+        $0.width.equalToSuperview().multipliedBy(0.8)
+        $0.centerX.equalToSuperview()
+      }
+    case .horizontal:
+      v_top.snp.makeConstraints {
+        $0.top.bottom.left.equalToSuperview()
+        $0.right.equalTo(snp.centerX)
+      }
+      imgv_icon.snp.makeConstraints {
+        $0.right.equalToSuperview()
+        $0.centerY.equalToSuperview()
+        $0.width.equalToSuperview().multipliedBy(0.6)
+        $0.height.equalTo(imgv_icon.snp.width)
+      }
+      stv_info.snp.makeConstraints {
+        $0.left.equalTo(v_top.snp.right).offset(20)
+        $0.right.equalToSuperview().inset(20)
+        $0.height.lessThanOrEqualToSuperview().multipliedBy(0.6)
+        $0.centerY.equalToSuperview()
+      }
     }
-    lb_title.snp.makeConstraints {
-      $0.top.equalTo(imgv_icon.snp.bottom).offset(20)
-      $0.width.equalToSuperview().multipliedBy(0.8)
-      $0.centerX.equalToSuperview()
-    }
-    lb_description.snp.makeConstraints {
-      $0.top.equalTo(lb_title.snp.bottom).offset(15)
-      $0.bottom.lessThanOrEqualToSuperview().inset(20)
-      $0.width.equalToSuperview().multipliedBy(0.8)
-      $0.centerX.equalToSuperview()
-    }
+    
   }
   
 }
