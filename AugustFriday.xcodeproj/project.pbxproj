@@ -39,6 +39,9 @@
 		A42DA4132141982800F1033F /* AGDateStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4122141982800F1033F /* AGDateStyle.swift */; };
 		A42DA4152141984A00F1033F /* AGDateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4142141984A00F1033F /* AGDateConfiguration.swift */; };
 		A42DA4172141992D00F1033F /* AGRetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4162141992D00F1033F /* AGRetryHandler.swift */; };
+		A43333C3217765370053A634 /* AGFontTextStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43333C2217765370053A634 /* AGFontTextStylable.swift */; };
+		A43333C5217766140053A634 /* AGIndictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43333C4217766140053A634 /* AGIndictable.swift */; };
+		A43333C921776B460053A634 /* AGViewFontTextStylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43333C821776B460053A634 /* AGViewFontTextStylable.swift */; };
 		A433E97A216F3EDE0068DAD9 /* AGSizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E979216F3EDE0068DAD9 /* AGSizeClass.swift */; };
 		A433E97C216F3F970068DAD9 /* AGSizeClassUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E97B216F3F970068DAD9 /* AGSizeClassUI.swift */; };
 		A433E97E216F3FAC0068DAD9 /* AGSizeClassUICollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */; };
@@ -185,6 +188,9 @@
 		A42DA4122141982800F1033F /* AGDateStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDateStyle.swift; sourceTree = "<group>"; };
 		A42DA4142141984A00F1033F /* AGDateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGDateConfiguration.swift; sourceTree = "<group>"; };
 		A42DA4162141992D00F1033F /* AGRetryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRetryHandler.swift; sourceTree = "<group>"; };
+		A43333C2217765370053A634 /* AGFontTextStylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGFontTextStylable.swift; sourceTree = "<group>"; };
+		A43333C4217766140053A634 /* AGIndictable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGIndictable.swift; sourceTree = "<group>"; };
+		A43333C821776B460053A634 /* AGViewFontTextStylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGViewFontTextStylable.swift; sourceTree = "<group>"; };
 		A433E979216F3EDE0068DAD9 /* AGSizeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClass.swift; sourceTree = "<group>"; };
 		A433E97B216F3F970068DAD9 /* AGSizeClassUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClassUI.swift; sourceTree = "<group>"; };
 		A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSizeClassUICollection.swift; sourceTree = "<group>"; };
@@ -734,6 +740,7 @@
 				A4BB9C012154E76700EAEBAF /* AGDefaults.swift */,
 				A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */,
 				A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */,
+				A43333C2217765370053A634 /* AGFontTextStylable.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -759,6 +766,8 @@
 				A434A17F21101EA9004898DE /* CAAnimation+Constraint+AG.swift */,
 				A434A18021101EA9004898DE /* AGViewAnimation.swift */,
 				A433E983216F405B0068DAD9 /* PanningUtil.swift */,
+				A43333C4217766140053A634 /* AGIndictable.swift */,
+				A43333C821776B460053A634 /* AGViewFontTextStylable.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1158,6 +1167,7 @@
 				A434A15821101B8F004898DE /* AGDate.swift in Sources */,
 				A434A1B621101EA9004898DE /* AGCollectionReusableView.swift in Sources */,
 				A434A13021101959004898DE /* Error+AG.swift in Sources */,
+				A43333C5217766140053A634 /* AGIndictable.swift in Sources */,
 				A434A1AE21101EA9004898DE /* AGTransitionViewController.swift in Sources */,
 				A42DA3E821417C5900F1033F /* AGReachabilityStatus.swift in Sources */,
 				A42DA3E421417A2600F1033F /* AGAlamofireManager.swift in Sources */,
@@ -1186,6 +1196,7 @@
 				A418518721241E1D00765969 /* URL+AG.swift in Sources */,
 				A42DA3F121417E9200F1033F /* AGRouterRequest.swift in Sources */,
 				A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */,
+				A43333C3217765370053A634 /* AGFontTextStylable.swift in Sources */,
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
 				A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */,
 				A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */,
@@ -1239,6 +1250,7 @@
 				A433E988216F40EB0068DAD9 /* ApplicationOrientationDependency.swift in Sources */,
 				A434A13621101997004898DE /* UIButton+AG.swift in Sources */,
 				A4B61D6A21185EA8003F98FF /* AGView.swift in Sources */,
+				A43333C921776B460053A634 /* AGViewFontTextStylable.swift in Sources */,
 				A44A431120E5E34A003F56E6 /* UIImage+AG.swift in Sources */,
 				A479EB51213E454700A4F143 /* AGApplicationRoutable.swift in Sources */,
 				A434A14721101A46004898DE /* UIWindow+AG.swift in Sources */,

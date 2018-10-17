@@ -18,16 +18,6 @@ import SnapKit
 //MARK: - AGStateViewModel
 public enum AGStateViewModel {
   
-  public enum State: CaseIterable {
-    
-    case normal
-    case loading
-    case noResults
-    case noConnection
-    case error
-    
-  }
-  
   open class Setting {
     
     public var image: UIImage?
@@ -83,7 +73,35 @@ public enum AGStateViewModel {
       
     }
     
+    public func getSetting(with state: AGStateViewState) -> AGStateViewModel.Setting {
+      var setting: AGStateViewModel.Setting
+      switch state {
+      case .normal:
+        setting = normal
+      case .loading:
+        setting = loading
+      case .noResults:
+        setting = noResults
+      case .noConnection:
+        setting = noConnection
+      case .error:
+        setting = error
+      }
+      return setting
+    }
+    
   }
+  
+}
+
+
+public enum AGStateViewState: CaseIterable {
+  
+  case normal
+  case loading
+  case noResults
+  case noConnection
+  case error
   
 }
 
@@ -91,7 +109,7 @@ public enum AGStateViewModel {
 
 //MARK: - AGStateViewDelegate
 public protocol AGStateViewDelegate: class {
-  func stateViewPressed(with stateView: AGStateView , state: AGStateViewModel.State)
+  func stateViewPressed(with stateView: AGStateView , state: AGStateViewState)
 }
 
 
@@ -128,7 +146,7 @@ public class AGStateView: UIView, AGReusable {
   
   
   //MARK: - Storage
-  fileprivate var state: AGStateViewModel.State = .normal
+  fileprivate var state: AGStateViewState = .normal
   fileprivate var viewModel: AGStateViewModel.ViewModel = AGStateViewModel.ViewModel()
   fileprivate var axis: NSLayoutConstraint.Axis = .vertical
   
@@ -199,9 +217,10 @@ public extension AGStateView {
     imgv_background = UIImageView()
     imgv_background.backgroundColor = UIColor.clear
     imgv_background.contentMode = .scaleAspectFill
+    imgv_background.isUserInteractionEnabled = true
     
     v_top = UIView()
-    v_top.backgroundColor = UIColor.yellow
+    v_top.backgroundColor = UIColor.clear
     
     imgv_icon = UIImageView()
     imgv_icon.backgroundColor = UIColor.clear
@@ -231,8 +250,8 @@ public extension AGStateView {
     iv_center = NVActivityIndicatorView(frame: .zero, type: .lineScale, color: UIColor.white, padding: nil)
     iv_center.startAnimating()
     
-    let tapg = UITapGestureRecognizer(target: self, action: #selector(backgroundImagePressed(_:)))
-    imgv_background.addGestureRecognizer(tapg)
+    let tapg = UITapGestureRecognizer(target: self, action: #selector(stateViewPressed(_:)))
+    addGestureRecognizer(tapg)
     
     switch axis {
     case .vertical:
@@ -251,6 +270,8 @@ public extension AGStateView {
     
     stv_info.addArrangedSubview(lb_title)
     stv_info.addArrangedSubview(lb_description)
+    
+    setupEmpty()
     
   }
   
@@ -272,7 +293,7 @@ public extension AGStateView {
     case .vertical:
       v_top.snp.makeConstraints {
         $0.top.right.left.equalToSuperview()
-        $0.bottom.equalTo(snp.centerY)
+        $0.height.equalToSuperview().multipliedBy(0.5)
       }
       imgv_icon.snp.makeConstraints {
         $0.bottom.equalToSuperview()
@@ -289,7 +310,7 @@ public extension AGStateView {
     case .horizontal:
       v_top.snp.makeConstraints {
         $0.top.bottom.left.equalToSuperview()
-        $0.right.equalTo(snp.centerX)
+        $0.width.equalToSuperview().multipliedBy(0.4)
       }
       imgv_icon.snp.makeConstraints {
         $0.right.equalToSuperview()
@@ -322,7 +343,7 @@ public extension AGStateView {
 public extension AGStateView {
   
   @objc
-  fileprivate func backgroundImagePressed(_ sender: UITapGestureRecognizer) {
+  fileprivate func stateViewPressed(_ sender: UITapGestureRecognizer) {
     delegate?.stateViewPressed(with: self, state: state)
   }
   
@@ -333,51 +354,15 @@ public extension AGStateView {
 //MARK: - Public
 public extension AGStateView {
   
-  public func show(isForce: Bool = false) {
-    //    curveEaseIn
-    let duration = isForce ? 0.0 : 0.1
-    UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
-      , animations: {
-        self.alpha = 1
-    }, completion: { _ in
-      
-    })
-    
-  }
-  
-  public func hide(_ onComplete: CallbackVoid? = nil) {
-    UIView.transition(with: self, duration: 0.1, options: .transitionCrossDissolve
-      , animations: {
-        self.alpha = 0
-    }, completion: { _ in
-      onComplete?()
-    })
-    
-  }
-  
-  public func setState(state: AGStateViewModel.State) {
+  public func setStateViewState(with state: AGStateViewState, animated: Bool = false, onComplete: CallbackVoid? = nil) {
     self.state = state
-    var setting: AGStateViewModel.Setting
     switch state {
     case .normal:
-      setting = viewModel.normal
-    case .loading:
-      setting = viewModel.loading
-    case .noResults:
-      setting = viewModel.noResults
-    case .noConnection:
-      setting = viewModel.noConnection
-    case .error:
-      setting = viewModel.error
+      hide(with: animated, onComplete: onComplete)
+    default:
+      show(with: animated, onComplete: onComplete)
     }
-    setupData(with: setting)
-    
-  }
-  
-  public func show(with state: AGStateViewModel.State, isForce: Bool = false) {
-    setState(state: state)
-    show(isForce: isForce)
-    
+    setupData(with: viewModel.getSetting(with: state))
   }
   
 }
@@ -386,6 +371,36 @@ public extension AGStateView {
 
 //MARK: - Private
 public extension AGStateView {
+  
+  private func setupEmpty() {
+    imgv_background.image = nil
+    iv_center.isHidden = true
+    imgv_icon.image = nil
+    lb_title.text = ""
+    lb_description.text = ""
+    alpha = 0
+  }
+  
+  private func show(with animated: Bool = false, onComplete: CallbackVoid? = nil) {
+    let duration = animated ? 0.0 : 0.2
+    UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
+      , animations: {
+        self.alpha = 1
+    }, completion: { _ in
+    })
+    
+  }
+  
+  private func hide(with animated: Bool = false, onComplete: CallbackVoid? = nil) {
+    let duration = animated ? 0.0 : 0.2
+    UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
+      , animations: {
+        self.alpha = 0
+    }, completion: { _ in
+      onComplete?()
+    })
+    
+  }
   
 }
 
@@ -426,9 +441,13 @@ public extension AGStateView {
     lb_description.text = setting.description
     lb_title.textColor = tint
     lb_description.textColor = tint
+    
     if let font = setting.font {
       lb_title.font = font
       lb_description.font = font
+    } else {
+      lb_title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+      lb_description.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     }
     
   }

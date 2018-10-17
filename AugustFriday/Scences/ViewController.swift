@@ -235,7 +235,7 @@ extension ViewController {
 //MARK: - AGStateViewDelegate
 extension ViewController {
   
-  func stateViewPressed(with stateView: AGStateView, state: AGStateViewModel.State) {
+  func stateViewPressed(with stateView: AGStateView, state: AGStateViewState) {
     
   }
   
