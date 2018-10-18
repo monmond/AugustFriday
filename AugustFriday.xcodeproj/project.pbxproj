@@ -29,8 +29,6 @@
 		A42DA3F121417E9200F1033F /* AGRouterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F021417E9200F1033F /* AGRouterRequest.swift */; };
 		A42DA3F521417F3A00F1033F /* Notification+AGAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F421417F3A00F1033F /* Notification+AGAlamofire.swift */; };
 		A42DA3F721417FA300F1033F /* Typealias+AGAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F621417FA300F1033F /* Typealias+AGAlamofire.swift */; };
-		A42DA3F92141804D00F1033F /* AGAlamofireResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3F82141804D00F1033F /* AGAlamofireResponse.swift */; };
-		A42DA3FB2141805600F1033F /* AGAlamofireResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3FA2141805600F1033F /* AGAlamofireResponseResult.swift */; };
 		A42DA3FE2141838600F1033F /* AGNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3FD2141838600F1033F /* AGNetworkManager.swift */; };
 		A42DA400214183BA00F1033F /* AGLogConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA3FF214183BA00F1033F /* AGLogConfiguration.swift */; };
 		A42DA4032141851200F1033F /* AGAlamofireConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42DA4022141851200F1033F /* AGAlamofireConfiguration.swift */; };
@@ -50,7 +48,6 @@
 		A433E984216F405B0068DAD9 /* PanningUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E983216F405B0068DAD9 /* PanningUtil.swift */; };
 		A433E986216F40CA0068DAD9 /* ApplicationOrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E985216F40CA0068DAD9 /* ApplicationOrientationManager.swift */; };
 		A433E988216F40EB0068DAD9 /* ApplicationOrientationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */; };
-		A434A1072110141A004898DE /* UIAlertController+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A1062110141A004898DE /* UIAlertController+AG.swift */; };
 		A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10A21101855004898DE /* UITableViewCell+AG.swift */; };
 		A434A11621101855004898DE /* UICollectionView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10C21101855004898DE /* UICollectionView+AG.swift */; };
 		A434A11721101855004898DE /* UICollectionViewCell+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10E21101855004898DE /* UICollectionViewCell+AG.swift */; };
@@ -81,10 +78,7 @@
 		A434A16121101BBA004898DE /* AGConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16021101BBA004898DE /* AGConfiguration.swift */; };
 		A434A19D21101EA9004898DE /* CGRect+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16421101EA9004898DE /* CGRect+AG.swift */; };
 		A434A19E21101EA9004898DE /* AGSpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16521101EA9004898DE /* AGSpinerLayer.swift */; };
-		A434A19F21101EA9004898DE /* AGNavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */; };
 		A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16921101EA9004898DE /* AGKeyboardHelper.swift */; };
-		A434A1A221101EA9004898DE /* AGLoadingViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */; };
-		A434A1A321101EA9004898DE /* AGNavigationViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */; };
 		A434A1A421101EA9004898DE /* AGIntrinsicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16F21101EA9004898DE /* AGIntrinsicTableView.swift */; };
 		A434A1A521101EA9004898DE /* AGAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A17121101EA9004898DE /* AGAsset.swift */; };
 		A434A1A621101EA9004898DE /* BaseAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A17221101EA9004898DE /* BaseAsset.swift */; };
@@ -96,7 +90,6 @@
 		A434A1AC21101EA9004898DE /* AGReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A17B21101EA9004898DE /* AGReusable.swift */; };
 		A434A1AD21101EA9004898DE /* AGFadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A17D21101EA9004898DE /* AGFadeTransition.swift */; };
 		A434A1AE21101EA9004898DE /* AGTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A17E21101EA9004898DE /* AGTransitionViewController.swift */; };
-		A434A1AF21101EA9004898DE /* CAAnimation+Constraint+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A17F21101EA9004898DE /* CAAnimation+Constraint+AG.swift */; };
 		A434A1B021101EA9004898DE /* AGViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18021101EA9004898DE /* AGViewAnimation.swift */; };
 		A434A1B121101EA9004898DE /* UIFont+AGAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18221101EA9004898DE /* UIFont+AGAsset.swift */; };
 		A434A1B221101EA9004898DE /* BaseFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18321101EA9004898DE /* BaseFont.swift */; };
@@ -111,12 +104,9 @@
 		A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19221101EA9004898DE /* AGShadowable.swift */; };
 		A434A1BC21101EA9004898DE /* AGStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19421101EA9004898DE /* AGStateView.swift */; };
 		A434A1BE21101EA9004898DE /* AGRadiusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19721101EA9004898DE /* AGRadiusable.swift */; };
-		A434A1BF21101EA9004898DE /* AGLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19921101EA9004898DE /* AGLoadingView.swift */; };
-		A434A1C021101EA9004898DE /* AGLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A434A19A21101EA9004898DE /* AGLoadingView.xib */; };
 		A434A1C121101EA9004898DE /* AGInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19C21101EA9004898DE /* AGInstantiatable.swift */; };
 		A4354E95214289A100093894 /* AvatarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4354E94214289A100093894 /* AvatarRouter.swift */; };
 		A44A431120E5E34A003F56E6 /* UIImage+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A431020E5E34A003F56E6 /* UIImage+AG.swift */; };
-		A44DBECC211AA6DC0002D75B /* AGStateViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44DBECB211AA6DC0002D75B /* AGStateViewProtocol.swift */; };
 		A477729821172F7E00D82F7D /* AGSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477729721172F7E00D82F7D /* AGSafeArea.swift */; };
 		A479EB4F213E38A900A4F143 /* AGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479EB4E213E38A900A4F143 /* AGVC.swift */; };
 		A479EB51213E454700A4F143 /* AGApplicationRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */; };
@@ -134,7 +124,6 @@
 		A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */; };
 		A4B457DD213E8CC3005A7783 /* ApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8992213DA390002A7E01 /* ApplicationFirebaseMessaging.swift */; };
 		A4B457E0213E9B3A005A7783 /* AGVCEventable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B457DF213E9B3A005A7783 /* AGVCEventable.swift */; };
-		A4B61D6321183979003F98FF /* AGNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6221183979003F98FF /* AGNavigationView.swift */; };
 		A4B61D6721185CA6003F98FF /* AGBouncingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6621185CA6003F98FF /* AGBouncingView.swift */; };
 		A4B61D6A21185EA8003F98FF /* AGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6921185EA8003F98FF /* AGView.swift */; };
 		A4BB9BFE2154CC3C00EAEBAF /* CATransition+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */; };
@@ -178,8 +167,6 @@
 		A42DA3F021417E9200F1033F /* AGRouterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGRouterRequest.swift; sourceTree = "<group>"; };
 		A42DA3F421417F3A00F1033F /* Notification+AGAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+AGAlamofire.swift"; sourceTree = "<group>"; };
 		A42DA3F621417FA300F1033F /* Typealias+AGAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typealias+AGAlamofire.swift"; sourceTree = "<group>"; };
-		A42DA3F82141804D00F1033F /* AGAlamofireResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireResponse.swift; sourceTree = "<group>"; };
-		A42DA3FA2141805600F1033F /* AGAlamofireResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireResponseResult.swift; sourceTree = "<group>"; };
 		A42DA3FD2141838600F1033F /* AGNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGNetworkManager.swift; sourceTree = "<group>"; };
 		A42DA3FF214183BA00F1033F /* AGLogConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLogConfiguration.swift; sourceTree = "<group>"; };
 		A42DA4022141851200F1033F /* AGAlamofireConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireConfiguration.swift; sourceTree = "<group>"; };
@@ -199,7 +186,6 @@
 		A433E983216F405B0068DAD9 /* PanningUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanningUtil.swift; sourceTree = "<group>"; };
 		A433E985216F40CA0068DAD9 /* ApplicationOrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationOrientationManager.swift; sourceTree = "<group>"; };
 		A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationOrientationDependency.swift; sourceTree = "<group>"; };
-		A434A1062110141A004898DE /* UIAlertController+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+AG.swift"; sourceTree = "<group>"; };
 		A434A10A21101855004898DE /* UITableViewCell+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+AG.swift"; sourceTree = "<group>"; };
 		A434A10C21101855004898DE /* UICollectionView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+AG.swift"; sourceTree = "<group>"; };
 		A434A10E21101855004898DE /* UICollectionViewCell+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+AG.swift"; sourceTree = "<group>"; };
@@ -230,10 +216,7 @@
 		A434A16021101BBA004898DE /* AGConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGConfiguration.swift; sourceTree = "<group>"; };
 		A434A16421101EA9004898DE /* CGRect+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AG.swift"; sourceTree = "<group>"; };
 		A434A16521101EA9004898DE /* AGSpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGSpinerLayer.swift; sourceTree = "<group>"; };
-		A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationBarProtocol.swift; sourceTree = "<group>"; };
 		A434A16921101EA9004898DE /* AGKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGKeyboardHelper.swift; sourceTree = "<group>"; };
-		A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLoadingViewManager.swift; sourceTree = "<group>"; };
-		A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGNavigationViewManager.swift; sourceTree = "<group>"; };
 		A434A16F21101EA9004898DE /* AGIntrinsicTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGIntrinsicTableView.swift; sourceTree = "<group>"; };
 		A434A17121101EA9004898DE /* AGAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGAsset.swift; sourceTree = "<group>"; };
 		A434A17221101EA9004898DE /* BaseAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAsset.swift; sourceTree = "<group>"; };
@@ -245,7 +228,6 @@
 		A434A17B21101EA9004898DE /* AGReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGReusable.swift; sourceTree = "<group>"; };
 		A434A17D21101EA9004898DE /* AGFadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGFadeTransition.swift; sourceTree = "<group>"; };
 		A434A17E21101EA9004898DE /* AGTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGTransitionViewController.swift; sourceTree = "<group>"; };
-		A434A17F21101EA9004898DE /* CAAnimation+Constraint+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAAnimation+Constraint+AG.swift"; sourceTree = "<group>"; };
 		A434A18021101EA9004898DE /* AGViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGViewAnimation.swift; sourceTree = "<group>"; };
 		A434A18221101EA9004898DE /* UIFont+AGAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+AGAsset.swift"; sourceTree = "<group>"; };
 		A434A18321101EA9004898DE /* BaseFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFont.swift; sourceTree = "<group>"; };
@@ -260,12 +242,9 @@
 		A434A19221101EA9004898DE /* AGShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGShadowable.swift; sourceTree = "<group>"; };
 		A434A19421101EA9004898DE /* AGStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStateView.swift; sourceTree = "<group>"; };
 		A434A19721101EA9004898DE /* AGRadiusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGRadiusable.swift; sourceTree = "<group>"; };
-		A434A19921101EA9004898DE /* AGLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLoadingView.swift; sourceTree = "<group>"; };
-		A434A19A21101EA9004898DE /* AGLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGLoadingView.xib; sourceTree = "<group>"; };
 		A434A19C21101EA9004898DE /* AGInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGInstantiatable.swift; sourceTree = "<group>"; };
 		A4354E94214289A100093894 /* AvatarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRouter.swift; sourceTree = "<group>"; };
 		A44A431020E5E34A003F56E6 /* UIImage+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AG.swift"; sourceTree = "<group>"; };
-		A44DBECB211AA6DC0002D75B /* AGStateViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGStateViewProtocol.swift; sourceTree = "<group>"; };
 		A477729721172F7E00D82F7D /* AGSafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSafeArea.swift; sourceTree = "<group>"; };
 		A479EB4E213E38A900A4F143 /* AGVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGVC.swift; sourceTree = "<group>"; };
 		A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationRoutable.swift; sourceTree = "<group>"; };
@@ -284,7 +263,6 @@
 		A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireTask.swift; sourceTree = "<group>"; };
 		A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireValidatable.swift; sourceTree = "<group>"; };
 		A4B457DF213E9B3A005A7783 /* AGVCEventable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGVCEventable.swift; sourceTree = "<group>"; };
-		A4B61D6221183979003F98FF /* AGNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGNavigationView.swift; sourceTree = "<group>"; };
 		A4B61D6621185CA6003F98FF /* AGBouncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBouncingView.swift; sourceTree = "<group>"; };
 		A4B61D6921185EA8003F98FF /* AGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGView.swift; sourceTree = "<group>"; };
 		A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+AG.swift"; sourceTree = "<group>"; };
@@ -502,8 +480,6 @@
 				A42DA3FD2141838600F1033F /* AGNetworkManager.swift */,
 				A42DA4042141880100F1033F /* AGOperationStatus.swift */,
 				A4EB820F21413E4900BBAC2D /* AGReachability.swift */,
-				A42DA3F82141804D00F1033F /* AGAlamofireResponse.swift */,
-				A42DA3FA2141805600F1033F /* AGAlamofireResponseResult.swift */,
 				A42DA3EB21417CFB00F1033F /* AGAlamofireRouter.swift */,
 				A42DA3F021417E9200F1033F /* AGRouterRequest.swift */,
 				A42DA3ED21417E6400F1033F /* AGRouterResponse.swift */,
@@ -685,7 +661,6 @@
 				A434A13521101997004898DE /* UIButton+AG.swift */,
 				A434A16421101EA9004898DE /* CGRect+AG.swift */,
 				A434A13221101992004898DE /* CGFloat+AG.swift */,
-				A434A1062110141A004898DE /* UIAlertController+AG.swift */,
 				A44A431020E5E34A003F56E6 /* UIImage+AG.swift */,
 				A434A13821101A32004898DE /* UINavigationController+AG.swift */,
 				A434A13A21101A32004898DE /* UIView+AG.swift */,
@@ -740,7 +715,6 @@
 				A4BB9C012154E76700EAEBAF /* AGDefaults.swift */,
 				A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */,
 				A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */,
-				A43333C2217765370053A634 /* AGFontTextStylable.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -763,11 +737,11 @@
 				A433E979216F3EDE0068DAD9 /* AGSizeClass.swift */,
 				A433E97B216F3F970068DAD9 /* AGSizeClassUI.swift */,
 				A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */,
-				A434A17F21101EA9004898DE /* CAAnimation+Constraint+AG.swift */,
 				A434A18021101EA9004898DE /* AGViewAnimation.swift */,
 				A433E983216F405B0068DAD9 /* PanningUtil.swift */,
 				A43333C4217766140053A634 /* AGIndictable.swift */,
 				A43333C821776B460053A634 /* AGViewFontTextStylable.swift */,
+				A43333C2217765370053A634 /* AGFontTextStylable.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -794,8 +768,6 @@
 		A434A16721101EA9004898DE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A434A16B21101EA9004898DE /* AGLoadingViewManager.swift */,
-				A434A16C21101EA9004898DE /* AGNavigationViewManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -841,12 +813,9 @@
 			children = (
 				A4B61D6921185EA8003F98FF /* AGView.swift */,
 				A4B61D6621185CA6003F98FF /* AGBouncingView.swift */,
-				A4B61D6221183979003F98FF /* AGNavigationView.swift */,
 				A434A19221101EA9004898DE /* AGShadowable.swift */,
 				A434A19421101EA9004898DE /* AGStateView.swift */,
 				A434A19721101EA9004898DE /* AGRadiusable.swift */,
-				A434A19921101EA9004898DE /* AGLoadingView.swift */,
-				A434A19A21101EA9004898DE /* AGLoadingView.xib */,
 			);
 			path = AGView;
 			sourceTree = "<group>";
@@ -871,9 +840,7 @@
 		A44DBECD211AA7070002D75B /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				A434A16821101EA9004898DE /* AGNavigationBarProtocol.swift */,
 				A41C2D4B2115AAF800EA8282 /* AGKeyboardProtocol.swift */,
-				A44DBECB211AA6DC0002D75B /* AGStateViewProtocol.swift */,
 				A4B457DF213E9B3A005A7783 /* AGVCEventable.swift */,
 			);
 			path = Protocol;
@@ -1054,7 +1021,6 @@
 				A47C8A9E20D3A829009F8183 /* LaunchScreen.storyboard in Resources */,
 				A47C8A9B20D3A829009F8183 /* Assets.xcassets in Resources */,
 				A4F3EEDF2148074D009CEFF5 /* FirebaseView.storyboard in Resources */,
-				A434A1C021101EA9004898DE /* AGLoadingView.xib in Resources */,
 				A47C8A9920D3A828009F8183 /* Main.storyboard in Resources */,
 				A4F3EEDD21480747009CEFF5 /* Alamofire.storyboard in Resources */,
 				A42D365D214E991300371A89 /* FirebaseDetailView.storyboard in Resources */,
@@ -1143,14 +1109,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A434A1BF21101EA9004898DE /* AGLoadingView.swift in Sources */,
 				A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */,
-				A42DA3F92141804D00F1033F /* AGAlamofireResponse.swift in Sources */,
 				A42DA3EE21417E6400F1033F /* AGRouterResponse.swift in Sources */,
 				A434A1AB21101EA9004898DE /* UIColor+AGAsset.swift in Sources */,
 				A42DA3F521417F3A00F1033F /* Notification+AGAlamofire.swift in Sources */,
 				A434A11721101855004898DE /* UICollectionViewCell+AG.swift in Sources */,
-				A434A1A221101EA9004898DE /* AGLoadingViewManager.swift in Sources */,
 				A4BB9BFE2154CC3C00EAEBAF /* CATransition+AG.swift in Sources */,
 				A434A1AC21101EA9004898DE /* AGReusable.swift in Sources */,
 				A42D899A213DAA89002A7E01 /* MainVC.swift in Sources */,
@@ -1158,7 +1121,6 @@
 				A434A12C21101959004898DE /* Int+AG.swift in Sources */,
 				A434A13321101992004898DE /* CGFloat+AG.swift in Sources */,
 				A42DA3EC21417CFB00F1033F /* AGAlamofireRouter.swift in Sources */,
-				A434A19F21101EA9004898DE /* AGNavigationBarProtocol.swift in Sources */,
 				A42D8982213D7878002A7E01 /* TemplateVC.swift in Sources */,
 				A47C8A9620D3A828009F8183 /* ViewController.swift in Sources */,
 				A434A1A521101EA9004898DE /* AGAsset.swift in Sources */,
@@ -1176,7 +1138,6 @@
 				A48C2F87214C2FA500778557 /* UserPet.swift in Sources */,
 				A479EB54213E4B3200A4F143 /* AGApplicationBlurable.swift in Sources */,
 				A433E97A216F3EDE0068DAD9 /* AGSizeClass.swift in Sources */,
-				A434A1072110141A004898DE /* UIAlertController+AG.swift in Sources */,
 				A4BB9C022154E76700EAEBAF /* AGDefaults.swift in Sources */,
 				A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */,
 				A434A1A921101EA9004898DE /* AGColor.swift in Sources */,
@@ -1187,12 +1148,10 @@
 				A434A12E21101959004898DE /* NotificationName+AG.swift in Sources */,
 				A42DA4072141884100F1033F /* AGModelHelper.swift in Sources */,
 				A434A12A21101959004898DE /* MutableCollection+AG.swift in Sources */,
-				A42DA3FB2141805600F1033F /* AGAlamofireResponseResult.swift in Sources */,
 				A434A11921101855004898DE /* UITableViewHeaderFooterView+AG.swift in Sources */,
 				A4EB821021413E4900BBAC2D /* AGReachability.swift in Sources */,
 				A4B61D6721185CA6003F98FF /* AGBouncingView.swift in Sources */,
 				A42D898B213D9AA6002A7E01 /* ApplicationBlurable.swift in Sources */,
-				A44DBECC211AA6DC0002D75B /* AGStateViewProtocol.swift in Sources */,
 				A418518721241E1D00765969 /* URL+AG.swift in Sources */,
 				A42DA3F121417E9200F1033F /* AGRouterRequest.swift in Sources */,
 				A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */,
@@ -1209,7 +1168,6 @@
 				A434A1B021101EA9004898DE /* AGViewAnimation.swift in Sources */,
 				A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */,
 				A4C0C258213E7E6E00288AFB /* AGApplicationSetup.swift in Sources */,
-				A4B61D6321183979003F98FF /* AGNavigationView.swift in Sources */,
 				A433E982216F3FE00068DAD9 /* AGDefaultsCodable.swift in Sources */,
 				A434A12B21101959004898DE /* Bundle+AG.swift in Sources */,
 				A42D898F213D9BDF002A7E01 /* ApplicationSetup.swift in Sources */,
@@ -1230,7 +1188,6 @@
 				A434A1AA21101EA9004898DE /* BaseColor.swift in Sources */,
 				A42D365B214E990300371A89 /* FirebaseDetailVC.swift in Sources */,
 				A434A12D21101959004898DE /* Float+AG.swift in Sources */,
-				A434A1A321101EA9004898DE /* AGNavigationViewManager.swift in Sources */,
 				A42DA4152141984A00F1033F /* AGDateConfiguration.swift in Sources */,
 				A434A13D21101A32004898DE /* UINavigationController+AG.swift in Sources */,
 				A4F3EEE121480753009CEFF5 /* FirebaseVC.swift in Sources */,
@@ -1256,7 +1213,6 @@
 				A434A14721101A46004898DE /* UIWindow+AG.swift in Sources */,
 				A434A1B721101EA9004898DE /* AGCollectionCell.swift in Sources */,
 				A434A1B521101EA9004898DE /* AGTableCell.swift in Sources */,
-				A434A1AF21101EA9004898DE /* CAAnimation+Constraint+AG.swift in Sources */,
 				A434A1B921101EA9004898DE /* UIButton+AGButton.swift in Sources */,
 				A41C2D4C2115AAF800EA8282 /* AGKeyboardProtocol.swift in Sources */,
 				A433E984216F405B0068DAD9 /* PanningUtil.swift in Sources */,

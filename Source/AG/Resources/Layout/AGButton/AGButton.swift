@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
@@ -27,7 +28,7 @@ public protocol AGButtonSetting {
   var appearance: AGButtonAppearance { get set }
   var option: AGButtonOption { get set }
   var color: AGButtonColor { get set }
-  var icon: AGAsset { get set }
+  var icon: UIImage { get set }
   
 }
 
@@ -43,14 +44,14 @@ public struct AGButtonAppearance {
   public var ic_style: AGButtonIconStyle
   
   public init() {
-    lb_font = UIFont.systemFont(ofSize: 14)
+    lb_font = UIFont.preferredFont(forTextStyle: .body)
     bg_alpha = 1
     bd_radius = nil
     bd_width = 1
     ic_style = .icon
   }
   
-  public init(lb_font: UIFont = UIFont.systemFont(ofSize: 14),
+  public init(lb_font: UIFont = UIFont.preferredFont(forTextStyle: .body),
               bg_alpha: CGFloat = 1,
               bd_radius: CGFloat? = nil,
               bd_width: CGFloat = 1,
@@ -75,6 +76,7 @@ public struct AGButtonOption {
   public var isSetupBackground: Bool
   public var isSetupIcon: Bool
   public var isSetupBorderBottom: Bool
+  public var isSetupSpinner: Bool
   
   public init() {
     isSetupTitle = true
@@ -83,77 +85,37 @@ public struct AGButtonOption {
     isSetupBackground = true
     isSetupIcon = false
     isSetupBorderBottom = false
-  }
-  
-  public init(isSetupTitle: Bool = true,
-              isSetupBorder: Bool = false,
-              isSetupRadius: Bool = false,
-              isSetupBackground: Bool = true,
-              isSetupIcon: Bool = false,
-              isSetupBorderBottom: Bool = false) {
-    self.isSetupTitle = isSetupTitle
-    self.isSetupBorder = isSetupBorder
-    self.isSetupRadius = isSetupRadius
-    self.isSetupBackground = isSetupBackground
-    self.isSetupIcon = isSetupIcon
-    self.isSetupBorderBottom = isSetupBorderBottom
+    isSetupSpinner = false
   }
   
 }
 
 
 
+//MARK: - AGButtonColorState
+public typealias AGButtonColorState = (normal: UIColor, hilighted: UIColor, disable: UIColor)
+
+
+
 //MARK: - AGButtonColor
 public struct AGButtonColor {
   
-  public var lb_normal: AGColor
-  public var lb_hilighted: AGColor
-  public var lb_disable: AGColor
-  public var bg_normal: AGColor
-  public var bg_hilighted: AGColor
-  public var bg_disable: AGColor
-  public var bd_normal: AGColor
-  public var bd_disable: AGColor
-  public var ic_normal: AGColor
-  public var ic_disable: AGColor
-  public var tint: AGColor
+  public var lb: AGButtonColorState
+  public var bg: AGButtonColorState
+  public var bd: AGButtonColorState
+  public var ic: AGButtonColorState
+  public var tint: UIColor
+  public var spinner: UIColor
+  public var spinnerBackground: UIColor
   
   public init() {
-    lb_normal = BaseColor.black
-    lb_hilighted = BaseColor.black
-    lb_disable = BaseColor.black
-    bg_normal = BaseColor.white
-    bg_hilighted = BaseColor.white_two
-    bg_disable = BaseColor.white
-    bd_normal = BaseColor.white
-    bd_disable = BaseColor.white
-    ic_normal = BaseColor.black
-    ic_disable = BaseColor.black
-    tint = BaseColor.black
-  }
-  
-  public init(lb_normal: AGColor = BaseColor.black,
-              lb_hilighted: AGColor = BaseColor.black,
-              lb_disable: AGColor = BaseColor.black,
-              bg_normal: AGColor = BaseColor.white,
-              bg_hilighted: AGColor = BaseColor.white_two,
-              bg_disable: AGColor = BaseColor.white,
-              bd_normal: AGColor = BaseColor.white,
-              bd_disable: AGColor = BaseColor.white,
-              ic_normal: AGColor = BaseColor.black,
-              ic_disable: AGColor = BaseColor.black,
-              tint: AGColor = BaseColor.black) {
-    self.lb_normal = lb_normal
-    self.lb_hilighted = lb_hilighted
-    self.lb_disable = lb_disable
-    self.bg_normal = bg_normal
-    self.bg_hilighted = bg_hilighted
-    self.bg_disable = bg_disable
-    self.bd_normal = bd_normal
-    self.bd_disable = bd_disable
-    self.ic_normal = ic_normal
-    self.ic_disable = ic_disable
-    self.tint = tint
+    lb = (normal: .black, hilighted: .black, disable: .black)
+    bg = (normal: .clear, hilighted: .clear, disable: .clear)
+    bd = (normal: .black, hilighted: .black, disable: .black)
+    ic = (normal: .black, hilighted: .black, disable: .black)
+    tint = UIColor.black
+    spinner = UIColor.black
+    spinnerBackground = UIColor.white
   }
   
 }
@@ -201,18 +163,20 @@ public class AGButton: UIButton, AGBouncingView {
   fileprivate var buttonBorder = CALayer()
   fileprivate var layoutButton = false
   
+  
+  fileprivate var cached_title: String? = ""
+  fileprivate var cached_Image: UIImage?
+  
   fileprivate let springGoEase: CAMediaTimingFunction = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
   fileprivate let shrinkCurve: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
   fileprivate let expandCurve: CAMediaTimingFunction = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
   fileprivate let shrinkDuration: CFTimeInterval = 0.1
   
-  fileprivate var cached_title: String? = ""
-  
-  //  fileprivate lazy var spiner: SpinerLayer = {
-  //    let spiner = SpinerLayer(frame: self.frame)
-  //    self.layer.addSublayer(spiner)
-  //    return spiner
-  //  }()
+  fileprivate lazy var spiner: AGSpinerLayer = {
+    let spiner = AGSpinerLayer(frame: self.frame)
+    self.layer.addSublayer(spiner)
+    return spiner
+  }()
   
 }
 
@@ -251,6 +215,10 @@ public extension AGButton {
     
   }
   
+  //  public convenience init() {
+  //    self.init(frame: .zero)
+  //  }
+  
   public override func awakeFromNib() {
     super.awakeFromNib()
     
@@ -258,14 +226,11 @@ public extension AGButton {
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
     if !layoutButton {
       layoutButton = true
-      self.setupStyle()
+      setupStyle()
     }
-    
-    //    self.spiner.setToFrame(self.frame)
-    
+    spiner.setToFrame(self.frame)
   }
   
 }
@@ -276,23 +241,26 @@ public extension AGButton {
 public extension AGButton {
   
   fileprivate func setupTitle() {
-    
     let c = setting.color
     let a = setting.appearance
-    setTitleColor(c.lb_normal.color, for: .normal)
-    setTitleColor(c.lb_normal.color, for: .highlighted)
-    setTitleColor(c.lb_disable.color, for: .disabled)
+    setTitleColor(c.lb.normal, for: .normal)
+    setTitleColor(c.lb.normal, for: .highlighted)
+    setTitleColor(c.lb.disable, for: .disabled)
     titleLabel?.font = a.lb_font
+    titleLabel?.adjustsFontForContentSizeCategory = true
+    titleLabel?.adjustsFontSizeToFitWidth = true
     
   }
   
   fileprivate func setupBackground(opacity: CGFloat = 1) {
-    
     let c = setting.color
-    backgroundColor = BaseColor.clear.color
-    setBackgroundColor(c.bg_normal.color(alpha: opacity), for: .normal)
-    setBackgroundColor(c.bg_hilighted.color(alpha: opacity), for: .highlighted)
-    setBackgroundColor(c.bg_disable.color(alpha: opacity), for: .disabled)
+    backgroundColor = UIColor.clear
+    setBackgroundColor(c.bg.normal, for: .normal)
+    setBackgroundColor(c.bg.hilighted, for: .highlighted)
+    setBackgroundColor(c.bg.disable, for: .disabled)
+    //    setBackgroundColor(c.bg.normal.withAlphaComponent(opacity), for: .normal)
+    //    setBackgroundColor(c.bg.hilighted.withAlphaComponent(opacity), for: .highlighted)
+    //    setBackgroundColor(c.bg.disable.withAlphaComponent(opacity), for: .disabled)
     //    if isEnabled {
     //      backgroundColor = color.bg_normal.color
     //    } else {
@@ -306,9 +274,9 @@ public extension AGButton {
     let c = setting.color
     layer.borderWidth = width
     if isEnabled {
-      layer.borderColor = c.bd_normal.cgColor
+      layer.borderColor = c.bd.normal.cgColor
     } else {
-      layer.borderColor = c.bd_disable.cgColor
+      layer.borderColor = c.bd.disable.cgColor
     }
     
   }
@@ -328,15 +296,14 @@ public extension AGButton {
     
     let c = setting.color
     if isEnabled {
-      addBorder(.bottom, color: c.bd_normal.color, width: 1)
+      addBorder(.bottom, color: c.bd.normal, width: 1)
     } else {
-      addBorder(.bottom, color: c.bd_disable.color, width: 1)
+      addBorder(.bottom, color: c.bd.disable, width: 1)
     }
     
   }
   
   fileprivate func addBorder(_ side: AGButtonBorderSides, color: UIColor, width: CGFloat) {
-    
     let frame_w = frame.size.width
     let frame_h = frame.size.height
     buttonBorder.backgroundColor = color.cgColor
@@ -350,6 +317,7 @@ public extension AGButton {
     case .right:
       buttonBorder.frame = CGRect(x: frame_w - width, y: 0, width: width, height: frame_h)
     }
+    buttonBorder.removeFromSuperlayer()
     layer.addSublayer(buttonBorder)
     layoutIfNeeded()
     
@@ -365,9 +333,9 @@ public extension AGButton {
     
     let c = setting.color
     let ic = setting.icon
-    let ic_nornal = ic.image(c.ic_normal)
-    let ic_highlighted = ic.image(c.ic_normal)
-    let ic_disable = ic.image(c.ic_disable)
+    let ic_nornal = ic.overlay(color: c.ic.normal)
+    let ic_highlighted = ic.overlay(color: c.ic.normal)
+    let ic_disable = ic.overlay(color: c.ic.disable)
     
     switch iconStyle {
     case .icon:
@@ -393,7 +361,7 @@ public extension AGButton {
       
     }
     
-    tintColor = c.tint.color
+    tintColor = c.tint
     imageView?.contentMode = .scaleAspectFit
     
     contentHorizontalAlignment = alignment
@@ -409,6 +377,12 @@ public extension AGButton {
     setImage(ic_highlighted, for: .highlighted)
     setImage(ic_disable, for: .disabled)
     
+  }
+  
+  fileprivate func setupSpinner() {
+    let c = setting.color
+    spiner.spinnerColor = c.spinner
+    clipsToBounds  = true
   }
   
 }
@@ -453,6 +427,9 @@ public extension AGButton {
     if o.isSetupBorderBottom {
       setupBorderBottom()
     }
+    if o.isSetupSpinner {
+      setupSpinner()
+    }
     
   }
   
@@ -462,124 +439,123 @@ public extension AGButton {
 
 //MARK: - TransitionButton
 //  Credit by Alaeddine M. on 11/1/15.
-public extension AGButton {
+extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
   
-  /**
-   start animating the button, before starting a task, exemple: before a network call.
-   */
   public func startAnimation() {
-    self.isUserInteractionEnabled = false // Disable the user interaction during the animation
+    isUserInteractionEnabled = false
     
-    self.cached_title = title(for: .normal)
+    cached_title = title(for: .normal)
+    cached_Image = image(for: .normal)
     
-    self.setTitle("",  for: .normal)
-    self.setImage(nil, for: .normal)
+    setTitle("",  for: .normal)
+    setImage(nil, for: .normal)
     
-    UIView.animate(withDuration: 0.1, animations: { () -> Void in
+    setBackgroundColor(setting.color.spinnerBackground, for: .normal)
+    
+    UIView.animate(withDuration: 0.1, animations: {
       self.layer.cornerRadius = self.frame.height / 2
     }, completion: { completed -> Void in
-      // reduce the width to be equal to the height in order to have a circle
       self.shrink()
-      // animate spinner
-      //      self.spiner.animation()
+      self.spiner.animation()
     })
   }
   
-  public func stopAnimation(animationStyle: StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
-    
+  public func stopAnimation(animationStyle: StopAnimationStyle = .normal,
+                            revertAfterDelay delay: TimeInterval = 1.0,
+                            completion: CallbackVoid? = nil) {
+    let delayToRevert = max(delay, 0.2)
     switch animationStyle {
     case .normal:
-      completion?()
-      // We return to original state after a delay to give opportunity to custom transition
-      DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-        self.setOriginalState()
+      DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
+        self.setOriginalState(completion: completion)
       }
     case .shake:
-      completion?()
-      // We return to original state after a delay to give opportunity to custom transition
-      DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-        self.setOriginalState()
-        self.shakeAnimation()
+      DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
+        self.setOriginalState(completion: nil)
+        self.shakeAnimation(completion: completion)
       }
     case .expand:
-      // before animate the expand animation we need to hide the spiner first
-      //      self.spiner.stopAnimation()
-      // scale the round button to fill the screen
-      self.expand(completion: completion, revertDelay:delay)
+      spiner.stopAnimation()
+      spiner.spinnerColor = setting.color.spinnerBackground
+      expand(completion: completion, revertDelay: delayToRevert)
     }
   }
   
-  private func shakeAnimation() {
-    
-    let keyFrame = CAAnimation.KeyFrame.position
-    let point = self.layer.position
+  private func shakeAnimation(completion: CallbackVoid?) {
+    let keyFrame = CAKeyframeAnimation(keyPath: "position")
+    let point = layer.position
     keyFrame.values = [NSValue(cgPoint: CGPoint(x: CGFloat(point.x), y: CGFloat(point.y))),
-                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x - 10), y: CGFloat(point.y))),
-                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 10), y: CGFloat(point.y))),
-                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x - 10), y: CGFloat(point.y))),
-                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 10), y: CGFloat(point.y))),
-                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x - 10), y: CGFloat(point.y))),
-                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 10), y: CGFloat(point.y))),
+                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x - 5), y: CGFloat(point.y))),
+                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 5), y: CGFloat(point.y))),
+                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x - 5), y: CGFloat(point.y))),
+                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 5), y: CGFloat(point.y))),
+                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x - 5), y: CGFloat(point.y))),
+                       NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 5), y: CGFloat(point.y))),
                        NSValue(cgPoint: point)]
     
     keyFrame.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     keyFrame.duration = 0.7
-    self.layer.position = point
-    self.layer.add(keyFrame, forKey: keyFrame.keyPath)
+    layer.position = point
+    CATransaction.setCompletionBlock {
+      completion?()
+    }
+    layer.add(keyFrame, forKey: keyFrame.keyPath)
+    CATransaction.commit()
   }
   
-  private func setOriginalState() {
-    animateToOriginalWidth()
-    //    spiner.stopAnimation()
-    setTitle(self.cached_title, for: .normal)
-    isUserInteractionEnabled = true // enable again the user interaction
-    setupStyle()
+  private func setOriginalState(completion: CallbackVoid?) {
+    animateToOriginalWidth(completion: completion)
+    spiner.stopAnimation()
+    setTitle(cached_title, for: .normal)
+    setImage(cached_Image, for: .normal)
+    setBackgroundColor(setting.color.bg.normal, for: .normal)
+    isUserInteractionEnabled = true
+    layer.cornerRadius = setting.appearance.bd_radius ?? 0
   }
   
-  private func animateToOriginalWidth() {
-    let shrinkAnim = CAAnimation.Basic.Size.width
-    shrinkAnim.fromValue = (self.bounds.height)
-    shrinkAnim.toValue = (self.bounds.width)
+  private func animateToOriginalWidth(completion: CallbackVoid?) {
+    let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
+    shrinkAnim.fromValue = bounds.height
+    shrinkAnim.toValue = bounds.width
     shrinkAnim.duration = shrinkDuration
     shrinkAnim.timingFunction = shrinkCurve
     shrinkAnim.fillMode = kCAFillModeForwards
     shrinkAnim.isRemovedOnCompletion = false
-    self.layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
+    CATransaction.setCompletionBlock {
+      completion?()
+    }
+    layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
+    CATransaction.commit()
   }
   
   private func shrink() {
-    
-    let shrinkAnim                   = CAAnimation.Basic.Size.width
-    shrinkAnim.fromValue             = frame.width
-    shrinkAnim.toValue               = frame.height
-    shrinkAnim.duration              = shrinkDuration
-    shrinkAnim.timingFunction        = shrinkCurve
-    shrinkAnim.fillMode              = kCAFillModeForwards
+    let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
+    shrinkAnim.fromValue = frame.width
+    shrinkAnim.toValue = frame.height
+    shrinkAnim.duration = shrinkDuration
+    shrinkAnim.timingFunction = shrinkCurve
+    shrinkAnim.fillMode = kCAFillModeForwards
     shrinkAnim.isRemovedOnCompletion = false
-    
     layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
   }
   
   private func expand(completion: CallbackVoid?, revertDelay: TimeInterval) {
-    let expandAnim = CAAnimation.Basic.Transform.scale
-    expandAnim.fromValue            = 1.0
-    expandAnim.toValue              = 26.0
-    expandAnim.timingFunction       = expandCurve
-    expandAnim.duration             = 0.4
-    expandAnim.fillMode             = kCAFillModeForwards
-    expandAnim.isRemovedOnCompletion  = false
-    
+    let expandAnim = CABasicAnimation(keyPath: "transform.scale")
+    let expandScale = (UIScreen.main.bounds.size.height/frame.size.height)*2
+    expandAnim.fromValue = 1.0
+    expandAnim.toValue = max(expandScale,26.0)
+    expandAnim.timingFunction = expandCurve
+    expandAnim.duration = 0.4
+    expandAnim.fillMode = kCAFillModeForwards
+    expandAnim.isRemovedOnCompletion = false
     CATransaction.setCompletionBlock {
       completion?()
-      // We return to original state after a delay to give opportunity to custom transition
       DispatchQueue.main.asyncAfter(deadline: .now() + revertDelay) {
-        self.setOriginalState()
-        self.layer.removeAllAnimations() // make sure we remove all animation
+        self.setOriginalState(completion: nil)
+        self.layer.removeAllAnimations()
       }
     }
-    
     layer.add(expandAnim, forKey: expandAnim.keyPath)
-    
     CATransaction.commit()
   }
   

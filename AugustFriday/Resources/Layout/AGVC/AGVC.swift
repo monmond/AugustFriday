@@ -38,7 +38,6 @@ class AGVC: UIViewController {
   
   
   //MARK: - Instance
-//  lazy var agLoadingViewManager = AGLoadingViewManager(vc: self, viewModel: OMULoadingViewModel())
 //  lazy var agReachabilityManager = AGReachabilityManager(vc: self)
   
   
@@ -176,7 +175,6 @@ extension AGVC {
 extension AGVC {
   
   fileprivate func setupViewOnViewDidLoad() {
-//    agLoadingViewManager.create()
 //    agReachabilityManager.setupObservers()
     
   }

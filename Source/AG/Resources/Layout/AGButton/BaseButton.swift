@@ -6,26 +6,32 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
-import Foundation
 
+
+//MARK: - Imports
+import UIKit
+
+
+
+//MARK: - BaseButtonSetting
 public struct BaseButtonSetting: AGButtonSetting {
   
   public var appearance: AGButtonAppearance = AGButtonAppearance()
   public var option: AGButtonOption = AGButtonOption()
   public var color: AGButtonColor = AGButtonColor()
-  public var icon: AGAsset = BaseAsset.none
+  public var icon: UIImage = UIImage()
   
   public init() {
     appearance = AGButtonAppearance()
     option = AGButtonOption()
     color = AGButtonColor()
-    icon = BaseAsset.none
+    icon = UIImage()
   }
   
   public init(appearance: AGButtonAppearance = AGButtonAppearance(),
               option: AGButtonOption = AGButtonOption(),
               color: AGButtonColor = AGButtonColor(),
-              icon: AGAsset = BaseAsset.none) {
+              icon: UIImage = UIImage()) {
     self.appearance = appearance
     self.option = option
     self.color = color
@@ -33,6 +39,8 @@ public struct BaseButtonSetting: AGButtonSetting {
   }
   
 }
+
+
 
 /**
  AGButtonStyle
@@ -43,6 +51,7 @@ public struct BaseButtonSetting: AGButtonSetting {
  - icon meaning icon using style
  - bottom meaning only bottom border
  */
+//MARK: - BaseButtonSetting
 public enum BaseButtonStyle: AGButtonStyle {
   
   //Button

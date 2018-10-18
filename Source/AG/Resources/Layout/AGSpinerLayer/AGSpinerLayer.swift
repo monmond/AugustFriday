@@ -7,18 +7,23 @@
 //
 //  Credit by Alaeddine M. on 11/1/15.
 
+
+
+//MARK: - Imports
 import UIKit
 
 
-public class SpinerLayer: CAShapeLayer {
+
+//MARK: - SpinerLayer
+class AGSpinerLayer: CAShapeLayer {
   
-  public var spinnerColor = UIColor.white {
+  var spinnerColor = UIColor.white {
     didSet {
       strokeColor = spinnerColor.cgColor
     }
   }
   
-  public init(frame: CGRect) {
+  init(frame: CGRect) {
     super.init()
     
     self.setToFrame(frame)
@@ -31,11 +36,16 @@ public class SpinerLayer: CAShapeLayer {
     self.isHidden = true
   }
   
-  public required init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func animation() {
+  override init(layer: Any) {
+    super.init(layer: layer)
+    
+  }
+  
+  func animation() {
     self.isHidden = false
     let rotate = CABasicAnimation(keyPath: "transform.rotation.z")
     rotate.fromValue = 0
@@ -50,7 +60,7 @@ public class SpinerLayer: CAShapeLayer {
     
   }
   
-  public func setToFrame(_ frame: CGRect) {
+  func setToFrame(_ frame: CGRect) {
     let radius:CGFloat = (frame.height / 2) * 0.5
     self.frame = CGRect(x: 0, y: 0, width: frame.height, height: frame.height)
     let center = CGPoint(x: frame.height / 2, y: bounds.center.y)
@@ -60,10 +70,8 @@ public class SpinerLayer: CAShapeLayer {
     self.path = UIBezierPath(arcCenter: center, radius: radius, startAngle: CGFloat(startAngle), endAngle: CGFloat(endAngle), clockwise: clockwise).cgPath
   }
   
-  public func stopAnimation() {
+  func stopAnimation() {
     self.isHidden = true
     self.removeAllAnimations()
   }
-  
 }
-

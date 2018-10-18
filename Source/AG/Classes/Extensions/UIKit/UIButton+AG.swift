@@ -16,26 +16,26 @@ import UIKit
 //MARK: - Static
 public extension UIButton {
   
-  @available(iOS, deprecated, message: "Use func UIBarButtonItem.createNavBarButton")
-  public class func createNavButton(_ img: UIImage,
-                                    isCompact: Bool = false,
-                                    horizontalAlignment: UIControlContentHorizontalAlignment? = nil ,
-                                    target: Any,
-                                    action: Selector) -> UIButton {
-    let btn = UIButton(type: .custom)
-    btn.setImage(img, for: .normal)
-    btn.setImage(img.overlay(color: BaseColor.white.color), for: .highlighted)
-    btn.setImage(img.overlay(color: BaseColor.white_four.color), for: .disabled)
-    let width: CGFloat = isCompact ? 24 : 44
-    btn.frame = CGRect(x: 0, y: 0, width: width, height: 44)
-    btn.contentMode = .scaleAspectFit
-    if let alignment = horizontalAlignment {
-      btn.contentHorizontalAlignment = alignment
-    }
-    btn.contentEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-    btn.addTarget(target, action: action, for: .touchUpInside)
-    return btn
-  }
+//  @available(iOS, deprecated, message: "Use func UIBarButtonItem.createNavBarButton")
+//  public class func createNavButton(_ img: UIImage,
+//                                    isCompact: Bool = false,
+//                                    horizontalAlignment: UIControlContentHorizontalAlignment? = nil ,
+//                                    target: Any,
+//                                    action: Selector) -> UIButton {
+//    let btn = UIButton(type: .custom)
+//    btn.setImage(img, for: .normal)
+//    btn.setImage(img.overlay(color: BaseColor.white.color), for: .highlighted)
+//    btn.setImage(img.overlay(color: BaseColor.white_four.color), for: .disabled)
+//    let width: CGFloat = isCompact ? 24 : 44
+//    btn.frame = CGRect(x: 0, y: 0, width: width, height: 44)
+//    btn.contentMode = .scaleAspectFit
+//    if let alignment = horizontalAlignment {
+//      btn.contentHorizontalAlignment = alignment
+//    }
+//    btn.contentEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+//    btn.addTarget(target, action: action, for: .touchUpInside)
+//    return btn
+//  }
   
 }
 

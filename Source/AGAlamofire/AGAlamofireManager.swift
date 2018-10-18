@@ -96,10 +96,10 @@ public extension AGAlamofireManager {
   
   //  public func requestCodable<T: AGAlamofireCodableResponse>(_ endpoint: (URLRequestConvertible & AGRouter),
   //                                                       session: SessionIdentifier = "",
-  //                                                       onComplete: @escaping ((AGAlamofireResponse<T>) -> Void)) {
+  //                                                       onComplete: @escaping ((AGDataResponse<T>) -> Void)) {
   //    if let r = AGNetworkManager.shared.reachability, r.currentReachabilityStatus == .notReachable {
   //      let message = r.currentReachabilityStatus
-  //      onComplete(AGAlamofireResponse<T>(data: nil, error: .reachability(message)))
+  //      onComplete(AGDataResponse<T>(data: nil, error: .reachability(message)))
   //    } else {
   //      self.codable(endpoint, session: session) {
   //        onComplete($0)
@@ -110,7 +110,7 @@ public extension AGAlamofireManager {
   //
   //  func codable<T: AGAlamofireCodableResponse>(_ endpoint: (URLRequestConvertible & AGRouter),
   //                                         session: SessionIdentifier = "",
-  //                                         onComplete: @escaping ((AGAlamofireResponse<T>) -> Void)) {
+  //                                         onComplete: @escaping ((AGDataResponse<T>) -> Void)) {
   //    let request = normal.request(endpoint)
   //    request.validate(statusCode: 200..<300)
   //    request.validate(contentType: ["application/json"])
@@ -158,7 +158,7 @@ public extension AGAlamofireManager {
   //
   //      }
   //
-  //      onComplete(AGAlamofireResponse<T>(data: data, error: error))
+  //      onComplete(AGDataResponse<T>(data: data, error: error))
   //
   //    }
   //

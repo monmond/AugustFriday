@@ -14,7 +14,7 @@ import SwiftyJSON
 
 
 
-public typealias CallbackAvatarApiGetAvatar = ((AGAlamofireResponse<GetAvatar.Response>) -> ())
+public typealias CallbackAvatarApiGetAvatar = ((AGDataResponse<GetAvatar.Response>) -> ())
 
 
 
@@ -27,7 +27,7 @@ public class AvatarApi {
     let endpoint = AvatarRouter.getAvatar(param)
     AGAlamofireManager.shared.requestJSON(endpoint) {
       let data = GetAvatar.Response(json: $0.data)
-      onComplete(AGAlamofireResponse<GetAvatar.Response>(data: data, error: $0.error))
+      onComplete(AGDataResponse<GetAvatar.Response>(data: data, error: $0.error))
     }
     
   }

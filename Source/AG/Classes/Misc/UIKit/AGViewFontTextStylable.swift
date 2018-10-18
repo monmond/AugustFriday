@@ -16,9 +16,8 @@ import UIKit
 //MARK: - AGViewFontTextStylable
 public protocol AGViewFontTextStylable {
   var v_adjustsContentSizeCategorys: [UIView] { get }
-  func viewFontTextAdjustsFont(with font: UIFont)
+  func viewFontTextAdjustsFonts(with font: UIFont)
   func viewFontTextAdjustsFont(with view: UIView, font: UIFont)
-  func viewFontTextAdjustsFontviewFontTextAdjustsSetupLabel(with label: UILabel, font: UIFont)
 }
 
 
@@ -26,7 +25,7 @@ public protocol AGViewFontTextStylable {
 //MARK: - Implements
 public extension AGViewFontTextStylable {
   
-  public func viewFontTextAdjustsFont(with font: UIFont) {
+  public func viewFontTextAdjustsFonts(with font: UIFont) {
     for v in v_adjustsContentSizeCategorys {
       viewFontTextAdjustsFont(with: v, font: font)
     }
@@ -34,17 +33,24 @@ public extension AGViewFontTextStylable {
   
   public func viewFontTextAdjustsFont(with view: UIView, font: UIFont) {
     if let btn = view as? UIButton, let lb = btn.titleLabel {
-      viewFontTextAdjustsFont(with: lb, font: font)
+      lb.font = font
+      lb.adjustsFontForContentSizeCategory = true
+      lb.adjustsFontSizeToFitWidth = true
+    }
+    if let tv = view as? UITextView {
+      tv.font = font
+      tv.adjustsFontForContentSizeCategory = true
+    }
+    if let txt = view as? UITextField {
+      txt.font = font
+      txt.adjustsFontForContentSizeCategory = true
+      txt.adjustsFontSizeToFitWidth = true
     }
     if let lb = view as? UILabel {
-      viewFontTextAdjustsFont(with: lb, font: font)
+      lb.font = font
+      lb.adjustsFontForContentSizeCategory = true
+      lb.adjustsFontSizeToFitWidth = true
     }
   }
-  
-  public func viewFontTextAdjustsFont(with label: UILabel, font: UIFont) {
-    label.font = font
-    label.adjustsFontForContentSizeCategory = true
-    label.adjustsFontSizeToFitWidth = true
-  }
-  
+ 
 }

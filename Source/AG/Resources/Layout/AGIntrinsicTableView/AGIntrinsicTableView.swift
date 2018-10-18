@@ -8,10 +8,12 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
 
+//MARK: - IntrinsicTableView
 open class IntrinsicTableView: UITableView {
   
   open override var contentSize: CGSize {

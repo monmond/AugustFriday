@@ -57,7 +57,7 @@ public extension UIView {
 public extension UIView {
   
   public func rotate(_ toValue: CGFloat, duration: CFTimeInterval = 0.2) {
-    let animation = CAAnimation.Basic.Transform.rotation
+    let animation = CABasicAnimation(keyPath: "transform.rotation")
     animation.toValue = toValue
     animation.duration = duration
     animation.isRemovedOnCompletion = false
@@ -67,12 +67,12 @@ public extension UIView {
   
   public func animateRotation() {
     
-    let rotation = CAAnimation.Basic.Transform.rotation
+    let rotation = CABasicAnimation(keyPath: "transform.rotation")
     rotation.fromValue = 0
     rotation.toValue = 2 * Double.pi
     rotation.duration = 1.1
     rotation.repeatCount = Float.infinity
-    self.layer.add(rotation, forKey: CAAnimation.Transition.Key.spin)
+    self.layer.add(rotation, forKey: "spin")
   }
   
 }
