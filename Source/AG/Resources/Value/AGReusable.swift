@@ -40,6 +40,22 @@ public extension AGReusable {
 
 
 
+
+//MARK: - Implements - UIViewController
+public extension AGReusable where Self: UIViewController {
+  
+  public func setupTag(with index: IndexPath) {
+//    tag = index.row
+  }
+  
+  public func setupDefault() {
+//    backgroundColor = BaseColor.clear.color
+  }
+  
+}
+
+
+
 //MARK: - Implements - UIView
 public extension AGReusable where Self: UIView {
   

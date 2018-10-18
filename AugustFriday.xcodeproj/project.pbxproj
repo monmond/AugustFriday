@@ -106,6 +106,11 @@
 		A434A1BE21101EA9004898DE /* AGRadiusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19721101EA9004898DE /* AGRadiusable.swift */; };
 		A434A1C121101EA9004898DE /* AGInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19C21101EA9004898DE /* AGInstantiatable.swift */; };
 		A4354E95214289A100093894 /* AvatarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4354E94214289A100093894 /* AvatarRouter.swift */; };
+		A444FC432178F54D00BCE80D /* AGTransitionVCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444FC422178F54D00BCE80D /* AGTransitionVCHelper.swift */; };
+		A444FC452178F58000BCE80D /* AGTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444FC442178F58000BCE80D /* AGTextFieldDelegate.swift */; };
+		A444FC472178F5B400BCE80D /* AGAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444FC462178F5B400BCE80D /* AGAdapter.swift */; };
+		A444FC492178F5CA00BCE80D /* SnapKitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444FC482178F5CA00BCE80D /* SnapKitUtil.swift */; };
+		A444FC4B2178F62900BCE80D /* AGSlidePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444FC4A2178F62900BCE80D /* AGSlidePanelView.swift */; };
 		A44A431120E5E34A003F56E6 /* UIImage+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A431020E5E34A003F56E6 /* UIImage+AG.swift */; };
 		A477729821172F7E00D82F7D /* AGSafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477729721172F7E00D82F7D /* AGSafeArea.swift */; };
 		A479EB4F213E38A900A4F143 /* AGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479EB4E213E38A900A4F143 /* AGVC.swift */; };
@@ -244,6 +249,11 @@
 		A434A19721101EA9004898DE /* AGRadiusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGRadiusable.swift; sourceTree = "<group>"; };
 		A434A19C21101EA9004898DE /* AGInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGInstantiatable.swift; sourceTree = "<group>"; };
 		A4354E94214289A100093894 /* AvatarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRouter.swift; sourceTree = "<group>"; };
+		A444FC422178F54D00BCE80D /* AGTransitionVCHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTransitionVCHelper.swift; sourceTree = "<group>"; };
+		A444FC442178F58000BCE80D /* AGTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGTextFieldDelegate.swift; sourceTree = "<group>"; };
+		A444FC462178F5B400BCE80D /* AGAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAdapter.swift; sourceTree = "<group>"; };
+		A444FC482178F5CA00BCE80D /* SnapKitUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapKitUtil.swift; sourceTree = "<group>"; };
+		A444FC4A2178F62900BCE80D /* AGSlidePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSlidePanelView.swift; sourceTree = "<group>"; };
 		A44A431020E5E34A003F56E6 /* UIImage+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+AG.swift"; sourceTree = "<group>"; };
 		A477729721172F7E00D82F7D /* AGSafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGSafeArea.swift; sourceTree = "<group>"; };
 		A479EB4E213E38A900A4F143 /* AGVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGVC.swift; sourceTree = "<group>"; };
@@ -739,9 +749,13 @@
 				A433E97D216F3FAC0068DAD9 /* AGSizeClassUICollection.swift */,
 				A434A18021101EA9004898DE /* AGViewAnimation.swift */,
 				A433E983216F405B0068DAD9 /* PanningUtil.swift */,
+				A444FC482178F5CA00BCE80D /* SnapKitUtil.swift */,
 				A43333C4217766140053A634 /* AGIndictable.swift */,
 				A43333C821776B460053A634 /* AGViewFontTextStylable.swift */,
 				A43333C2217765370053A634 /* AGFontTextStylable.swift */,
+				A444FC422178F54D00BCE80D /* AGTransitionVCHelper.swift */,
+				A444FC442178F58000BCE80D /* AGTextFieldDelegate.swift */,
+				A444FC462178F5B400BCE80D /* AGAdapter.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -816,6 +830,7 @@
 				A434A19221101EA9004898DE /* AGShadowable.swift */,
 				A434A19421101EA9004898DE /* AGStateView.swift */,
 				A434A19721101EA9004898DE /* AGRadiusable.swift */,
+				A444FC4A2178F62900BCE80D /* AGSlidePanelView.swift */,
 			);
 			path = AGView;
 			sourceTree = "<group>";
@@ -1143,10 +1158,12 @@
 				A434A1A921101EA9004898DE /* AGColor.swift in Sources */,
 				A48A3401214B681F00B220A9 /* AGHeaderReusable.swift in Sources */,
 				A433E97C216F3F970068DAD9 /* AGSizeClassUI.swift in Sources */,
+				A444FC452178F58000BCE80D /* AGTextFieldDelegate.swift in Sources */,
 				A42DA4132141982800F1033F /* AGDateStyle.swift in Sources */,
 				A433E986216F40CA0068DAD9 /* ApplicationOrientationManager.swift in Sources */,
 				A434A12E21101959004898DE /* NotificationName+AG.swift in Sources */,
 				A42DA4072141884100F1033F /* AGModelHelper.swift in Sources */,
+				A444FC492178F5CA00BCE80D /* SnapKitUtil.swift in Sources */,
 				A434A12A21101959004898DE /* MutableCollection+AG.swift in Sources */,
 				A434A11921101855004898DE /* UITableViewHeaderFooterView+AG.swift in Sources */,
 				A4EB821021413E4900BBAC2D /* AGReachability.swift in Sources */,
@@ -1156,9 +1173,11 @@
 				A42DA3F121417E9200F1033F /* AGRouterRequest.swift in Sources */,
 				A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */,
 				A43333C3217765370053A634 /* AGFontTextStylable.swift in Sources */,
+				A444FC4B2178F62900BCE80D /* AGSlidePanelView.swift in Sources */,
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
 				A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */,
 				A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */,
+				A444FC472178F5B400BCE80D /* AGAdapter.swift in Sources */,
 				A434A11A21101855004898DE /* UICollectionReusableView+AG.swift in Sources */,
 				A48A33FB214B64AD00B220A9 /* FirebaseViewConfiguration.swift in Sources */,
 				A434A1AD21101EA9004898DE /* AGFadeTransition.swift in Sources */,
@@ -1199,6 +1218,7 @@
 				A42DA4032141851200F1033F /* AGAlamofireConfiguration.swift in Sources */,
 				A479EB4F213E38A900A4F143 /* AGVC.swift in Sources */,
 				A420A2A22148CF7F0027AAB4 /* AGDataResponseResult.swift in Sources */,
+				A444FC432178F54D00BCE80D /* AGTransitionVCHelper.swift in Sources */,
 				A434A12F21101959004898DE /* String+AG.swift in Sources */,
 				A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */,
 				A42D8996213DA480002A7E01 /* AGLog.swift in Sources */,
