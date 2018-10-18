@@ -13,25 +13,28 @@ import UIKit
 
 
 
-//MARK: - FontTextStyleModel
-public typealias FontTextStyleModel = [UIFont.TextStyle: FontModel]
+//MARK: - AGFontTextStyleModel
+public typealias AGFontTextStyleModel = [UIFont.TextStyle: AGFontModel]
 
 
 
-//MARK: - FontTextStyle
-public enum FontTextStyle {
+//MARK: - AGFontTextStyle
+public enum AGFontTextStyle {
   case system(weight: UIFont.Weight)
   case custom(name: String)
 }
 
 
 
-//MARK: - FontModel
-public struct FontModel {
-  public let f_style: FontTextStyle
+//MARK: - AGFontModel
+public class AGFontModel {
+  public let f_style: AGFontTextStyle
   public let f_size: CGFloat
+  public init(f_style: AGFontTextStyle, f_size: CGFloat) {
+    self.f_style = f_style
+    self.f_size = f_size
+  }
 }
-
 
 
 //MARK: - FontTextStylable
@@ -39,7 +42,7 @@ public protocol AGFontTextStylable {
   var name: String { get }
   var joined: String { get }
   var font: String { get }
-  static var f_style: FontTextStyleModel { get }
+  static var f_style: AGFontTextStyleModel { get }
 }
 
 

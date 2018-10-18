@@ -178,7 +178,7 @@ public class AGSlidePanelView: AGModelHelper {
   
   
   //MARK: - Initial
-  init(container parent: UIViewController, tabBar: UITabBar, panel child: UIViewController) {
+  public init(container parent: UIViewController, tabBar: UITabBar, panel child: UIViewController) {
     vc_parent = parent
     vc_child = child
     v_container = parent.view

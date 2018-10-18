@@ -14,7 +14,7 @@ import UIKit
 
 
 //MARK: - AGAdapter
-public class AGAdapter: NSObject {
+open class AGAdapter: NSObject {
   
   public func agAdapterCollectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
     let cell = collectionView.cellForItem(at: indexPath) as? AGCollectionCell
