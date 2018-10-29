@@ -13,8 +13,8 @@ import UIKit
 
 
 
-//MARK: - IntrinsicTableView
-open class IntrinsicTableView: UITableView {
+//MARK: - AGIntrinsicTableView
+open class AGIntrinsicTableView: UITableView {
   
   open override var contentSize: CGSize {
     didSet {

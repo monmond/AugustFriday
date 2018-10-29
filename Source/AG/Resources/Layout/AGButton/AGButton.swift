@@ -445,9 +445,9 @@ public extension AGButton {
     
     let c = setting.color
     let ic = setting.icon
-    let ic_nornal = ic.overlay(color: c.ic.normal)
-    let ic_highlighted = ic.overlay(color: c.ic.normal)
-    let ic_disable = ic.overlay(color: c.ic.disable)
+    let ic_nornal = ic.overlay(with: c.ic.normal)
+    let ic_highlighted = ic.overlay(with: c.ic.normal)
+    let ic_disable = ic.overlay(with: c.ic.disable)
     
     switch iconStyle {
     case .icon:

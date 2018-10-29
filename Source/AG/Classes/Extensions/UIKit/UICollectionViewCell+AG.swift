@@ -6,8 +6,14 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
+
+
+//MARK: - Imports
 import UIKit
 
+
+
+//MARK: - UICollectionViewCell
 public extension UICollectionViewCell {
   
   

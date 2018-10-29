@@ -13,7 +13,7 @@ import UIKit
 
 
 
-//MARK: - Type
+//MARK: - Typealias
 public typealias ApplicationOrientationChange = (mask: UIInterfaceOrientationMask, rotateTo: UIInterfaceOrientation)
 
 

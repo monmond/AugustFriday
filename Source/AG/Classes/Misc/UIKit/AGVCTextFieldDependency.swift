@@ -15,6 +15,7 @@ import UIKit
 
 //MARK: - AGVCTextFieldDependency
 public protocol AGVCTextFieldDependency: class {
+  
   func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField)
   func agTextField(_ text: String?, replace string: String, with range: NSRange) -> (current: String, update: String)?
   
@@ -42,6 +43,7 @@ public extension AGVCTextFieldDependency {
     let str_update = str_current.replacingCharacters(in: str_range, with: string)
     return (current: str_current, update: str_update)
   }
+  
 }
 
 

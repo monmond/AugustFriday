@@ -31,15 +31,15 @@ public protocol AGSizeClass {
 //MARK: - Implements
 public extension AGSizeClass {
   
-  static var transparent_inhaft: CGFloat {
+  public static var transparent_inhaft: CGFloat {
     return -1.0000
   }
   
-  static var transparent: CGFloat {
+  public static var transparent: CGFloat {
     return 0.0001
   }
   
-  static var solid: CGFloat {
+  public static var solid: CGFloat {
     return 1.0000
   }
   

@@ -56,7 +56,7 @@ public class AGTransitionVCHelper: NSObject {
 
 
 //MARK: - Life Cycle
-extension AGTransitionVCHelper {
+public extension AGTransitionVCHelper {
   
   public func onInit() {
     enableTransitioningDelegate()
@@ -71,7 +71,7 @@ extension AGTransitionVCHelper {
 
 
 //MARK: - Setup
-extension AGTransitionVCHelper {
+public extension AGTransitionVCHelper {
   
   public func enableTransitioningDelegate() {
     vc.transitioningDelegate = self

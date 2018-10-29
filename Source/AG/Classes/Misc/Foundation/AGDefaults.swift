@@ -15,8 +15,10 @@ import Foundation
 
 //MARK: - AGDefaults
 public protocol AGDefaults {
+  
   static func getAll() -> [String: Any]
   static func removeAll()
+  
 }
 
 

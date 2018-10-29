@@ -20,29 +20,36 @@ public typealias AGFontTextStyleModel = [UIFont.TextStyle: AGFontModel]
 
 //MARK: - AGFontTextStyle
 public enum AGFontTextStyle {
+  
   case system(weight: UIFont.Weight)
   case custom(name: String)
+  
 }
 
 
 
 //MARK: - AGFontModel
 public class AGFontModel {
+  
   public let f_style: AGFontTextStyle
   public let f_size: CGFloat
+  
   public init(f_style: AGFontTextStyle, f_size: CGFloat) {
     self.f_style = f_style
     self.f_size = f_size
   }
+  
 }
 
 
 //MARK: - FontTextStylable
 public protocol AGFontTextStylable {
+  
   var name: String { get }
   var joined: String { get }
   var font: String { get }
   static var f_style: AGFontTextStyleModel { get }
+  
 }
 
 

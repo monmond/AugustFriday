@@ -22,30 +22,38 @@ public protocol AGGenericTM {
 
 //MARK: - AGGenericTC
 public protocol AGGenericTC {
+  
   func setupTag(with index: IndexPath)
   func setupData(with data: AGGenericTM)
+  
 }
 
 
 
 //MARK: - AGGenericTCAM
 public protocol AGGenericTCAM {
+  
   var rows: [AGGenericTM] { get set }
   init()
+  
 }
 
 
 
 //MARK: - AGGenericTCA
 public protocol AGGenericTCA: class {
+  
   var delegate_generic: AGGenericTCADelegate? { get set }
   func setupData(with data: AGGenericTCAM)
   //  init(collection: UICollectionView)
+  
 }
 
 
 
 //MARK: - AGGenericTCADelegate
 public protocol AGGenericTCADelegate: class {
+  
   func genericCCAItemPressed(with adpater: AGGenericTCA, indexPath: IndexPath)
+  
 }

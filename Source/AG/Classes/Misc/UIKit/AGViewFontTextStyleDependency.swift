@@ -15,8 +15,10 @@ import UIKit
 
 //MARK: - AGViewFontTextStyleDependency
 public protocol AGViewFontTextStyleDependency {
+  
   func viewFontTextAdjustsFonts(with views: [UIView], font: UIFont)
   func viewFontTextAdjustsFont(with view: UIView, font: UIFont)
+  
 }
 
 
@@ -24,7 +26,7 @@ public protocol AGViewFontTextStyleDependency {
 //MARK: - Implements
 public extension AGViewFontTextStyleDependency {
   
-  func viewFontTextAdjustsFonts(with views: [UIView], font: UIFont) {
+  public func viewFontTextAdjustsFonts(with views: [UIView], font: UIFont) {
     for v in views {
       viewFontTextAdjustsFont(with: v, font: font)
     }

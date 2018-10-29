@@ -14,7 +14,7 @@ import Foundation
 
 
 //MARK: - Notification.Name
-extension Notification.Name {
+public extension Notification.Name {
 
 //  static let kValidateLayoutMain = NSNotification.Name(rawValue: "ValidateLayout-Main")
   

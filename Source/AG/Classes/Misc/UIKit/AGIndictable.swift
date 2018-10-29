@@ -15,7 +15,9 @@ import UIKit
 
 //MARK: - AGIndictable
 public protocol AGIndictable {
+  
   func startIndicator(completion: @escaping CBVoid)
   func updateIndicator(with progress: Float)
   func endIndicator(completion: @escaping CBVoid)
+  
 }

@@ -15,11 +15,13 @@ import Foundation
 
 //MARK: - AGDefaultsFoundation
 public protocol AGDefaultsFoundation {
+  
   associatedtype T
   static var key: String { get }
   static func get() -> T?
   static func set(data: T)
   static func remove()
+  
 }
 
 

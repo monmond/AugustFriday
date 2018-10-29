@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Imports
 import Foundation
 import UIKit
 
@@ -93,7 +94,7 @@ public enum SwapRootVCAnimationType {
 
 public extension UIWindow {
   
-  public func setController(_ newViewController:UIViewController, animationType:SwapRootVCAnimationType, completion: (() -> ())? = nil) {
+  public func setController(_ newViewController:UIViewController, animationType: SwapRootVCAnimationType, completion: (() -> ())? = nil) {
     guard let currentViewController = rootViewController else {
       return
     }

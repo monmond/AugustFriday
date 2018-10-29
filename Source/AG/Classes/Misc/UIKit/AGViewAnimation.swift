@@ -15,8 +15,10 @@ import UIKit
 
 //MARK: - AGViewAnimation
 public protocol AGViewAnimation {
+  
   func animateChange(_ onComplete: CBVoid?)
   func animateChangeWithDamping(_ onComplete: CBVoid?)
+  
 }
 
 

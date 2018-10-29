@@ -16,10 +16,10 @@ import Foundation
 //MARK: - AGAlamofireTask
 public class AGAlamofireTask {
   
-  var sessionId: String
-  var taskIds: [Int]
+  public var sessionId: String
+  public var taskIds: [Int]
   
-  init(sessionId: String, taskIds: [Int]) {
+  public init(sessionId: String, taskIds: [Int]) {
     self.sessionId = sessionId
     self.taskIds = taskIds
     

@@ -73,6 +73,5 @@ open class AGLog: NSObject {
   open class func verbose(_ message: Any = "", showReflecting: Bool = true, fileName: String = #file, line: Int = #line, function: String = #function) {
     log(.verbose, message: message, showReflecting: showReflecting, fileName: fileName, line: line, function: function)
   }
-  
-  
+    
 }

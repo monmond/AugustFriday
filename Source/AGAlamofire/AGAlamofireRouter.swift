@@ -47,7 +47,7 @@ public extension AGAlamofireRouter {
     }
   }
   
-  var content_type: String {
+  public var content_type: String {
     return "application/json"
   }
 
@@ -55,7 +55,7 @@ public extension AGAlamofireRouter {
     return ""
   }
   
-  var header: [String: String] {
+  public var header: [String: String] {
     let header = [
       "Content-Type" : content_type
     ]

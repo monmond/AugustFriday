@@ -93,7 +93,7 @@
 		A434A1B621101EA9004898DE /* AGCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18A21101EA9004898DE /* AGCollectionReusableView.swift */; };
 		A434A1B721101EA9004898DE /* AGCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18B21101EA9004898DE /* AGCollectionCell.swift */; };
 		A434A1B821101EA9004898DE /* AGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18D21101EA9004898DE /* AGButton.swift */; };
-		A434A1B921101EA9004898DE /* UIButton+AGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18E21101EA9004898DE /* UIButton+AGButton.swift */; };
+		A434A1B921101EA9004898DE /* UIButton+AG in Sources */ = {isa = PBXBuildFile; fileRef = A434A18E21101EA9004898DE /* UIButton+AG */; };
 		A434A1BA21101EA9004898DE /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A18F21101EA9004898DE /* BaseButton.swift */; };
 		A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19221101EA9004898DE /* AGShadowable.swift */; };
 		A434A1BC21101EA9004898DE /* AGStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19421101EA9004898DE /* AGStateView.swift */; };
@@ -130,6 +130,8 @@
 		A4B6AC942186B8A60025C350 /* AGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC932186B8A60025C350 /* AGB.swift */; };
 		A4B6AC962186C5E10025C350 /* AGGenericCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC952186C5E10025C350 /* AGGenericCC.swift */; };
 		A4B6AC982186C5F20025C350 /* AGGenericTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC972186C5F20025C350 /* AGGenericTC.swift */; };
+		A4B6AC9D2186F36C0025C350 /* UINavigationBar+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC9C2186F36C0025C350 /* UINavigationBar+AG.swift */; };
+		A4B6AC9F2186FE8A0025C350 /* AGObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC9E2186FE8A0025C350 /* AGObject.swift */; };
 		A4BB9BFE2154CC3C00EAEBAF /* CATransition+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */; };
 		A4BB9C022154E76700EAEBAF /* AGDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB9C012154E76700EAEBAF /* AGDefaults.swift */; };
 		A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */; };
@@ -237,7 +239,7 @@
 		A434A18A21101EA9004898DE /* AGCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGCollectionReusableView.swift; sourceTree = "<group>"; };
 		A434A18B21101EA9004898DE /* AGCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGCollectionCell.swift; sourceTree = "<group>"; };
 		A434A18D21101EA9004898DE /* AGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGButton.swift; sourceTree = "<group>"; };
-		A434A18E21101EA9004898DE /* UIButton+AGButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+AGButton.swift"; sourceTree = "<group>"; };
+		A434A18E21101EA9004898DE /* UIButton+AG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UIButton+AG"; sourceTree = "<group>"; };
 		A434A18F21101EA9004898DE /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A434A19221101EA9004898DE /* AGShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGShadowable.swift; sourceTree = "<group>"; };
 		A434A19421101EA9004898DE /* AGStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStateView.swift; sourceTree = "<group>"; };
@@ -275,6 +277,8 @@
 		A4B6AC932186B8A60025C350 /* AGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGB.swift; sourceTree = "<group>"; };
 		A4B6AC952186C5E10025C350 /* AGGenericCC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGGenericCC.swift; sourceTree = "<group>"; };
 		A4B6AC972186C5F20025C350 /* AGGenericTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGGenericTC.swift; sourceTree = "<group>"; };
+		A4B6AC9C2186F36C0025C350 /* UINavigationBar+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+AG.swift"; sourceTree = "<group>"; };
+		A4B6AC9E2186FE8A0025C350 /* AGObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGObject.swift; sourceTree = "<group>"; };
 		A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+AG.swift"; sourceTree = "<group>"; };
 		A4BB9C012154E76700EAEBAF /* AGDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDefaults.swift; sourceTree = "<group>"; };
 		A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebase.swift; sourceTree = "<group>"; };
@@ -682,6 +686,8 @@
 				A434A11021101855004898DE /* UITableView+AG.swift */,
 				A434A11221101855004898DE /* UITableViewHeaderFooterView+AG.swift */,
 				A434A11421101855004898DE /* UICollectionReusableView+AG.swift */,
+				A4B6AC9C2186F36C0025C350 /* UINavigationBar+AG.swift */,
+				A434A18E21101EA9004898DE /* UIButton+AG */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -723,6 +729,7 @@
 				A4BB9C012154E76700EAEBAF /* AGDefaults.swift */,
 				A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */,
 				A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */,
+				A4B6AC9E2186FE8A0025C350 /* AGObject.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -817,7 +824,6 @@
 			isa = PBXGroup;
 			children = (
 				A434A18D21101EA9004898DE /* AGButton.swift */,
-				A434A18E21101EA9004898DE /* UIButton+AGButton.swift */,
 				A434A18F21101EA9004898DE /* BaseButton.swift */,
 			);
 			path = AGButton;
@@ -1162,6 +1168,7 @@
 				A434A1B321101EA9004898DE /* AGF.swift in Sources */,
 				A48C2F87214C2FA500778557 /* UserPet.swift in Sources */,
 				A479EB54213E4B3200A4F143 /* AGApplicationBlurable.swift in Sources */,
+				A4B6AC9F2186FE8A0025C350 /* AGObject.swift in Sources */,
 				A433E97A216F3EDE0068DAD9 /* AGSizeClass.swift in Sources */,
 				A4BB9C022154E76700EAEBAF /* AGDefaults.swift in Sources */,
 				A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */,
@@ -1216,6 +1223,7 @@
 				A477729821172F7E00D82F7D /* AGSafeArea.swift in Sources */,
 				A42DA400214183BA00F1033F /* AGLogConfiguration.swift in Sources */,
 				A42D365B214E990300371A89 /* FirebaseDetailVC.swift in Sources */,
+				A4B6AC9D2186F36C0025C350 /* UINavigationBar+AG.swift in Sources */,
 				A434A12D21101959004898DE /* Float+AG.swift in Sources */,
 				A42DA4152141984A00F1033F /* AGDateConfiguration.swift in Sources */,
 				A434A13D21101A32004898DE /* UINavigationController+AG.swift in Sources */,
@@ -1246,7 +1254,7 @@
 				A434A14721101A46004898DE /* UIWindow+AG.swift in Sources */,
 				A434A1B721101EA9004898DE /* AGCollectionCell.swift in Sources */,
 				A434A1B521101EA9004898DE /* AGTableCell.swift in Sources */,
-				A434A1B921101EA9004898DE /* UIButton+AGButton.swift in Sources */,
+				A434A1B921101EA9004898DE /* UIButton+AG in Sources */,
 				A4908F542185EFE700B36696 /* AG.swift in Sources */,
 				A41C2D4C2115AAF800EA8282 /* AGKeyboardProtocol.swift in Sources */,
 				A433E984216F405B0068DAD9 /* PanningUtil.swift in Sources */,

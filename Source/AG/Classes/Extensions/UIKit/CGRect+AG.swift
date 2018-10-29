@@ -15,9 +15,9 @@ import UIKit
 
 
 //MARK: - Getter
-extension CGRect {
+public extension CGRect {
   
-  var x: CGFloat {
+  public var x: CGFloat {
     get {
       return self.origin.x
     }
@@ -26,7 +26,7 @@ extension CGRect {
     }
   }
   
-  var y: CGFloat {
+  public var y: CGFloat {
     get {
       return self.origin.y
     }
@@ -36,7 +36,7 @@ extension CGRect {
   }
   
   
-  var width: CGFloat {
+  public var width: CGFloat {
     get {
       return self.size.width
     }
@@ -45,7 +45,7 @@ extension CGRect {
     }
   }
   
-  var height: CGFloat {
+  public var height: CGFloat {
     get {
       return self.size.height
     }
@@ -55,7 +55,7 @@ extension CGRect {
   }
   
   
-  var top: CGFloat {
+  public var top: CGFloat {
     get {
       return self.origin.y
     }
@@ -64,7 +64,7 @@ extension CGRect {
     }
   }
   
-  var bottom: CGFloat {
+  public var bottom: CGFloat {
     get {
       return self.origin.y + self.size.height
     }
@@ -73,7 +73,7 @@ extension CGRect {
     }
   }
   
-  var left: CGFloat {
+  public var left: CGFloat {
     get {
       return self.origin.x
     }
@@ -82,7 +82,7 @@ extension CGRect {
     }
   }
   
-  var right: CGFloat {
+  public var right: CGFloat {
     get {
       return x + width
     }
@@ -92,7 +92,7 @@ extension CGRect {
   }
   
   
-  var midX: CGFloat {
+  public var midX: CGFloat {
     get {
       return self.x + self.width / 2
     }
@@ -101,7 +101,7 @@ extension CGRect {
     }
   }
   
-  var midY: CGFloat {
+  public var midY: CGFloat {
     get {
       return self.y + self.height / 2
     }
@@ -110,8 +110,7 @@ extension CGRect {
     }
   }
   
-  
-  var center: CGPoint {
+  public var center: CGPoint {
     get {
       return CGPoint(x: self.midX, y: self.midY)
     }
@@ -119,5 +118,6 @@ extension CGRect {
       self = CGRect(x: newValue.x - width / 2, y: newValue.y - height / 2, width: width, height: height)
     }
   }
+  
 }
 

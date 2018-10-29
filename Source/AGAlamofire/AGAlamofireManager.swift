@@ -174,7 +174,7 @@ public extension AGAlamofireManager {
   public func requestJSON(_ endpoint: (URLRequestConvertible & AGAlamofireRouter),
                           session: SessionIdentifier = "",
                           validator: AGAlamofireValidatable.Type? = nil,
-                          onComplete: @escaping CallbackAGDataResponseJSON) {
+                          onComplete: @escaping CBAGDataResponseJSON) {
     if let r = AGNetworkManager.shared.reachability, r.currentReachabilityStatus == .notReachable {
       let message = r.currentReachabilityStatus
       onComplete(AGDataResponse<JSON>(data: nil, error: .reachability(message)))
@@ -189,7 +189,7 @@ public extension AGAlamofireManager {
   fileprivate func json(_ endpoint: (URLRequestConvertible & AGAlamofireRouter),
                         session: SessionIdentifier = "",
                         validator: AGAlamofireValidatable.Type? = nil,
-                        onComplete: @escaping CallbackAGDataResponseJSON) {
+                        onComplete: @escaping CBAGDataResponseJSON) {
     let request = normal.request(endpoint)
     request.validate(statusCode: 200..<300)
     request.validate(contentType: ["application/json"])

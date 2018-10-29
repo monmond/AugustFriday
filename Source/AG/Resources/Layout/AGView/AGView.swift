@@ -8,10 +8,12 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
 
+//MARK: - AGView
 public class AGView: UIView, AGBouncingView {
 
   

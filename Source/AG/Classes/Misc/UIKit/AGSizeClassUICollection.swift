@@ -15,11 +15,13 @@ import UIKit
 
 //MARK: - AGSizeClassUICollection
 public protocol AGSizeClassUICollection {
+  
   static func size(with bound: CGRect) -> CGSize
   static func itemSpace(with bound: CGRect) -> CGFloat
   static func lineSpace(with bound: CGRect) -> CGFloat
   static func inset(with bound: CGRect) -> UIEdgeInsets
   static func offset(with bound: CGRect) -> CGPoint
+  
 }
 
 

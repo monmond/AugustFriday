@@ -50,8 +50,8 @@ public extension UIBarButtonItem {
                                        action: Selector) -> UIBarButtonItem {
     let btn = UIButton(type: .custom)
     btn.setImage(image, for: .normal)
-    btn.setImage(image.overlay(color: AG.C.white), for: .highlighted)
-    btn.setImage(image.overlay(color: AG.C.mercury), for: .disabled)
+    btn.setImage(image.overlay(with: AG.C.white), for: .highlighted)
+    btn.setImage(image.overlay(with: AG.C.mercury), for: .disabled)
     let width: CGFloat = isCompact ? 24 : 44
     btn.frame = CGRect(x: 0, y: 0, width: width, height: 44)
     btn.contentMode = .scaleAspectFit
@@ -106,7 +106,7 @@ public extension UIBarButtonItem {
 //MARK: - Animation
 extension UIButton {
   
-  func pulsate() {
+  public func pulsate() {
     
     let pulse = CASpringAnimation(keyPath: "transform.scale")
     pulse.duration = 0.2
@@ -120,7 +120,7 @@ extension UIButton {
     layer.add(pulse, forKey: "pulse")
   }
   
-  func flash() {
+  public func flash() {
     
     let flash = CABasicAnimation(keyPath: "opacity")
     flash.duration = 0.2
@@ -134,7 +134,7 @@ extension UIButton {
   }
   
   
-  func shake() {
+  public func shake() {
     
     let shake = CABasicAnimation(keyPath: "position")
     shake.duration = 0.05
