@@ -23,14 +23,11 @@ class AGSpinerLayer: CAShapeLayer {
     }
   }
   
-  init(frame: CGRect) {
+  override init() {
     super.init()
-    
-    self.setToFrame(frame)
-    
     self.fillColor = nil
     self.strokeColor = spinnerColor.cgColor
-    self.lineWidth = 1
+    self.lineWidth = 2
     
     self.strokeEnd = 0.4
     self.isHidden = true
@@ -42,7 +39,12 @@ class AGSpinerLayer: CAShapeLayer {
   
   override init(layer: Any) {
     super.init(layer: layer)
+    self.fillColor = nil
+    self.strokeColor = spinnerColor.cgColor
+    self.lineWidth = 2
     
+    self.strokeEnd = 0.4
+    self.isHidden = true
   }
   
   func animation() {

@@ -18,11 +18,11 @@ import SwiftyJSON
 //MARK: - Imports
 public protocol AGAlamofireRouter {
   
-  var baseURL: String { get }
-  var apiGroup: String { get }
+  var host: String { get }
   var path: String { get }
+  var path_last: String { get }
   var method: HTTPMethod { get }
-  var trailParam: String { get }
+  var path_param: String { get }
   
   var encoding: ParameterEncoding { get }
   var content_type: String { get }
@@ -51,7 +51,7 @@ public extension AGAlamofireRouter {
     return "application/json"
   }
 
-  public var trailParam: String {
+  public var path_param: String {
     return ""
   }
   
@@ -63,7 +63,7 @@ public extension AGAlamofireRouter {
   }
   
   public var theURLRequest: URLRequest {
-    let url = URL(string:"\(baseURL)\(apiGroup)\(path)\(trailParam)")!
+    let url = URL(string:"\(host)\(path)\(path_last)\(path_param)")!
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue
     for h in header {

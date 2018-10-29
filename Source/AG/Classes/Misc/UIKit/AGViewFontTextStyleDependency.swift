@@ -1,5 +1,5 @@
 //
-//  AGViewFontTextStylable.swift
+//  AGViewFontTextStyleDependency.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 17/10/18.
@@ -13,20 +13,19 @@ import UIKit
 
 
 
-//MARK: - AGViewFontTextStylable
-public protocol AGViewFontTextStylable {
-  var v_adjustsContentSizeCategorys: [UIView] { get }
-  func viewFontTextAdjustsFonts(with font: UIFont)
+//MARK: - AGViewFontTextStyleDependency
+public protocol AGViewFontTextStyleDependency {
+  func viewFontTextAdjustsFonts(with views: [UIView], font: UIFont)
   func viewFontTextAdjustsFont(with view: UIView, font: UIFont)
 }
 
 
 
 //MARK: - Implements
-public extension AGViewFontTextStylable {
+public extension AGViewFontTextStyleDependency {
   
-  public func viewFontTextAdjustsFonts(with font: UIFont) {
-    for v in v_adjustsContentSizeCategorys {
+  func viewFontTextAdjustsFonts(with views: [UIView], font: UIFont) {
+    for v in views {
       viewFontTextAdjustsFont(with: v, font: font)
     }
   }

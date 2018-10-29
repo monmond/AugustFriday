@@ -24,8 +24,8 @@ public extension UIButton {
 //                                    action: Selector) -> UIButton {
 //    let btn = UIButton(type: .custom)
 //    btn.setImage(img, for: .normal)
-//    btn.setImage(img.overlay(color: BaseColor.white.color), for: .highlighted)
-//    btn.setImage(img.overlay(color: BaseColor.white_four.color), for: .disabled)
+//    btn.setImage(img.overlay(color: AG.Color.white), for: .highlighted)
+//    btn.setImage(img.overlay(color: AG.Color.white_four), for: .disabled)
 //    let width: CGFloat = isCompact ? 24 : 44
 //    btn.frame = CGRect(x: 0, y: 0, width: width, height: 44)
 //    btn.contentMode = .scaleAspectFit
@@ -39,17 +39,19 @@ public extension UIButton {
   
 }
 
+
+
 public extension UIBarButtonItem {
   
-  public class func createNavBarButton(_ image: AGAsset,
+  public class func createNavBarButton(_ image: UIImage,
                                        isCompact: Bool = false,
                                        horizontalAlignment: UIControlContentHorizontalAlignment? = nil,
                                        target: Any,
                                        action: Selector) -> UIBarButtonItem {
     let btn = UIButton(type: .custom)
-    btn.setImage(image.image, for: .normal)
-    btn.setImage(image.image.overlay(color: BaseColor.white.color), for: .highlighted)
-    btn.setImage(image.image.overlay(color: BaseColor.white_four.color), for: .disabled)
+    btn.setImage(image, for: .normal)
+    btn.setImage(image.overlay(color: AG.C.white), for: .highlighted)
+    btn.setImage(image.overlay(color: AG.C.mercury), for: .disabled)
     let width: CGFloat = isCompact ? 24 : 44
     btn.frame = CGRect(x: 0, y: 0, width: width, height: 44)
     btn.contentMode = .scaleAspectFit
@@ -71,10 +73,10 @@ public extension UIBarButtonItem {
     
   }
   
-  public class func createNavTitleImage(_ image: AGAsset,
+  public class func createNavTitleImage(_ image: UIImage,
                                         target: Any,
                                         action: Selector? = nil) -> UIImageView {
-    let img = image.image
+    let img = image
     let imgv = UIImageView(image: img)
     imgv.contentMode = .scaleAspectFill
     if let action = action {

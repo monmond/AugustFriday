@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
@@ -35,9 +36,9 @@ public extension UITableView {
     backgroundColor = UIColor.clear
   }
   
-  public func setBackgroundImage(image: AGAsset) {
-    backgroundColor = BaseColor.clear.color
-    let img = UIImageView(image: image.image)
+  public func setBackgroundImage(image: UIImage) {
+    backgroundColor = AG.C.clear
+    let img = UIImageView(image: image)
     img.contentMode = .scaleAspectFill
     backgroundView = img
   }

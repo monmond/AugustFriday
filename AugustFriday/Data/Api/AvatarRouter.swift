@@ -51,15 +51,15 @@ public enum AvatarRouter: AGAlamofireRouter, URLRequestConvertible {
     }
   }
   
-  public var baseURL: String {
+  public var host: String {
     return "https://api.omumusic.net"
   }
   
-  public var apiGroup: String {
+  public var path: String {
     return "/avatar"
   }
   
-  public var path: String {
+  public var path_last: String {
     switch self {
     case .getAvatar:
       return "/get_avatar"

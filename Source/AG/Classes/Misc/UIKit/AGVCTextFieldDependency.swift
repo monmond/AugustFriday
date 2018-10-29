@@ -13,15 +13,29 @@ import UIKit
 
 
 
-//MARK: - AGTextFieldDelegate
-public protocol AGTextFieldDelegate {
+//MARK: - AGVCTextFieldDependency
+public protocol AGVCTextFieldDependency: class {
+  func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField)
   func agTextField(_ text: String?, replace string: String, with range: NSRange) -> (current: String, update: String)?
+  
+}
+
+
+
+//MARK: Implements - AGVC
+public extension AGVC {
+  
+  @objc
+  public func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField) {
+    sender.resignFirstResponder()
+  }
+  
 }
 
 
 
 //MARK: - Implement
-public extension AGTextFieldDelegate {
+public extension AGVCTextFieldDependency {
   
   public func agTextField(_ text: String?, replace string: String, with range: NSRange) -> (current: String, update: String)? {
     guard let str_current = text, let str_range = Range(range, in: str_current) else { return nil }
@@ -33,7 +47,7 @@ public extension AGTextFieldDelegate {
 
 
 //MARK: - Common function
-public extension AGTextFieldDelegate {
+public extension AGVCTextFieldDependency {
   
 }
 

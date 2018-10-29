@@ -15,11 +15,11 @@ import UIKit
 
 //MARK: - AGSizeClassUICollection
 public protocol AGSizeClassUICollection {
-  static func size(_ bound: CGRect) -> CGSize
-  static func itemSpace(_ bound: CGRect) -> CGFloat
-  static func lineSpace(_ bound: CGRect) -> CGFloat
-  static func inset(_ bound: CGRect) -> UIEdgeInsets
-  static func offset(_ bound: CGRect) -> CGPoint
+  static func size(with bound: CGRect) -> CGSize
+  static func itemSpace(with bound: CGRect) -> CGFloat
+  static func lineSpace(with bound: CGRect) -> CGFloat
+  static func inset(with bound: CGRect) -> UIEdgeInsets
+  static func offset(with bound: CGRect) -> CGPoint
 }
 
 
@@ -27,23 +27,23 @@ public protocol AGSizeClassUICollection {
 //MARK: - Implements
 public extension AGSizeClassUICollection {
   
-  public static func size(_ bound: CGRect = .zero) -> CGSize {
+  public static func size(with bound: CGRect = .zero) -> CGSize {
     return CGSize(width: bound.width, height: bound.width)
   }
   
-  public static func itemSpace(_ bound: CGRect = .zero) -> CGFloat {
+  public static func itemSpace(with bound: CGRect = .zero) -> CGFloat {
     return 0
   }
   
-  public static func lineSpace(_ bound: CGRect = .zero) -> CGFloat {
+  public static func lineSpace(with bound: CGRect = .zero) -> CGFloat {
     return 0
   }
   
-  public static func inset(_ bound: CGRect = .zero) -> UIEdgeInsets {
+  public static func inset(with bound: CGRect = .zero) -> UIEdgeInsets {
     return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
   }
   
-  public static func offset(_ bound: CGRect = .zero) -> CGPoint {
+  public static func offset(with bound: CGRect = .zero) -> CGPoint {
     return .zero
   }
   

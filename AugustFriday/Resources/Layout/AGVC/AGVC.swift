@@ -21,7 +21,7 @@ extension AGVC: AGVCEventable { }
 
 
 //MARK: - AGVC
-class AGVC: UIViewController {
+public class AGVC: UIViewController {
   
   //MARK: - UI
   //  @IBOutlet var v_navigationBar: UIView!
@@ -88,7 +88,7 @@ class AGVC: UIViewController {
   
   //MARK: - AGObservableVC
   var isWillAppearCalled: Bool = false
-  var isDidAppearCalled: Bool = false
+  public var isDidAppearCalled: Bool = false
   var isDidLoadCalled: Bool = false
   var isWillDisappearCalled: Bool = false
   var isDidDisappearCalled: Bool = false

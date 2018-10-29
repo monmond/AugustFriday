@@ -39,6 +39,8 @@ public struct AGButtonAppearance {
   
   public var lb_font: UIFont
   public var bg_alpha: CGFloat
+  public var bgGradient_axis: NSLayoutConstraint.Axis
+  public var bdGradient_axis: NSLayoutConstraint.Axis
   public var bd_radius: CGFloat?
   public var bd_width: CGFloat
   public var ic_style: AGButtonIconStyle
@@ -46,21 +48,11 @@ public struct AGButtonAppearance {
   public init() {
     lb_font = UIFont.preferredFont(forTextStyle: .body)
     bg_alpha = 1
+    bgGradient_axis = .horizontal
+    bdGradient_axis = .horizontal
     bd_radius = nil
     bd_width = 1
     ic_style = .icon
-  }
-  
-  public init(lb_font: UIFont = UIFont.preferredFont(forTextStyle: .body),
-              bg_alpha: CGFloat = 1,
-              bd_radius: CGFloat? = nil,
-              bd_width: CGFloat = 1,
-              ic_style: AGButtonIconStyle = .icon) {
-    self.lb_font = lb_font
-    self.bg_alpha = bg_alpha
-    self.bd_radius = bd_radius
-    self.bd_width = bd_width
-    self.ic_style = ic_style
   }
   
 }
@@ -72,20 +64,26 @@ public struct AGButtonOption {
   
   public var isSetupTitle: Bool
   public var isSetupBorder: Bool
+  public var isSetupBorderGradient: Bool
   public var isSetupRadius: Bool
   public var isSetupBackground: Bool
+  public var isSetupBackgroundGradient: Bool
   public var isSetupIcon: Bool
   public var isSetupBorderBottom: Bool
   public var isSetupSpinner: Bool
+  public var flag_bouncing: Bool
   
   public init() {
     isSetupTitle = true
     isSetupBorder = false
+    isSetupBorderGradient = false
     isSetupRadius = false
-    isSetupBackground = true
+    isSetupBackground = false
+    isSetupBackgroundGradient = false
     isSetupIcon = false
     isSetupBorderBottom = false
     isSetupSpinner = false
+    flag_bouncing = false
   }
   
 }
@@ -93,7 +91,8 @@ public struct AGButtonOption {
 
 
 //MARK: - AGButtonColorState
-public typealias AGButtonColorState = (normal: UIColor, hilighted: UIColor, disable: UIColor)
+public typealias AGButtonColorState = (normal: UIColor, highlighted: UIColor, disable: UIColor)
+public typealias AGButtonCradientColorState = (normal: [UIColor], highlighted: [UIColor], disable: [UIColor])
 
 
 
@@ -102,20 +101,25 @@ public struct AGButtonColor {
   
   public var lb: AGButtonColorState
   public var bg: AGButtonColorState
+  public var bgGradient: AGButtonCradientColorState
   public var bd: AGButtonColorState
+  public var bdGradient: AGButtonCradientColorState
   public var ic: AGButtonColorState
   public var tint: UIColor
   public var spinner: UIColor
   public var spinnerBackground: UIColor
   
   public init() {
-    lb = (normal: .black, hilighted: .black, disable: .black)
-    bg = (normal: .clear, hilighted: .clear, disable: .clear)
-    bd = (normal: .black, hilighted: .black, disable: .black)
-    ic = (normal: .black, hilighted: .black, disable: .black)
+    lb = (normal: .black, highlighted: .black, disable: .black)
+    bg = (normal: .clear, highlighted: .clear, disable: .clear)
+    bgGradient = (normal: [.black, .white], highlighted: [.black, .white], disable: [.black, .white])
+    bd = (normal: .black, highlighted: .black, disable: .black)
+    bdGradient = (normal: [.black, .white], highlighted: [.black, .white], disable: [.black, .white])
+    ic = (normal: .black, highlighted: .black, disable: .black)
     tint = UIColor.black
     spinner = UIColor.black
     spinnerBackground = UIColor.white
+    
   }
   
 }
@@ -156,27 +160,55 @@ public protocol AGButtonStyle {
 
 
 
+
+
+
+//MARK: - Extension
+extension AGButton: AGBouncingView { }
+
+
+
 //MARK: - Storage
-public class AGButton: UIButton, AGBouncingView {
+public class AGButton: UIButton {
   
-  fileprivate var setting: AGButtonSetting = BaseButtonSetting()
-  fileprivate var buttonBorder = CALayer()
-  fileprivate var layoutButton = false
+  //MARK: - UI
+  fileprivate var l_border = CALayer()
+  fileprivate var l_borderGradient = CAGradientLayer()
+  fileprivate var l_gradient = CAGradientLayer()
+  fileprivate var l_spiner = AGSpinerLayer()
+  var l_sublayers: [CALayer] {
+    return [l_border, l_borderGradient, l_gradient]
+  }
+  
+  //MARK: - NSLayout
   
   
-  fileprivate var cached_title: String? = ""
-  fileprivate var cached_Image: UIImage?
   
+  //MARK: - Constraint
   fileprivate let springGoEase: CAMediaTimingFunction = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
   fileprivate let shrinkCurve: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
   fileprivate let expandCurve: CAMediaTimingFunction = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
   fileprivate let shrinkDuration: CFTimeInterval = 0.1
   
-  fileprivate lazy var spiner: AGSpinerLayer = {
-    let spiner = AGSpinerLayer(frame: self.frame)
-    self.layer.addSublayer(spiner)
-    return spiner
-  }()
+  
+  
+  //MARK: - Instance
+  
+  
+  
+  //MARK: - Flag
+  fileprivate var flag_layouted = false
+  fileprivate var flag_animating = false
+  
+  
+  //MARK: - Storage
+  fileprivate var cached_title: String? = ""
+  fileprivate var cached_Image: UIImage?
+  fileprivate var setting: AGButtonSetting = BaseButtonSetting()
+  
+  
+  //MARK: - Initial
+  
   
 }
 
@@ -187,50 +219,70 @@ public extension AGButton {
   
   public override var isEnabled: Bool {
     didSet {
-      self.setupStyle()
+      setupStyle()
     }
   }
   
   public override var isSelected: Bool {
     didSet {
-      self.setupStyle()
+      setupStyle()
+    }
+  }
+  
+  public override var isHighlighted: Bool {
+    didSet {
+      setupStyle()
     }
   }
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.goSquash()
+    if setting.option.flag_bouncing {
+      self.goSquash()
+    }
     super.touchesBegan(touches, with: event)
     
   }
   
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.goBouncing()
+    if setting.option.flag_bouncing {
+      self.goBouncing()
+    }
     super.touchesEnded(touches, with: event)
     
   }
   
   public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-    self.goIdentity()
+    if setting.option.flag_bouncing {
+      self.goIdentity()
+    }
     super.touchesCancelled(touches, with: event)
     
   }
   
-  //  public convenience init() {
-  //    self.init(frame: .zero)
-  //  }
+  public convenience init() {
+    self.init(type: .custom)
+    onInit()
+  }
   
   public override func awakeFromNib() {
     super.awakeFromNib()
-    
+    onInit()
   }
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    if !layoutButton {
-      layoutButton = true
+    if !flag_layouted {
+      flag_layouted = true
       setupStyle()
     }
-    spiner.setToFrame(self.frame)
+    l_spiner.setToFrame(self.frame)
+  }
+  
+  func onInit() {
+    layer.addSublayer(l_gradient)
+    layer.addSublayer(l_borderGradient)
+    layer.addSublayer(l_border)
+    layer.addSublayer(l_spiner)
   }
   
 }
@@ -239,6 +291,10 @@ public extension AGButton {
 
 //MARK: - Common Function
 public extension AGButton {
+  
+  fileprivate func arrangeSublayer() {
+    
+  }
   
   fileprivate func setupTitle() {
     let c = setting.color
@@ -256,10 +312,10 @@ public extension AGButton {
     let c = setting.color
     backgroundColor = UIColor.clear
     setBackgroundColor(c.bg.normal, for: .normal)
-    setBackgroundColor(c.bg.hilighted, for: .highlighted)
+    setBackgroundColor(c.bg.highlighted, for: .highlighted)
     setBackgroundColor(c.bg.disable, for: .disabled)
     //    setBackgroundColor(c.bg.normal.withAlphaComponent(opacity), for: .normal)
-    //    setBackgroundColor(c.bg.hilighted.withAlphaComponent(opacity), for: .highlighted)
+    //    setBackgroundColor(c.bg.highlighted.withAlphaComponent(opacity), for: .highlighted)
     //    setBackgroundColor(c.bg.disable.withAlphaComponent(opacity), for: .disabled)
     //    if isEnabled {
     //      backgroundColor = color.bg_normal.color
@@ -269,8 +325,38 @@ public extension AGButton {
     
   }
   
+  fileprivate func setupBackgroundGradient() {
+    let c = setting.color
+    let a = setting.appearance
+    let r = a.bd_radius ?? bounds.height / 2
+    let shape = CAShapeLayer()
+    shape.path = UIBezierPath(roundedRect: bounds, cornerRadius: r).cgPath
+    switch a.bgGradient_axis {
+    case .horizontal:
+      l_gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+      l_gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+    case .vertical:
+      l_gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+      l_gradient.endPoint = CGPoint(x: 0.5, y: 0.1)
+    }
+    let colors: [UIColor]
+    switch state {
+    case .normal:
+      colors = c.bgGradient.normal
+    case .highlighted:
+      colors = c.bgGradient.highlighted
+    case .disabled:
+      colors = c.bgGradient.disable
+    default:
+      colors = c.bgGradient.normal
+    }
+    l_gradient.frame = bounds
+    l_gradient.mask = shape
+    l_gradient.colors = colors.map({ $0.cgColor })
+    layoutIfNeeded()
+  }
+  
   fileprivate func setupBorder(width: CGFloat = 1) {
-    
     let c = setting.color
     layer.borderWidth = width
     if isEnabled {
@@ -278,47 +364,73 @@ public extension AGButton {
     } else {
       layer.borderColor = c.bd.disable.cgColor
     }
-    
   }
   
-  fileprivate func setupRadius(radius: CGFloat? = nil) {
-    
-    if let radius = radius {
-      layer.cornerRadius = radius
-    } else {
-      layer.cornerRadius = bounds.height / 2
+  fileprivate func setupBorderGradient() {
+    let c = setting.color
+    let a = setting.appearance
+    let r = a.bd_radius ?? bounds.height / 2
+    let shape = CAShapeLayer()
+    shape.lineWidth = a.bd_width
+    shape.path = UIBezierPath(roundedRect: bounds, cornerRadius: r).cgPath
+    shape.strokeColor = UIColor.black.cgColor
+    shape.fillColor = UIColor.clear.cgColor
+    switch a.bdGradient_axis {
+    case .horizontal:
+      l_borderGradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+      l_borderGradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+    case .vertical:
+      l_borderGradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+      l_borderGradient.endPoint = CGPoint(x: 0.5, y: 0.1)
     }
+    let colors: [UIColor]
+    switch state {
+    case .normal:
+      colors = c.bdGradient.normal
+    case .highlighted:
+      colors = c.bdGradient.highlighted
+    case .disabled:
+      colors = c.bdGradient.disable
+    default:
+      colors = c.bdGradient.normal
+    }
+    l_borderGradient.frame = bounds
+    l_borderGradient.mask = shape
+    l_borderGradient.colors = colors.map({ $0.cgColor })
+    layoutIfNeeded()
+  }
+  
+  
+  fileprivate func setupRadius() {
+    let a = setting.appearance
+    let r = a.bd_radius ?? bounds.height / 2
+    layer.cornerRadius = r
     clipsToBounds = true
-    
   }
   
   fileprivate func setupBorderBottom() {
-    
     let c = setting.color
     if isEnabled {
       addBorder(.bottom, color: c.bd.normal, width: 1)
     } else {
       addBorder(.bottom, color: c.bd.disable, width: 1)
     }
-    
   }
   
   fileprivate func addBorder(_ side: AGButtonBorderSides, color: UIColor, width: CGFloat) {
     let frame_w = frame.size.width
     let frame_h = frame.size.height
-    buttonBorder.backgroundColor = color.cgColor
+    l_border.backgroundColor = color.cgColor
     switch side {
     case .top:
-      buttonBorder.frame = CGRect(x: 0, y: 0, width: frame_w, height: width)
+      l_border.frame = CGRect(x: 0, y: 0, width: frame_w, height: width)
     case .bottom:
-      buttonBorder.frame = CGRect(x: 0, y: frame_h - width, width: frame_w, height: width)
+      l_border.frame = CGRect(x: 0, y: frame_h - width, width: frame_w, height: width)
     case .left:
-      buttonBorder.frame = CGRect(x: 0, y: 0, width: width, height: frame_h)
+      l_border.frame = CGRect(x: 0, y: 0, width: width, height: frame_h)
     case .right:
-      buttonBorder.frame = CGRect(x: frame_w - width, y: 0, width: width, height: frame_h)
+      l_border.frame = CGRect(x: frame_w - width, y: 0, width: width, height: frame_h)
     }
-    buttonBorder.removeFromSuperlayer()
-    layer.addSublayer(buttonBorder)
     layoutIfNeeded()
     
   }
@@ -381,7 +493,8 @@ public extension AGButton {
   
   fileprivate func setupSpinner() {
     let c = setting.color
-    spiner.spinnerColor = c.spinner
+    l_spiner.spinnerColor = c.spinner
+    l_spiner.lineWidth = (frame.size.height / CGFloat(30)).rounded(.up)
     clipsToBounds  = true
   }
   
@@ -399,33 +512,38 @@ public extension AGButton {
   }
   
   public func setup(_ setting: AGButtonSetting) {
-    
     self.setting = setting
     setupStyle()
     
   }
   
   fileprivate func setupStyle() {
-    
+    guard !flag_animating else { return }
     let o = setting.option
     let a = setting.appearance
     if o.isSetupTitle {
       setupTitle()
     }
+    if o.isSetupRadius {
+      setupRadius()
+    }
     if o.isSetupBorder {
       setupBorder(width: a.bd_width)
     }
-    if o.isSetupRadius {
-      setupRadius(radius: a.bd_radius)
+    if o.isSetupBorderGradient {
+      setupBorderGradient()
+    }
+    if o.isSetupBorderBottom {
+      setupBorderBottom()
     }
     if o.isSetupBackground {
       setupBackground(opacity: a.bg_alpha)
     }
+    if o.isSetupBackgroundGradient {
+      setupBackgroundGradient()
+    }
     if o.isSetupIcon {
       setupIcon(iconStyle: setting.appearance.ic_style)
-    }
-    if o.isSetupBorderBottom {
-      setupBorderBottom()
     }
     if o.isSetupSpinner {
       setupSpinner()
@@ -442,21 +560,22 @@ public extension AGButton {
 extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
   
   public func startAnimation() {
+    flag_animating = true
     isUserInteractionEnabled = false
-    
     cached_title = title(for: .normal)
     cached_Image = image(for: .normal)
-    
     setTitle("",  for: .normal)
     setImage(nil, for: .normal)
-    
+    for l in l_sublayers {
+      l.isHidden = true
+    }
     setBackgroundColor(setting.color.spinnerBackground, for: .normal)
-    
     UIView.animate(withDuration: 0.1, animations: {
       self.layer.cornerRadius = self.frame.height / 2
     }, completion: { completed -> Void in
+      self.flag_animating = false
       self.shrink()
-      self.spiner.animation()
+      self.l_spiner.animation()
     })
   }
   
@@ -475,8 +594,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
         self.shakeAnimation(completion: completion)
       }
     case .expand:
-      spiner.stopAnimation()
-      spiner.spinnerColor = setting.color.spinnerBackground
+      l_spiner.stopAnimation()
       expand(completion: completion, revertDelay: delayToRevert)
     }
   }
@@ -497,6 +615,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     keyFrame.duration = 0.7
     layer.position = point
     CATransaction.setCompletionBlock {
+      self.flag_animating = false
       completion?()
     }
     layer.add(keyFrame, forKey: keyFrame.keyPath)
@@ -504,16 +623,22 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
   }
   
   private func setOriginalState(completion: CallbackVoid?) {
+    let a = setting.appearance
+    let r = a.bd_radius ?? bounds.height / 2
     animateToOriginalWidth(completion: completion)
-    spiner.stopAnimation()
+    l_spiner.stopAnimation()
     setTitle(cached_title, for: .normal)
     setImage(cached_Image, for: .normal)
+    for l in l_sublayers {
+      l.isHidden = false
+    }
     setBackgroundColor(setting.color.bg.normal, for: .normal)
     isUserInteractionEnabled = true
-    layer.cornerRadius = setting.appearance.bd_radius ?? 0
+    layer.cornerRadius = r
   }
   
   private func animateToOriginalWidth(completion: CallbackVoid?) {
+    flag_animating = false
     let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
     shrinkAnim.fromValue = bounds.height
     shrinkAnim.toValue = bounds.width
@@ -549,6 +674,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     expandAnim.fillMode = kCAFillModeForwards
     expandAnim.isRemovedOnCompletion = false
     CATransaction.setCompletionBlock {
+      self.flag_animating = false
       completion?()
       DispatchQueue.main.asyncAfter(deadline: .now() + revertDelay) {
         self.setOriginalState(completion: nil)
