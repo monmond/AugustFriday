@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
@@ -46,14 +47,14 @@ public extension UIViewController {
 //MARK: - Flow control
 public extension UIViewController {
 
-  public func present(_ viewControllerToPresent: UIViewController, transition: CATransition? = nil, completion: CallbackVoid? = nil) {
+  public func present(_ viewControllerToPresent: UIViewController, transition: CATransition? = nil, completion: CBVoid? = nil) {
     if let t = transition {
       view.window?.layer.add(t, forKey: nil)
     }
     present(viewControllerToPresent, animated: false, completion: completion)
   }
   
-  public func dismiss(transition: CATransition? = nil, completion: CallbackVoid? = nil) {
+  public func dismiss(transition: CATransition? = nil, completion: CBVoid? = nil) {
     if let t = transition {
       view.window?.layer.add(t, forKey: nil)
     }

@@ -8,30 +8,36 @@
 
 
 
+
+//MARK: - Imports
 import UIKit
 
 
 
+//MARK: - ViewProtocol
 protocol ViewProtocol {
   
 }
 
 
 
+//MARK: - Extensions
 //extension ViewController: AGInstantiatable { }
 extension ViewController: ViewProtocol { }
 extension ViewController: AGStateViewDelegate { }
 
 
 
+
+//MARK: - ViewController
 class ViewController: UIViewController {
   
   //MARK: - AGInstantiatable
 //  static var sb_name: String = "Main"
 //  static var vc_name: String = "ViewController"
-//  var onViewDidLoad: LambdaVoid?
-//  var onViewWillAppear: LambdaVoid?
-//  var onViewDidAppear: LambdaVoid?
+//  var onViewDidLoad: LDVoid?
+//  var onViewWillAppear: LDVoid?
+//  var onViewDidAppear: LDVoid?
   
   
   
@@ -190,7 +196,7 @@ extension ViewController {
 
 
 
-//MARK: - Common Function
+//MARK: - Commons
 extension ViewController {
   
   
@@ -220,11 +226,11 @@ extension ViewController {
 //MARK: - Display Logic
 extension ViewController {
   
-  func displayStartLoading(isForce: Bool = false, _ onComplete: CallbackVoid? = nil) {
+  func displayStartLoading(isForce: Bool = false, _ onComplete: CBVoid? = nil) {
     
   }
   
-  func displayStopLoading(_ onComplete: CallbackVoid? = nil) {
+  func displayStopLoading(_ onComplete: CBVoid? = nil) {
     
   }
   

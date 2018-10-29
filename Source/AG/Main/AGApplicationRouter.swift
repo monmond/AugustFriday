@@ -6,11 +6,17 @@
 //  Copyright © 2018 ssankosik. All rights reserved.
 //
 
+
+
+//MARK: - Imports
 import UIKit
 
+
+
+//MARK: AGApplicationRouter
 public struct AGApplicationRouter {
   
-  public static func openUrl(_ url: URL, onComplete: CallbackVoid? = nil) {
+  public static func openUrl(_ url: URL, onComplete: CBVoid? = nil) {
     if #available(iOS 10.0, *) {
       UIApplication.shared.open(url, options: [:], completionHandler: { _ in
         onComplete?()

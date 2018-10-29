@@ -75,7 +75,7 @@ public extension AGApplicationRoutable {
 
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension AGApplicationRoutable {
 
   public func canStart(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

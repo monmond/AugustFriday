@@ -33,7 +33,7 @@ public extension AGApplicationFirebase {
 
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension AGApplicationFirebase {
 
 }

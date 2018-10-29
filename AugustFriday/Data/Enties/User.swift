@@ -34,7 +34,7 @@ class User: AGModelHelper {
   var _height: Float?
   var _weight: Float?
   
-  //MARK: Relate
+  //MARK: - Relate
   var _pets: [Pet]
   
   init() {

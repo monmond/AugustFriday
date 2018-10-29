@@ -58,7 +58,7 @@ public extension ApplicationRoutable {
 
 
 
-//MARK: - Common function
+//MARK: - Commons
 public extension ApplicationRoutable {
   
 }

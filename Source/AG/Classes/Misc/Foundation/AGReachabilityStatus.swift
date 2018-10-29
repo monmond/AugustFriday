@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Imports
 import Foundation
 
 
@@ -23,6 +24,7 @@ public enum AGReachabilityStatus {
 
 
 
+//MARK: - AGReachabilityStatus
 public extension AGReachabilityStatus {
   
   public var getDescription: String {

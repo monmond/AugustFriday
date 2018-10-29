@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Imports
 import UIKit
 import NVActivityIndicatorView
 
@@ -87,17 +88,17 @@ public class AGVC: UIViewController {
   
   
   //MARK: - AGObservableVC
-  var isWillAppearCalled: Bool = false
+  public var isWillAppearCalled: Bool = false
   public var isDidAppearCalled: Bool = false
-  var isDidLoadCalled: Bool = false
-  var isWillDisappearCalled: Bool = false
-  var isDidDisappearCalled: Bool = false
+  public var isDidLoadCalled: Bool = false
+  public var isWillDisappearCalled: Bool = false
+  public var isDidDisappearCalled: Bool = false
   
-  var onWillAppear: LambdaVoid? = nil
-  var onDidAppear: LambdaVoid? = nil
-  var onDidLoad: LambdaVoid? = nil
-  var onWillDisappear: LambdaVoid? = nil
-  var onDidDisappear: LambdaVoid? = nil
+  public var onWillAppear: LDVoid? = nil
+  public var onDidAppear: LDVoid? = nil
+  public var onDidLoad: LDVoid? = nil
+  public var onWillDisappear: LDVoid? = nil
+  public var onDidDisappear: LDVoid? = nil
   
   
   
@@ -108,35 +109,35 @@ public class AGVC: UIViewController {
 //MARK: - Life Cycle
 extension AGVC {
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     trigger(on: .didLoad)
     setupViewOnViewDidLoad()
     
   }
 
-  override func viewWillAppear(_ animated: Bool) {
+  override public func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     trigger(on: .willAppear)
     setupViewOnWillAppear()
     
   }
   
-  override func viewDidAppear(_ animated: Bool) {
+  override public func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     trigger(on: .didAppear)
     setupViewOnDidAppear()
     
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
+  override public func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     trigger(on: .willDisappear)
     setupViewOnWillDisappear()
     
   }
   
-  override func viewDidDisappear(_ animated: Bool) {
+  override public func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     trigger(on: .didDisappear)
     setupViewOnDidDisappear()
@@ -152,7 +153,7 @@ extension AGVC {
     
   }
   
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+  override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
     view.endEditing(true)
     
@@ -210,7 +211,7 @@ extension AGVC {
 
 
 
-//MARK: - Common Function
+//MARK: - Commons
 extension AGVC {
   
 }
@@ -262,7 +263,7 @@ extension AGVC {
 //
 //  }
 //
-//  func displayNetworkingResponse(_ error: AFResponseHandler, _ onComplete: CallbackVoid) {
+//  func displayNetworkingResponse(_ error: AFResponseHandler, _ onComplete: CBVoid) {
 //    switch error {
 //    case .unknown:
 //      //      PopupManager.shared.alert(title: error.title, message: error.description, onComplete: {
@@ -277,12 +278,12 @@ extension AGVC {
 //
 //  }
 //
-//  func displayNetworkingResponse(_ message: String, _ onComplete: CallbackVoid) {
+//  func displayNetworkingResponse(_ message: String, _ onComplete: CBVoid) {
 //    //    PopupManager.shared.alert(title: "Error", message: message, onComplete: onComplete)
 //
 //  }
 //
-//  func displayPopup(with localize: String, _ onComplete: CallbackVoid) {
+//  func displayPopup(with localize: String, _ onComplete: CBVoid) {
 //    //    PopupManager.shared.alert(title: "Error", message: message, onComplete: onComplete)
 //
 //  }

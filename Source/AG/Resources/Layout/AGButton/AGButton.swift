@@ -289,7 +289,7 @@ public extension AGButton {
 
 
 
-//MARK: - Common Function
+//MARK: - Commons
 public extension AGButton {
   
   fileprivate func arrangeSublayer() {
@@ -581,7 +581,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
   
   public func stopAnimation(animationStyle: StopAnimationStyle = .normal,
                             revertAfterDelay delay: TimeInterval = 1.0,
-                            completion: CallbackVoid? = nil) {
+                            completion: CBVoid? = nil) {
     let delayToRevert = max(delay, 0.2)
     switch animationStyle {
     case .normal:
@@ -599,7 +599,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     }
   }
   
-  private func shakeAnimation(completion: CallbackVoid?) {
+  private func shakeAnimation(completion: CBVoid?) {
     let keyFrame = CAKeyframeAnimation(keyPath: "position")
     let point = layer.position
     keyFrame.values = [NSValue(cgPoint: CGPoint(x: CGFloat(point.x), y: CGFloat(point.y))),
@@ -622,7 +622,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     CATransaction.commit()
   }
   
-  private func setOriginalState(completion: CallbackVoid?) {
+  private func setOriginalState(completion: CBVoid?) {
     let a = setting.appearance
     let r = a.bd_radius ?? bounds.height / 2
     animateToOriginalWidth(completion: completion)
@@ -637,7 +637,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     layer.cornerRadius = r
   }
   
-  private func animateToOriginalWidth(completion: CallbackVoid?) {
+  private func animateToOriginalWidth(completion: CBVoid?) {
     flag_animating = false
     let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
     shrinkAnim.fromValue = bounds.height
@@ -664,7 +664,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
   }
   
-  private func expand(completion: CallbackVoid?, revertDelay: TimeInterval) {
+  private func expand(completion: CBVoid?, revertDelay: TimeInterval) {
     let expandAnim = CABasicAnimation(keyPath: "transform.scale")
     let expandScale = (UIScreen.main.bounds.size.height/frame.size.height)*2
     expandAnim.fromValue = 1.0

@@ -27,7 +27,7 @@ public extension ApplicationFirebaseMessaging {
 
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension ApplicationFirebaseMessaging {
   
 }

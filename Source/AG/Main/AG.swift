@@ -17,5 +17,10 @@ import UIKit
 //MARK: - AG
 public class AG {
 
+  public enum App {
+    
+    static let name = "AugustFriday"
+    
+  }
 
 }

@@ -36,7 +36,7 @@ public extension AGApplicationBlurable {
 }
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension AGApplicationBlurable {
 
   public func setupBlurableObserverListeners() {

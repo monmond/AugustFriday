@@ -199,11 +199,11 @@ public class AGSlidePanelView: AGModelHelper {
   public var isWillDisappearCalled: Bool = false
   public var isDidDisappearCalled: Bool = false
   
-  public var onWillAppear: LambdaVoid? = nil
-  public var onDidAppear: LambdaVoid? = nil
-  public var onDidLoad: LambdaVoid? = nil
-  public var onWillDisappear: LambdaVoid? = nil
-  public var onDidDisappear: LambdaVoid? = nil
+  public var onWillAppear: LDVoid? = nil
+  public var onDidAppear: LDVoid? = nil
+  public var onDidLoad: LDVoid? = nil
+  public var onWillDisappear: LDVoid? = nil
+  public var onDidDisappear: LDVoid? = nil
   
   
 }

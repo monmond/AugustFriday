@@ -16,28 +16,28 @@ import UIKit
 //MARK: - Block
 public extension UINavigationController {
   
-  public func popViewController(onComplete: CallbackVoid?) {
+  public func popViewController(onComplete: CBVoid?) {
     CATransaction.begin()
     CATransaction.setCompletionBlock(onComplete)
     self.popViewController(animated: true)
     CATransaction.commit()
   }
   
-  public func popToViewController(to vc: UIViewController, onComplete: CallbackVoid?) {
+  public func popToViewController(to vc: UIViewController, onComplete: CBVoid?) {
     CATransaction.begin()
     CATransaction.setCompletionBlock(onComplete)
     self.popToViewController(vc, animated: true)
     CATransaction.commit()
   }
   
-  public func pushViewController(to vc: UIViewController, onComplete: CallbackVoid?) {
+  public func pushViewController(to vc: UIViewController, onComplete: CBVoid?) {
     CATransaction.begin()
     CATransaction.setCompletionBlock(onComplete)
     self.pushViewController(vc, animated: true)
     CATransaction.commit()
   }
   
-  public func popViewController(count: Int, onComplete: CallbackVoid?) {
+  public func popViewController(count: Int, onComplete: CBVoid?) {
     guard let viewControllers = navigationController?.viewControllers else {
       return
     }

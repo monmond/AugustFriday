@@ -8,6 +8,7 @@
 
 
 
+//MARK: - Improts
 import Foundation
 
 
@@ -92,7 +93,7 @@ public protocol AGLocalizable {
 
 
 
-//MARK: - Core function
+//MARK: - Commons
 public extension AGLocalizable where Self: RawRepresentable, Self.RawValue == String {
   
   public var localized: String {

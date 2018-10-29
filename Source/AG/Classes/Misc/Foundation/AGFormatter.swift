@@ -8,12 +8,12 @@
 
 
 
-//MARK: Phone
+//MARK: - Imports
 import Foundation
 
 
 
-//MARK: Phone
+//MARK: -  Phone
 public class AGFormatter {
   
   public class func steamUrlFormatToSteamDisplay(steamUrlFormat: String, point: String, replace: String) -> String {
@@ -24,7 +24,7 @@ public class AGFormatter {
 
 
 
-//MARK: CitizenId
+//MARK: -  CitizenId
 public extension AGFormatter {
   
   public class CitizenId {
@@ -49,7 +49,7 @@ public extension AGFormatter {
 
 
 
-//MARK: Phone
+//MARK: -  Phone
 public extension AGFormatter {
   
   public class Phone {

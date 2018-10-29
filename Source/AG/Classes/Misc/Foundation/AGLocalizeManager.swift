@@ -8,10 +8,12 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
 
+//MARK: -AGLocalizeManagerImports
 public class AGLocalizeManager {
   
   public static let shared = AGLocalizeManager()
@@ -26,7 +28,7 @@ public class AGLocalizeManager {
 
 
 
-//MARK: Core function
+//MARK: - Commons
 public extension AGLocalizeManager {
   
   // get current Apple language

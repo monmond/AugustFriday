@@ -12,12 +12,15 @@
 import Foundation
 
 
+
 //MARK: - AGModelHelper
 public protocol AGModelHelper {
   
 }
 
 
+
+//MARK: - Implements
 public extension AGModelHelper {
   
   public var description: String {

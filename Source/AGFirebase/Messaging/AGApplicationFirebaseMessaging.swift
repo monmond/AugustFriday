@@ -51,7 +51,7 @@ public extension AGApplicationFirebaseMessaging {
 
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension AGApplicationFirebaseMessaging {
 
 }

@@ -43,7 +43,7 @@ public extension AGApplicationSetup {
 
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension AGApplicationSetup {
 
   private func logFontFamilyNames() {

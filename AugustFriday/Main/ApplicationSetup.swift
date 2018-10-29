@@ -46,7 +46,7 @@ public extension ApplicationSetup {
 
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension ApplicationSetup {
   
 }

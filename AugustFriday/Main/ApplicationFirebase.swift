@@ -27,7 +27,7 @@ public extension ApplicationFirebase {
 
 
 
-//MARK: - Common functions
+//MARK: - Commons
 public extension ApplicationFirebase {
   
 }

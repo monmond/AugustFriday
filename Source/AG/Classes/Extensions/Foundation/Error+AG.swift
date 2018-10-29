@@ -13,7 +13,7 @@ import Foundation
 
 
 
-//MARK: Checker
+//MARK: - Checker
 public extension Error {
   
   public var isTimedOut: Bool {

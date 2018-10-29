@@ -8,10 +8,12 @@
 
 
 
+//MARK: - Imports
 import UIKit
 
 
 
+//MARK: - AGVCEvent
 public enum AGVCEvent {
   
   case didLoad
@@ -33,13 +35,13 @@ public protocol AGVCEventable: class {
   var isWillDisappearCalled: Bool { get set }
   var isDidDisappearCalled: Bool { get set }
   
-  var onDidLoad: LambdaVoid? { get set }
-  var onWillAppear: LambdaVoid? { get set }
-  var onDidAppear: LambdaVoid? { get set }
-  var onWillDisappear: LambdaVoid? { get set }
-  var onDidDisappear: LambdaVoid? { get set }
+  var onDidLoad: LDVoid? { get set }
+  var onWillAppear: LDVoid? { get set }
+  var onDidAppear: LDVoid? { get set }
+  var onWillDisappear: LDVoid? { get set }
+  var onDidDisappear: LDVoid? { get set }
   
-  func observe(on event: AGVCEvent, context: @escaping LambdaVoid)
+  func observe(on event: AGVCEvent, context: @escaping LDVoid)
   func trigger(on event: AGVCEvent)
   func eventVCReset()
   
@@ -50,7 +52,7 @@ public protocol AGVCEventable: class {
 //MARK: - Implements
 public extension AGVCEventable {
   
-  public func observe(on event: AGVCEvent, context: @escaping LambdaVoid) {
+  public func observe(on event: AGVCEvent, context: @escaping LDVoid) {
     switch event {
     case .didLoad:
       onDidLoad = context

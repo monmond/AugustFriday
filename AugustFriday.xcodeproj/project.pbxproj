@@ -75,7 +75,6 @@
 		A434A15C21101B8F004898DE /* AGFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15421101B8F004898DE /* AGFormatter.swift */; };
 		A434A15D21101B8F004898DE /* AGLocalizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15621101B8F004898DE /* AGLocalizeManager.swift */; };
 		A434A15E21101B8F004898DE /* AGLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15721101B8F004898DE /* AGLocalize.swift */; };
-		A434A16121101BBA004898DE /* AGConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16021101BBA004898DE /* AGConfiguration.swift */; };
 		A434A19D21101EA9004898DE /* CGRect+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16421101EA9004898DE /* CGRect+AG.swift */; };
 		A434A19E21101EA9004898DE /* AGSpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16521101EA9004898DE /* AGSpinerLayer.swift */; };
 		A434A1A021101EA9004898DE /* AGKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16921101EA9004898DE /* AGKeyboardHelper.swift */; };
@@ -121,7 +120,6 @@
 		A48C2F87214C2FA500778557 /* UserPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48C2F86214C2FA500778557 /* UserPet.swift */; };
 		A4908F542185EFE700B36696 /* AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4908F532185EFE700B36696 /* AG.swift */; };
 		A4908F562185F39400B36696 /* AGN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4908F552185F39400B36696 /* AGN.swift */; };
-		A4908F582185F39F00B36696 /* AGT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4908F572185F39F00B36696 /* AGT.swift */; };
 		A4960EDC214620FB001D8E43 /* AGAlamofireCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */; };
 		A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */; };
 		A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */; };
@@ -130,6 +128,8 @@
 		A4B61D6721185CA6003F98FF /* AGBouncingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6621185CA6003F98FF /* AGBouncingView.swift */; };
 		A4B61D6A21185EA8003F98FF /* AGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6921185EA8003F98FF /* AGView.swift */; };
 		A4B6AC942186B8A60025C350 /* AGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC932186B8A60025C350 /* AGB.swift */; };
+		A4B6AC962186C5E10025C350 /* AGGenericCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC952186C5E10025C350 /* AGGenericCC.swift */; };
+		A4B6AC982186C5F20025C350 /* AGGenericTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B6AC972186C5F20025C350 /* AGGenericTC.swift */; };
 		A4BB9BFE2154CC3C00EAEBAF /* CATransition+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */; };
 		A4BB9C022154E76700EAEBAF /* AGDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB9C012154E76700EAEBAF /* AGDefaults.swift */; };
 		A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */; };
@@ -219,7 +219,6 @@
 		A434A15421101B8F004898DE /* AGFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGFormatter.swift; sourceTree = "<group>"; };
 		A434A15621101B8F004898DE /* AGLocalizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLocalizeManager.swift; sourceTree = "<group>"; };
 		A434A15721101B8F004898DE /* AGLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLocalize.swift; sourceTree = "<group>"; };
-		A434A16021101BBA004898DE /* AGConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGConfiguration.swift; sourceTree = "<group>"; };
 		A434A16421101EA9004898DE /* CGRect+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AG.swift"; sourceTree = "<group>"; };
 		A434A16521101EA9004898DE /* AGSpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGSpinerLayer.swift; sourceTree = "<group>"; };
 		A434A16921101EA9004898DE /* AGKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGKeyboardHelper.swift; sourceTree = "<group>"; };
@@ -267,7 +266,6 @@
 		A48C2F86214C2FA500778557 /* UserPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPet.swift; sourceTree = "<group>"; };
 		A4908F532185EFE700B36696 /* AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AG.swift; sourceTree = "<group>"; };
 		A4908F552185F39400B36696 /* AGN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGN.swift; sourceTree = "<group>"; };
-		A4908F572185F39F00B36696 /* AGT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGT.swift; sourceTree = "<group>"; };
 		A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireCodableResponse.swift; sourceTree = "<group>"; };
 		A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireTask.swift; sourceTree = "<group>"; };
 		A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireValidatable.swift; sourceTree = "<group>"; };
@@ -275,6 +273,8 @@
 		A4B61D6621185CA6003F98FF /* AGBouncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBouncingView.swift; sourceTree = "<group>"; };
 		A4B61D6921185EA8003F98FF /* AGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGView.swift; sourceTree = "<group>"; };
 		A4B6AC932186B8A60025C350 /* AGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGB.swift; sourceTree = "<group>"; };
+		A4B6AC952186C5E10025C350 /* AGGenericCC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGGenericCC.swift; sourceTree = "<group>"; };
+		A4B6AC972186C5F20025C350 /* AGGenericTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGGenericTC.swift; sourceTree = "<group>"; };
 		A4BB9BFD2154CC3C00EAEBAF /* CATransition+AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransition+AG.swift"; sourceTree = "<group>"; };
 		A4BB9C012154E76700EAEBAF /* AGDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDefaults.swift; sourceTree = "<group>"; };
 		A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebase.swift; sourceTree = "<group>"; };
@@ -553,7 +553,6 @@
 				A434A17721101EA9004898DE /* AGC.swift */,
 				A434A18421101EA9004898DE /* AGF.swift */,
 				A4908F552185F39400B36696 /* AGN.swift */,
-				A4908F572185F39F00B36696 /* AGT.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -732,7 +731,6 @@
 			isa = PBXGroup;
 			children = (
 				A434A17521101EA9004898DE /* AGApplicationRouter.swift */,
-				A434A16021101BBA004898DE /* AGConfiguration.swift */,
 				A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */,
 				A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */,
 				A479EB53213E4B3200A4F143 /* AGApplicationBlurable.swift */,
@@ -757,6 +755,8 @@
 				A444FC422178F54D00BCE80D /* AGTransitionVCHelper.swift */,
 				A444FC442178F58000BCE80D /* AGVCTextFieldDependency.swift */,
 				A444FC462178F5B400BCE80D /* AGAdapter.swift */,
+				A4B6AC952186C5E10025C350 /* AGGenericCC.swift */,
+				A4B6AC972186C5F20025C350 /* AGGenericTC.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1145,7 +1145,6 @@
 				A42DA3F721417FA300F1033F /* Typealias+AGAlamofire.swift in Sources */,
 				A434A12C21101959004898DE /* Int+AG.swift in Sources */,
 				A434A13321101992004898DE /* CGFloat+AG.swift in Sources */,
-				A4908F582185F39F00B36696 /* AGT.swift in Sources */,
 				A42DA3EC21417CFB00F1033F /* AGAlamofireRouter.swift in Sources */,
 				A42D8982213D7878002A7E01 /* TemplateVC.swift in Sources */,
 				A47C8A9620D3A828009F8183 /* ViewController.swift in Sources */,
@@ -1208,8 +1207,8 @@
 				A434A13F21101A32004898DE /* UIViewController+AG.swift in Sources */,
 				A47C8A9420D3A828009F8183 /* AppDelegate.swift in Sources */,
 				A434A11621101855004898DE /* UICollectionView+AG.swift in Sources */,
+				A4B6AC982186C5F20025C350 /* AGGenericTC.swift in Sources */,
 				A434A15E21101B8F004898DE /* AGLocalize.swift in Sources */,
-				A434A16121101BBA004898DE /* AGConfiguration.swift in Sources */,
 				A4C0C25A213E830800288AFB /* AGApplicationFirebaseMessaging.swift in Sources */,
 				A42D8991213DA0DB002A7E01 /* ApplicationFirebase.swift in Sources */,
 				A434A15D21101B8F004898DE /* AGLocalizeManager.swift in Sources */,
@@ -1242,6 +1241,7 @@
 				A4E838CC2180CDA8000C2F8D /* FixPopupDialog.swift in Sources */,
 				A43333C921776B460053A634 /* AGViewFontTextStyleDependency.swift in Sources */,
 				A44A431120E5E34A003F56E6 /* UIImage+AG.swift in Sources */,
+				A4B6AC962186C5E10025C350 /* AGGenericCC.swift in Sources */,
 				A479EB51213E454700A4F143 /* AGApplicationRoutable.swift in Sources */,
 				A434A14721101A46004898DE /* UIWindow+AG.swift in Sources */,
 				A434A1B721101EA9004898DE /* AGCollectionCell.swift in Sources */,

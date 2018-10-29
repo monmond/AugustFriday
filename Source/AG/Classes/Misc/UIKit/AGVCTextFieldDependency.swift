@@ -22,8 +22,8 @@ public protocol AGVCTextFieldDependency: class {
 
 
 
-//MARK: Implements - AGVC
-public extension AGVC {
+//MARK: - Implements - UIViewController
+public extension UIViewController {
   
   @objc
   public func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField) {
@@ -46,7 +46,7 @@ public extension AGVCTextFieldDependency {
 
 
 
-//MARK: - Common function
+//MARK: - Commons
 public extension AGVCTextFieldDependency {
   
 }

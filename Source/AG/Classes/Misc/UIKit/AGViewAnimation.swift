@@ -15,8 +15,8 @@ import UIKit
 
 //MARK: - AGViewAnimation
 public protocol AGViewAnimation {
-  func animateChange(_ onComplete: CallbackVoid?)
-  func animateChangeWithDamping(_ onComplete: CallbackVoid?)
+  func animateChange(_ onComplete: CBVoid?)
+  func animateChangeWithDamping(_ onComplete: CBVoid?)
 }
 
 
@@ -24,7 +24,7 @@ public protocol AGViewAnimation {
 //MARK: - Implements
 public extension AGViewAnimation where Self: UIViewController {
   
-  public func animateChange(_ onComplete: CallbackVoid? = nil) {
+  public func animateChange(_ onComplete: CBVoid? = nil) {
     let options: UIViewAnimationOptions = [.curveEaseOut]
     UIView.animate(withDuration: 0.3, delay: 0.0, options: options, animations: {
       self.view.layoutIfNeeded()
@@ -33,7 +33,7 @@ public extension AGViewAnimation where Self: UIViewController {
     })
   }
   
-  public func animateChangeWithDamping(_ onComplete: CallbackVoid? = nil) {
+  public func animateChangeWithDamping(_ onComplete: CBVoid? = nil) {
     let options: UIViewAnimationOptions = [.curveEaseOut]
     UIView.animate(withDuration: 0.3,
                    delay: 0,

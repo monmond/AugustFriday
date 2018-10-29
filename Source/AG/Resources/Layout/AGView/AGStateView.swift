@@ -354,7 +354,7 @@ public extension AGStateView {
 //MARK: - Public
 public extension AGStateView {
   
-  public func setStateViewState(with state: AGStateViewState, animated: Bool = false, onComplete: CallbackVoid? = nil) {
+  public func setStateViewState(with state: AGStateViewState, animated: Bool = false, onComplete: CBVoid? = nil) {
     self.state = state
     switch state {
     case .normal:
@@ -381,7 +381,7 @@ public extension AGStateView {
     alpha = 0
   }
   
-  private func show(with animated: Bool = false, onComplete: CallbackVoid? = nil) {
+  private func show(with animated: Bool = false, onComplete: CBVoid? = nil) {
     let duration = animated ? 0.0 : 0.2
     UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
       , animations: {
@@ -391,7 +391,7 @@ public extension AGStateView {
     
   }
   
-  private func hide(with animated: Bool = false, onComplete: CallbackVoid? = nil) {
+  private func hide(with animated: Bool = false, onComplete: CBVoid? = nil) {
     let duration = animated ? 0.0 : 0.2
     UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
       , animations: {
