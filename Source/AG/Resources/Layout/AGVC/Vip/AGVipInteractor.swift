@@ -35,6 +35,10 @@ open class AGVipInteractor: AGObject, AGVipBussinessLogic, AGVipDataStore {
   
   
   //MARK: - Initial
+  public init() {
+    
+  }
+  
   deinit {
     
   }

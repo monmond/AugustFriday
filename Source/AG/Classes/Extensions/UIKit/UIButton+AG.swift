@@ -36,8 +36,8 @@ public extension UIButton {
 //                                    action: Selector) -> UIButton {
 //    let btn = UIButton(type: .custom)
 //    btn.setImage(img, for: .normal)
-//    btn.setImage(img.overlay(color: AG.Color.white), for: .highlighted)
-//    btn.setImage(img.overlay(color: AG.Color.white_four), for: .disabled)
+//    btn.setImage(img.overlay(with: AG.Color.white), for: .highlighted)
+//    btn.setImage(img.overlay(with: AG.Color.white_four), for: .disabled)
 //    let width: CGFloat = isCompact ? 24 : 44
 //    btn.frame = CGRect(x: 0, y: 0, width: width, height: 44)
 //    btn.contentMode = .scaleAspectFit

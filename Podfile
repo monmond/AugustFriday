@@ -17,11 +17,11 @@ def ui_pods
   # Popup dialog
   pod 'PopupDialog', '~> 0.8.1'
   # Allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.
-  pod 'IQKeyboardManagerSwift', '~> 6.0.4'
-  # Facebook Preloading, '~> 1.4.1'
-  pod 'SkeletonView'
+  pod 'IQKeyboardManagerSwift', '~> 6.0.5'
+  # Facebook Preloading, '~> 1.4'
+  pod 'SkeletonView', '~> 1.4'
   # The easiest way to display highly customizable in app notification banners in iOS 1.6.3
-  pod 'NotificationBannerSwift'
+  pod 'NotificationBannerSwift', '~> 1.6.3'
   
 end
 

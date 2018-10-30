@@ -22,7 +22,7 @@ extension AGPopupVC: AGPopupVCAttributedStringDependency { }
 
 
 //MARK: - AGPopupVC
-public class AGPopupVC: AGVC {
+open class AGPopupVC: AGVC {
   
   
   //MARK: - UI

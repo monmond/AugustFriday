@@ -36,6 +36,10 @@ open class AGVipRouter: NSObject, AGVipRoutingLogic, AGVipDataPassing {
   
   
   //MARK: - Initial
+  public override init() {
+    
+  }
+  
   deinit {
     
   }
@@ -54,12 +58,12 @@ public extension AGVipRouter {
 //MARK: - Commons
 public extension AGVipRouter {
   
-  private var app_delegate: AppDelegate? {
-    return UIApplication.shared.delegate as? AppDelegate
+  private var app_delegate: UIApplicationDelegate? {
+    return UIApplication.shared.delegate
   }
   
   public var window: UIWindow? {
-    return app_delegate?.window
+    return app_delegate?.window ?? nil
   }
   
 }

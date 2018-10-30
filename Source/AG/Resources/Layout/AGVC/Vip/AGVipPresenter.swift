@@ -22,6 +22,10 @@ open class AGVipPresenter: AGVipPresentationLogic {
   
   
   //MARK: - Initial
+  public init() {
+    
+  }
+  
   deinit {
     
   }

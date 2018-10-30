@@ -139,9 +139,15 @@ s.subspec 'Core' do |c|
 	c.requires_arc = true
 	c.dependency 'NVActivityIndicatorView', '~> 4.0'
 	c.dependency 'SnapKit', '~> 4.0.0'
+	c.dependency 'PopupDialog', '~> 0.8.1'
+	c.dependency 'IQKeyboardManagerSwift', '~> 6.0.5'
+	c.dependency 'SkeletonView', '~> 1.4'
+	c.dependency 'NotificationBannerSwift', '~> 1.4'
+	
 
 	# AG
 	c.subspec 'AG' do |agc|
+		agc.frameworks = 'UIKit'
 		agc.source_files = PodUtility.mapSwiftFiles(str_ag, 0)
 
 		# Classes

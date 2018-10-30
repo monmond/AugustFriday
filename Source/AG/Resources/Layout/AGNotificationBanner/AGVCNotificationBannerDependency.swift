@@ -57,6 +57,15 @@ public struct AGNotificationBannerVM {
   var subtitle: String
   var style: BannerStyle
   var position: BannerPosition
+  public init(title: String,
+              subtitle: String,
+              style: BannerStyle,
+              position: BannerPosition) {
+    self.title = title
+    self.subtitle = subtitle
+    self.style = style
+    self.position = position
+  }
 }
 
 
@@ -81,9 +90,9 @@ public protocol AGVCNotificationBannerDependency {
 public extension AGVCNotificationBannerDependency {
   
   public func displayNotificationBanner(_ viewModel: AGNotificationBannerVM,
-                                 on: UIViewController?,
-                                 onTap: CBVoid? = nil,
-                                 onSwipeUp: CBVoid? = nil) {
+                                        on: UIViewController?,
+                                        onTap: CBVoid? = nil,
+                                        onSwipeUp: CBVoid? = nil) {
     let banner = NotificationBanner(title: viewModel.title,
                                     subtitle: viewModel.subtitle,
                                     leftView: AGVCBannerView.view(for: viewModel.style),
@@ -100,12 +109,12 @@ public extension AGVCNotificationBannerDependency {
   }
   
   public func displayStatusBarNotificationBanner(_ viewModel: AGNotificationBannerVM,
-                                          on: UIViewController?,
-                                          onTap: CBVoid? = nil,
-                                          onSwipeUp: CBVoid? = nil) {
+                                                 on: UIViewController?,
+                                                 onTap: CBVoid? = nil,
+                                                 onSwipeUp: CBVoid? = nil) {
     let banner = StatusBarNotificationBanner(title: "\(viewModel.title) \(viewModel.subtitle)",
-                                             style: viewModel.style,
-                                             colors: AGBannerColor())
+      style: viewModel.style,
+      colors: AGBannerColor())
     banner.onTap = {
       if let t = onTap { t() } else { banner.dismiss() }
     }
