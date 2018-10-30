@@ -24,6 +24,7 @@ extension AppDelegate: ApplicationBlurable { }
 extension AppDelegate: ApplicationFirebase { }
 extension AppDelegate: ApplicationFirebaseMessaging { }
 extension AppDelegate: MessagingDelegate { }
+extension AppDelegate: AGApplicationOrientationDependency { }
 
 
 

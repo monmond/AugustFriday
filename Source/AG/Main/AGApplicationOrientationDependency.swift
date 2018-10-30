@@ -1,5 +1,5 @@
 //
-//  ApplicationOrientationDependency.swift
+//  AGApplicationOrientationDependency.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 11/10/18.
@@ -13,8 +13,8 @@ import UIKit
 
 
 
-//MARK: - ApplicationOrientationDependency
-public protocol ApplicationOrientationDependency {
+//MARK: - AGApplicationOrientationDependency
+public protocol AGApplicationOrientationDependency {
   var applicationOrientationOrientation: UIInterfaceOrientationMask { get }
   var applicationOrientationIsLandscape: Bool { get }
   var applicationOrientationIsPortrait: Bool { get }
@@ -24,7 +24,7 @@ public protocol ApplicationOrientationDependency {
 
 
 //MARK: - Implements
-public extension ApplicationOrientationDependency {
+public extension AGApplicationOrientationDependency {
   
   private var manager_applicationOrientation: AGApplicationOrientationManager {
     return AGApplicationOrientationManager.shared

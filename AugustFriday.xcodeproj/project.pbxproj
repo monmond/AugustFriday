@@ -46,7 +46,6 @@
 		A433E982216F3FE00068DAD9 /* AGDefaultsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */; };
 		A433E984216F405B0068DAD9 /* AGPanningUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E983216F405B0068DAD9 /* AGPanningUtil.swift */; };
 		A433E986216F40CA0068DAD9 /* AGApplicationOrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E985216F40CA0068DAD9 /* AGApplicationOrientationManager.swift */; };
-		A433E988216F40EB0068DAD9 /* ApplicationOrientationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */; };
 		A434A11521101855004898DE /* UITableViewCell+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10A21101855004898DE /* UITableViewCell+AG.swift */; };
 		A434A11621101855004898DE /* UICollectionView+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10C21101855004898DE /* UICollectionView+AG.swift */; };
 		A434A11721101855004898DE /* UICollectionViewCell+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A10E21101855004898DE /* UICollectionViewCell+AG.swift */; };
@@ -137,6 +136,7 @@
 		A4913D502188ADB0007934BB /* AGHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4913D4F2188ADAF007934BB /* AGHost.swift */; };
 		A4913D522188ADD7007934BB /* AGScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4913D512188ADD7007934BB /* AGScheme.swift */; };
 		A4913D542188AE47007934BB /* AGBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4913D532188AE47007934BB /* AGBundle.swift */; };
+		A4913D562188B654007934BB /* AGApplicationOrientationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4913D552188B654007934BB /* AGApplicationOrientationDependency.swift */; };
 		A4960EDC214620FB001D8E43 /* AGAlamofireCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */; };
 		A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */; };
 		A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */; };
@@ -221,7 +221,6 @@
 		A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDefaultsCodable.swift; sourceTree = "<group>"; };
 		A433E983216F405B0068DAD9 /* AGPanningUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGPanningUtil.swift; sourceTree = "<group>"; };
 		A433E985216F40CA0068DAD9 /* AGApplicationOrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationOrientationManager.swift; sourceTree = "<group>"; };
-		A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationOrientationDependency.swift; sourceTree = "<group>"; };
 		A434A10A21101855004898DE /* UITableViewCell+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+AG.swift"; sourceTree = "<group>"; };
 		A434A10C21101855004898DE /* UICollectionView+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+AG.swift"; sourceTree = "<group>"; };
 		A434A10E21101855004898DE /* UICollectionViewCell+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+AG.swift"; sourceTree = "<group>"; };
@@ -315,6 +314,7 @@
 		A4913D4F2188ADAF007934BB /* AGHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGHost.swift; sourceTree = "<group>"; };
 		A4913D512188ADD7007934BB /* AGScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGScheme.swift; sourceTree = "<group>"; };
 		A4913D532188AE47007934BB /* AGBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBundle.swift; sourceTree = "<group>"; };
+		A4913D552188B654007934BB /* AGApplicationOrientationDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGApplicationOrientationDependency.swift; sourceTree = "<group>"; };
 		A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireCodableResponse.swift; sourceTree = "<group>"; };
 		A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireTask.swift; sourceTree = "<group>"; };
 		A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireValidatable.swift; sourceTree = "<group>"; };
@@ -668,7 +668,6 @@
 			isa = PBXGroup;
 			children = (
 				A434A17B21101EA9004898DE /* AGReusable.swift */,
-				A433E987216F40EB0068DAD9 /* ApplicationOrientationDependency.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -803,6 +802,7 @@
 		A434A15F21101BBA004898DE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A4913D552188B654007934BB /* AGApplicationOrientationDependency.swift */,
 				A434A17521101EA9004898DE /* AGApplicationRouter.swift */,
 				A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */,
 				A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */,
@@ -1388,12 +1388,12 @@
 				A4B6AD162187174C0025C350 /* AGPopupVCAttributedStringDependency.swift in Sources */,
 				A4908F562185F39400B36696 /* AGN.swift in Sources */,
 				A444FC432178F54D00BCE80D /* AGTransitionVCHelper.swift in Sources */,
+				A4913D562188B654007934BB /* AGApplicationOrientationDependency.swift in Sources */,
 				A434A12F21101959004898DE /* String+AG.swift in Sources */,
 				A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */,
 				A42D8996213DA480002A7E01 /* AGLog.swift in Sources */,
 				A4B6AD0C2187174C0025C350 /* ChoicePopupCCA.swift in Sources */,
 				A4354E95214289A100093894 /* AvatarRouter.swift in Sources */,
-				A433E988216F40EB0068DAD9 /* ApplicationOrientationDependency.swift in Sources */,
 				A434A13621101997004898DE /* UIButton+AG.swift in Sources */,
 				A4B6AD172187174C0025C350 /* AGVCPopupDependency.swift in Sources */,
 				A4B6AD122187174C0025C350 /* GridChoicePopupCC.swift in Sources */,

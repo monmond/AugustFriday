@@ -37,6 +37,17 @@ public extension ApplicationRoutable {
     
   }
   
+  public func start(with app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey : Any], condition isLoggedIn: Bool) -> Bool {
+    guard let scheme = url.scheme else {
+      return false
+    }
+    if scheme.isEqual("") {
+      return false
+    }
+    //Handle Deeplink
+    return false
+  }
+  
   public func timeOut() {
     guard isTimeOutEnable else { return }
     

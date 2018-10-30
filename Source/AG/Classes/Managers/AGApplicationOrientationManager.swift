@@ -23,20 +23,20 @@ public class AGApplicationOrientationManager {
   
   public static let shared = AGApplicationOrientationManager()
   
-  var orientation: UIInterfaceOrientationMask = .portrait
+  public var orientation: UIInterfaceOrientationMask = .portrait
   
-  var isLandscape: Bool {
+  public var isLandscape: Bool {
     let sb_orientation = UIApplication.shared.statusBarOrientation
     let device_orientation = UIDevice.current.orientation
     return device_orientation.isValidInterfaceOrientation ? device_orientation.isLandscape : sb_orientation.isLandscape
   }
-  var isPortrait: Bool {
+  public var isPortrait: Bool {
     let sb_orientation = UIApplication.shared.statusBarOrientation
     let device_orientation = UIDevice.current.orientation
     return device_orientation.isValidInterfaceOrientation ? device_orientation.isPortrait : sb_orientation.isPortrait
   }
   
-  func change(with orientations: AGApplicationOrientationChange) {
+  public func change(with orientations: AGApplicationOrientationChange) {
     self.orientation = orientations.mask
     UIDevice.current.setValue(orientations.rotateTo.rawValue, forKey: "orientation")
   }
