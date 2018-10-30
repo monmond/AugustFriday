@@ -30,7 +30,7 @@ public protocol AGSizeClassUICollection {
 public extension AGSizeClassUICollection {
   
   public static func size(with bound: CGRect = .zero) -> CGSize {
-    return CGSize(width: bound.width, height: bound.width)
+    return CGSize(width: bound.size.width, height: bound.size.width)
   }
   
   public static func itemSpace(with bound: CGRect = .zero) -> CGFloat {

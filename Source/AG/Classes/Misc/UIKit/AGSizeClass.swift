@@ -68,7 +68,7 @@ public extension AGSizeClass {
   }
   
   public static func getOrigin(parent: CGSize, with child: CGSize) -> CGPoint {
-    return CGPoint(x: (parent.width - child.width) / 2, y: (parent.height - child.height) / 2)
+    return CGPoint(x: (parent.height - child.width) / 2, y: (parent.height - child.height) / 2)
   }
   
   public static func getCenter(frame: CGRect) -> CGPoint {

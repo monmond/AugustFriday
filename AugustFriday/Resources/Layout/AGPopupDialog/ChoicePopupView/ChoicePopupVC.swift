@@ -293,7 +293,7 @@ class ChoicePopupVC: AGPopupVC {
     
       let count = self.displayed.choice.rows.count
       if count > 0 {
-        let con_collectionHeightMaximun = (UIScreen.main.bounds.height * self.h_scale)
+        let con_collectionHeightMaximun = (UIScreen.main.bounds.size.height * self.h_scale)
         let h_sum: CGFloat = self.con_collectionHeight * CGFloat(count)
         if h_sum < con_collectionHeightMaximun {
           self.con_collectionDetailHeight.update(offset: con_collectionHeightMaximun)

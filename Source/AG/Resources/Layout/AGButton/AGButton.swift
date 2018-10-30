@@ -328,7 +328,7 @@ public extension AGButton {
   fileprivate func setupBackgroundGradient() {
     let c = setting.color
     let a = setting.appearance
-    let r = a.bd_radius ?? bounds.height / 2
+    let r = a.bd_radius ?? bounds.size.height / 2
     let shape = CAShapeLayer()
     shape.path = UIBezierPath(roundedRect: bounds, cornerRadius: r).cgPath
     switch a.bgGradient_axis {
@@ -369,7 +369,7 @@ public extension AGButton {
   fileprivate func setupBorderGradient() {
     let c = setting.color
     let a = setting.appearance
-    let r = a.bd_radius ?? bounds.height / 2
+    let r = a.bd_radius ?? bounds.size.height / 2
     let shape = CAShapeLayer()
     shape.lineWidth = a.bd_width
     shape.path = UIBezierPath(roundedRect: bounds, cornerRadius: r).cgPath
@@ -403,7 +403,7 @@ public extension AGButton {
   
   fileprivate func setupRadius() {
     let a = setting.appearance
-    let r = a.bd_radius ?? bounds.height / 2
+    let r = a.bd_radius ?? bounds.size.height / 2
     layer.cornerRadius = r
     clipsToBounds = true
   }
@@ -624,7 +624,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
   
   private func setOriginalState(completion: CBVoid?) {
     let a = setting.appearance
-    let r = a.bd_radius ?? bounds.height / 2
+    let r = a.bd_radius ?? bounds.size.height / 2
     animateToOriginalWidth(completion: completion)
     l_spiner.stopAnimation()
     setTitle(cached_title, for: .normal)
@@ -640,7 +640,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
   private func animateToOriginalWidth(completion: CBVoid?) {
     flag_animating = false
     let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
-    shrinkAnim.fromValue = bounds.height
+    shrinkAnim.fromValue = bounds.size.height
     shrinkAnim.toValue = bounds.width
     shrinkAnim.duration = shrinkDuration
     shrinkAnim.timingFunction = shrinkCurve
