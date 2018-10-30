@@ -16,6 +16,16 @@ import UIKit
 //MARK: - AGVipWorker
 open class AGVipWorker {
   
+  //MARK: - Initial
+  public init() {
+    
+  }
+  
+  deinit {
+    
+  }
+
+  
 }
 
 
