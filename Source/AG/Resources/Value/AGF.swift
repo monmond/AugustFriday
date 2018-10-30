@@ -15,17 +15,6 @@ import UIKit
 
 
 //MARK: - Font
-public extension AG {
-  
-  public enum F {
-    
-  }
-  
-}
-
-
-
-//MARK: - NotoSerif
 public extension AG.F {
   
   public enum System: String, AGFontTextStylable {

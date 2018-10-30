@@ -14,14 +14,14 @@ import UIKit
 
 
 //MARK: - PanningUtil
-public protocol PanningUtil {
+public protocol AGPanningUtil {
   
 }
 
 
 
 //MARK: - Implements
-public extension PanningUtil {
+public extension AGPanningUtil {
   
   public func panningLocationRounded(with location: CGFloat, min: CGFloat, max: CGFloat) -> CGFloat {
     var rounded = location

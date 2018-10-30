@@ -16,8 +16,6 @@ import UIKit
 //MARK: - Notification
 public extension AG {
   
-  public enum N {
-    typealias K = Int
-  }
+  public typealias K = Int
   
 }

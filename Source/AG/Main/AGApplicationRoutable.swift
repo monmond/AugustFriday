@@ -27,6 +27,7 @@ public protocol AGApplicationRoutable: AGApplicationWindow {
   
   var isTimeOutEnable: Bool { get }
   func start(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?, condition isLoggedIn: Bool)
+  func start(with app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey : Any], condition isLoggedIn: Bool) -> Bool
   func timeOut()
   func receiveCommon()
   func receiveDeeplink()
@@ -82,7 +83,11 @@ public extension AGApplicationRoutable {
   public func canStart(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     let isLaunchWithOption = !(launchOptions == nil)
     let isFromSourceApplication = (launchOptions ?? [:]).keys.contains(.sourceApplication)
-    return !isLaunchWithOption || !isFromSourceApplication
+    var isFromApple = false
+    if let option = launchOptions, let app = option[.sourceApplication] as? String, isFromSourceApplication {
+      isFromApple = app.contains(AG.Bundle.apple)
+    }
+    return !isLaunchWithOption || !isFromSourceApplication || isFromApple
     
   }
   

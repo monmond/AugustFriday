@@ -14,29 +14,17 @@ import UIKit
 
 
 //MARK: - Button
-public extension AG {
+public extension AG.B{
   
-  public enum B {
-    
-    public enum Text { }
-    
-    public enum Plain { }
-    
-    public enum Popup { }
-    
-    public enum Border { }
-    
-    public enum BorderLess { }
-    
-    public enum Toggle { }
-    
-    public enum Icon { }
-    
-    public enum IconText { }
-    
-    public enum TextIcon { }
-    
-  }
+  public enum Text { }
+  public enum Plain { }
+  public enum Popup { }
+  public enum Border { }
+  public enum BorderLess { }
+  public enum Toggle { }
+  public enum Icon { }
+  public enum IconText { }
+  public enum TextIcon { }
   
 }
 

@@ -25,3 +25,10 @@ public protocol AGVipRoutingLogic  {
 public extension AGVipRoutingLogic {
   
 }
+
+
+
+//MARK: - Commons
+public extension AGVipRoutingLogic {
+  
+}

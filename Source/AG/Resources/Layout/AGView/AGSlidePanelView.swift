@@ -127,7 +127,7 @@ public class AGSlidePanelConfiguration {
 
 //MARK: - Extensions
 extension AGSlidePanelView: AGVCEventable { }
-extension AGSlidePanelView: PanningUtil { }
+extension AGSlidePanelView: AGPanningUtil { }
 
 
 

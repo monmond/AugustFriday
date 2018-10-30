@@ -18,7 +18,7 @@ public protocol ApplicationOrientationDependency {
   var applicationOrientationOrientation: UIInterfaceOrientationMask { get }
   var applicationOrientationIsLandscape: Bool { get }
   var applicationOrientationIsPortrait: Bool { get }
-  func applicationOrientationChange(with orientations: ApplicationOrientationChange)
+  func applicationOrientationChange(with orientations: AGApplicationOrientationChange)
 }
 
 
@@ -26,8 +26,8 @@ public protocol ApplicationOrientationDependency {
 //MARK: - Implements
 public extension ApplicationOrientationDependency {
   
-  private var manager_applicationOrientation: ApplicationOrientationManager {
-    return ApplicationOrientationManager.shared
+  private var manager_applicationOrientation: AGApplicationOrientationManager {
+    return AGApplicationOrientationManager.shared
   }
   
   public var applicationOrientationOrientation: UIInterfaceOrientationMask {
@@ -42,7 +42,7 @@ public extension ApplicationOrientationDependency {
     return manager_applicationOrientation.isPortrait
   }
   
-  public func applicationOrientationChange(with orientations: ApplicationOrientationChange) {
+  public func applicationOrientationChange(with orientations: AGApplicationOrientationChange) {
     manager_applicationOrientation.change(with: orientations)
   }
   

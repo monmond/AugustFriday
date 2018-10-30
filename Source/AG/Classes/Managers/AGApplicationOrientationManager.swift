@@ -1,5 +1,5 @@
 //
-//  ApplicationOrientationManager.swift
+//  AGApplicationOrientationManager.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 11/10/18.
@@ -18,7 +18,7 @@ public typealias AGApplicationOrientationChange = (mask: UIInterfaceOrientationM
 
 
 
-//MARK: - ApplicationOrientationManager
+//MARK: - AGApplicationOrientationManager
 public class AGApplicationOrientationManager {
   
   public static let shared = AGApplicationOrientationManager()

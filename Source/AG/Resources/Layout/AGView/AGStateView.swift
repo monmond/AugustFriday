@@ -1,5 +1,5 @@
 //
-//  AGStateView.swift
+//  AGStateVM.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 30/7/18.
@@ -15,8 +15,8 @@ import SnapKit
 
 
 
-//MARK: - AGStateViewModel
-public enum AGStateViewModel {
+//MARK: - AGStateVM
+public enum AGStateVM {
   
   open class Setting {
     
@@ -55,26 +55,26 @@ public enum AGStateViewModel {
   open class ViewModel {
     
     /// Normal
-    public var normal: AGStateViewModel.Setting = AGStateViewModel.Setting()
+    public var normal: AGStateVM.Setting = AGStateVM.Setting()
     
     /// Loading
-    public var loading: AGStateViewModel.Setting = AGStateViewModel.Setting()
+    public var loading: AGStateVM.Setting = AGStateVM.Setting()
     
     /// Tap to refresh or pull to refresh
-    public var noResults: AGStateViewModel.Setting = AGStateViewModel.Setting()
+    public var noResults: AGStateVM.Setting = AGStateVM.Setting()
     
     /// Tap to refresh or reconnect network
-    public var noConnection: AGStateViewModel.Setting = AGStateViewModel.Setting()
+    public var noConnection: AGStateVM.Setting = AGStateVM.Setting()
     
     /// Tap to refresh
-    public var error: AGStateViewModel.Setting = AGStateViewModel.Setting()
+    public var error: AGStateVM.Setting = AGStateVM.Setting()
     
     public init() {
       
     }
     
-    public func getSetting(with state: AGStateViewState) -> AGStateViewModel.Setting {
-      var setting: AGStateViewModel.Setting
+    public func getSetting(with state: AGStateViewState) -> AGStateVM.Setting {
+      var setting: AGStateVM.Setting
       switch state {
       case .normal:
         setting = normal
@@ -147,13 +147,13 @@ public class AGStateView: UIView, AGReusable {
   
   //MARK: - Storage
   fileprivate var state: AGStateViewState = .normal
-  fileprivate var viewModel: AGStateViewModel.ViewModel = AGStateViewModel.ViewModel()
+  fileprivate var viewModel: AGStateVM.ViewModel = AGStateVM.ViewModel()
   fileprivate var axis: NSLayoutConstraint.Axis = .vertical
   
   
   //MARK: - Initial
   
-  public init(viewModel: AGStateViewModel.ViewModel, axis: NSLayoutConstraint.Axis) {
+  public init(viewModel: AGStateVM.ViewModel, axis: NSLayoutConstraint.Axis) {
     super.init(frame: .zero)
     self.viewModel = viewModel
     self.axis = axis
@@ -416,7 +416,7 @@ public extension AGStateView {
 //MARK: - Display
 public extension AGStateView {
   
-  public func setupData(with setting: AGStateViewModel.Setting) {
+  public func setupData(with setting: AGStateVM.Setting) {
     let tint = setting.tint ?? UIColor.black
     
     if let img = setting.bg_image {
