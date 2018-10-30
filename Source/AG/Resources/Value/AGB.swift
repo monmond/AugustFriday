@@ -72,6 +72,36 @@ extension AG.B.Plain {
 //MARK: - Popup
 extension AG.B.Popup {
   
+  struct Confirm: AGButtonSetting {
+    var appearance = AGButtonAppearance()
+    var option = AGButtonOption()
+    var color = AGButtonColor()
+    var icon = UIImage()
+    init() {
+      appearance.lb_font = AG.F.System.font(with: .body)
+      option.isSetupTitle = true
+      option.isSetupBackground = true
+      option.isSetupRadius = false
+      color.lb = (normal: AG.C.white, highlighted: AG.C.white, disable: AG.C.white)
+      color.bg = (normal: AG.C.red, highlighted: AG.C.grayLight, disable: AG.C.grayLight)
+    }
+  }
+  
+  struct Cancel: AGButtonSetting {
+    var appearance = AGButtonAppearance()
+    var option = AGButtonOption()
+    var color = AGButtonColor()
+    var icon = UIImage()
+    init() {
+      appearance.lb_font = AG.F.System.font(with: .body)
+      option.isSetupTitle = true
+      option.isSetupBackground = true
+      option.isSetupRadius = false
+      color.lb = (normal: AG.C.black, highlighted: AG.C.nickel, disable: AG.C.white)
+      color.bg = (normal: AG.C.nickel, highlighted: AG.C.nickel, disable: AG.C.tungsten)
+    }
+  }
+  
 }
 
 

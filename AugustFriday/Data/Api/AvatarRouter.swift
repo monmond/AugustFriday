@@ -8,22 +8,21 @@
 
 
 
+//MARK: - Imports
 import Foundation
 import Alamofire
 import SwiftyJSON
 
 
 
-public typealias CallbackAvatarApiGetAvatar = ((AGDataResponse<GetAvatar.Response>) -> ())
-
-
-
+//MARK: - AvatarApi
 public class AvatarApi {
   
 //  class let agam =
-  
+  //MARK: - GetAvatar
+  public typealias CBGetAvatar = ((AGDataResponse<GetAvatar.Response>) -> ())
   public class func getAvatar(_ param: GetAvatar.Request,
-                              onComplete: @escaping CallbackAvatarApiGetAvatar) {
+                              onComplete: @escaping CBGetAvatar) {
     let endpoint = AvatarRouter.getAvatar(param)
     AGAlamofireManager.shared.requestJSON(endpoint) {
       let data = GetAvatar.Response(json: $0.data)

@@ -13,7 +13,15 @@ def ui_pods
   # Auto layout helper
   pod 'SnapKit', '~> 4.0.0'
   # A library to simplify iOS animations in Swift
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+#  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  # Popup dialog
+  pod 'PopupDialog', '~> 0.8.1'
+  # Allows to prevent issues of keyboard sliding up and cover UITextField/UITextView.
+  pod 'IQKeyboardManagerSwift', '~> 6.0.4'
+  # Facebook Preloading, '~> 1.4.1'
+  pod 'SkeletonView'
+  # The easiest way to display highly customizable in app notification banners in iOS 1.6.3
+  pod 'NotificationBannerSwift'
   
 end
 
@@ -41,6 +49,8 @@ def networking_pods
   # pod 'Kingfisher' , '~> 4.8'
   # Codable Firebase 0.2.0
   pod 'CodableFirebase'
+  # Image downloader and cacheing 4.9
+  pod 'Kingfisher', '~> 4.6.3'
   
 end
 

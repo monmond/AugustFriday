@@ -13,6 +13,18 @@ import UIKit
 
 
 
+//MARK: - Background
+public extension UIButton {
+  
+  public func setBackgroundColor(_ color: UIColor, for state: UIControlState) {
+    let img = UIImage.color(with: color)
+    self.setBackgroundImage(img, for: state)
+  }
+  
+}
+
+
+
 //MARK: - Static
 public extension UIButton {
   

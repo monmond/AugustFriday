@@ -96,7 +96,7 @@ extension UIView {
   var safeLeftAnchor: NSLayoutXAxisAnchor {
     if #available(iOS 11.0, *){
       return self.safeAreaLayoutGuide.leftAnchor
-    }else {
+    } else {
       return self.leftAnchor
     }
   }
@@ -104,7 +104,7 @@ extension UIView {
   var safeRightAnchor: NSLayoutXAxisAnchor {
     if #available(iOS 11.0, *){
       return self.safeAreaLayoutGuide.rightAnchor
-    }else {
+    } else {
       return self.rightAnchor
     }
   }

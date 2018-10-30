@@ -13,10 +13,34 @@ import UIKit
 
 
 
+//MARK: - AGColorTheme
+protocol AGColorTheme {
+  static var lb_1: UIColor { get }
+  static var lb_2: UIColor { get }
+  static var v_bg_1: UIColor { get }
+  static var v_bg_2: UIColor { get }
+  static var v_bg_3: UIColor { get }
+  static var navigation: UIColor { get }
+  static var progressBar_live: UIColor { get }
+  static var progressBar_vod: UIColor { get }
+  static var v_seperator: UIColor { get }
+  static var cell_bg_default: UIColor { get }
+  static var cell_bg_1: UIColor { get }
+  static var cell_bg_2: UIColor { get }
+  static var cell_bg_3: UIColor { get }
+  static var cell_lb_1: UIColor { get }
+  static var cell_lb_2: UIColor { get }
+}
+
+
+
 //MARK: - Color
 public extension AG {
   
   public enum C {
+    
+    //MARK: AGColorTheme
+    static let Theme: AGColorTheme.Type = AG.Configuration.shared.theme
     
     //MARK: Mono tone
     public static let clear = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0)
@@ -77,3 +101,54 @@ public extension AG {
   }
   
 }
+
+
+
+//MARK: - Light
+extension AG.C {
+  
+  enum Light: AGColorTheme {
+    static let lb_1 = white
+    static let lb_2 = silver
+    static let v_bg_1 = iron
+    static var v_bg_2 = black
+    static var v_bg_3 = lead
+    static let navigation = lead
+    static var progressBar_live = blueberry
+    static var progressBar_vod = red
+    static var v_seperator = iron
+    static var cell_bg_default = tungsten
+    static var cell_bg_1 = black
+    static var cell_bg_2 = lead
+    static var cell_bg_3 = tungsten
+    static var cell_lb_1 = grayLight
+    static var cell_lb_2 = redDark
+  }
+  
+}
+
+
+
+//MARK: - Dark
+extension AG.C {
+  
+  enum Dark: AGColorTheme {
+    static let lb_1 = iron
+    static let lb_2 = lead
+    static let v_bg_1 = white
+    static var v_bg_2 = black
+    static var v_bg_3 = lead
+    static let navigation = silver
+    static var progressBar_live = blueberry
+    static var progressBar_vod = red
+    static var v_seperator = iron
+    static var cell_bg_default = tungsten
+    static var cell_bg_1 = black
+    static var cell_bg_2 = lead
+    static var cell_bg_3 = tungsten
+    static var cell_lb_1 = grayLight
+    static var cell_lb_2 = redDark
+  }
+  
+}
+

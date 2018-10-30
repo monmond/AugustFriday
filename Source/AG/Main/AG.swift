@@ -17,10 +17,17 @@ import UIKit
 //MARK: - AG
 public class AG {
 
+  //MARK: - App
   public enum App {
-    
     static let name = "AugustFriday"
-    
+  }
+  
+  
+  
+  //MARK: - Configuration
+  class Configuration {
+    static let shared = Configuration()
+    var theme: AGColorTheme.Type = AG.C.Light.self
   }
 
 }
