@@ -13,7 +13,7 @@ import UIKit
 
 
 
-//MARK: - ChartViewDisplayLogic
+//MARK: - AGVipDisplayLogic
 public protocol AGVipDisplayLogic: class {
   
   func displaySomeThing(viewModel: String)

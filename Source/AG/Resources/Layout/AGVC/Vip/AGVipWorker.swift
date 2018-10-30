@@ -33,7 +33,7 @@ open class AGVipWorker {
 //MARK: - Implements
 public extension AGVipWorker {
   
-  func fetchSomeThing(onComplete: @escaping (AGDataResponse<String?>) -> ()) {
+  public func fetchSomeThing(onComplete: @escaping (AGDataResponse<String?>) -> ()) {
     onComplete(AGDataResponse<String?>(data: "SomeThing", error: nil))
   }
   
