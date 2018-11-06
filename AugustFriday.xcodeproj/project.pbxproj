@@ -94,7 +94,7 @@
 		A434A1BB21101EA9004898DE /* AGShadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19221101EA9004898DE /* AGShadowable.swift */; };
 		A434A1BC21101EA9004898DE /* AGStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19421101EA9004898DE /* AGStateView.swift */; };
 		A434A1BE21101EA9004898DE /* AGRadiusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19721101EA9004898DE /* AGRadiusable.swift */; };
-		A434A1C121101EA9004898DE /* AGInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19C21101EA9004898DE /* AGInstantiatable.swift */; };
+		A434A1C121101EA9004898DE /* AGVCInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A19C21101EA9004898DE /* AGVCInstantiatable.swift */; };
 		A4354E95214289A100093894 /* AvatarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4354E94214289A100093894 /* AvatarRouter.swift */; };
 		A4445EB8218847A800813D8B /* VCPopupDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445EB7218847A800813D8B /* VCPopupDependency.swift */; };
 		A4445EBA21884CC900813D8B /* AGVCEventable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445EB921884CC900813D8B /* AGVCEventable.swift */; };
@@ -129,6 +129,7 @@
 		A47C8A9E20D3A829009F8183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47C8A9C20D3A829009F8183 /* LaunchScreen.storyboard */; };
 		A48A33FB214B64AD00B220A9 /* FirebaseViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A33FA214B64AD00B220A9 /* FirebaseViewConfiguration.swift */; };
 		A48A3401214B681F00B220A9 /* AGHeaderReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A3400214B681F00B220A9 /* AGHeaderReusable.swift */; };
+		A48BB6952191905B00F81BB7 /* AGApplicationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48BB6942191905B00F81BB7 /* AGApplicationDependency.swift */; };
 		A48C2F87214C2FA500778557 /* UserPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48C2F86214C2FA500778557 /* UserPet.swift */; };
 		A4908F542185EFE700B36696 /* AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4908F532185EFE700B36696 /* AG.swift */; };
 		A4908F562185F39400B36696 /* AGN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4908F552185F39400B36696 /* AGN.swift */; };
@@ -270,7 +271,7 @@
 		A434A19221101EA9004898DE /* AGShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGShadowable.swift; sourceTree = "<group>"; };
 		A434A19421101EA9004898DE /* AGStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGStateView.swift; sourceTree = "<group>"; };
 		A434A19721101EA9004898DE /* AGRadiusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGRadiusable.swift; sourceTree = "<group>"; };
-		A434A19C21101EA9004898DE /* AGInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGInstantiatable.swift; sourceTree = "<group>"; };
+		A434A19C21101EA9004898DE /* AGVCInstantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGVCInstantiatable.swift; sourceTree = "<group>"; };
 		A4354E94214289A100093894 /* AvatarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRouter.swift; sourceTree = "<group>"; };
 		A4445EB7218847A800813D8B /* VCPopupDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPopupDependency.swift; sourceTree = "<group>"; };
 		A4445EB921884CC900813D8B /* AGVCEventable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGVCEventable.swift; sourceTree = "<group>"; };
@@ -307,6 +308,7 @@
 		A47C8A9F20D3A829009F8183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A48A33FA214B64AD00B220A9 /* FirebaseViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseViewConfiguration.swift; sourceTree = "<group>"; };
 		A48A3400214B681F00B220A9 /* AGHeaderReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGHeaderReusable.swift; sourceTree = "<group>"; };
+		A48BB6942191905B00F81BB7 /* AGApplicationDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationDependency.swift; sourceTree = "<group>"; };
 		A48C2F86214C2FA500778557 /* UserPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPet.swift; sourceTree = "<group>"; };
 		A4908F532185EFE700B36696 /* AG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AG.swift; sourceTree = "<group>"; };
 		A4908F552185F39400B36696 /* AGN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGN.swift; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 				A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */,
 				A479EB53213E4B3200A4F143 /* AGApplicationBlurable.swift */,
 				A4908F532185EFE700B36696 /* AG.swift */,
+				A48BB6942191905B00F81BB7 /* AGApplicationDependency.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -898,7 +901,7 @@
 		A434A19B21101EA9004898DE /* AGStoryboard */ = {
 			isa = PBXGroup;
 			children = (
-				A434A19C21101EA9004898DE /* AGInstantiatable.swift */,
+				A434A19C21101EA9004898DE /* AGVCInstantiatable.swift */,
 			);
 			path = AGStoryboard;
 			sourceTree = "<group>";
@@ -1379,7 +1382,7 @@
 				A4F3EEE321481A80009CEFF5 /* FirebaseViewWorker.swift in Sources */,
 				A4B6AD1A2187174C0025C350 /* ConfirmTextPopupVC.swift in Sources */,
 				A4F3EEE621481C5C009CEFF5 /* User.swift in Sources */,
-				A434A1C121101EA9004898DE /* AGInstantiatable.swift in Sources */,
+				A434A1C121101EA9004898DE /* AGVCInstantiatable.swift in Sources */,
 				A4B6AD0E2187174C0025C350 /* ChoicePopupVC.swift in Sources */,
 				A42DA4032141851200F1033F /* AGAlamofireConfiguration.swift in Sources */,
 				A4445EBE21884CFB00813D8B /* AGNotificationBannerManager.swift in Sources */,
@@ -1417,6 +1420,7 @@
 				A434A1A421101EA9004898DE /* AGIntrinsicTableView.swift in Sources */,
 				A4445ED121884D5300813D8B /* AGVipInteractor.swift in Sources */,
 				A4EB820D21413DF600BBAC2D /* AGError.swift in Sources */,
+				A48BB6952191905B00F81BB7 /* AGApplicationDependency.swift in Sources */,
 				A433E97E216F3FAC0068DAD9 /* AGSizeClassUICollection.swift in Sources */,
 				A42DA3FE2141838600F1033F /* AGNetworkManager.swift in Sources */,
 				A434A1A621101EA9004898DE /* AGBundleAsset.swift in Sources */,

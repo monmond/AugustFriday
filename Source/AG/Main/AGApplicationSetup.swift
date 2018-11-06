@@ -17,7 +17,7 @@ import UIKit
 public protocol AGApplicationSetup {
   
   func setupOnInit()
-  func setupOnApplicationDidFinishLaunching()
+  func setupOnDidFinishLaunching(with app: UIApplication, options: [UIApplicationLaunchOptionsKey: Any]?)
   func setupOnDeinit()
   
 }
@@ -31,7 +31,7 @@ public extension AGApplicationSetup {
     
   }
   
-  public func setupOnApplicationDidFinishLaunching() {
+  public func setupOnDidFinishLaunching(with app: UIApplication, options: [UIApplicationLaunchOptionsKey: Any]?) {
     setupNavigationBar()
     
   }
@@ -55,6 +55,27 @@ public extension AGApplicationSetup {
       }
     }
   }
+  
+  
+  private func checkUpdateAvailable() {
+    //    let id = Bundle.main.bundleId
+    //    guard let url_lookup = URL(string: "http://itunes.apple.com/lookup?bundleId=\(id)") else { return }
+    //    guard let data = try? Data(contentsOf: url_lookup) else { return }
+    //    guard let optional = try? JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String: Any] else { return }
+    //    guard let json = optional, let result = (json["results"] as? [Any])?.first as? [String: Any] else { return }
+    //    guard let version = result["version"] as? String else { return }
+    //    guard version != Bundle.main.versionNumber else { return }
+    //    print("app store", version)
+    //    print("installed", Bundle.main.versionNumber)
+    //    guard let url_app = URL(string: "https://itunes.apple.com/us/app/apple-store/id375380948?mt=8") else { return }
+    //    guard UIApplication.shared.canOpenURL(url_app) else { return }
+    //    UIApplication.shared.open(url_app, options: [:]) {
+    //      if $0 {
+    //        print("1")
+    //      }
+    //    }
+  }
+  
   
 }
 

@@ -20,6 +20,10 @@ public extension String {
     return (self as NSString).integerValue
   }
   
+  public var toBool: Bool {
+    return NSString(string: self).boolValue
+  }
+  
   public static func className(_ aClass: AnyClass) -> String {
     return NSStringFromClass(aClass).components(separatedBy: ".").last!
   }

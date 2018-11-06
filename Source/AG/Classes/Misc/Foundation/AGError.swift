@@ -40,7 +40,7 @@ public enum AGError: Error {
   case dataEmpty
   case dataNotValid
   case cannotGetData
-  case cannotUpdateData
+  case cannotUpdateData(String)
   case cannotDeleteData
   case cannotCreateData
   case indexOutOfBound

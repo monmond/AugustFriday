@@ -141,7 +141,6 @@ extension AppDelegate {
 
 
 
-
 //MARK: MessagingDelegate
 extension AppDelegate {
   
@@ -149,7 +148,7 @@ extension AppDelegate {
     // TODO: If necessary send token to application server.
     // Note: This callback is fired at each app startup and whenever a new token is generated.
     AGLog.info(fcmToken)
-    
+
   }
   
   func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
