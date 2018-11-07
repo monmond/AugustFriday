@@ -167,6 +167,7 @@
 		A4C0C256213E7D8400288AFB /* AGApplicationFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */; };
 		A4C0C258213E7E6E00288AFB /* AGApplicationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */; };
 		A4C0C25A213E830800288AFB /* AGApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */; };
+		A4D304862192BB4B00C4C08E /* AGLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D304852192BB4B00C4C08E /* AGLoadView.swift */; };
 		A4D84D8C217A4248009A88D3 /* AGGradientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D84D8B217A4248009A88D3 /* AGGradientable.swift */; };
 		A4E838CC2180CDA8000C2F8D /* FixPopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E838CB2180CDA8000C2F8D /* FixPopupDialog.swift */; };
 		A4EB820D21413DF600BBAC2D /* AGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EB820C21413DF600BBAC2D /* AGError.swift */; };
@@ -345,6 +346,7 @@
 		A4C0C255213E7D8400288AFB /* AGApplicationFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebase.swift; sourceTree = "<group>"; };
 		A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationSetup.swift; sourceTree = "<group>"; };
 		A4C0C259213E830800288AFB /* AGApplicationFirebaseMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGApplicationFirebaseMessaging.swift; sourceTree = "<group>"; };
+		A4D304852192BB4B00C4C08E /* AGLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGLoadView.swift; sourceTree = "<group>"; };
 		A4D84D8B217A4248009A88D3 /* AGGradientable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGGradientable.swift; sourceTree = "<group>"; };
 		A4E838CB2180CDA8000C2F8D /* FixPopupDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixPopupDialog.swift; sourceTree = "<group>"; };
 		A4EB820C21413DF600BBAC2D /* AGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGError.swift; sourceTree = "<group>"; };
@@ -891,6 +893,7 @@
 				A4B61D6621185CA6003F98FF /* AGBouncingView.swift */,
 				A434A19221101EA9004898DE /* AGShadowable.swift */,
 				A434A19421101EA9004898DE /* AGStateView.swift */,
+				A4D304852192BB4B00C4C08E /* AGLoadView.swift */,
 				A434A19721101EA9004898DE /* AGRadiusable.swift */,
 				A4D84D8B217A4248009A88D3 /* AGGradientable.swift */,
 				A444FC4A2178F62900BCE80D /* AGSlidePanelView.swift */,
@@ -1334,6 +1337,7 @@
 				A444FC4B2178F62900BCE80D /* AGSlidePanelView.swift in Sources */,
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
 				A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */,
+				A4D304862192BB4B00C4C08E /* AGLoadView.swift in Sources */,
 				A4913D542188AE47007934BB /* AGBundle.swift in Sources */,
 				A4B6AD142187174C0025C350 /* AGPopupManager.swift in Sources */,
 				A4445ED821884DBC00813D8B /* NorthCarolinaBannerView.swift in Sources */,

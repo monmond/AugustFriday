@@ -171,20 +171,16 @@ public class AGStateView: UIView, AGReusable {
     onDeinit()
     
   }
-  
-}
 
 
 
-//MARK: -  Life Cycle
-public extension AGStateView {
-  
-  override func awakeFromNib() {
+  //MARK: -  Life Cycle
+  override public func awakeFromNib() {
     super.awakeFromNib()
     setupViewOnAwakeFromNib()
   }
   
-  override func layoutSubviews() {
+  override public func layoutSubviews() {
     super.layoutSubviews()
     
   }
@@ -198,14 +194,10 @@ public extension AGStateView {
   func onDeinit() {
     
   }
-  
-}
 
 
 
-//MARK: -  Setup UI
-public extension AGStateView {
-  
+  //MARK: -  Setup UI
   func setupViewOnAwakeFromNib() {
     setupUI()
     setupSnp()
@@ -327,33 +319,22 @@ public extension AGStateView {
     }
     
   }
-  
-}
 
 
 
-//MARK: - Setup Data
-public extension AGStateView {
-  
-}
+  //MARK: - Setup Data
 
 
 
-//MARK: - Event
-public extension AGStateView {
-  
+  //MARK: - Event
   @objc
   fileprivate func stateViewPressed(_ sender: UITapGestureRecognizer) {
     delegate?.stateViewPressed(with: self, state: state)
   }
-  
-}
 
 
 
-//MARK: - Public
-public extension AGStateView {
-  
+  //MARK: - Public
   public func setStateViewState(with state: AGStateViewState, animated: Bool = false, onComplete: CBVoid? = nil) {
     self.state = state
     switch state {
@@ -364,14 +345,10 @@ public extension AGStateView {
     }
     setupData(with: viewModel.getSetting(with: state))
   }
-  
-}
 
 
 
-//MARK: - Private
-public extension AGStateView {
-  
+  //MARK: - Private
   private func setupEmpty() {
     imgv_background.image = nil
     iv_center.isHidden = true
@@ -402,20 +379,13 @@ public extension AGStateView {
     
   }
   
-}
 
-
-
-//MARK: - Interaction & Presentation
-public extension AGStateView {
   
-}
-
-
-
-//MARK: - Display
-public extension AGStateView {
+  //MARK: - Interaction & Presentation
+ 
   
+  
+  //MARK: - Display
   public func setupData(with setting: AGStateVM.Setting) {
     let tint = setting.tint ?? UIColor.black
     
