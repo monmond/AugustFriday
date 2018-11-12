@@ -103,9 +103,9 @@ s.subspec 'Alamofire' do |c|
 	c.frameworks = 'UIKit'
 	c.source_files = PodUtility.mapSwiftFiles(str_aga, 1)
 	c.dependency 'AugustFriday/Core'
-	c.dependency 'Alamofire', '~> 4.7'
+	c.dependency 'Alamofire', '~> 4.7.0'
 	# c.dependency 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
-	c.dependency 'SwiftyJSON', '~> 4.1'
+	c.dependency 'SwiftyJSON', '~> 4.1.0'
 
 end	
 
@@ -114,7 +114,7 @@ s.subspec 'Firebase' do |c|
 	c.frameworks = 'UIKit', 'Firebase'
 	c.source_files = PodUtility.mapSwiftFiles(str_agf_core, 1)
 	c.dependency 'AugustFriday/Core'
-	c.dependency 'Firebase/Core', '~> 5.0'
+	c.dependency 'Firebase/Core', '~> 5.0.0'
 
 end	
 
@@ -137,12 +137,12 @@ s.subspec 'Core' do |c|
 	# 	'AugustFriday' => PodUtility.mapResourceFiles(str_source, 0)
 	# }
 	c.requires_arc = true
-	c.dependency 'NVActivityIndicatorView', '4.0'
-	c.dependency 'SnapKit', '4.0.0'
-	c.dependency 'PopupDialog', '0.9'
-	c.dependency 'IQKeyboardManagerSwift', '6.0.5'
-	c.dependency 'SkeletonView', '1.4'
-	c.dependency 'NotificationBannerSwift', '1.4'
+	c.dependency 'NVActivityIndicatorView', '~> 4.0.0'
+	c.dependency 'SnapKit', '~> 4.0.0'
+	c.dependency 'PopupDialog', '~> 0.9.0'
+	c.dependency 'IQKeyboardManagerSwift', '~> 6.0.5'
+	c.dependency 'SkeletonView', '~> 1.4.0'
+	c.dependency 'NotificationBannerSwift', '~> 1.4.0'
 	
 
 	# AG
