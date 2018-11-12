@@ -60,6 +60,12 @@ public enum AGStateVM {
     /// Loading
     public var loading: AGStateVM.Setting = AGStateVM.Setting()
     
+    /// loading bg transparent
+    public var loading_bg_transparent: AGStateVM.Setting = AGStateVM.Setting()
+    
+    /// loading bg red
+    public var loading_bg_red: AGStateVM.Setting = AGStateVM.Setting()
+    
     /// Tap to refresh or pull to refresh
     public var noResults: AGStateVM.Setting = AGStateVM.Setting()
     
@@ -80,6 +86,10 @@ public enum AGStateVM {
         setting = normal
       case .loading:
         setting = loading
+      case .loading_bg_transparent:
+        setting = loading_bg_transparent
+      case .loading_bg_red:
+        setting = loading_bg_red
       case .noResults:
         setting = noResults
       case .noConnection:
@@ -99,6 +109,8 @@ public enum AGStateViewState: CaseIterable {
   
   case normal
   case loading
+  case loading_bg_transparent
+  case loading_bg_red
   case noResults
   case noConnection
   case error
@@ -238,7 +250,7 @@ public extension AGStateView {
     lb_title.textColor = UIColor.darkText
     lb_title.backgroundColor = UIColor.clear
     lb_title.numberOfLines = 0
-    lb_title.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+    lb_title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     
     lb_description = UILabel()
     lb_description.text = "description"
@@ -284,10 +296,6 @@ public extension AGStateView {
     imgv_background.snp.makeConstraints {
       $0.top.right.bottom.left.equalToSuperview()
     }
-    iv_center.snp.makeConstraints {
-      $0.width.equalToSuperview().multipliedBy(0.1)
-      $0.height.equalTo(iv_center.snp.width)
-    }
     
     switch axis {
     case .vertical:
@@ -298,18 +306,21 @@ public extension AGStateView {
       imgv_icon.snp.makeConstraints {
         $0.bottom.equalToSuperview()
         $0.centerX.equalToSuperview()
-        $0.height.equalToSuperview().multipliedBy(0.7)
+        //        $0.height.equalToSuperview().multipliedBy(0.7)
+        $0.height.equalToSuperview().multipliedBy(0.3)
         $0.width.equalTo(imgv_icon.snp.height)
+      }
+      iv_center.snp.makeConstraints {
+        $0.bottom.equalTo(imgv_icon.snp.bottom)
+        $0.centerX.equalTo(imgv_icon.snp.centerX)
+        $0.width.equalToSuperview().multipliedBy(0.1)
+        $0.height.equalTo(iv_center.snp.width)
       }
       stv_info.snp.makeConstraints {
         $0.top.equalTo(v_top.snp.bottom).offset(20)
         $0.bottom.lessThanOrEqualToSuperview().inset(20)
         $0.width.equalToSuperview().multipliedBy(0.8)
         $0.centerX.equalToSuperview()
-      }
-      iv_center.snp.makeConstraints {
-        $0.centerX.equalToSuperview()
-        $0.centerY.equalToSuperview().multipliedBy(0.9)
       }
     case .horizontal:
       v_top.snp.makeConstraints {
@@ -319,8 +330,15 @@ public extension AGStateView {
       imgv_icon.snp.makeConstraints {
         $0.right.equalToSuperview()
         $0.centerY.equalToSuperview()
-        $0.width.equalToSuperview().multipliedBy(0.6)
+        //        $0.width.equalToSuperview().multipliedBy(0.6)
+        $0.width.equalToSuperview().multipliedBy(0.3)
         $0.height.equalTo(imgv_icon.snp.width)
+      }
+      iv_center.snp.makeConstraints {
+        $0.right.equalToSuperview()
+        $0.centerY.equalToSuperview()
+        $0.width.equalToSuperview().multipliedBy(0.1)
+        $0.height.equalTo(iv_center.snp.width)
       }
       stv_info.snp.makeConstraints {
         $0.left.equalTo(v_top.snp.right).offset(20)
@@ -328,11 +346,9 @@ public extension AGStateView {
         $0.height.lessThanOrEqualToSuperview().multipliedBy(0.6)
         $0.centerY.equalToSuperview()
       }
-      iv_center.snp.makeConstraints {
-        $0.centerX.equalToSuperview()
-        $0.centerY.equalToSuperview()
-      }
     }
+    
+    
     
   }
   
@@ -456,7 +472,7 @@ public extension AGStateView {
       lb_title.font = font
       lb_description.font = font
     } else {
-      lb_title.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+      lb_title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
       lb_description.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     }
     
