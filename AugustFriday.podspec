@@ -138,7 +138,7 @@ s.subspec 'Core' do |c|
 	# }
 	c.requires_arc = true
 	c.dependency 'NVActivityIndicatorView', '~> 4.0'
-	c.dependency 'SnapKit', '~> 4.0'
+	c.dependency 'SnapKit', '~> 4.2'
 	c.dependency 'PopupDialog', '~> 0.9'
 	c.dependency 'IQKeyboardManagerSwift', '~> 6.0'
 	c.dependency 'SkeletonView', '~> 1.4'
