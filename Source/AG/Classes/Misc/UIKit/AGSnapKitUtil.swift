@@ -23,7 +23,7 @@ public extension Constraint {
     return loc.constant
   }
   
-  public func constant(with item: AnyObject, attribute: NSLayoutAttribute) -> CGFloat {
+  public func constant(with item: AnyObject, attribute: NSLayoutConstraint.Attribute) -> CGFloat {
     guard let loc = self.layoutConstraints.first(where: {
       $0.firstItem === item && $0.firstAttribute == attribute
     }) else { return 0.0 }
@@ -42,7 +42,7 @@ public extension Optional where Wrapped == Constraint {
     return con.constant(with: index)
   }
   
-  public func constant(with item: AnyObject, attribute: NSLayoutAttribute) -> CGFloat {
+  public func constant(with item: AnyObject, attribute: NSLayoutConstraint.Attribute) -> CGFloat {
     guard let con = self else { return 0.0 }
     return con.constant(with: item, attribute: attribute)
   }

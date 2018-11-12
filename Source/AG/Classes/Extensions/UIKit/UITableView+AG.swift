@@ -94,7 +94,7 @@ public extension UITableView {
 //MARK: - Reload
 public extension UITableView {
   
-  public func reloadSectionsWithoutAnimation(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
+  public func reloadSectionsWithoutAnimation(_ sections: IndexSet, with animation: UITableView.RowAnimation) {
     UIView.performWithoutAnimation {
       reloadSections(sections, with: animation)
     }

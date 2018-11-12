@@ -186,7 +186,7 @@ public class AGButton: UIButton {
   
   //MARK: - Constraint
   fileprivate let springGoEase: CAMediaTimingFunction = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
-  fileprivate let shrinkCurve: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+  fileprivate let shrinkCurve: CAMediaTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
   fileprivate let expandCurve: CAMediaTimingFunction = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
   fileprivate let shrinkDuration: CFTimeInterval = 0.1
   
@@ -440,7 +440,7 @@ public extension AGButton {
     let titleInset: UIEdgeInsets = .zero
     var imageInset: UIEdgeInsets = .zero
     let contentInset: UIEdgeInsets = .zero
-    var alignment: UIControlContentHorizontalAlignment = .center
+    var alignment: UIControl.ContentHorizontalAlignment = .center
     var text_alignment: NSTextAlignment = .natural
     
     let c = setting.color
@@ -611,7 +611,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
                        NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 5), y: CGFloat(point.y))),
                        NSValue(cgPoint: point)]
     
-    keyFrame.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    keyFrame.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
     keyFrame.duration = 0.7
     layer.position = point
     CATransaction.setCompletionBlock {
@@ -644,7 +644,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     shrinkAnim.toValue = bounds.width
     shrinkAnim.duration = shrinkDuration
     shrinkAnim.timingFunction = shrinkCurve
-    shrinkAnim.fillMode = kCAFillModeForwards
+    shrinkAnim.fillMode = CAMediaTimingFillMode.forwards
     shrinkAnim.isRemovedOnCompletion = false
     CATransaction.setCompletionBlock {
       completion?()
@@ -659,7 +659,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     shrinkAnim.toValue = frame.height
     shrinkAnim.duration = shrinkDuration
     shrinkAnim.timingFunction = shrinkCurve
-    shrinkAnim.fillMode = kCAFillModeForwards
+    shrinkAnim.fillMode = CAMediaTimingFillMode.forwards
     shrinkAnim.isRemovedOnCompletion = false
     layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
   }
@@ -671,7 +671,7 @@ extension AGButton: UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     expandAnim.toValue = max(expandScale,26.0)
     expandAnim.timingFunction = expandCurve
     expandAnim.duration = 0.4
-    expandAnim.fillMode = kCAFillModeForwards
+    expandAnim.fillMode = CAMediaTimingFillMode.forwards
     expandAnim.isRemovedOnCompletion = false
     CATransaction.setCompletionBlock {
       self.flag_animating = false

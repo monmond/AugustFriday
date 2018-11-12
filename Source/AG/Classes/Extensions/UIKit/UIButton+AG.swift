@@ -16,7 +16,7 @@ import UIKit
 //MARK: - Background
 public extension UIButton {
   
-  public func setBackgroundColor(_ color: UIColor, for state: UIControlState) {
+  public func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
     let img = UIImage.color(with: color)
     self.setBackgroundImage(img, for: state)
   }
@@ -57,7 +57,7 @@ public extension UIBarButtonItem {
   
   public class func createNavBarButton(_ image: UIImage,
                                        isCompact: Bool = false,
-                                       horizontalAlignment: UIControlContentHorizontalAlignment? = nil,
+                                       horizontalAlignment: UIControl.ContentHorizontalAlignment? = nil,
                                        target: Any,
                                        action: Selector) -> UIBarButtonItem {
     let btn = UIButton(type: .custom)
@@ -138,7 +138,7 @@ extension UIButton {
     flash.duration = 0.2
     flash.fromValue = 1
     flash.toValue = 0.1
-    flash.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
     flash.autoreverses = true
     flash.repeatCount = 3
     

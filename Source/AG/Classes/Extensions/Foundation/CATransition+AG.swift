@@ -25,13 +25,12 @@ public extension CATransition {
   public convenience init(transition: Transition) {
     self.init()
     duration = 0.3
-    timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
     switch transition {
     case .fade:
-      type = kCATransitionFade
+      type = CATransitionType.fade
     case .push:
-      type = kCATransitionPush
-      subtype = kCATransitionFade
+      type = CATransitionType.push
     }
   }
   

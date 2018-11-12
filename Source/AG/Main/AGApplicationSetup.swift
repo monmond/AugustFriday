@@ -17,7 +17,7 @@ import UIKit
 public protocol AGApplicationSetup {
   
   func setupOnInit()
-  func setupOnDidFinishLaunching(with app: UIApplication, options: [UIApplicationLaunchOptionsKey: Any]?)
+  func setupOnDidFinishLaunching(with app: UIApplication, options: [UIApplication.LaunchOptionsKey: Any]?)
   func setupOnDeinit()
   
 }
@@ -31,7 +31,7 @@ public extension AGApplicationSetup {
     
   }
   
-  public func setupOnDidFinishLaunching(with app: UIApplication, options: [UIApplicationLaunchOptionsKey: Any]?) {
+  public func setupOnDidFinishLaunching(with app: UIApplication, options: [UIApplication.LaunchOptionsKey: Any]?) {
     setupNavigationBar()
     
   }

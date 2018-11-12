@@ -590,7 +590,7 @@ extension FirebaseVC {
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return vm_all.displayed[indexPath.section].isCollpase ? 0 : UITableViewAutomaticDimension
+    return vm_all.displayed[indexPath.section].isCollpase ? 0 : UITableView.automaticDimension
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

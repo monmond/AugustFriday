@@ -223,12 +223,12 @@ public extension AGSlidePanelView {
   public func resetPanel(child: UIViewController) {
     trigger(on: .willDisappear)
     NotificationCenter.default.removeObserver(self,
-                                              name: .UIDeviceOrientationDidChange,
+                                              name: UIDevice.orientationDidChangeNotification,
                                               object: nil)
-    child.willMove(toParentViewController: nil)
-    child.removeFromParentViewController()
+    child.willMove(toParent: nil)
+    child.removeFromParent()
     child.view.removeFromSuperview()
-    child.didMove(toParentViewController: nil)
+    child.didMove(toParent: nil)
     
     if let v = v_panel { v.removeFromSuperview() }
     v_container = nil
@@ -245,13 +245,13 @@ public extension AGSlidePanelView {
     state_slideUpPanel = .closed
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(onOrientationChanged),
-                                           name: .UIDeviceOrientationDidChange,
+                                           name: UIDevice.orientationDidChangeNotification,
                                            object: nil)
   }
   
   func onDeinit() {
     NotificationCenter.default.removeObserver(self,
-                                              name: .UIDeviceOrientationDidChange,
+                                              name: UIDevice.orientationDidChangeNotification,
                                               object: nil)
   }
   
@@ -268,10 +268,10 @@ public extension AGSlidePanelView {
   }
   
   public func setupUI() {
-    vc_parent.addChildViewController(vc_child)
+    vc_parent.addChild(vc_child)
     v_container.insertSubview(v_panel, belowSubview: tb)
-    vc_child.willMove(toParentViewController: vc_parent)
-    vc_child.didMove(toParentViewController: vc_parent)
+    vc_child.willMove(toParent: vc_parent)
+    vc_child.didMove(toParent: vc_parent)
     
     pan_panel = UIPanGestureRecognizer(target: self, action: #selector(slideUpViewPanning))
     v_panel.addGestureRecognizer(pan_panel)

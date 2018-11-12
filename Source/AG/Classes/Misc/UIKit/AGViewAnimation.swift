@@ -27,7 +27,7 @@ public protocol AGViewAnimation {
 public extension AGViewAnimation where Self: UIViewController {
   
   public func animateChange(_ onComplete: CBVoid? = nil) {
-    let options: UIViewAnimationOptions = [.curveEaseOut]
+    let options: UIView.AnimationOptions = [.curveEaseOut]
     UIView.animate(withDuration: 0.3, delay: 0.0, options: options, animations: {
       self.view.layoutIfNeeded()
     }, completion: { _ in
@@ -36,7 +36,7 @@ public extension AGViewAnimation where Self: UIViewController {
   }
   
   public func animateChangeWithDamping(_ onComplete: CBVoid? = nil) {
-    let options: UIViewAnimationOptions = [.curveEaseOut]
+    let options: UIView.AnimationOptions = [.curveEaseOut]
     UIView.animate(withDuration: 0.3,
                    delay: 0,
                    usingSpringWithDamping: 0.4,

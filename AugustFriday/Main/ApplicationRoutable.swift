@@ -27,7 +27,7 @@ public extension ApplicationRoutable {
     return false
   }
   
-  public func start(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?, condition isLoggedIn: Bool) {
+  public func start(with launchOptions: [UIApplication.LaunchOptionsKey: Any]?, condition isLoggedIn: Bool) {
     guard canStart(with: launchOptions) else { return }
     if isLoggedIn {
       routeToMain()
@@ -37,7 +37,7 @@ public extension ApplicationRoutable {
     
   }
   
-  public func start(with app: UIApplication, url: URL, options: [UIApplicationOpenURLOptionsKey : Any], condition isLoggedIn: Bool) -> Bool {
+  public func start(with app: UIApplication, url: URL, options: [UIApplication.OpenURLOptionsKey : Any], condition isLoggedIn: Bool) -> Bool {
     guard let scheme = url.scheme else {
       return false
     }

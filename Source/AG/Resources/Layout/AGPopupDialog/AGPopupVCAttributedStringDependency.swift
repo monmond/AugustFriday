@@ -43,7 +43,7 @@ public extension AGPopupVCAttributedStringDependency where Self: AGPopupVC  {
     //    style.headIndent = 0
     //    style.firstLineHeadIndent = 0
     //    style.paragraphSpacingBefore = 0
-    let attributes: [NSAttributedStringKey : Any] = [
+    let attributes: [NSAttributedString.Key : Any] = [
       // Line spacing attribute
       .paragraphStyle: style,
       .foregroundColor: AG.C.Theme.cell_lb_1
@@ -58,7 +58,7 @@ public extension AGPopupVCAttributedStringDependency where Self: AGPopupVC  {
     style.lineSpacing = 10
     style.alignment = .center
     style.lineBreakMode = .byTruncatingTail
-    let attributes: [NSAttributedStringKey : Any] = [
+    let attributes: [NSAttributedString.Key : Any] = [
       // Line spacing attribute
       .paragraphStyle: style,
       .foregroundColor: AG.C.Theme.cell_lb_1

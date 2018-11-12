@@ -127,7 +127,7 @@ public extension UIWindow {
     addSubview(newViewController.view)
     
     if !newVCAnimated {
-      bringSubview(toFront: currentViewController.view)
+      bringSubviewToFront(currentViewController.view)
     }
     
     UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {

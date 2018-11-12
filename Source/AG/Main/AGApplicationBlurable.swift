@@ -42,13 +42,13 @@ public extension AGApplicationBlurable {
 
   public func setupBlurableObserverListeners() {
     let nc = NotificationCenter.default
-    nc.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) {
+    nc.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) {
       self.applicationWillEnterForeground($0)
     }
-    nc.addObserver(forName: .UIApplicationWillResignActive, object: nil, queue: nil) {
+    nc.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: nil) {
       self.applicationWillResignActive($0)
     }
-    nc.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: nil) {
+    nc.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) {
       self.applicationDidBecomeActive($0)
     }
     
@@ -81,7 +81,7 @@ public extension AGApplicationBlurable {
     v_blur.tag = kTag
     v_blur.alpha = 0
     window?.addSubview(v_blur)
-    window?.bringSubview(toFront: v_blur)
+    window?.bringSubviewToFront(v_blur)
     UIView.animate(withDuration: 0.2, animations: {
       v_blur.alpha = 1.0
     })

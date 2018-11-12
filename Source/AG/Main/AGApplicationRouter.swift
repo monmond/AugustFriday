@@ -18,7 +18,7 @@ public struct AGApplicationRouter {
   
   public static func openUrl(_ url: URL, onComplete: CBVoid? = nil) {
     if #available(iOS 10.0, *) {
-      UIApplication.shared.open(url, options: [:], completionHandler: { _ in
+      UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: { _ in
         onComplete?()
       })
     } else {
@@ -31,4 +31,9 @@ public struct AGApplicationRouter {
     return UIApplication.shared.canOpenURL(url)
   }
   
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
