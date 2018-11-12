@@ -137,12 +137,12 @@ s.subspec 'Core' do |c|
 	# 	'AugustFriday' => PodUtility.mapResourceFiles(str_source, 0)
 	# }
 	c.requires_arc = true
-	c.dependency 'NVActivityIndicatorView', '~> 4.0'
-	c.dependency 'SnapKit', '~> 4.0.0'
-	c.dependency 'PopupDialog', '~> 0.8.1'
-	c.dependency 'IQKeyboardManagerSwift', '~> 6.0.5'
-	c.dependency 'SkeletonView', '~> 1.4'
-	c.dependency 'NotificationBannerSwift', '~> 1.4'
+	c.dependency 'NVActivityIndicatorView', '4.0'
+	c.dependency 'SnapKit', '4.0.0'
+	c.dependency 'PopupDialog', '0.9'
+	c.dependency 'IQKeyboardManagerSwift', '6.0.5'
+	c.dependency 'SkeletonView', '1.4'
+	c.dependency 'NotificationBannerSwift', '1.4'
 	
 
 	# AG

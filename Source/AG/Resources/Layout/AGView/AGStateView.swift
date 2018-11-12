@@ -171,16 +171,20 @@ public class AGStateView: UIView, AGReusable {
     onDeinit()
     
   }
+  
+}
 
 
 
-  //MARK: -  Life Cycle
-  override public func awakeFromNib() {
+//MARK: -  Life Cycle
+public extension AGStateView {
+  
+  override func awakeFromNib() {
     super.awakeFromNib()
     setupViewOnAwakeFromNib()
   }
   
-  override public func layoutSubviews() {
+  override func layoutSubviews() {
     super.layoutSubviews()
     
   }
@@ -194,10 +198,14 @@ public class AGStateView: UIView, AGReusable {
   func onDeinit() {
     
   }
+  
+}
 
 
 
-  //MARK: -  Setup UI
+//MARK: -  Setup UI
+public extension AGStateView {
+  
   func setupViewOnAwakeFromNib() {
     setupUI()
     setupSnp()
@@ -230,7 +238,7 @@ public class AGStateView: UIView, AGReusable {
     lb_title.textColor = UIColor.darkText
     lb_title.backgroundColor = UIColor.clear
     lb_title.numberOfLines = 0
-    lb_title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+    lb_title.font = UIFont.systemFont(ofSize: 16, weight: .regular)
     
     lb_description = UILabel()
     lb_description.text = "description"
@@ -243,6 +251,7 @@ public class AGStateView: UIView, AGReusable {
     iv_center.startAnimating()
     
     let tapg = UITapGestureRecognizer(target: self, action: #selector(stateViewPressed(_:)))
+    tapg.cancelsTouchesInView = false
     addGestureRecognizer(tapg)
     
     switch axis {
@@ -276,7 +285,6 @@ public class AGStateView: UIView, AGReusable {
       $0.top.right.bottom.left.equalToSuperview()
     }
     iv_center.snp.makeConstraints {
-      $0.center.equalToSuperview()
       $0.width.equalToSuperview().multipliedBy(0.1)
       $0.height.equalTo(iv_center.snp.width)
     }
@@ -299,6 +307,10 @@ public class AGStateView: UIView, AGReusable {
         $0.width.equalToSuperview().multipliedBy(0.8)
         $0.centerX.equalToSuperview()
       }
+      iv_center.snp.makeConstraints {
+        $0.centerX.equalToSuperview()
+        $0.centerY.equalToSuperview().multipliedBy(0.9)
+      }
     case .horizontal:
       v_top.snp.makeConstraints {
         $0.top.bottom.left.equalToSuperview()
@@ -316,25 +328,40 @@ public class AGStateView: UIView, AGReusable {
         $0.height.lessThanOrEqualToSuperview().multipliedBy(0.6)
         $0.centerY.equalToSuperview()
       }
+      iv_center.snp.makeConstraints {
+        $0.centerX.equalToSuperview()
+        $0.centerY.equalToSuperview()
+      }
     }
     
   }
+  
+}
 
 
 
-  //MARK: - Setup Data
+//MARK: - Setup Data
+public extension AGStateView {
+  
+}
 
 
 
-  //MARK: - Event
+//MARK: - Event
+public extension AGStateView {
+  
   @objc
   fileprivate func stateViewPressed(_ sender: UITapGestureRecognizer) {
     delegate?.stateViewPressed(with: self, state: state)
   }
+  
+}
 
 
 
-  //MARK: - Public
+//MARK: - Public
+public extension AGStateView {
+  
   public func setStateViewState(with state: AGStateViewState, animated: Bool = false, onComplete: CBVoid? = nil) {
     self.state = state
     switch state {
@@ -345,10 +372,14 @@ public class AGStateView: UIView, AGReusable {
     }
     setupData(with: viewModel.getSetting(with: state))
   }
+  
+}
 
 
 
-  //MARK: - Private
+//MARK: - Private
+public extension AGStateView {
+  
   private func setupEmpty() {
     imgv_background.image = nil
     iv_center.isHidden = true
@@ -359,6 +390,7 @@ public class AGStateView: UIView, AGReusable {
   }
   
   private func show(with animated: Bool = false, onComplete: CBVoid? = nil) {
+    self.isHidden = false
     let duration = animated ? 0.0 : 0.2
     UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
       , animations: {
@@ -373,19 +405,27 @@ public class AGStateView: UIView, AGReusable {
     UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve
       , animations: {
         self.alpha = 0
+        self.isHidden = true
     }, completion: { _ in
       onComplete?()
     })
     
   }
   
+}
 
+
+
+//MARK: - Interaction & Presentation
+public extension AGStateView {
   
-  //MARK: - Interaction & Presentation
- 
+}
+
+
+
+//MARK: - Display
+public extension AGStateView {
   
-  
-  //MARK: - Display
   public func setupData(with setting: AGStateVM.Setting) {
     let tint = setting.tint ?? UIColor.black
     
@@ -416,7 +456,7 @@ public class AGStateView: UIView, AGReusable {
       lb_title.font = font
       lb_description.font = font
     } else {
-      lb_title.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+      lb_title.font = UIFont.systemFont(ofSize: 16, weight: .regular)
       lb_description.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     }
     
