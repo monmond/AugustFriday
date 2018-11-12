@@ -142,7 +142,7 @@ s.subspec 'Core' do |c|
 	c.dependency 'PopupDialog', '~> 0.9'
 	c.dependency 'IQKeyboardManagerSwift', '~> 6.0'
 	c.dependency 'SkeletonView', '~> 1.4'
-	c.dependency 'NotificationBannerSwift', '~> 1.4'
+	c.dependency 'NotificationBannerSwift', '~> 1.8'
 	
 
 	# AG
