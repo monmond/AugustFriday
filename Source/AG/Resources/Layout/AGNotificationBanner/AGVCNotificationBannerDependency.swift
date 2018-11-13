@@ -81,6 +81,11 @@ public protocol AGVCNotificationBannerDependency {
                                           on: UIViewController?,
                                           onTap: CBVoid?,
                                           onSwipeUp: CBVoid?)
+  func displayNotificationBanner(_ custom: UIView,
+                                 viewModel: AGNotificationBannerVM,
+                                 on: UIViewController?,
+                                 onTap: CBVoid?,
+                                 onSwipeUp: CBVoid?)
   
 }
 
@@ -115,6 +120,21 @@ public extension AGVCNotificationBannerDependency {
     let banner = StatusBarNotificationBanner(title: "\(viewModel.title) \(viewModel.subtitle)",
       style: viewModel.style,
       colors: AGBannerColor())
+    banner.onTap = {
+      if let t = onTap { t() } else { banner.dismiss() }
+    }
+    banner.onSwipeUp = {
+      if let sw = onSwipeUp { sw() } else { banner.dismiss() }
+    }
+    banner.show(queuePosition: .back, bannerPosition: viewModel.position, on: on)
+  }
+  
+  public func displayNotificationBanner(_ custom: UIView,
+                                        viewModel: AGNotificationBannerVM,
+                                        on: UIViewController?,
+                                        onTap: CBVoid? = nil,
+                                        onSwipeUp: CBVoid? = nil) {
+    let banner = NotificationBanner(customView: custom)
     banner.onTap = {
       if let t = onTap { t() } else { banner.dismiss() }
     }
