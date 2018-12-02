@@ -105,7 +105,7 @@ s.subspec 'Alamofire' do |c|
 	c.dependency 'AugustFriday/Core'
 	c.dependency 'Alamofire', '~> 4.7'
 	# c.dependency 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
-	c.dependency 'SwiftyJSON', '~> 4.2'
+	c.dependency 'SwiftyJSON', '~> 4.0'
 
 end	
 
@@ -153,7 +153,6 @@ s.subspec 'Core' do |c|
 		# Classes
 		agc.subspec 'Classes' do |fd|
 			fd.source_files = PodUtility.mapSwiftFiles(str_ag_classes, 4)
-
 		end
 
 		# Resources
@@ -162,15 +161,12 @@ s.subspec 'Core' do |c|
 			agc.resource_bundle = {
 				'AugustFriday' => PodUtility.mapResourceFiles(str_ag_resources, 4)
 			}
-
 		end
 
 		# Main
 		agc.subspec 'Main' do |m|
 			m.source_files = PodUtility.mapSwiftFiles(str_ag_main, 2)
-			
 		end
-
 
 	end
 

@@ -61,3 +61,24 @@ public extension UIApplication {
 }
 
 
+
+
+//MARK: - AutoLayout
+public extension UIApplication {
+  
+  public var inset: (top: CGFloat, right: CGFloat, bottom: CGFloat, left: CGFloat) {
+    var result: (top: CGFloat, right: CGFloat, bottom: CGFloat, left: CGFloat)?
+    if #available(iOS 11.0, *), let safeAreas = UIApplication.shared.keyWindow?.safeAreaInsets {
+      result = (top: safeAreas.top, right: safeAreas.right, bottom: safeAreas.bottom, left: safeAreas.left)
+    } else if let layoutMargins = UIApplication.shared.keyWindow?.layoutMargins {
+      result = (top: layoutMargins.top, right: layoutMargins.right, bottom: layoutMargins.bottom, left: layoutMargins.left)
+    }
+    return result ?? (top: 0.0, right: 0.0, bottom: 0.0, left: 0.0)
+  }
+  
+  public var height_statusBar: CGFloat {
+    return UIApplication.shared.statusBarFrame.size.height
+  }
+  
+}
+

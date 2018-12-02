@@ -41,6 +41,8 @@ public protocol AGViewTrasitionable {
 
 //MARK: - AGSlidePanelTrasitionable
 public protocol AGSlidePanelTrasitionable {
+  func agSlidePanelUIVertical()
+  func agSlidePanelUIHorizontal()
   func agSlidePanelAnimateUIVertical(with states: AGSlidePanelStateChange)
   func agSlidePanelAnimateUIHorizontal(with states: AGSlidePanelStateChange)
   func agSlidePanelTransitionUIVertical(with percent: CGFloat)
@@ -139,7 +141,7 @@ public class AGSlidePanelView: AGModelHelper {
   public weak var vc_child: UIViewController!
   public var v_container: UIView! // parent view
   public var v_panel: UIView! // slidingUp panel view
-  public var tb: UITabBar! // tabBar
+  public var tb: UITabBar? // tabBar
   public var pan_panel: UIPanGestureRecognizer!
   
   //MARK: - NSLayout
@@ -155,7 +157,7 @@ public class AGSlidePanelView: AGModelHelper {
     return v_container.frame.height - (height_tabBar + height_dock)
   }
   public var height_tabBar: CGFloat { // tabbar height
-    return tb.frame.height
+    return tb?.frame.height ?? 0.0
   }
   
   
@@ -178,7 +180,7 @@ public class AGSlidePanelView: AGModelHelper {
   
   
   //MARK: - Initial
-  public init(container parent: UIViewController, tabBar: UITabBar, panel child: UIViewController) {
+  public init(container parent: UIViewController, tabBar: UITabBar?, panel child: UIViewController) {
     vc_parent = parent
     vc_child = child
     v_container = parent.view
@@ -269,14 +271,22 @@ public extension AGSlidePanelView {
   
   public func setupUI() {
     vc_parent.addChild(vc_child)
-    v_container.insertSubview(v_panel, belowSubview: tb)
+    if let tb = tb {
+      v_container.insertSubview(v_panel, belowSubview: tb)
+    } else {
+      v_container.addSubview(v_panel)
+    }
     vc_child.willMove(toParent: vc_parent)
     vc_child.didMove(toParent: vc_parent)
     
     pan_panel = UIPanGestureRecognizer(target: self, action: #selector(slideUpViewPanning))
     v_panel.addGestureRecognizer(pan_panel)
     
-    y_originTabBar = tb != nil ? tb.frame.origin.y : v_container.frame.height
+    if let tb = tb {
+      y_originTabBar = tb.frame.origin.y
+    } else {
+      y_originTabBar = v_container.frame.height
+    }
     v_panel.frame = CGRect(x: 0, y: v_container.frame.height,
                            width: UIScreen.main.bounds.size.width,
                            height: flag_isStickyTabBar ? v_container.frame.height - height_tabBar : v_container.frame.height)
@@ -342,14 +352,31 @@ public extension AGSlidePanelView {
       guard let _ = tb, !flag_isStickyTabBar else { return }
       let min = height - height_tabBar
       let max = height
-      tb.frame.origin.y = ((max - min) * percent) + min
+      tb?.frame.origin.y = ((max - min) * percent) + min
     case .ended:
       let delta = y - y_dragStart
+      let percent = 1 - panningLocationPercent(with: y, min: min, max: max, power: 4)
       delegate_panelDragging?.panelDraggingFinished(delta: delta)
-      if delta > 0 {
-        setSlideUpPanelState(to: .docked)
-      } else {
-        setSlideUpPanelState(to: .opened)
+      let direction = sender.direction(in: v_container)
+      switch state_slideUpPanel {
+      case .opened:
+        if percent < 0.5 {
+          setSlideUpPanelState(to: .docked)
+        } else if percent > 0.5 && direction.contains(.down) {
+          setSlideUpPanelState(to: .docked)
+        } else {
+          setSlideUpPanelState(to: .opened)
+        }
+      case .docked:
+        if percent > 0.5 {
+          setSlideUpPanelState(to: .opened)
+        } else if percent < 0.5 && direction.contains(.up) {
+          setSlideUpPanelState(to: .opened)
+        } else {
+          setSlideUpPanelState(to: .docked)
+        }
+      case .closed:
+        break
       }
     default:
       break
@@ -415,7 +442,7 @@ public extension AGSlidePanelView {
                                                       states: (_s.state_slideUpPanel, state))
       _s.v_panel.frame.origin.y = y.panal
       if let _ = _s.tb, !_s.flag_isStickyTabBar {
-        _s.tb.frame.origin.y = y.tabBar
+        _s.tb?.frame.origin.y = y.tabBar
       }
       
     }) { [weak self] completed in
@@ -441,6 +468,38 @@ public extension AGSlidePanelView {
   
 }
 
+
+
+extension UIPanGestureRecognizer {
+  
+  public struct PanGestureDirection: OptionSet {
+    public let rawValue: UInt8
+    
+    public init(rawValue: UInt8) {
+      self.rawValue = rawValue
+    }
+    
+    static let up = PanGestureDirection(rawValue: 1 << 0)
+    static let down = PanGestureDirection(rawValue: 1 << 1)
+    static let left = PanGestureDirection(rawValue: 1 << 2)
+    static let right = PanGestureDirection(rawValue: 1 << 3)
+  }
+  
+  private func getDirectionBy(velocity: CGFloat, greater: PanGestureDirection, lower: PanGestureDirection) -> PanGestureDirection {
+    if velocity == 0 {
+      return []
+    }
+    return velocity > 0 ? greater : lower
+  }
+  
+  public func direction(in view: UIView) -> PanGestureDirection {
+    let velocity = self.velocity(in: view)
+    let yDirection = getDirectionBy(velocity: velocity.y, greater: PanGestureDirection.down, lower: PanGestureDirection.up)
+    let xDirection = getDirectionBy(velocity: velocity.x, greater: PanGestureDirection.right, lower: PanGestureDirection.left)
+    return xDirection.union(yDirection)
+  }
+  
+}
 
 
 

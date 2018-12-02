@@ -100,7 +100,6 @@ public extension AGReusable where Self: UICollectionViewCell {
 public extension AGReusable where Self: UITableViewHeaderFooterView {
   
   public func setupDefault() {
-    backgroundColor = AG.C.clear
     contentView.backgroundColor = AG.C.clear
   }
   

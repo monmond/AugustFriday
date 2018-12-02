@@ -739,24 +739,24 @@
 		A434A1032110127E004898DE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				A434A13521101997004898DE /* UIButton+AG.swift */,
-				A434A16421101EA9004898DE /* CGRect+AG.swift */,
 				A434A13221101992004898DE /* CGFloat+AG.swift */,
-				A44A431020E5E34A003F56E6 /* UIImage+AG.swift */,
-				A434A13821101A32004898DE /* UINavigationController+AG.swift */,
-				A434A13A21101A32004898DE /* UIView+AG.swift */,
-				A434A13C21101A32004898DE /* UIViewController+AG.swift */,
+				A434A16421101EA9004898DE /* CGRect+AG.swift */,
 				A434A14521101A46004898DE /* UIApplication+AG.swift */,
-				A434A14121101A46004898DE /* UIDevice+AG.swift */,
-				A434A14321101A46004898DE /* UIWindow+AG.swift */,
-				A434A10A21101855004898DE /* UITableViewCell+AG.swift */,
+				A434A18E21101EA9004898DE /* UIButton+AG */,
+				A434A13521101997004898DE /* UIButton+AG.swift */,
+				A434A11421101855004898DE /* UICollectionReusableView+AG.swift */,
 				A434A10C21101855004898DE /* UICollectionView+AG.swift */,
 				A434A10E21101855004898DE /* UICollectionViewCell+AG.swift */,
-				A434A11021101855004898DE /* UITableView+AG.swift */,
-				A434A11221101855004898DE /* UITableViewHeaderFooterView+AG.swift */,
-				A434A11421101855004898DE /* UICollectionReusableView+AG.swift */,
+				A434A14121101A46004898DE /* UIDevice+AG.swift */,
+				A44A431020E5E34A003F56E6 /* UIImage+AG.swift */,
 				A4B6AC9C2186F36C0025C350 /* UINavigationBar+AG.swift */,
-				A434A18E21101EA9004898DE /* UIButton+AG */,
+				A434A13821101A32004898DE /* UINavigationController+AG.swift */,
+				A434A11021101855004898DE /* UITableView+AG.swift */,
+				A434A10A21101855004898DE /* UITableViewCell+AG.swift */,
+				A434A11221101855004898DE /* UITableViewHeaderFooterView+AG.swift */,
+				A434A13A21101A32004898DE /* UIView+AG.swift */,
+				A434A13C21101A32004898DE /* UIViewController+AG.swift */,
+				A434A14321101A46004898DE /* UIWindow+AG.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";

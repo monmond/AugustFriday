@@ -201,12 +201,12 @@ open class AGVC: UIViewController {
   
   //MARK: - Event
   @objc
-  func popButtonPressed(_ sender: Any) {
+  public func popButtonPressed(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
   }
   
   @objc
-  func dismissButtonPressed(_ sender: Any) {
+  public func dismissButtonPressed(_ sender: Any) {
     var dissmiss = false
     if let nav = navigationController {
       if nav.viewControllers.count > 1 {
