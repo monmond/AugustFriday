@@ -143,7 +143,7 @@ s.subspec 'Core' do |c|
 	c.dependency 'IQKeyboardManagerSwift', '~> 6.0'
 	c.dependency 'SkeletonView', '~> 1.4'
 	# using tempolary until master update podspec cause by snapkit dependency
-	c.dependency 'NotificationBannerSwift', :git => 'https://github.com/Arcovv/NotificationBanner.git', :branch => 'master'
+	# c.dependency 'NotificationBannerSwift', :git => 'https://github.com/Arcovv/NotificationBanner.git', :branch => 'master'
 	
 
 	# AG
