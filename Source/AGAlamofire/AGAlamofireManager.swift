@@ -18,12 +18,12 @@ import SwiftyJSON
 public class AGAlamofireManager: NSObject {
   
   public static let shared = AGAlamofireManager()
-  fileprivate var normal: SessionManager = {
-    let configuration = URLSessionConfiguration.default
-    configuration.timeoutIntervalForRequest = AGAlamofireConfiguration.shared.timeoutIntervalForRequest
-    let sessionManager = SessionManager(configuration: configuration)
-    sessionManager.retrier = AGRetryHandler()
-    return sessionManager
+  fileprivate var normal: Session = {
+    let config = URLSessionConfiguration.default
+    config.timeoutIntervalForRequest = AGAlamofireConfiguration.shared.timeoutIntervalForRequest
+    var sm = Session(configuration: config,
+                     retrier: AGRetryHandler())
+    return sm
   }()
   fileprivate var tasks: [AGAlamofireTask] = []
   private override init() { }
