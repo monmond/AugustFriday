@@ -49,6 +49,7 @@ def networking_pods
   pod 'Firebase/Auth'
   # note
 #  pod 'Alamofire', '~> 4.7'
+  # support codable
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
   # note
   pod 'SwiftyJSON', '~> 4.2.0'

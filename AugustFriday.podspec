@@ -104,7 +104,7 @@ s.subspec 'Alamofire' do |c|
 	c.source_files = PodUtility.mapSwiftFiles(str_aga, 1)
 	c.dependency 'AugustFriday/Core'
 	# c.dependency 'Alamofire', '~> 4.7'
-	c.dependency 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+	# c.dependency 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
 	c.dependency 'SwiftyJSON', '~> 4.2'
 
 end	
