@@ -51,7 +51,7 @@ def networking_pods
 #  pod 'Alamofire', '~> 4.7'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
   # note
-  pod 'SwiftyJSON', '~> 4.1.0'
+  pod 'SwiftyJSON', '~> 4.2.0'
   # note
   # pod 'Kingfisher' , '~> 4.8'
   # note
@@ -75,26 +75,21 @@ end
 
 # Pods for OMU
 def ag_pods
-  
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  
   # UI
   ui_pods
-  
   # DB
   db_pods
-  
   # Networking
   networking_pods
-  
   # Social
   social_pods
-  
 end
 
+
+
 target 'AugustFriday' do
-  
   ag_pods
   swift_4_0_pods = ['SkeletonView']
   post_install do |installer|
@@ -106,5 +101,4 @@ target 'AugustFriday' do
       end
     end
   end
-  
 end

@@ -86,7 +86,7 @@ PODS:
   - Protobuf (3.6.1)
   - SkeletonView (1.4)
   - SnapKit (4.2.0)
-  - SwiftyJSON (4.1.0)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `alamofire5`)
@@ -101,7 +101,7 @@ DEPENDENCIES:
   - PopupDialog (~> 0.9)
   - SkeletonView (~> 1.4)
   - SnapKit (~> 4.2.0)
-  - SwiftyJSON (~> 4.1.0)
+  - SwiftyJSON (~> 4.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -170,8 +170,8 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SkeletonView: 50f7a9b04e3a62bd0ae964859c19317fabaea367
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 39286b2e7dee5e342bdecea568912ea33bb342d3
+PODFILE CHECKSUM: 5d67798ed223610dc7357fa10aedd7f8c3e0581b
 
 COCOAPODS: 1.5.3

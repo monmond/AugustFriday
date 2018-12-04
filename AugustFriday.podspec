@@ -103,9 +103,9 @@ s.subspec 'Alamofire' do |c|
 	c.frameworks = 'UIKit'
 	c.source_files = PodUtility.mapSwiftFiles(str_aga, 1)
 	c.dependency 'AugustFriday/Core'
-	c.dependency 'Alamofire', '~> 4.7'
-	# c.dependency 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
-	c.dependency 'SwiftyJSON', '~> 4.0'
+	# c.dependency 'Alamofire', '~> 4.7'
+	c.dependency 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
+	c.dependency 'SwiftyJSON', '~> 4.2'
 
 end	
 
@@ -137,12 +137,13 @@ s.subspec 'Core' do |c|
 	# 	'AugustFriday' => PodUtility.mapResourceFiles(str_source, 0)
 	# }
 	c.requires_arc = true
-	c.dependency 'NVActivityIndicatorView', '~> 4.0'
-	c.dependency 'SnapKit', '~> 4.0.1'
+	c.dependency 'NVActivityIndicatorView', '~> 4.4'
+	c.dependency 'SnapKit', '~> 4.2'
 	c.dependency 'PopupDialog', '~> 0.9'
 	c.dependency 'IQKeyboardManagerSwift', '~> 6.0'
 	c.dependency 'SkeletonView', '~> 1.4'
-	c.dependency 'NotificationBannerSwift', '~> 1.8'
+	# using tempolary until master update podspec cause by snapkit dependency
+	c.dependency 'NotificationBannerSwift', :git => 'https://github.com/Arcovv/NotificationBanner.git', :branch => 'master'
 	
 
 	# AG
