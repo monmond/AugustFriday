@@ -301,13 +301,16 @@ class ConfirmTextPopupVC: AGPopupVC {
   
   //MARK: - Core - UITextFieldDelegate
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    guard let result = agTextField(textField.text, replace: string, with: range) else { return true }
+    let tf = AGUtil.TextField.self
+    var canReplace = true
+    guard let response = tf.textField(with:  (textField.text ?? "", string, range)) else { return true }
     switch textField {
     case txt_frist:
-      return result.update.count <= 255
+      canReplace = response.update.count <= 255
     default:
-      return true
+      break
     }
+    return canReplace
   }
   
   @objc
@@ -326,7 +329,16 @@ class ConfirmTextPopupVC: AGPopupVC {
   
   
   
-  //MARK: - Custom - Protocol
+  //MARK: - Custom - AGVCTextFieldDependency
+  @objc
+  open func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField) {
+    sender.resignFirstResponder()
+  }
+
+  @objc
+  open func textFieldDidChange(_ textField: UITextField) {
+
+  }
   
   
   

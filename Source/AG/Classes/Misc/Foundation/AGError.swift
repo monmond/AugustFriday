@@ -8,81 +8,40 @@
 
 
 
-//MARK: - Imports
-import Foundation
-import Alamofire
+
+import UIKit
 
 
 
-//MARK: - AGError
-public enum AGError: Error {
-  
-  //MARK: - AFWrapper & AFResponse
-  case alamofire(Error)
-  case firebase(Error)
-  case facebook(Error)
-  case google(Error)
-  case reachability(AGReachabilityStatus)
+public typealias AGErrorInfo = (type: CommonError, code: Int, message: String?)
+public let AGErrorInfoDefault: AGErrorInfo = (.none, 0, nil)
+
+
+
+public enum CommonError: Error {
+  case none
+  case get
+  case insert
+  case update
+  case delete
+  case format
+  case outofbound
+  case notvalid
+  case empty
+  case notfound
   case cancelled
-  case timedOut(Error)
-  case responseDataNotValid
-  case responseDataInit
   case operationstatus
   case notsuccess
-  
-  
-  //MARK: - Authentication
-  case notLoggedIn
-  
-  
-  //MARK: - Data
-  case dataFormat
-  case dataEmpty
-  case dataNotValid
-  case cannotGetData
-  case cannotUpdateData(String)
-  case cannotDeleteData
-  case cannotCreateData
-  case indexOutOfBound
-  
-  //MARK: - UI
-  case noMoreData
-  
-  
-  
-  //MARK: - User
-  case inputNotValid
-  case inputFormat
-  
-  
-  //MARK: - Facebook
-  case shareFacebookFail(Error)
-  
-  
-  //MARK: - UIActivity
-  case shareOtherFail(Error)
-  
-  
-  //MARK: - UNIDENTIFY
-  case layoutNotFound
-  case facebookProfile
-  case facebookLogin
-  case googleLogin
-  
+  case timedOut
+  case reachability
 }
 
 
-public extension AGError {
-  
-  public var getAFError: AFError? {
-    if case let .alamofire(error) = self, let e = error as? AFError {
-      return e
-    }
-    return nil
-  }
-  
+public enum AGError: Error {
+  case service(AGErrorInfo)
+  case data(AGErrorInfo)
+  case ui(AGErrorInfo)
+  case user(AGErrorInfo)
+  case social(AGErrorInfo)
+  case other(AGErrorInfo)
 }
-
-
-
-

@@ -8,7 +8,6 @@
 
 
 
-//MARK: - Imports
 import Alamofire
 import SystemConfiguration
 
@@ -22,7 +21,6 @@ import SystemConfiguration
 
 
 
-//MARK: - AGNetworkManager
 public class AGNetworkManager {
   
   /*

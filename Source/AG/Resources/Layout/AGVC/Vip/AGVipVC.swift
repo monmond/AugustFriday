@@ -73,8 +73,8 @@ public extension AGVipVC {
   
   public func displaySomeThingError() {
     AGLog.info()
-    let vm = AGNotificationBannerVM(title: "title", subtitle: #function, style: .info, position: .top)
-    displayStatusBarNotificationBanner(vm, on: self)
+//    let vm = AGNotificationBannerVM(title: "title", subtitle: #function, style: .info, position: .top)
+//    displayStatusBarNotificationBanner(vm, on: self)
   }
   
 }

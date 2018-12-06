@@ -20,7 +20,7 @@ def ui_pods
   # note
   pod 'PopupDialog', '~> 0.9'
   # note
-  pod 'IQKeyboardManagerSwift', '~> 6.0.5'
+  pod 'IQKeyboardManagerSwift', '~> 6.0'
   # note
   pod 'SkeletonView', '~> 1.4'
   # note

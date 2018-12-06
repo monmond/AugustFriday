@@ -225,7 +225,7 @@ extension FirebaseVC {
   
   func fetchUserById() {
     guard let id = vm_select[0].detail else {
-      displayFetchUserById(with: .dataNotValid)
+      displayFetchUserById(with: .data((.notvalid, 0, "")))
       return 
     }
     worker.fetchUserById(id: id) { [weak self] in
@@ -274,7 +274,7 @@ extension FirebaseVC {
   
   func deleteUser() {
     guard let id = vm_select[0].detail else {
-      displayDeleteUser(with: .dataNotValid)
+      displayDeleteUser(with: .data((.notvalid, 0, "")))
       return
     }
     worker.deleteUser(id: id) { [weak self] in
@@ -306,7 +306,7 @@ extension FirebaseVC {
   
   func fetchPetById() {
     guard let id = vm_select[1].detail else {
-      displayFetchPetById(with: .dataNotValid)
+      displayFetchPetById(with: .data((.notvalid, 0, "")))
       return
     }
     worker.fetchPetById(id: id) { [weak self] in
@@ -350,7 +350,7 @@ extension FirebaseVC {
   
   func deletePet() {
     guard let id = vm_select[1].detail else {
-      displayDeletePet(with: .dataNotValid)
+      displayDeletePet(with: .data((.notvalid, 0, "")))
       return
     }
     worker.deletePet(id: id) { [weak self] in
@@ -366,7 +366,7 @@ extension FirebaseVC {
   
   func fetchUserPet() {
     guard let id = vm_select[0].detail else {
-      displayFetchUserPet(with: .dataNotValid)
+      displayFetchUserPet(with: .data((.notvalid, 0, "")))
       return
     }
     worker.fetchUserPet(id: id) { [weak self] in
@@ -382,7 +382,7 @@ extension FirebaseVC {
   
   func insertUserPet() {
     guard let userId = vm_select[0].detail, let petId = vm_select[1].detail else {
-      displayInsertUserPet(with: .dataNotValid)
+      displayInsertUserPet(with: .data((.notvalid, 0, "")))
       return
     }
     worker.insertUserPet(userId: userId, petId: petId) { [weak self] in
@@ -398,7 +398,7 @@ extension FirebaseVC {
   
   func deleteUserPet() {
     guard let userId = vm_select[0].detail, let petId = vm_select[1].detail else {
-      displayDeleteUserPet(with: .dataNotValid)
+      displayDeleteUserPet(with: .data((.notvalid, 0, "")))
       return
     }
     worker.deleteUserPet(userId: userId, petId: petId) { [weak self] in

@@ -8,12 +8,10 @@
 
 
 
-//MARK: - Imports
 import Foundation
 
 
 
-//MARK: - AGDataResponse
 public class AGDataResponse<T> {
   
   public var data: T?
@@ -29,7 +27,8 @@ public class AGDataResponse<T> {
       return .failure(error)
     }
     guard let data = data else {
-      return .failure(error ?? .responseDataNotValid)
+      let info = AGErrorInfo(type: .notvalid, code: 0, message: "")
+      return .failure(error ?? .service(info))
     }
     return .success(data)
   }

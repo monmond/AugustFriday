@@ -18,7 +18,7 @@ import NVActivityIndicatorView
 extension AGVC: UIBarPositioningDelegate { }
 extension AGVC: UIGestureRecognizerDelegate { }
 extension AGVC: AGVCEventable { }
-extension AGVC: AGVCNotificationBannerDependency { }
+//extension AGVC: AGVCNotificationBannerDependency { }
 extension AGVC: AGVCSkeletonable { }
 extension AGVC: AGVCPopupDependency { }
 extension AGVC: AGObject { }

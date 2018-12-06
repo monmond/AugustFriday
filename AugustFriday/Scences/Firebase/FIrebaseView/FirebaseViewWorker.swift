@@ -117,13 +117,14 @@ class FirebaseViewWorker {
       error = nil
       onComplete(AGDataResponse<[User]>(data: data, error: error))
     }) {
-      onComplete(AGDataResponse<[User]>(data: nil, error: .firebase($0)))
+      
+      onComplete(AGDataResponse<[User]>(data: nil, error: .service((.notvalid, 0, $0.localizedDescription))))
     }
   }
   
   func fetchUserById(id: String, onComplete: @escaping ((AGDataResponse<User>) -> ())) {
     guard !id.isEmpty else {
-      onComplete(AGDataResponse<User>(data: nil, error: .dataNotValid))
+      onComplete(AGDataResponse<User>(data: nil, error: .data((.notvalid, 0, ""))))
       return
     }
     let ref_user = db.reference(withPath: User.path)
@@ -147,7 +148,7 @@ class FirebaseViewWorker {
       var data: String?
       var error: AGError?
       data = $1.key
-      if let e = $0 { error = .firebase(e) }
+      if let e = $0 { error = .service((.notvalid, 0, e.localizedDescription)) }
       onComplete?(AGDataResponse<String>(data: data, error: error))
     }
     
@@ -159,7 +160,7 @@ class FirebaseViewWorker {
       switch $0.result {
       case let .success(d):
         guard !d.isEmpty else {
-          onComplete?(AGDataResponse<String>(data: nil, error: .dataEmpty))
+          onComplete?(AGDataResponse<String>(data: nil, error: .data((.empty, 0, ""))))
           return
         }
         let u = d[Int(arc4random_uniform(UInt32(d.count)))]
@@ -177,13 +178,13 @@ class FirebaseViewWorker {
           var data: String?
           var error: AGError?
           data = $1.key
-          if let e = $0 { error = .firebase(e) }
+          if let e = $0 { error = .service((.notvalid, 0, e.localizedDescription)) }
           onComplete?(AGDataResponse<String>(data: data, error: error))
         }
         
       case let .failure(e):
         AGLog.debug(e)
-        onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
+        onComplete?(AGDataResponse<String>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
         
       }
     }
@@ -191,7 +192,7 @@ class FirebaseViewWorker {
   
   func deleteUser(id: String, onComplete: ((AGDataResponse<String>) -> ())? = nil) {
     guard !id.isEmpty else {
-      onComplete?(AGDataResponse<String>(data: nil, error: .dataNotValid))
+      onComplete?(AGDataResponse<String>(data: nil, error: .data((.notvalid, 0, ""))))
       return
     }
     fetchUserById(id: id) {
@@ -201,13 +202,13 @@ class FirebaseViewWorker {
         d._ref?.removeValue { e, ref in
           let data = ref.key
           var error: AGError? = nil
-          if let e = e { error = .firebase(e) }
+          if let e = e { error = .service((.notvalid, 0, e.localizedDescription)) }
           onComplete?(AGDataResponse<String>(data: data, error: error))
         }
         
       case let .failure(e):
         AGLog.debug(e)
-        onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
+        onComplete?(AGDataResponse<String>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
         
       }
     }
@@ -224,7 +225,7 @@ class FirebaseViewWorker {
   
   func fetchPetById(id: String, onComplete: @escaping ((AGDataResponse<Pet>) -> ())) {
     guard !id.isEmpty else {
-      onComplete(AGDataResponse<Pet>(data: nil, error: .dataNotValid))
+      onComplete(AGDataResponse<Pet>(data: nil, error: .data((.notvalid, 0, ""))))
       return
     }
     let ref_user = db.reference(withPath: Pet.path)
@@ -243,7 +244,7 @@ class FirebaseViewWorker {
     ref_pet.updateChildValues([key:u.toAny]) { e, ref in
       let data = ref.key
       var error: AGError? = nil
-      if let e = e { error = .firebase(e) }
+      if let e = e { error = .service((.notvalid, 0, e.localizedDescription)) }
       onComplete?(AGDataResponse<String>(data: data, error: error))
     }
   
@@ -255,7 +256,7 @@ class FirebaseViewWorker {
       switch $0.result {
       case let .success(d):
         guard !d.isEmpty else {
-          onComplete?(AGDataResponse<String>(data: nil, error: .dataEmpty))
+          onComplete?(AGDataResponse<String>(data: nil, error: .data((.empty, 0, ""))))
           return
         }
         let p = d[Int(arc4random_uniform(UInt32(d.count)))]
@@ -269,13 +270,13 @@ class FirebaseViewWorker {
         ref_pet.updateChildValues([p.id: p.toAny]) {
           let data = $1.key
           var error: AGError?
-          if let e = $0 { error = .firebase(e) }
+          if let e = $0 { error = .service((.notvalid, 0, e.localizedDescription)) }
           onComplete?(AGDataResponse<String>(data: data, error: error))
         }
         
       case let .failure(e):
         AGLog.debug(e)
-        onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
+        onComplete?(AGDataResponse<String>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
         
       }
     }
@@ -283,7 +284,7 @@ class FirebaseViewWorker {
   
   func deletePet(id: String, onComplete: ((AGDataResponse<String>) -> ())? = nil) {
     guard !id.isEmpty else {
-      onComplete?(AGDataResponse<String>(data: nil, error: .dataNotValid))
+      onComplete?(AGDataResponse<String>(data: nil, error: .data((.notvalid, 0, ""))))
       return
     }
     fetchUserById(id: id) {
@@ -293,13 +294,13 @@ class FirebaseViewWorker {
         d._ref?.removeValue {
           let data = $1.key
           var error: AGError?
-          if let e = $0 { error = .firebase(e) }
+          if let e = $0 { error = .service((.notvalid, 0, e.localizedDescription)) }
           onComplete?(AGDataResponse<String>(data: data, error: error))
         }
         
       case let .failure(e):
         AGLog.debug(e)
-        onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
+        onComplete?(AGDataResponse<String>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
         
       }
     }
@@ -307,7 +308,7 @@ class FirebaseViewWorker {
   
   func fetchUserPet(id: String, onComplete: ((AGDataResponse<User>) -> ())? = nil) {
     guard !id.isEmpty else {
-      onComplete?(AGDataResponse<User>(data: nil, error: .dataNotValid))
+      onComplete?(AGDataResponse<User>(data: nil, error: .data((.notvalid, 0, ""))))
       return
     }
     let ref_userpet = db.reference(withPath: UserPet.path)
@@ -316,24 +317,24 @@ class FirebaseViewWorker {
       case let .success(d):
         ref_userpet.queryEqual(toValue: id).observeSingleEvent(of: .value, andPreviousSiblingKeyWith: { snapshot, parent in
           guard let list = Pet.Array(snapshot: snapshot) else {
-            onComplete?(AGDataResponse<User>(data: nil, error: .responseDataInit))
+            onComplete?(AGDataResponse<User>(data: nil, error: .service((.notvalid, 0, ""))))
             return
           }
           d._pets = list._pets
           onComplete?(AGDataResponse<User>(data: d, error: nil))
         }) { e in
-          onComplete?(AGDataResponse<User>(data: nil, error: .firebase(e)))
+          onComplete?(AGDataResponse<User>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
         }
       case let .failure(e):
         AGLog.debug(e)
-        onComplete?(AGDataResponse<User>(data: nil, error: .firebase(e)))
+        onComplete?(AGDataResponse<User>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
       }
     }
   }
   
   func insertUserPet(userId: String, petId: String, onComplete: ((AGDataResponse<String>) -> ())? = nil) {
     guard !userId.isEmpty && !petId.isEmpty  else {
-      onComplete?(AGDataResponse<String>(data: nil, error: .dataNotValid))
+      onComplete?(AGDataResponse<String>(data: nil, error: .data((.notvalid, 0, ""))))
       return
     }
     fetchUserById(id: userId) { [weak self] in
@@ -349,20 +350,20 @@ class FirebaseViewWorker {
               var data: String?
               var error: AGError?
               data = $1.key
-              if let e = $0 { error = .firebase(e) }
+              if let e = $0 { error = .service((.notvalid, 0, e.localizedDescription)) }
               onComplete?(AGDataResponse<String>(data: data, error: error))
             }
             
           case let .failure(e):
             AGLog.debug(e)
-            onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
+            onComplete?(AGDataResponse<String>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
             
           }
         }
 
       case let .failure(e):
         AGLog.debug(e)
-        onComplete?(AGDataResponse<String>(data: nil, error: .firebase(e)))
+        onComplete?(AGDataResponse<String>(data: nil, error: .service((.notvalid, 0, e.localizedDescription))))
         
       }
     }
@@ -370,7 +371,7 @@ class FirebaseViewWorker {
   
   func deleteUserPet(userId: String, petId: String, onComplete: ((AGDataResponse<String>) -> ())? = nil) {
     guard !userId.isEmpty && !petId.isEmpty  else {
-      onComplete?(AGDataResponse<String>(data: nil, error: .dataNotValid))
+      onComplete?(AGDataResponse<String>(data: nil, error: .data((.notvalid, 0, ""))))
       return
     }
     let ref_user = db.reference(withPath: User.path)
@@ -378,7 +379,7 @@ class FirebaseViewWorker {
       var data: String?
       var error: AGError?
       data = $1.key
-      if let e = $0 { error = .firebase(e) }
+      if let e = $0 { error = .service((.notvalid, 0, e.localizedDescription)) }
       onComplete?(AGDataResponse<String>(data: data, error: error))
     }
   }

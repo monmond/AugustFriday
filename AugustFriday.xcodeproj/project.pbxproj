@@ -69,8 +69,6 @@
 		A434A14821101A46004898DE /* UIApplication+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14521101A46004898DE /* UIApplication+AG.swift */; };
 		A434A15821101B8F004898DE /* AGDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A14D21101B8F004898DE /* AGDate.swift */; };
 		A434A15A21101B8F004898DE /* Typealias+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15121101B8F004898DE /* Typealias+AG.swift */; };
-		A434A15B21101B8F004898DE /* AGValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15321101B8F004898DE /* AGValidator.swift */; };
-		A434A15C21101B8F004898DE /* AGFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15421101B8F004898DE /* AGFormatter.swift */; };
 		A434A15D21101B8F004898DE /* AGLocalizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15621101B8F004898DE /* AGLocalizeManager.swift */; };
 		A434A15E21101B8F004898DE /* AGLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A15721101B8F004898DE /* AGLocalize.swift */; };
 		A434A19D21101EA9004898DE /* CGRect+AG.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A16421101EA9004898DE /* CGRect+AG.swift */; };
@@ -139,8 +137,13 @@
 		A4913D542188AE47007934BB /* AGBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4913D532188AE47007934BB /* AGBundle.swift */; };
 		A4913D562188B654007934BB /* AGApplicationOrientationDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4913D552188B654007934BB /* AGApplicationOrientationDependency.swift */; };
 		A4960EDC214620FB001D8E43 /* AGAlamofireCodableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */; };
+		A49D06C421B92494004D4275 /* AGError+AGAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49D06C321B92494004D4275 /* AGError+AGAlamofire.swift */; };
 		A4A4366121425C6B00CE7FB4 /* AGAlamofireTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */; };
 		A4A4366321425EEE00CE7FB4 /* AGAlamofireValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */; };
+		A4A792E221B9441E0051C5A5 /* AGUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A792E121B9441E0051C5A5 /* AGUtil.swift */; };
+		A4A792E421B9442C0051C5A5 /* AGUtilTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A792E321B9442C0051C5A5 /* AGUtilTextField.swift */; };
+		A4A792E621B944520051C5A5 /* AGUtilValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A792E521B944520051C5A5 /* AGUtilValidator.swift */; };
+		A4A792E821B946590051C5A5 /* AGUtilFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A792E721B946590051C5A5 /* AGUtilFormatter.swift */; };
 		A4B457DD213E8CC3005A7783 /* ApplicationFirebaseMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D8992213DA390002A7E01 /* ApplicationFirebaseMessaging.swift */; };
 		A4B61D6721185CA6003F98FF /* AGBouncingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6621185CA6003F98FF /* AGBouncingView.swift */; };
 		A4B61D6A21185EA8003F98FF /* AGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B61D6921185EA8003F98FF /* AGView.swift */; };
@@ -246,8 +249,6 @@
 		A434A14521101A46004898DE /* UIApplication+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+AG.swift"; sourceTree = "<group>"; };
 		A434A14D21101B8F004898DE /* AGDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGDate.swift; sourceTree = "<group>"; };
 		A434A15121101B8F004898DE /* Typealias+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Typealias+AG.swift"; sourceTree = "<group>"; };
-		A434A15321101B8F004898DE /* AGValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGValidator.swift; sourceTree = "<group>"; };
-		A434A15421101B8F004898DE /* AGFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGFormatter.swift; sourceTree = "<group>"; };
 		A434A15621101B8F004898DE /* AGLocalizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLocalizeManager.swift; sourceTree = "<group>"; };
 		A434A15721101B8F004898DE /* AGLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGLocalize.swift; sourceTree = "<group>"; };
 		A434A16421101EA9004898DE /* CGRect+AG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+AG.swift"; sourceTree = "<group>"; };
@@ -319,8 +320,13 @@
 		A4913D532188AE47007934BB /* AGBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBundle.swift; sourceTree = "<group>"; };
 		A4913D552188B654007934BB /* AGApplicationOrientationDependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGApplicationOrientationDependency.swift; sourceTree = "<group>"; };
 		A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireCodableResponse.swift; sourceTree = "<group>"; };
+		A49D06C321B92494004D4275 /* AGError+AGAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AGError+AGAlamofire.swift"; sourceTree = "<group>"; };
 		A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireTask.swift; sourceTree = "<group>"; };
 		A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGAlamofireValidatable.swift; sourceTree = "<group>"; };
+		A4A792E121B9441E0051C5A5 /* AGUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGUtil.swift; sourceTree = "<group>"; };
+		A4A792E321B9442C0051C5A5 /* AGUtilTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGUtilTextField.swift; sourceTree = "<group>"; };
+		A4A792E521B944520051C5A5 /* AGUtilValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGUtilValidator.swift; sourceTree = "<group>"; };
+		A4A792E721B946590051C5A5 /* AGUtilFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGUtilFormatter.swift; sourceTree = "<group>"; };
 		A4B61D6621185CA6003F98FF /* AGBouncingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGBouncingView.swift; sourceTree = "<group>"; };
 		A4B61D6921185EA8003F98FF /* AGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGView.swift; sourceTree = "<group>"; };
 		A4B6AC932186B8A60025C350 /* AGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGB.swift; sourceTree = "<group>"; };
@@ -569,6 +575,7 @@
 				A4A4366021425C6B00CE7FB4 /* AGAlamofireTask.swift */,
 				A4A4366221425EEE00CE7FB4 /* AGAlamofireValidatable.swift */,
 				A4960EDB214620FB001D8E43 /* AGAlamofireCodableResponse.swift */,
+				A49D06C321B92494004D4275 /* AGError+AGAlamofire.swift */,
 			);
 			path = AGAlamofire;
 			sourceTree = "<group>";
@@ -664,6 +671,10 @@
 		A433E96D216F39AA0068DAD9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A4A792E121B9441E0051C5A5 /* AGUtil.swift */,
+				A4A792E721B946590051C5A5 /* AGUtilFormatter.swift */,
+				A4A792E321B9442C0051C5A5 /* AGUtilTextField.swift */,
+				A4A792E521B944520051C5A5 /* AGUtilValidator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -793,8 +804,6 @@
 				A42DA4142141984A00F1033F /* AGDateConfiguration.swift */,
 				A42DA4122141982800F1033F /* AGDateStyle.swift */,
 				A434A15121101B8F004898DE /* Typealias+AG.swift */,
-				A434A15321101B8F004898DE /* AGValidator.swift */,
-				A434A15421101B8F004898DE /* AGFormatter.swift */,
 				A4BB9C012154E76700EAEBAF /* AGDefaults.swift */,
 				A433E97F216F3FBC0068DAD9 /* AGDefaultsFoundation.swift */,
 				A433E981216F3FE00068DAD9 /* AGDefaultsCodable.swift */,
@@ -1290,6 +1299,7 @@
 				A434A15A21101B8F004898DE /* Typealias+AG.swift in Sources */,
 				A4445ED621884D5300813D8B /* AGVipPresentationLogic.swift in Sources */,
 				A4913D522188ADD7007934BB /* AGScheme.swift in Sources */,
+				A4A792E421B9442C0051C5A5 /* AGUtilTextField.swift in Sources */,
 				A434A1A821101EA9004898DE /* AGApplicationRouter.swift in Sources */,
 				A434A15821101B8F004898DE /* AGDate.swift in Sources */,
 				A4445ECE21884D5300813D8B /* AGVipRoutingLogic.swift in Sources */,
@@ -1314,8 +1324,10 @@
 				A48A3401214B681F00B220A9 /* AGHeaderReusable.swift in Sources */,
 				A433E97C216F3F970068DAD9 /* AGSizeClassUI.swift in Sources */,
 				A444FC452178F58000BCE80D /* AGVCTextFieldDependency.swift in Sources */,
+				A4A792E621B944520051C5A5 /* AGUtilValidator.swift in Sources */,
 				A42DA4132141982800F1033F /* AGDateStyle.swift in Sources */,
 				A433E986216F40CA0068DAD9 /* AGApplicationOrientationManager.swift in Sources */,
+				A49D06C421B92494004D4275 /* AGError+AGAlamofire.swift in Sources */,
 				A434A12E21101959004898DE /* NotificationName+AG.swift in Sources */,
 				A4445EBC21884CF500813D8B /* AGVCSkeletonable.swift in Sources */,
 				A4D84D8C217A4248009A88D3 /* AGGradientable.swift in Sources */,
@@ -1334,6 +1346,7 @@
 				A444FC4B2178F62900BCE80D /* AGSlidePanelView.swift in Sources */,
 				A434A1B821101EA9004898DE /* AGButton.swift in Sources */,
 				A42DA4052141880100F1033F /* AGOperationStatus.swift in Sources */,
+				A4A792E821B946590051C5A5 /* AGUtilFormatter.swift in Sources */,
 				A4D304862192BB4B00C4C08E /* AGLoadView.swift in Sources */,
 				A4913D542188AE47007934BB /* AGBundle.swift in Sources */,
 				A4B6AD142187174C0025C350 /* AGPopupManager.swift in Sources */,
@@ -1429,11 +1442,10 @@
 				A434A1BE21101EA9004898DE /* AGRadiusable.swift in Sources */,
 				A4B457DD213E8CC3005A7783 /* ApplicationFirebaseMessaging.swift in Sources */,
 				A42D898D213D9AC1002A7E01 /* ApplicationRoutable.swift in Sources */,
-				A434A15B21101B8F004898DE /* AGValidator.swift in Sources */,
 				A4445ED421884D5300813D8B /* AGVipModels.swift in Sources */,
 				A434A1B421101EA9004898DE /* AGTableViewHeaderFooterView.swift in Sources */,
 				A4960EDC214620FB001D8E43 /* AGAlamofireCodableResponse.swift in Sources */,
-				A434A15C21101B8F004898DE /* AGFormatter.swift in Sources */,
+				A4A792E221B9441E0051C5A5 /* AGUtil.swift in Sources */,
 				A4445EB8218847A800813D8B /* VCPopupDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,11 +20,19 @@ public class AvatarApi {
   
 //  class let agam =
   //MARK: - GetAvatar
+  static var session_main: Session = {
+    let config = URLSessionConfiguration.default
+    config.timeoutIntervalForRequest = AGAlamofireConfiguration.shared.timeoutIntervalForRequest
+    let sm = Session(configuration: config,
+                     retrier: AGRetryHandler())
+    return sm
+  }()
+  
   public typealias CBGetAvatar = ((AGDataResponse<GetAvatar.Response>) -> ())
   public class func getAvatar(_ param: GetAvatar.Request,
                               onComplete: @escaping CBGetAvatar) {
     let endpoint = AvatarRouter.getAvatar(param)
-    AGAlamofireManager.shared.requestJSON(endpoint) {
+    AGAlamofireUtil.requestJSON(with: session_main, endpoint: endpoint) {
       let data = GetAvatar.Response(json: $0.data)
       onComplete(AGDataResponse<GetAvatar.Response>(data: data, error: $0.error))
     }

@@ -145,8 +145,7 @@ extension AlamofireVC {
 
   @objc
   func cancleBBIPressed() {
-    AGAlamofireManager.shared.cancelSession(with: "Alamofire")
-    
+
   }
   
 }

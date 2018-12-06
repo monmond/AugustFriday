@@ -8,16 +8,14 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVCTextFieldDependency
 public protocol AGVCTextFieldDependency: class {
   
   func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField)
-  func agTextField(_ text: String?, replace string: String, with range: NSRange) -> (current: String, update: String)?
+  func textFieldDidChange(_ textField: UITextField)
   
 }
 
@@ -26,10 +24,15 @@ public protocol AGVCTextFieldDependency: class {
 //MARK: - Implements - UIViewController
 public extension UIViewController {
   
-  @objc
-  public func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField) {
-    sender.resignFirstResponder()
-  }
+  //  @objc
+  //  open func keyboardToolbarDoneBarButtonPressed(_ sender: UITextField) {
+  //    sender.resignFirstResponder()
+  //  }
+  //
+  //  @objc
+  //  open func textFieldDidChange(_ textField: UITextField) {
+  //
+  //  }
   
 }
 
@@ -37,12 +40,6 @@ public extension UIViewController {
 
 //MARK: - Implement
 public extension AGVCTextFieldDependency {
-  
-  public func agTextField(_ text: String?, replace string: String, with range: NSRange) -> (current: String, update: String)? {
-    guard let str_current = text, let str_range = Range(range, in: str_current) else { return nil }
-    let str_update = str_current.replacingCharacters(in: str_range, with: string)
-    return (current: str_current, update: str_update)
-  }
   
 }
 
