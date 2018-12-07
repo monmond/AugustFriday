@@ -6,29 +6,32 @@
 //  Copyright © 2018 gmm. All rights reserved.
 //
 
-//MARK: - Imports
+
+
 import UIKit
 
 
 
-//MARK: - AGVipInteractor
 public protocol AGVipPresentationLogic: class {
-  
   func presentSomeThing(response: String?)
   func presentSomeThingPassed(response: String?)
-  
 }
 
 
 
-//MARK: Implements
+//MARK: - Extensions
 public extension AGVipPresentationLogic {
   
-}
-
-
-
-//MARK: - Commons
-public extension AGVipPresentationLogic {
+  //MARK: - Implements
+  
+  
+  
+  //MARK: - Public
+  
+  
+  
+  //MARK: - Private
+  
+  
   
 }

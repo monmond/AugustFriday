@@ -8,12 +8,10 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipBussinessLogic
 public protocol AGVipBussinessLogic: class {
   
   func fetchSomeThing()
@@ -23,14 +21,19 @@ public protocol AGVipBussinessLogic: class {
 
 
 
-//MARK: - Implements
+//MARK: - Extensions
 public extension AGVipBussinessLogic {
   
-}
-
-
-
-//MARK: - Commons
-public extension AGVipBussinessLogic {
+  //MARK: - Implements
+  
+  
+  
+  //MARK: - Public
+  
+  
+  
+  //MARK: - Private
+  
+  
   
 }

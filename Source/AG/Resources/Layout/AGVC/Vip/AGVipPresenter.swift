@@ -8,16 +8,29 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipPresenter
 open class AGVipPresenter: AGVipPresentationLogic {
-  
-  //MARK: - Clean-Swift
+
+  //MARK: - VIP
   public weak var vc_ag: AGVipDisplayLogic?
+  
+  
+  //MARK: - Constraint
+  
+  
+  
+  //MARK: - Instance
+  
+  
+  
+  //MARK: - Flag
+  
+  
+  
+  //MARK: - Storage
   
   
   
@@ -29,15 +42,19 @@ open class AGVipPresenter: AGVipPresentationLogic {
   deinit {
     
   }
-
-}
-
-
-
-//MARK: Implements
-public extension AGVipPresenter {
   
-  public func presentSomeThing(response: String?) {
+  
+  
+  //MARK: - Public
+  
+  
+  
+  //MARK: - Private
+  
+  
+  
+  //MARK: - VIP - UseCase
+  open func presentSomeThing(response: String?) {
     if let r = response {
       vc_ag?.displaySomeThing(viewModel: r)
     } else {
@@ -45,7 +62,7 @@ public extension AGVipPresenter {
     }
   }
   
-  public func presentSomeThingPassed(response: String?) {
+  open func presentSomeThingPassed(response: String?) {
     if let r = response {
       vc_ag?.displaySomeThing(viewModel: r)
     } else {
@@ -53,11 +70,18 @@ public extension AGVipPresenter {
     }
   }
   
-}
-
-
-
-//MARK: - Commons
-extension AGVipPresenter {
+  
+  
+  //MARK: - Core - Protocol
+  
+  
+  
+  //MARK: - Custom - Protocol
+  
+  
+  
+  //MARK: - Pods - Protocol
+  
+  
   
 }

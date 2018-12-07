@@ -8,12 +8,10 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipRoutingLogic
 @objc
 public protocol AGVipRoutingLogic  {
   
@@ -21,14 +19,19 @@ public protocol AGVipRoutingLogic  {
 
 
 
-//MARK: - Implements
+//MARK: - Extensions
 public extension AGVipRoutingLogic {
   
-}
-
-
-
-//MARK: - Commons
-public extension AGVipRoutingLogic {
+  //MARK: - Implements
+  
+  
+  
+  //MARK: - Public
+  
+  
+  
+  //MARK: - Private
+  
+  
   
 }

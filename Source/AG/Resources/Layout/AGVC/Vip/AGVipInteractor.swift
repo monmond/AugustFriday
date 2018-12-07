@@ -8,12 +8,10 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipDataStore
 public protocol AGVipDataStore: class {
   
   var someThing: String? { get set }
@@ -22,16 +20,37 @@ public protocol AGVipDataStore: class {
 
 
 
-//MARK: - AGVipInteractor
 open class AGVipInteractor: AGObject, AGVipBussinessLogic, AGVipDataStore {
   
-  //MARK: - Clean-Swift
+  //MARK: - Storage
   public var p_ag: AGVipPresentationLogic?
   public var w_ag: AGVipWorker? = AGVipWorker()
   
   
+  //MARK: - Initial
+  
+  
+  
+  
+  //MARK: - VIP
+  
+  
+  
+  //MARK: - Constraint
+  
+  
+  
+  //MARK: - Instance
+  
+  
+  
+  //MARK: - Flag
+  
+  
+  
   //MARK: - Storage
   public var someThing: String?
+  
   
   
   //MARK: - Initial
@@ -43,14 +62,18 @@ open class AGVipInteractor: AGObject, AGVipBussinessLogic, AGVipDataStore {
     
   }
   
-}
-
-
-
-//MARK: - Implements
-public extension AGVipInteractor {
   
-  public func fetchSomeThing() {
+  
+  //MARK: - Public
+  
+  
+  
+  //MARK: - Private
+  
+  
+  
+  //MARK: - VIP - UseCase
+  open func fetchSomeThing() {
     w_ag?.fetchSomeThing { [weak self] response in
       guard let _s = self else { return }
       self?.mockBackgroundWaiting { [weak self] in
@@ -60,16 +83,21 @@ public extension AGVipInteractor {
     }
   }
   
-  public func fetchSomeThingPassed() {
+  open func fetchSomeThingPassed() {
     p_ag?.presentSomeThingPassed(response: someThing)
   }
   
-}
-
-
-
-//MARK: - Commons
-public extension AGVipInteractor {
+  
+  
+  //MARK: - Core - Protocol
+  
+  
+  
+  //MARK: - Custom - Protocol
+  
+  
+  
+  //MARK: - Pods - Protocol
   
   
   

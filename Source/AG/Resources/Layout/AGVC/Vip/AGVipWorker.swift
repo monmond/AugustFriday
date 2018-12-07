@@ -8,13 +8,32 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipWorker
 open class AGVipWorker {
+  
+  
+  //MARK: - VIP
+  
+  
+  
+  //MARK: - Constraint
+  
+  
+  
+  //MARK: - Instance
+  
+  
+  
+  //MARK: - Flag
+  
+  
+  
+  //MARK: - Storage
+  
+  
   
   //MARK: - Initial
   public init() {
@@ -24,17 +43,33 @@ open class AGVipWorker {
   deinit {
     
   }
-
   
-}
-
-
-
-//MARK: - Implements
-public extension AGVipWorker {
   
+  
+  //MARK: - Public
+  
+  
+  
+  //MARK: - Private
+  
+  
+  
+  //MARK: - VIP - UseCase
   public func fetchSomeThing(onComplete: @escaping (AGDataResponse<String?>) -> ()) {
     onComplete(AGDataResponse<String?>(data: "SomeThing", error: nil))
   }
+  
+  
+  
+  //MARK: - Core - Protocol
+  
+  
+  
+  //MARK: - Custom - Protocol
+  
+  
+  
+  //MARK: - Pods - Protocol
+  
   
 }

@@ -8,12 +8,10 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipVM
 public enum AGVipVM {
   
   //MARK: - All View Models

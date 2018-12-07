@@ -8,17 +8,18 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipVC
 open class AGVipVC: AGVC, AGVipDisplayLogic {
   
-  //MARK: - Clean-Swift
+  //MARK: - VIP
   public var i_ag: AGVipBussinessLogic?
   public var r_ag: (NSObjectProtocol & AGVipRoutingLogic & AGVipDataPassing)?
+  
+  
+  //MARK: - Constraint
   
   
   
@@ -56,34 +57,43 @@ open class AGVipVC: AGVC, AGVipDisplayLogic {
   
   
   
-}
-
-
-
-//MARK: - Implements
-public extension AGVipVC {
+  //MARK: - Public
   
-  public func displaySomeThing(viewModel: String) {
+  
+  
+  //MARK: - Private
+  
+  
+  
+  //MARK: - VIP - UseCase
+  open func displaySomeThing(viewModel: String) {
     AGLog.info(viewModel)
   }
   
-  public func displaySomeThingPassed(viewModel: String) {
+  open func displaySomeThingPassed(viewModel: String) {
     AGLog.info(viewModel)
   }
   
-  public func displaySomeThingError() {
+  open func displaySomeThingError() {
     AGLog.info()
-//    let vm = AGNotificationBannerVM(title: "title", subtitle: #function, style: .info, position: .top)
-//    displayStatusBarNotificationBanner(vm, on: self)
+    //    let vm = AGNotificationBannerVM(title: "title", subtitle: #function, style: .info, position: .top)
+    //    displayStatusBarNotificationBanner(vm, on: self)
   }
   
-}
-
-
-
-//MARK: - Commons
-public extension AGVipVC {
-
+  
+  
+  //MARK: - Core - Protocol
+  
+  
+  
+  //MARK: - Custom - Protocol
+  
+  
+  
+  //MARK: - Pods - Protocol
+  
+  
+  
 }
 
 

@@ -8,24 +8,23 @@
 
 
 
-//MARK: - imports
 import UIKit
 import NVActivityIndicatorView
 
 
 
-//MARK: Extensions
-extension AGVC: UIBarPositioningDelegate { }
-extension AGVC: UIGestureRecognizerDelegate { }
-extension AGVC: AGVCEventable { }
-//extension AGVC: AGVCNotificationBannerDependency { }
-extension AGVC: AGVCSkeletonable { }
-extension AGVC: AGVCPopupDependency { }
-extension AGVC: AGObject { }
+extension AGVC:
+  UIBarPositioningDelegate,
+  UIGestureRecognizerDelegate,
+  AGVCEventable,
+  AGVCSkeletonable,
+  AGVCPopupDependency,
+//  AGVCNotificationBannerDependency,
+  AGObject
+{ }
 
 
 
-//MARK: - AGVC
 open class AGVC: UIViewController {
   
   //MARK: - UI

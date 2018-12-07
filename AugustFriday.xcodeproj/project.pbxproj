@@ -422,6 +422,7 @@
 		A42D8971213D77BF002A7E01 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A4908F532185EFE700B36696 /* AG.swift */,
 				A47C8A9320D3A828009F8183 /* AppDelegate.swift */,
 				A42D898A213D9AA6002A7E01 /* ApplicationBlurable.swift */,
 				A42D898C213D9AC1002A7E01 /* ApplicationRoutable.swift */,
@@ -814,7 +815,6 @@
 				A4C0C257213E7E6E00288AFB /* AGApplicationSetup.swift */,
 				A479EB50213E454700A4F143 /* AGApplicationRoutable.swift */,
 				A479EB53213E4B3200A4F143 /* AGApplicationBlurable.swift */,
-				A4908F532185EFE700B36696 /* AG.swift */,
 				A48BB6942191905B00F81BB7 /* AGApplicationDependency.swift */,
 			);
 			path = Main;

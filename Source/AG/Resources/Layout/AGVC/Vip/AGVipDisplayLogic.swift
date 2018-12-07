@@ -8,12 +8,10 @@
 
 
 
-//MARK: - Imports
 import UIKit
 
 
 
-//MARK: - AGVipDisplayLogic
 public protocol AGVipDisplayLogic: class {
   
   func displaySomeThing(viewModel: String)
@@ -24,16 +22,19 @@ public protocol AGVipDisplayLogic: class {
 
 
 
-//MARK: - Implements
+//MARK: - Extensions
 public extension AGVipDisplayLogic {
   
-
+  //MARK: - Implements
   
-}
-
-
-
-//MARK: - Commons
-public extension AGVipDisplayLogic {
+  
+  
+  //MARK: - Public
+  
+  
+  
+  //MARK: - Private
+  
+  
   
 }
