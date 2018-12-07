@@ -25,7 +25,7 @@ public extension UICollectionView {
   }
   
   public func setBackgroundImage(image: UIImage) {
-    backgroundColor = AG.C.clear
+    backgroundColor = AG.Cons.Color.clear
     let img = UIImageView(image: image)
     img.contentMode = .scaleAspectFill
     backgroundView = img

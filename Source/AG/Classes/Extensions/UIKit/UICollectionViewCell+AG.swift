@@ -1,5 +1,5 @@
 //
-//  UICollectionViewCell+AG.swift
+//  UICollectionViewCell+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 29/6/18.

@@ -1,5 +1,5 @@
 //
-//  UITableViewHeaderFooterView+AG.swift
+//  UITableViewHeaderFooterView+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 29/6/18.

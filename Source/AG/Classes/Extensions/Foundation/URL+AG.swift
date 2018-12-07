@@ -1,5 +1,5 @@
 //
-//  URL+AG.swift
+//  URL+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 15/8/18.

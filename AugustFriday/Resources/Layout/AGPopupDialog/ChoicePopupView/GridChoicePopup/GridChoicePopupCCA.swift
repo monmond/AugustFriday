@@ -102,7 +102,7 @@ class GridChoicePopupCCA: AGAdapter {
     collection.delegate = self
     collection.dataSource = self
     collection.allowsSelection = true
-    collection.backgroundColor = AG.C.Theme.v_bg_2
+    collection.backgroundColor = AG.Cons.Color.Theme.v_bg_2
     collection.registerCellClass(cc_using.self)
     collection.isUserInteractionEnabled = false
     

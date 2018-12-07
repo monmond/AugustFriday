@@ -14,7 +14,7 @@ import Foundation
 
 
 //MARK: - Host
-public extension AG.Host {
+public extension AG.Cons.Host {
   
 }
 

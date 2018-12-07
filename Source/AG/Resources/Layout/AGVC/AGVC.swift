@@ -36,7 +36,7 @@ open class AGVC: UIViewController {
   
   
   //MARK: - Constraint
-  var color_navigationBarTint: UIColor = AG.C.mint
+  var color_navigationBarTint: UIColor = AG.Cons.Color.mint
   
   
   

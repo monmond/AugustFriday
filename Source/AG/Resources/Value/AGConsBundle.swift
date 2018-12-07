@@ -1,5 +1,5 @@
 //
-//  AGScheme.swift
+//  AGBundle.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 30/10/18.
@@ -13,10 +13,11 @@ import Foundation
 
 
 
-//MARK: - Scheme
-public extension AG.Scheme {
-  
+//MARK: - Bundle
+public extension AG.Cons.Bundle {
+  public static let apple = "com.apple"
 }
+
 
 
 

@@ -14,7 +14,7 @@ import UIKit
 
 
 //MARK: - Button
-public extension AG.B{
+public extension AG.Cons.Button{
   
   public enum Text { }
   public enum Plain { }
@@ -31,7 +31,7 @@ public extension AG.B{
 
 
 //MARK: - Text
-extension AG.B.Text {
+extension AG.Cons.Button.Text {
   
   public struct Base: AGButtonSetting {
     public var appearance: AGButtonAppearance = AGButtonAppearance()
@@ -51,14 +51,14 @@ extension AG.B.Text {
 
 
 //MARK: - Plain
-extension AG.B.Plain {
+extension AG.Cons.Button.Plain {
   
 }
 
 
 
 //MARK: - Popup
-extension AG.B.Popup {
+extension AG.Cons.Button.Popup {
   
   struct Confirm: AGButtonSetting {
     var appearance = AGButtonAppearance()
@@ -66,12 +66,12 @@ extension AG.B.Popup {
     var color = AGButtonColor()
     var icon = UIImage()
     init() {
-      appearance.lb_font = AG.F.System.font(with: .body)
+      appearance.lb_font = AG.Cons.Font.System.font(with: .body)
       option.isSetupTitle = true
       option.isSetupBackground = true
       option.isSetupRadius = false
-      color.lb = (normal: AG.C.white, highlighted: AG.C.white, disable: AG.C.white)
-      color.bg = (normal: AG.C.red, highlighted: AG.C.grayLight, disable: AG.C.grayLight)
+      color.lb = (normal: AG.Cons.Color.white, highlighted: AG.Cons.Color.white, disable: AG.Cons.Color.white)
+      color.bg = (normal: AG.Cons.Color.red, highlighted: AG.Cons.Color.grayLight, disable: AG.Cons.Color.grayLight)
     }
   }
   
@@ -81,12 +81,12 @@ extension AG.B.Popup {
     var color = AGButtonColor()
     var icon = UIImage()
     init() {
-      appearance.lb_font = AG.F.System.font(with: .body)
+      appearance.lb_font = AG.Cons.Font.System.font(with: .body)
       option.isSetupTitle = true
       option.isSetupBackground = true
       option.isSetupRadius = false
-      color.lb = (normal: AG.C.black, highlighted: AG.C.nickel, disable: AG.C.white)
-      color.bg = (normal: AG.C.nickel, highlighted: AG.C.nickel, disable: AG.C.tungsten)
+      color.lb = (normal: AG.Cons.Color.black, highlighted: AG.Cons.Color.nickel, disable: AG.Cons.Color.white)
+      color.bg = (normal: AG.Cons.Color.nickel, highlighted: AG.Cons.Color.nickel, disable: AG.Cons.Color.tungsten)
     }
   }
   
@@ -95,42 +95,42 @@ extension AG.B.Popup {
 
 
 //MARK: - Border
-extension AG.B.Border {
+extension AG.Cons.Button.Border {
   
 }
 
 
 
 //MARK: - BorderLess
-extension AG.B.BorderLess {
+extension AG.Cons.Button.BorderLess {
   
 }
 
 
 
 //MARK: - Toggle
-extension AG.B.Toggle {
+extension AG.Cons.Button.Toggle {
   
 }
 
 
 
 //MARK: - Icon
-extension AG.B.Icon {
+extension AG.Cons.Button.Icon {
   
 }
 
 
 
 //MARK: - IconText
-extension AG.B.IconText {
+extension AG.Cons.Button.IconText {
   
 }
 
 
 
 //MARK: - TextIcon
-extension AG.B.TextIcon {
+extension AG.Cons.Button.TextIcon {
   
 }
 

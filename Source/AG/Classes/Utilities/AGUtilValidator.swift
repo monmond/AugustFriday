@@ -1,5 +1,5 @@
 //
-//  AGUtilValidator.swift
+//  AG.UtilValidator.swift
 //  AugustFriday
 //
 //  Created by Sasawat Sankosik on 6/12/2561 BE.
@@ -12,7 +12,7 @@ import Foundation
 
 
 
-public extension AGUtil.Validator {
+public extension AG.Util.Validator {
   
   public class Phone: AGValidatorPhone { }
   public class Citizen: AGValidatorCitizen { }
@@ -95,7 +95,7 @@ public protocol AGValidatorCitizen {
 extension AGValidatorCitizen {
   
   public static func isCitizenId(string: String) -> Bool {
-    guard string.count == 13, AGUtil.Validator.isNumeric(string: string) else {
+    guard string.count == 13, AG.Util.Validator.isNumeric(string: string) else {
       return false
     }
     var sum:Int = 0

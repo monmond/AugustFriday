@@ -49,7 +49,7 @@ public extension AGReusable where Self: UIViewController {
   }
   
   public func setupDefault() {
-//    backgroundColor = AG.Color.clear
+//    backgroundColor = AG.Cons.Color.clear
   }
   
 }
@@ -64,7 +64,7 @@ public extension AGReusable where Self: UIView {
   }
   
   public func setupDefault() {
-    backgroundColor = AG.C.clear
+    backgroundColor = AG.Cons.Color.clear
   }
   
 }
@@ -76,8 +76,8 @@ public extension AGReusable where Self: UITableViewCell {
   
   public func setupDefault() {
     selectionStyle = .none
-    backgroundColor = AG.C.clear
-    contentView.backgroundColor = AG.C.clear
+    backgroundColor = AG.Cons.Color.clear
+    contentView.backgroundColor = AG.Cons.Color.clear
   }
   
 }
@@ -88,8 +88,8 @@ public extension AGReusable where Self: UITableViewCell {
 public extension AGReusable where Self: UICollectionViewCell {
   
   public func setupDefault() {
-    backgroundColor = AG.C.clear
-    contentView.backgroundColor = AG.C.clear
+    backgroundColor = AG.Cons.Color.clear
+    contentView.backgroundColor = AG.Cons.Color.clear
   }
   
 }
@@ -100,7 +100,7 @@ public extension AGReusable where Self: UICollectionViewCell {
 public extension AGReusable where Self: UITableViewHeaderFooterView {
   
   public func setupDefault() {
-    contentView.backgroundColor = AG.C.clear
+    contentView.backgroundColor = AG.Cons.Color.clear
   }
   
 }
@@ -111,7 +111,7 @@ public extension AGReusable where Self: UITableViewHeaderFooterView {
 public extension AGReusable where Self: UICollectionReusableView {
   
   public func setupDefault() {
-    backgroundColor = AG.C.clear
+    backgroundColor = AG.Cons.Color.clear
   }
   
 }

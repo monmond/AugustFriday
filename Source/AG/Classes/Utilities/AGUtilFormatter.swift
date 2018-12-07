@@ -1,5 +1,5 @@
 //
-//  AGUtilFormatter.swift
+//  AG.UtilFormatter.swift
 //  AugustFriday
 //
 //  Created by Sasawat Sankosik on 6/12/2561 BE.
@@ -12,7 +12,7 @@ import Foundation
 
 
 
-public extension AGUtil.Formatter {
+public extension AG.Util.Formatter {
   
   public class Phone: AGFormatterPhone { }
   public class Citizen: AGFormatterCitizen { }

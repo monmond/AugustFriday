@@ -1,5 +1,5 @@
 //
-//  Error+AG.swift
+//  Error+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 29/7/18.

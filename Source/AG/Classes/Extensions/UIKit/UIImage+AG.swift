@@ -1,5 +1,5 @@
 //
-//  UIImage+AG.swift
+//  UIImage+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 29/6/18.

@@ -1,5 +1,5 @@
 //
-//  Alamofire+AG.swift
+//  Alamofire+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by Sasawat Sankosik on 6/12/2561 BE.

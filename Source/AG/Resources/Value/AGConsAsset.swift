@@ -14,25 +14,23 @@ import UIKit
 
 
 //MARK: - Assets
-public extension AG.A {
-  
+public extension AG.Cons.Asset {
   public enum Img { }
   public enum Ic { }
-  
 }
 
 
 
 
 //MARK: - Img
-public extension AG.A.Img {
+public extension AG.Cons.Asset.Img {
   
 }
 
 
 
 //MARK: - Ic
-public extension AG.A.Ic {
+public extension AG.Cons.Asset.Ic {
   
 }
 

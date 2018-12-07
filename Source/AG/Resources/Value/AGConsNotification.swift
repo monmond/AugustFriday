@@ -14,7 +14,7 @@ import UIKit
 
 
 //MARK: - Notification
-public extension AG {
+public extension AG.Cons.Notification {
   
   public typealias K = Int
   

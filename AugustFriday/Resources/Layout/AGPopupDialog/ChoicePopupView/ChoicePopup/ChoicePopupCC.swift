@@ -124,28 +124,28 @@ class ChoicePopupCC: AGCollectionCell {
   //MARK: - Setup Data
   func setupUI() {
     setupDefault()
-    backgroundColor = AG.C.Theme.cell_bg_1
-    contentView.backgroundColor = AG.C.Theme.cell_bg_1
+    backgroundColor = AG.Cons.Color.Theme.cell_bg_1
+    contentView.backgroundColor = AG.Cons.Color.Theme.cell_bg_1
 
     v_container = UIView()
-    v_container.backgroundColor = AG.C.Theme.cell_bg_1
+    v_container.backgroundColor = AG.Cons.Color.Theme.cell_bg_1
 
     v_seperator = UIView()
-    v_seperator.backgroundColor = AG.C.Theme.v_seperator
+    v_seperator.backgroundColor = AG.Cons.Color.Theme.v_seperator
 
     lb_title = UILabel()
     lb_title.text = "-"
-    lb_title.textColor = AG.C.Theme.cell_lb_1
+    lb_title.textColor = AG.Cons.Color.Theme.cell_lb_1
     lb_title.font = UIFont.boldSystemFont(ofSize: lb_title.font.pointSize)
-    lb_title.backgroundColor = AG.C.clear
+    lb_title.backgroundColor = AG.Cons.Color.clear
     
     imgv_icon = UIImageView()
     imgv_icon.image = nil
     imgv_icon.contentMode = .scaleAspectFit
-    imgv_icon.backgroundColor = AG.C.Theme.cell_bg_default
+    imgv_icon.backgroundColor = AG.Cons.Color.Theme.cell_bg_default
     imgv_icon.clipsToBounds = true
 
-    let font_using = AG.F.System.font(with: .body)
+    let font_using = AG.Cons.Font.System.font(with: .body)
     viewFontTextAdjustsFonts(with: v_infoLabelACSC, font: font_using)
 
     contentView.addSubview(v_container)
@@ -208,7 +208,7 @@ class ChoicePopupCC: AGCollectionCell {
   func setupData(with data: AGGenericCM) {
     if let d = data as? ChoicePopupCCM {
       lb_title.text = d.name
-      imgv_icon.image = d.icon?.overlay(with: AG.C.red)
+      imgv_icon.image = d.icon?.overlay(with: AG.Cons.Color.red)
     } else {
       
     }

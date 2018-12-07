@@ -1,5 +1,5 @@
 //
-//  Float+AG.swift
+//  Float+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 27/6/18.

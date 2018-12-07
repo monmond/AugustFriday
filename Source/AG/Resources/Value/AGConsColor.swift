@@ -35,10 +35,10 @@ public protocol AGColorTheme {
 
 
 //MARK: - Color
-public extension AG.C {
+public extension AG.Cons.Color {
   
   //MARK: AGColorTheme
-  public static let Theme: AGColorTheme.Type = AG.Configuration.shared.theme
+  public static let Theme: AGColorTheme.Type = AG.Cons.Configuration.shared.theme
   public enum Light: AGColorTheme { }
   public enum Dark: AGColorTheme { }
   
@@ -104,46 +104,46 @@ public extension AG.C {
 
 
 //MARK: - Light
-extension AG.C.Light {
+extension AG.Cons.Color.Light {
   
-  public static let lb_1 = AG.C.white
-  public static let lb_2 = AG.C.silver
-  public static let v_bg_1 = AG.C.iron
-  public static var v_bg_2 = AG.C.black
-  public static var v_bg_3 = AG.C.lead
-  public static let navigation = AG.C.lead
-  public static var progressBar_live = AG.C.blueberry
-  public static var progressBar_vod = AG.C.red
-  public static var v_seperator = AG.C.iron
-  public static var cell_bg_default = AG.C.tungsten
-  public static var cell_bg_1 = AG.C.black
-  public static var cell_bg_2 = AG.C.lead
-  public static var cell_bg_3 = AG.C.tungsten
-  public static var cell_lb_1 = AG.C.grayLight
-  public static var cell_lb_2 = AG.C.redDark
+  public static let lb_1 = AG.Cons.Color.white
+  public static let lb_2 = AG.Cons.Color.silver
+  public static let v_bg_1 = AG.Cons.Color.iron
+  public static var v_bg_2 = AG.Cons.Color.black
+  public static var v_bg_3 = AG.Cons.Color.lead
+  public static let navigation = AG.Cons.Color.lead
+  public static var progressBar_live = AG.Cons.Color.blueberry
+  public static var progressBar_vod = AG.Cons.Color.red
+  public static var v_seperator = AG.Cons.Color.iron
+  public static var cell_bg_default = AG.Cons.Color.tungsten
+  public static var cell_bg_1 = AG.Cons.Color.black
+  public static var cell_bg_2 = AG.Cons.Color.lead
+  public static var cell_bg_3 = AG.Cons.Color.tungsten
+  public static var cell_lb_1 = AG.Cons.Color.grayLight
+  public static var cell_lb_2 = AG.Cons.Color.redDark
   
 }
 
 
 
 //MARK: - Dark
-extension AG.C.Dark {
+extension AG.Cons.Color.Dark {
   
-  public static let lb_1 = AG.C.iron
-  public static let lb_2 = AG.C.lead
-  public static let v_bg_1 = AG.C.white
-  public static var v_bg_2 = AG.C.black
-  public static var v_bg_3 = AG.C.lead
-  public static let navigation = AG.C.silver
-  public static var progressBar_live = AG.C.blueberry
-  public static var progressBar_vod = AG.C.red
-  public static var v_seperator = AG.C.iron
-  public static var cell_bg_default = AG.C.tungsten
-  public static var cell_bg_1 = AG.C.black
-  public static var cell_bg_2 = AG.C.lead
-  public static var cell_bg_3 = AG.C.tungsten
-  public static var cell_lb_1 = AG.C.grayLight
-  public static var cell_lb_2 = AG.C.redDark
+  public static let lb_1 = AG.Cons.Color.iron
+  public static let lb_2 = AG.Cons.Color.lead
+  public static let v_bg_1 = AG.Cons.Color.white
+  public static var v_bg_2 = AG.Cons.Color.black
+  public static var v_bg_3 = AG.Cons.Color.lead
+  public static let navigation = AG.Cons.Color.silver
+  public static var progressBar_live = AG.Cons.Color.blueberry
+  public static var progressBar_vod = AG.Cons.Color.red
+  public static var v_seperator = AG.Cons.Color.iron
+  public static var cell_bg_default = AG.Cons.Color.tungsten
+  public static var cell_bg_1 = AG.Cons.Color.black
+  public static var cell_bg_2 = AG.Cons.Color.lead
+  public static var cell_bg_3 = AG.Cons.Color.tungsten
+  public static var cell_lb_1 = AG.Cons.Color.grayLight
+  public static var cell_lb_2 = AG.Cons.Color.redDark
   
 }
 

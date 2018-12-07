@@ -1,5 +1,5 @@
 //
-//  AGApp.swift
+//  AGScheme.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 30/10/18.
@@ -13,7 +13,12 @@ import Foundation
 
 
 
-//MARK: - App
-public extension AG.App {
-  public static let name = "AugustFriday"
+//MARK: - Scheme
+public extension AG.Cons.Scheme {
+  
 }
+
+
+
+
+

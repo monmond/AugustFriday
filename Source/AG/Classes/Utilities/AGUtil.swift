@@ -1,5 +1,5 @@
 //
-//  AGUtil.swift
+//  AG.Util.swift
 //  AugustFriday
 //
 //  Created by Sasawat Sankosik on 6/12/2561 BE.
@@ -11,10 +11,6 @@
 import Foundation
 
 
-open class AGUtil {
-  
-  open class TextField { }
-  open class Validator: AGValidator { }
-  open class Formatter { }
+open class AG.Util {
   
 }

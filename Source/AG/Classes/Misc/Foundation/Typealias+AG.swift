@@ -1,5 +1,5 @@
 //
-//  Typealias+AG.swift
+//  Typealias+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 15/6/18.

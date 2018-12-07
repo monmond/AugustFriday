@@ -135,13 +135,13 @@ class ConfirmTextPopupVC: AGPopupVC {
   }
   
   func setupUI() {
-    view.backgroundColor = AG.C.Theme.cell_bg_1
+    view.backgroundColor = AG.Cons.Color.Theme.cell_bg_1
     
     v_container = UIView()
-    v_container.backgroundColor = AG.C.clear
+    v_container.backgroundColor = AG.Cons.Color.clear
     
     stv_info = UIStackView()
-    stv_info.backgroundColor = AG.C.clear
+    stv_info.backgroundColor = AG.Cons.Color.clear
     stv_info.axis = .vertical
     stv_info.alignment = .fill
     stv_info.distribution = .fill
@@ -149,28 +149,28 @@ class ConfirmTextPopupVC: AGPopupVC {
     
     lb_title = UILabel()
     lb_title.text = "-"
-    lb_title.textColor = AG.C.Theme.cell_lb_2
-//    lb_title.textColor = AG.Color.red
+    lb_title.textColor = AG.Cons.Color.Theme.cell_lb_2
+//    lb_title.textColor = AG.Cons.Color.red
 //    lb_title.font = AppFont.DBOzoneX.bold.with(size: 22)
     lb_title.font = UIFont.systemFont(ofSize: lb_title.font.pointSize)
-    lb_title.backgroundColor = AG.C.clear
+    lb_title.backgroundColor = AG.Cons.Color.clear
     lb_title.textAlignment = .left
     
     lb_message = UILabel()
     lb_message.text = "-"
-    lb_message.textColor = AG.C.Theme.cell_lb_1
+    lb_message.textColor = AG.Cons.Color.Theme.cell_lb_1
     lb_message.font = UIFont.systemFont(ofSize: lb_title.font.pointSize)
-    lb_message.backgroundColor = AG.C.clear
+    lb_message.backgroundColor = AG.Cons.Color.clear
     lb_message.numberOfLines = 0
     lb_message.textAlignment = .left
     
     txt_frist = UITextField()
     txt_frist.delegate = self
-    txt_frist.backgroundColor = AG.C.white
-//    txt_frist.textColor = AG.Color.white
-    txt_frist.textColor = AG.C.black
-//    txt_frist.tintColor = AG.Color.white
-    txt_frist.tintColor = AG.C.red
+    txt_frist.backgroundColor = AG.Cons.Color.white
+//    txt_frist.textColor = AG.Cons.Color.white
+    txt_frist.textColor = AG.Cons.Color.black
+//    txt_frist.tintColor = AG.Cons.Color.white
+    txt_frist.tintColor = AG.Cons.Color.red
     txt_frist.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(keyboardToolbarDoneBarButtonPressed))
     txt_frist.returnKeyType = .done
     txt_frist.clearButtonMode = .always
@@ -184,22 +184,22 @@ class ConfirmTextPopupVC: AGPopupVC {
 //    txt_frist.enablesReturnKeyAutomatically = true
     
     stv_button = UIStackView()
-    stv_button.backgroundColor = AG.C.clear
+    stv_button.backgroundColor = AG.Cons.Color.clear
     stv_button.axis = .horizontal
     stv_button.alignment = .fill
     stv_button.distribution = .fillEqually
     stv_button.spacing = 0
     
     btn_cancel = AGButton()
-    btn_cancel.setup(AG.B.Popup.Cancel())
+    btn_cancel.setup(AG.Cons.Button.Popup.Cancel())
     btn_cancel.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
     
     btn_ok = AGButton()
-    btn_ok.setup(AG.B.Popup.Confirm())
+    btn_ok.setup(AG.Cons.Button.Popup.Confirm())
     btn_ok.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
     btn_ok.isEnabled = false
     
-    let font_using = AG.F.System.font(with: .body)
+    let font_using = AG.Cons.Font.System.font(with: .body)
     viewFontTextAdjustsFonts(with: v_infoLabelACSC, font: font_using)
     
     view.addSubview(v_container)
@@ -301,7 +301,7 @@ class ConfirmTextPopupVC: AGPopupVC {
   
   //MARK: - Core - UITextFieldDelegate
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    let tf = AGUtil.TextField.self
+    let tf = AG.Util.TextField.self
     var canReplace = true
     guard let response = tf.textField(with:  (textField.text ?? "", string, range)) else { return true }
     switch textField {

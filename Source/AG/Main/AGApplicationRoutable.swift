@@ -85,7 +85,7 @@ public extension AGApplicationRoutable {
     let isFromSourceApplication = (launchOptions ?? [:]).keys.contains(.sourceApplication)
     var isFromApple = false
     if let option = launchOptions, let app = option[.sourceApplication] as? String, isFromSourceApplication {
-      isFromApple = app.contains(AG.Bundle.apple)
+      isFromApple = app.contains(AG.Cons.Bundle.apple)
     }
     return !isLaunchWithOption || !isFromSourceApplication || isFromApple
     

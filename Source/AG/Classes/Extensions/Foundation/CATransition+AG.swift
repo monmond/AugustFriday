@@ -1,5 +1,5 @@
 //
-//  CATransition+AG.swift
+//  CATransition+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 21/9/18.

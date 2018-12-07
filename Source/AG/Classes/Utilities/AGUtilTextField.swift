@@ -1,5 +1,5 @@
 //
-//  AGUtilTextField.swift
+//  AG.UtilTextField.swift
 //  AugustFriday
 //
 //  Created by Sasawat Sankosik on 6/12/2561 BE.
@@ -18,7 +18,7 @@ public typealias LDTextFieldDidChange = (UITextField) -> ()
 
 
 
-public extension AGUtil.TextField {
+public extension AG.Util.TextField {
   
   public static func textField(with request: AGTextFieldRequest) -> AGTextFieldResponse? {
     guard let str_current = request.text, let str_range = Range(request.range, in: str_current) else { return nil }

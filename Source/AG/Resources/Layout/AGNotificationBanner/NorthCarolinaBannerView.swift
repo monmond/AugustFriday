@@ -19,8 +19,8 @@ public class NorthCarolinaBannerView: UIView {
   public init() {
     super.init(frame: .zero)
     backgroundColor = .white
-    let uncView = teamView(image: UIImage.color(with: AG.C.facebook)!, record: "27-0", onLeft: true)
-    let dukeView = teamView(image: UIImage.color(with: AG.C.mint)!, record: "18-9", onLeft: false)
+    let uncView = teamView(image: UIImage.color(with: AG.Cons.Color.facebook)!, record: "27-0", onLeft: true)
+    let dukeView = teamView(image: UIImage.color(with: AG.Cons.Color.mint)!, record: "18-9", onLeft: false)
     
     let centerView = UIView()
     addSubview(centerView)

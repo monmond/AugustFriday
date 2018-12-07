@@ -15,7 +15,7 @@ import UIKit
 
 
 //MARK: - Font
-public extension AG.F {
+public extension AG.Cons.Font {
   
   public enum System: String, AGFontTextStylable {
     case regular = ""
@@ -27,7 +27,7 @@ public extension AG.F {
 
 
 //MARK: - System
-public extension AG.F.System {
+public extension AG.Cons.Font.System {
   
   public var a: UIFont.Weight {
     return .ultraLight

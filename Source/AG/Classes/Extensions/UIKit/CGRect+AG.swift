@@ -1,5 +1,5 @@
 //
-//  CGRect+AG.swift
+//  CGRect+AG.Cons.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 27/6/18.

@@ -46,7 +46,7 @@ public extension AGPopupVCAttributedStringDependency where Self: AGPopupVC  {
     let attributes: [NSAttributedString.Key : Any] = [
       // Line spacing attribute
       .paragraphStyle: style,
-      .foregroundColor: AG.C.Theme.cell_lb_1
+      .foregroundColor: AG.Cons.Color.Theme.cell_lb_1
     ]
     string.addAttributes(attributes, range: NSMakeRange(0, string.length))
     return string
@@ -61,7 +61,7 @@ public extension AGPopupVCAttributedStringDependency where Self: AGPopupVC  {
     let attributes: [NSAttributedString.Key : Any] = [
       // Line spacing attribute
       .paragraphStyle: style,
-      .foregroundColor: AG.C.Theme.cell_lb_1
+      .foregroundColor: AG.Cons.Color.Theme.cell_lb_1
     ]
     string.addAttributes(attributes, range: NSMakeRange(0, string.length))
     return string

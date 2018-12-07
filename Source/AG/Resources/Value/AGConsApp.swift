@@ -1,5 +1,5 @@
 //
-//  AGBundle.swift
+//  AGApp.swift
 //  AugustFriday
 //
 //  Created by sasawat sankosik on 30/10/18.
@@ -13,13 +13,7 @@ import Foundation
 
 
 
-//MARK: - Bundle
-public extension AG.Bundle {
-  public static let apple = "com.apple"
+//MARK: - App
+public extension AG.Cons.App {
+  public static let name = "AugustFriday"
 }
-
-
-
-
-
-

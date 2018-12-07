@@ -140,22 +140,22 @@ class ConfirmPopupVC: AGPopupVC {
   }
   
   func setupUI() {
-    view.backgroundColor = AG.C.Theme.cell_bg_1
+    view.backgroundColor = AG.Cons.Color.Theme.cell_bg_1
     
     v_container = UIView()
-    v_container.backgroundColor = AG.C.clear
+    v_container.backgroundColor = AG.Cons.Color.clear
     
     v_header = UIView()
-    v_header.backgroundColor = AG.C.clear
+    v_header.backgroundColor = AG.Cons.Color.clear
     
     imgv_header = UIImageView()
     imgv_header.image = nil
     imgv_header.contentMode = .scaleAspectFit
-    imgv_header.backgroundColor = AG.C.Theme.cell_bg_default
+    imgv_header.backgroundColor = AG.Cons.Color.Theme.cell_bg_default
     imgv_header.clipsToBounds = true
     
     stv_info = UIStackView()
-    stv_info.backgroundColor = AG.C.clear
+    stv_info.backgroundColor = AG.Cons.Color.clear
     stv_info.axis = .vertical
     stv_info.alignment = .fill
     stv_info.distribution = .fill
@@ -163,37 +163,37 @@ class ConfirmPopupVC: AGPopupVC {
     
     lb_title = UILabel()
     lb_title.text = "-"
-    lb_title.textColor = AG.C.Theme.cell_lb_2
-//    lb_title.textColor = AG.Color.red
+    lb_title.textColor = AG.Cons.Color.Theme.cell_lb_2
+//    lb_title.textColor = AG.Cons.Color.red
 //    lb_title.font = AppFont.DBOzoneX.bold.with(size: 22)
     lb_title.font = UIFont.systemFont(ofSize: lb_title.font.pointSize)
-    lb_title.backgroundColor = AG.C.clear
+    lb_title.backgroundColor = AG.Cons.Color.clear
     lb_title.textAlignment = .center
 
     lb_message = UILabel()
     lb_message.text = "-"
-    lb_message.textColor = AG.C.Theme.cell_lb_1
+    lb_message.textColor = AG.Cons.Color.Theme.cell_lb_1
     lb_message.font = UIFont.systemFont(ofSize: lb_title.font.pointSize)
-    lb_message.backgroundColor = AG.C.clear
+    lb_message.backgroundColor = AG.Cons.Color.clear
     lb_message.numberOfLines = 0
     lb_message.textAlignment = .center
     
     stv_button = UIStackView()
-    stv_button.backgroundColor = AG.C.clear
+    stv_button.backgroundColor = AG.Cons.Color.clear
     stv_button.axis = .horizontal
     stv_button.alignment = .fill
     stv_button.distribution = .fillEqually
     stv_button.spacing = 0
     
     btn_cancel = AGButton()
-    btn_cancel.setup(AG.B.Popup.Cancel())
+    btn_cancel.setup(AG.Cons.Button.Popup.Cancel())
     btn_cancel.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
     
     btn_ok = AGButton()
-    btn_ok.setup(AG.B.Popup.Confirm())
+    btn_ok.setup(AG.Cons.Button.Popup.Confirm())
     btn_ok.addTarget(self, action: #selector(okButtonPressed), for: .touchUpInside)
     
-    let font_using = AG.F.System.font(with: .body)
+    let font_using = AG.Cons.Font.System.font(with: .body)
     viewFontTextAdjustsFonts(with: v_infoLabelACSC, font: font_using)
 
     view.addSubview(v_container)
@@ -288,8 +288,8 @@ class ConfirmPopupVC: AGPopupVC {
       let url = URL(string: url)
       imgv_header.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(1))])
     } else if let icon = hi.icon, icon != .none {
-      imgv_header.image = icon.overlay(with: AG.C.red)
-      imgv_header.backgroundColor = AG.C.clear
+      imgv_header.image = icon.overlay(with: AG.Cons.Color.red)
+      imgv_header.backgroundColor = AG.Cons.Color.clear
     } else {
       con_headerViewHeight.update(offset: 0)
     }
