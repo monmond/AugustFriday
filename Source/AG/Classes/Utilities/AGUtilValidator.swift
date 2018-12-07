@@ -14,10 +14,10 @@ import Foundation
 
 public extension AG.Util.Validator {
   
-  public class Phone: AGValidatorPhone { }
-  public class Citizen: AGValidatorCitizen { }
-  public class Email: AGValidatorEmail { }
-  public class Password: AGValidatorPassword { }
+  public class Phone: AGUtilValidatorPhone { }
+  public class Citizen: AGUtilValidatorCitizen { }
+  public class Email: AGUtilValidatorEmail { }
+  public class Password: AGUtilValidatorPassword { }
   
 }
 
@@ -60,13 +60,13 @@ extension AGUtilValidator {
 
 
 
-public protocol AGValidatorPhone {
+public protocol AGUtilValidatorPhone {
   static func isPhoneNumber(string: String) -> Bool
 }
 
 
 
-extension AGValidatorPhone {
+extension AGUtilValidatorPhone {
   
   public static func isPhoneNumber(string: String) -> Bool {
     do {
@@ -86,13 +86,13 @@ extension AGValidatorPhone {
 
 
 
-public protocol AGValidatorCitizen {
+public protocol AGUtilValidatorCitizen {
   static func isCitizenId(string: String) -> Bool
 }
 
 
 
-extension AGValidatorCitizen {
+extension AGUtilValidatorCitizen {
   
   public static func isCitizenId(string: String) -> Bool {
     guard string.count == 13, AG.Util.Validator.isNumeric(string: string) else {
@@ -116,13 +116,13 @@ extension AGValidatorCitizen {
 
 
 
-public protocol AGValidatorEmail {
+public protocol AGUtilValidatorEmail {
   static func isEmail(_ string: String) -> Bool
 }
 
 
 
-extension AGValidatorEmail {
+extension AGUtilValidatorEmail {
   public static func isEmail(_ string: String) -> Bool {
     do {
       let regex = try NSRegularExpression(pattern: "^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-+]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z‌​]{2,})$", options: .caseInsensitive)
@@ -136,13 +136,13 @@ extension AGValidatorEmail {
 
 
 
-public protocol AGValidatorPassword {
+public protocol AGUtilValidatorPassword {
   static func isValidPassword(string: String) -> Bool
 }
 
 
 
-extension AGValidatorPassword {
+extension AGUtilValidatorPassword {
   
   public static func isValidPassword(string: String) -> Bool {
     do {
