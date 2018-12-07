@@ -34,9 +34,9 @@ public class AG {
     public class Bundle { }
   }
   public class Util {
-    open class TextField { }
-    open class Validator: AGValidator { }
-    open class Formatter { }
+    open class TextField: AGUtilTextField { }
+    open class Validator: AGUtilValidator { }
+    open class Formatter: AGUtilFormatter { }
   }
   
 }

@@ -23,7 +23,7 @@ public extension AG.Util.Validator {
 
 
 
-public protocol AGValidator {
+public protocol AGUtilValidator {
   static func isNumberic(string: String) -> Bool
   static func isBlank(string: String) -> Bool
   static func isNumeric(string: String) -> Bool
@@ -32,7 +32,7 @@ public protocol AGValidator {
 
 
 
-extension AGValidator {
+extension AGUtilValidator {
   
   public static func isNumberic(string: String) -> Bool {
     if let _ = Int(string) {

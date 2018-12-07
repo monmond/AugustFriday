@@ -21,13 +21,13 @@ public extension AG.Util.Formatter {
 
 
 
-public protocol AGFormatter {
+public protocol AGUtilFormatter {
   static func steamUrlFormatToSteamDisplay(steamUrlFormat: String, point: String, replace: String) -> String
 }
 
 
 
-extension AGFormatter {
+extension AGUtilFormatter {
   
   public static func steamUrlFormatToSteamDisplay(steamUrlFormat: String, point: String, replace: String) -> String {
     return steamUrlFormat.replacingOccurrences(of: "{\(point)}", with: replace)
